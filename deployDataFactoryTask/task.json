@@ -1,0 +1,56 @@
+{
+    "id": "32da18f4-f099-4cd1-9c82-998a35dc0aeb",
+    "name": "PublishDacPacTask",
+    "friendlyName": "Publish Azure Data Factory",
+    "description": "Deploys entire ADF (v2) from JSON files to ADF instance",
+    "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
+	"category": "Utility",
+    "visibility": [
+	    "Build",
+        "Release"
+    ],
+    "author": "SQLPlayer",
+	"demands": [
+        "SqlPackage"
+    ],
+    "version": {
+        "Major": "0",
+        "Minor": "1",
+        "Patch": "0"
+     },
+    "inputs": [
+		{
+            "name": "DataFactoryCodePath",
+            "type": "filePath",
+            "label": "Azure Data Factory Path",
+            "required": true
+        },
+		{
+            "name": "DataFactoryName",
+            "type": "string",
+            "label": "Target Azure Data Factory Name",
+            "required": true
+        },
+		{
+            "name": "ResourceGroupName",
+            "type": "string",
+            "label": "Resource Group Name",
+            "required": true
+        },
+		{
+            "name": "Location",
+            "type": "string",
+            "label": "Target Region",
+            "required": true
+        }
+    ],
+    "instanceNameFormat": "Publish ADF $(DataFactoryName) using objects from JSON files",
+    "execution": {
+        "PowerShell3": {
+            "target": "PublishADF.ps1",
+            "platforms": [
+                "windows"
+            ]
+        }
+    }
+}

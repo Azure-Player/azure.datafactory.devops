@@ -30,8 +30,9 @@ foreach ($TaskFolder in $Folders.name) {
     }
 }
 
+Copy-Item LICENSE LICENSE.md
 Remove-Item ./bin/*.* -Force -ErrorAction SilentlyContinue
-&tfx extension create --manifest-globs vss-extension.json --output-path ./bin
+tfx extension create --manifest-globs vss-extension.json --output-path ./bin
 
 # $TaskFolder = $Folders.name
 # $ModuleName = "azure.datafactory.tools"

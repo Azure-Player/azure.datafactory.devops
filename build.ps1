@@ -15,7 +15,7 @@ Function DownloadModules($TaskFolder, $ModuleName) {
     Save-Module -Name $ModuleName -Path $TaskModuleFolder -Force -Confirm:$false -AllowPrerelease
 
     Get-ChildItem $TaskModuleFolder\$ModuleName\*\* | ForEach-Object {
-        Move-Item -Path $_.FullName -Destination $TaskModuleFolder\$ModuleName\
+        Move-Item -Path $_.FullName -Destination "$TaskModuleFolder\$ModuleName\"
     }
 }
 
@@ -32,3 +32,6 @@ foreach ($TaskFolder in $Folders.name) {
 
 Remove-Item ./bin/*.* -Force -ErrorAction SilentlyContinue
 &tfx extension create --manifest-globs vss-extension.json --output-path ./bin
+
+# $TaskFolder = $Folders.name
+# $ModuleName = "azure.datafactory.tools"

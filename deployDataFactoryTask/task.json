@@ -52,7 +52,34 @@
             "type": "string",
             "label": "Target Region",
             "required": true
+        },
+		{
+            "name": "Include objects",
+            "type": "string",
+            "label": "Include objects",
+            "required": false
+        },
+		{
+            "name": "Exclude objects",
+            "type": "string",
+            "label": "Exclude objects",
+            "required": false
+        },
+        {
+            "name": "DeleteNotInSource",
+            "type": "boolean",
+            "label": "Delete objects not in source",
+            "defaultValue": "false",
+            "required": false
+        },
+        {
+            "name": "StopStartTriggers",
+            "type": "boolean",
+            "label": "Stop/Start triggers",
+            "defaultValue": "true",
+            "required": false
         }
+        
     ],
     "dataSourceBindings": [
         {

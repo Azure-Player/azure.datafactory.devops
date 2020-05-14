@@ -50,6 +50,10 @@ try {
     [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
     [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
     [string]$Location = Get-VstsInput -Name "Location" -Require;
+    [string]$Include = Get-VstsInput -Name "Include";
+    [string]$Exclude = Get-VstsInput -Name "Exclude";
+    [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource";
+    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers";
 
     $global:ErrorActionPreference = 'Stop';
 
@@ -58,6 +62,32 @@ try {
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "ResourceGroupName:  $ResourceGroupName";
     Write-Host "Location:           $Location";
+
+    # Options
+    $opt = New-AdfPublishOption 
+    $opt.DeleteNotInSource = $DeleteNotInSource
+    $opt.StopStartTriggers = $StopStartTriggers
+
+    #$Include="pipeline.*, *.Copy*"
+    #$Exclude = ''
+
+    # Include/Exclude options
+    $IncludeArr = $Include.Replace(',', "`n").Split("`n");
+    $IncludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
+        $i = $_.Trim()
+        Write-Verbose "- Include: $i"
+        $opt.Includes.Add($i, "");
+    }
+    Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
+    
+    $ExcludeArr = $Exclude.Replace(',', "`n").Split("`n");
+    $ExcludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
+        $e = $_.Trim()
+        Write-Verbose "- Exclude: $e"
+        $opt.Excludes.Add($e, "");
+    }
+    Write-Host "$($opt.Excludes.Count) rule(s)/object(s) added to be excluded from deployment."
+
 
     Publish-AdfV2FromJson -RootFolder "$RootFolder" `
         -ResourceGroupName "$ResourceGroupName" `

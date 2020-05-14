@@ -14,7 +14,7 @@
     "version": {
         "Major": 0,
         "Minor": 1,
-        "Patch": 18
+        "Patch": 19
      },
     "inputs": [
         {
@@ -55,13 +55,13 @@
         },
 		{
             "name": "Include",
-            "type": "string",
+            "type": "multiLine",
             "label": "Include objects",
             "required": false
         },
 		{
             "name": "Exclude",
-            "type": "string",
+            "type": "multiLine",
             "label": "Exclude objects",
             "required": false
         },

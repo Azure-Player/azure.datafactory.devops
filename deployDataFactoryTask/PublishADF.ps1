@@ -52,8 +52,8 @@ try {
     [string]$Location = Get-VstsInput -Name "Location" -Require;
     [string]$Include = Get-VstsInput -Name "Include";
     [string]$Exclude = Get-VstsInput -Name "Exclude";
-    [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource";
-    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers";
+    [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
+    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
 
     $global:ErrorActionPreference = 'Stop';
 
@@ -72,7 +72,7 @@ try {
     #$Exclude = ''
 
     # Include/Exclude options
-    $IncludeArr = $Include.Replace(',', "`n").Split("`n");
+    $IncludeArr = $Include.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
     $IncludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
         $i = $_.Trim()
         Write-Verbose "- Include: $i"
@@ -80,7 +80,7 @@ try {
     }
     Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
     
-    $ExcludeArr = $Exclude.Replace(',', "`n").Split("`n");
+    $ExcludeArr = $Exclude.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
     $ExcludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
         $e = $_.Trim()
         Write-Verbose "- Exclude: $e"

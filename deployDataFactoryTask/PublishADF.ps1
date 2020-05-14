@@ -20,12 +20,32 @@ Trace-VstsEnteringInvocation $MyInvocation
 try {
 
     # import required modules
-	$ModulePath = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    Import-Module -Name $ModulePath
-    $config = Import-PowerShellDataFile $ModulePath
-    Write-Output "Tools Version: $($config.ModuleVersion)"
+	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    $config = Import-PowerShellDataFile $ModulePathADFT
+    Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
 
-    #Get inputs params
+    #Get-Module -ListAvailable
+
+    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\az.accounts.psd1"
+    Import-Module -Name $ModulePathAcc
+	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\az.datafactory.psd1"
+    Import-Module -Name $ModulePathADF
+    Import-Module -Name $ModulePathADFT
+
+
+    . "$PSScriptRoot\Utility.ps1"
+
+    #$serviceName = Get-VstsInput -Name ConnectedServiceNameARM -Require
+    $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
+    $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
+    $endpoint = ConvertTo-Json $endpointObject
+    #$CoreAzArgument = "-endpoint '$endpoint'"
+    . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
+
+
+    #Get-Module -ListAvailable
+
+    # Get inputs params
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
     [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
     [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;

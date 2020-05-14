@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
-    "id": "dataFactoryDeployTasks",
+    "id": "DataFactoryTools",
     "name": "Deploy Azure Data Factory by SQLPlayer",
-    "version": "0.1.0",
+    "version": "0.1.14",
     "publisher": "SQLPlayer",
     "description": "Tools for deploying entire ADF code (JSON files) to ADF instance",
     "targets": [
@@ -16,7 +16,7 @@
         "DevOps",
         "Deploy",
         "Release",
-        "Azure",
+        "Azure Data Factory",
         "Continuous Delivery",
         "Build",
         "Release"
@@ -29,7 +29,7 @@
             "path": "readme.md"
         },
         "license": {
-            "path": "license.md"
+            "path": "license"
         }
     },
     "repository": {
@@ -52,13 +52,13 @@
     ],
     "contributions": [
         {
-            "id": "dataFactoryDeployTask",
+            "id": "PublishADF",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "dataFactoryDeployTask"
+                "name": "deployDataFactoryTask"
             }
         }
     ]

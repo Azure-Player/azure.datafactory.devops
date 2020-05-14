@@ -1,38 +1,21 @@
-param(
-    [boolean]$Clean = $true
-)
 
-# Use PowerShell Core
-Set-Location $PSScriptRoot
+$JsonDoc = Get-Content ".\vss-extension.json" -Raw | ConvertFrom-Json
+$ver = $JsonDoc.Version
+$verarr = $ver.Split('.')
+Write-Output "Module version: $ver"
 
-Function DownloadModules($TaskFolder, $ModuleName) {
-    $TaskModuleFolder = Join-Path $TaskFolder "\ps_modules"
-    $ModuleFolder = Join-Path $TaskModuleFolder $ModuleName
-    if (Test-Path -Path $ModuleFolder) {
-        Remove-Item $ModuleFolder -Force -Recurse
-    }
-    New-Item -ItemType Directory $TaskModuleFolder -Force | Out-Null
-    Save-Module -Name $ModuleName -Path $TaskModuleFolder -Force -Confirm:$false -AllowPrerelease
+$taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployDataFactoryTask\task.json'
+Copy-Item -Path $taskFile -Destination "$taskFile - copy"
+Write-Output "Updating version for task definition in file: $taskFile"
+$JsonDoc = Get-Content $taskFile -Raw | ConvertFrom-Json
+$JsonDoc.version.Major = $verarr[0]
+$JsonDoc.version.Minor = $verarr[1]
+$JsonDoc.version.Patch = $verarr[2]
+$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 
-    Get-ChildItem $TaskModuleFolder\$ModuleName\*\* | ForEach-Object {
-        Move-Item -Path $_.FullName -Destination "$TaskModuleFolder\$ModuleName\"
-    }
-}
 
-$Folders = Get-ChildItem -Filter "deploy*" -Directory
-foreach ($TaskFolder in $Folders.name) {
-    if ((!(Test-Path -Path (Join-Path $TaskFolder "\ps_modules\VstsTaskSDK"))) -or ($Clean)) {
-        DownloadModules $TaskFolder "VstsTaskSDK"
-    }
 
-    if ((!(Test-Path -Path (Join-Path $TaskFolder "\ps_modules\azure.datafactory.tools"))) -or ($Clean)) {
-        DownloadModules $TaskFolder "azure.datafactory.tools"
-    }
-}
 
-Copy-Item LICENSE LICENSE.md
-Remove-Item ./bin/*.* -Force -ErrorAction SilentlyContinue
-tfx extension create --manifest-globs vss-extension.json --output-path ./bin
+# tfx extension create --manifest-globs vss-extension.json --output-path ./bin
 
-# $TaskFolder = $Folders.name
-# $ModuleName = "azure.datafactory.tools"
+

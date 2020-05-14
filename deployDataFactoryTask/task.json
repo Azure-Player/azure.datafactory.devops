@@ -1,29 +1,39 @@
 {
-    "id": "32da18f4-f099-4cd1-9c82-998a35dc0aeb",
-    "name": "PublishDacPacTask",
+    "id": "1af843b5-35a0-411f-9a18-9eb7a59fb8b8",
+    "name": "PublishADFTask",
     "friendlyName": "Publish Azure Data Factory",
     "description": "Deploys entire ADF (v2) from JSON files to ADF instance",
     "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
-	"category": "Utility",
+	"category": "deploy",
+    "preview": true,
     "visibility": [
 	    "Build",
         "Release"
     ],
     "author": "SQLPlayer",
-	"demands": [
-        "SqlPackage"
-    ],
     "version": {
-        "Major": "0",
-        "Minor": "1",
-        "Patch": "0"
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 13
      },
     "inputs": [
-		{
-            "name": "DataFactoryCodePath",
-            "type": "filePath",
-            "label": "Azure Data Factory Path",
+        {
+            "name": "ConnectedServiceName",
+            "aliases": ["azureSubscription"],
+            "type": "connectedService:AzureRM",
+            "label": "Azure Subscription",
+            "defaultValue": "",
             "required": true
+        },
+        {
+            "name": "ResourceGroupName",
+            "type": "pickList",
+            "label": "Resource Group Name",
+            "required": true,
+            "helpMarkDown": "Provide the name of the Resource Group.",
+            "properties": {
+                "EditableOptions": "True"
+            }
         },
 		{
             "name": "DataFactoryName",
@@ -31,10 +41,10 @@
             "label": "Target Azure Data Factory Name",
             "required": true
         },
-		{
-            "name": "ResourceGroupName",
-            "type": "string",
-            "label": "Resource Group Name",
+        {
+            "name": "DataFactoryCodePath",
+            "type": "filePath",
+            "label": "Azure Data Factory Path",
             "required": true
         },
 		{
@@ -44,7 +54,14 @@
             "required": true
         }
     ],
-    "instanceNameFormat": "Publish ADF $(DataFactoryName) using objects from JSON files",
+    "dataSourceBindings": [
+        {
+            "target": "ResourceGroupName",
+            "endpointId": "$(ConnectedServiceName)",
+            "dataSourceName": "AzureResourceGroups"
+        }
+    ],
+    "instanceNameFormat": "Publish ADF $(DataFactoryName) from JSON files",
     "execution": {
         "PowerShell3": {
             "target": "PublishADF.ps1",

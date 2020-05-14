@@ -54,13 +54,13 @@
             "required": true
         },
 		{
-            "name": "Include objects",
+            "name": "Include",
             "type": "string",
             "label": "Include objects",
             "required": false
         },
 		{
-            "name": "Exclude objects",
+            "name": "Exclude",
             "type": "string",
             "label": "Exclude objects",
             "required": false

@@ -92,7 +92,8 @@ try {
     Publish-AdfV2FromJson -RootFolder "$RootFolder" `
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
-        -Location "$Location"
+        -Location "$Location" `
+        -Option $opt
 
 
 } finally {

@@ -52,6 +52,7 @@ try {
     [string]$Location = Get-VstsInput -Name "Location" -Require;
     [string]$Include = Get-VstsInput -Name "Include";
     [string]$Exclude = Get-VstsInput -Name "Exclude";
+    [string]$StageCode = Get-VstsInput -Name "StageCode";
     [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
     [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
 
@@ -62,6 +63,7 @@ try {
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "ResourceGroupName:  $ResourceGroupName";
     Write-Host "Location:           $Location";
+    Write-Host "Stage:              $Stage";
 
     # Options
     $opt = New-AdfPublishOption 
@@ -93,7 +95,7 @@ try {
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
-        -Option $opt
+        -Option $opt -Stage "$StageCode"
 
 
 } finally {

@@ -14,7 +14,7 @@
     "version": {
         "Major": 0,
         "Minor": 1,
-        "Patch": 20
+        "Patch": 21
      },
     "inputs": [
         {
@@ -55,6 +55,14 @@
             "type": "string",
             "label": "Target Region",
             "helpMarkDown": "Azure Region of target Data Factory.\nIt is used only in order to create new instance of ADF.",
+            "required": false
+        },
+		{
+            "name": "StageCode",
+            "type": "string",
+            "label": "Environment (stage)",
+            "defaultValue": "",
+            "helpMarkDown": "Allows to point configuration with values for all properties whom need to be replaced.\nIf parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.",
             "required": false
         },
 		{

@@ -14,7 +14,7 @@
     "version": {
         "Major": 0,
         "Minor": 1,
-        "Patch": 21
+        "Patch": 22
      },
     "inputs": [
         {
@@ -62,7 +62,7 @@
             "type": "string",
             "label": "Environment (stage)",
             "defaultValue": "",
-            "helpMarkDown": "Allows to point configuration with values for all properties whom need to be replaced.\nIf parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.",
+            "helpMarkDown": "Allows pointing configuration with values for all properties who need to be replaced.\nIf parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.",
             "required": false
         },
 		{

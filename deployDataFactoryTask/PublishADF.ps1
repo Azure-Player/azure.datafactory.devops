@@ -50,56 +50,79 @@ try {
     [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
     [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
     [string]$Location = Get-VstsInput -Name "Location" -Require;
-    [string]$Include = Get-VstsInput -Name "Include";
-    [string]$Exclude = Get-VstsInput -Name "Exclude";
+    [string]$StageType = Get-VstsInput -Name "StageType" -Require;
     [string]$StageCode = Get-VstsInput -Name "StageCode";
+    [string]$StageConfigFile = Get-VstsInput -Name "StageConfigFile";
     [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
     [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
-
+    [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
+    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require
+    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile
+    [string]$FilterText = Get-VstsInput -Name FilterText
+    
     $global:ErrorActionPreference = 'Stop';
+    if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
 
-    Write-Host "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
-    Write-Host "DataFactoryName:    $DataFactoryName";
-    Write-Host "RootFolder:         $RootFolder";
-    Write-Host "ResourceGroupName:  $ResourceGroupName";
-    Write-Host "Location:           $Location";
-    Write-Host "Stage:              $Stage";
+    Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
+    Write-Debug "DataFactoryName:    $DataFactoryName";
+    Write-Debug "RootFolder:         $RootFolder";
+    Write-Debug "ResourceGroupName:  $ResourceGroupName";
+    Write-Debug "Location:           $Location";
+    Write-Debug "Stage:              $StageCode";
+    Write-Debug "Filtering:          $FilteringYesNo";
 
     # Options
     $opt = New-AdfPublishOption 
     $opt.DeleteNotInSource = $DeleteNotInSource
     $opt.StopStartTriggers = $StopStartTriggers
+    $opt.CreateNewInstance = $CreateNewInstance
 
     #$Include="pipeline.*, *.Copy*"
     #$Exclude = ''
 
-    # Include/Exclude options
-    $IncludeArr = $Include.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
-    $IncludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
-        $i = $_.Trim()
-        Write-Verbose "- Include: $i"
-        $opt.Includes.Add($i, "");
-    }
-    Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
-    
-    $ExcludeArr = $Exclude.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
-    $ExcludeArr | Where-Object { $_.Length -gt 0 } | ForEach-Object {
-        $e = $_.Trim()
-        Write-Verbose "- Exclude: $e"
-        $opt.Excludes.Add($e, "");
-    }
-    Write-Host "$($opt.Excludes.Count) rule(s)/object(s) added to be excluded from deployment."
+    # Validate the Filtering Type
+    if ($FilteringType -ne "None") {
+        if ($FilteringType -eq "FilePath") {
+            if ($FilterTextFile -match '[\r\n]' -or [string]::IsNullOrWhitespace($FilterTextFile)) {
+                throw ("Invalid script path '{0}'. Invalid path characters specified." -f $FilterTextFile)
+            }
+            $FilterText = Get-Content -Path $FilterTextFile
+        }
+        $FilterArray = $FilterText.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
 
+        # Include/Exclude options
+        $FilterArray | Where-Object { ($_.Trim().Length -gt 0 -or $_.Trim().StartsWith('+')) -and (!$_.Trim().StartsWith('-')) } | ForEach-Object {
+            $i = $_.Trim().Replace('+', '')
+            Write-Verbose "- Include: $i"
+            $opt.Includes.Add($i, "");
+        }
+        Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
+        
+        $FilterArray | Where-Object { $_.Trim().StartsWith('-') } | ForEach-Object {
+            $e = $_.Trim().Substring(1)
+            Write-Verbose "- Exclude: $e"
+            $opt.Excludes.Add($e, "");
+        }
+        Write-Host "$($opt.Excludes.Count) rule(s)/object(s) added to be excluded from deployment."
+    }
+
+    if ($StageType -eq "Stage") {
+        $Stage = $StageCode
+    } else {
+        if (!$StageConfigFile.EndsWith('.csv')) {
+            throw ("Invalid config file name '{0}'. File must ends with '.csv'." -f $StageConfigFile)
+        }
+        $Stage = $StageConfigFile
+    }
 
     Publish-AdfV2FromJson -RootFolder "$RootFolder" `
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
-        -Option $opt -Stage "$StageCode"
+        -Option $opt -Stage "$Stage"
 
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
 }
-
 

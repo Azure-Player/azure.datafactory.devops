@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "DataFactoryTools",
     "name": "Deploy Azure Data Factory by SQLPlayer",
-    "version": "0.2.6",
+    "version": "0.3.0",
     "publisher": "SQLPlayer",
     "description": "Tools for deploying entire ADF code (JSON files) to ADF instance",
     "targets": [
@@ -53,6 +53,10 @@
     "files": [
         {
             "path": "deployDataFactoryTask"
+        },
+        {
+            "path": "images",
+            "addressable": true
         }
     ],
     "contributions": [

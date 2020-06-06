@@ -117,6 +117,13 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 # Screenshot of the Task 
 ![Task](images/AzureDevOps-ADF-custom-task-preview-screenshot.png)
 
+# Related modules
+This task includes the following modules:  
+- [azure.datafactory.tools - ver.0.10.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.10.0)
+- [Az.DataFactory - ver.1.7.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.7.0)
+- [Az.Accounts - ver.1.7.5](https://www.powershellgallery.com/packages/Az.Accounts/1.7.5)
+
 # History
+- 06 Jun 2020 - v.0.3   Upgrade module azure.datafactory.tools to ver.0.10 (a few bug fixes)
 - 27 May 2020 - v.0.2   Enhanced few things. First Public Preview release.
 - 15 May 2020 - v.0.1   The first Private Preview release. 

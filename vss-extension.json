@@ -53,6 +53,10 @@
     "files": [
         {
             "path": "deployDataFactoryTask"
+        },
+        {
+            "path": "images",
+            "addressable": true
         }
     ],
     "contributions": [

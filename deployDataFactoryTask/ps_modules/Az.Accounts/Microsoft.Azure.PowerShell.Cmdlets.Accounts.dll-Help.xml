@@ -314,7 +314,7 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>AzureAttestationServiceEndpointResourceId</maml:name>
           <maml:Description>
             <maml:para>The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</maml:para>
@@ -326,10 +326,34 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>AzureAttestationServiceEndpointSuffix</maml:name>
           <maml:Description>
             <maml:para>Dns suffix of Azure Attestation service.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+          <maml:Description>
+            <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+          <maml:Description>
+            <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -523,7 +547,7 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>AzureAttestationServiceEndpointResourceId</maml:name>
           <maml:Description>
             <maml:para>The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</maml:para>
@@ -535,10 +559,34 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>AzureAttestationServiceEndpointSuffix</maml:name>
           <maml:Description>
             <maml:para>Dns suffix of Azure Attestation service.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+          <maml:Description>
+            <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+          <maml:Description>
+            <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -571,6 +619,82 @@
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Add-AzEnvironment</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AutoDiscover</maml:name>
+          <maml:Description>
+            <maml:para>Discovers environments via default or configured endpoint.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, tenant and subscription used for communication with azure</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Scope</maml:name>
+          <maml:Description>
+            <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">CurrentUser</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Uri</maml:name>
+          <maml:Description>
+            <maml:para>Specifies URI of the internet resource to fetch environments.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Uri</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Uri</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -648,6 +772,18 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AutoDiscover</maml:name>
+        <maml:Description>
+          <maml:para>Discovers environments via default or configured endpoint.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>AzureAnalysisServicesEndpointResourceId</maml:name>
         <maml:Description>
@@ -672,7 +808,7 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>AzureAttestationServiceEndpointResourceId</maml:name>
         <maml:Description>
           <maml:para>The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</maml:para>
@@ -684,7 +820,7 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>AzureAttestationServiceEndpointSuffix</maml:name>
         <maml:Description>
           <maml:para>Dns suffix of Azure Attestation service.</maml:para>
@@ -760,6 +896,30 @@
         <maml:name>AzureOperationalInsightsEndpointResourceId</maml:name>
         <maml:Description>
           <maml:para>The audience for tokens authenticating with the Azure Log Analytics API.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+        <maml:Description>
+          <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+        <maml:Description>
+          <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -960,6 +1120,18 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Uri</maml:name>
+        <maml:Description>
+          <maml:para>Specifies URI of the internet resource to fetch environments.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Uri</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Uri</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
         <maml:Description>
@@ -1062,6 +1234,8 @@ AzureOperationalInsightsEndpoint                  :
 AzureAnalysisServicesEndpointSuffix               :
 AzureAttestationServiceEndpointSuffix             :
 AzureAttestationServiceEndpointResourceId         :
+AzureSynapseAnalyticsEndpointSuffix               :
+AzureSynapseAnalyticsEndpointResourceId           :
 VersionProfiles                                   : {}
 ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
@@ -1283,7 +1457,7 @@ In this example we are creating a new Azure environment with sample endpoints us
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------------------- Clear global context ---------------------</maml:title>
+        <maml:title>--------------- Example 1: Clear global context ---------------</maml:title>
         <dev:code>PS C:\&gt; Clear-AzContext -Scope CurrentUser</dev:code>
         <dev:remarks>
           <maml:para>Remove all account, subscription, and credential information for any powershell session.</maml:para>
@@ -1521,7 +1695,7 @@ In this example we are creating a new Azure environment with sample endpoints us
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
         <dev:code>PS C:\&gt; Clear-AzDefault -ResourceGroup</dev:code>
         <dev:remarks>
           <maml:para>This command removes the default resource group set by the user in the current context.</maml:para>
@@ -3069,10 +3243,20 @@ Environment      : AzureCloud</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>---------------- Disable autosaving the context ----------------</maml:title>
+        <maml:title>---------- Example 1: Disable autosaving the context ----------</maml:title>
         <dev:code>PS C:\&gt; Disable-AzContextAutosave</dev:code>
         <dev:remarks>
           <maml:para>Disable autosave for the current user.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Disable-AzContextAutosave -Scope Process</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -3091,11 +3275,11 @@ Environment      : AzureCloud</dev:code>
       <command:verb>Disable</command:verb>
       <command:noun>AzDataCollection</command:noun>
       <maml:description>
-        <maml:para>Opts out of collecting data to improve the AzurePowerShell cmdlets.  Data is not collected unless you explicitly opt in.</maml:para>
+        <maml:para>Opts out of collecting data to improve the Azure PowerShell cmdlets. Data is collected by default unless you explicitly opt out.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>You can improve the experience of using the Microsoft Cloud and Azure PowerShell by opting in to data collection. Azure PowerShell does not collect data without your consent - you must explicitly opt in by executing Enable-AzDataCollection, or by answering yes when Azure PowerShell prompts you about collecting data the first time you execute a cmdlet. Microsoft aggregates collected data to identify patterns of usage, to identify common issues and to improve the experience of using Azure PowerShell. Microsoft Azure PowerShell does not collect any private data, or any personally identifiable information. Run the Disable-AzDataCollection cmdlet to disable data collection for the current user. This will prevent the current user from being prompted about data collection the first time cmdlets are executed. To enable data collection for the current user, run the Enable-AzDataCollection cmdlet.</maml:para>
+      <maml:para>The `Disable-AzDataCollection` cmdlet is used to opt out of data collection. Azure PowerShell automatically collects telemetry data by default. To disable data collection, you must explicitly opt-out. Microsoft aggregates collected data to identify patterns of usage, to identify common issues, and to improve the experience of Azure PowerShell. Microsoft Azure PowerShell doesn't collect any private or personal data. If you've previously opted out, run the `Enable-AzDataCollection` cmdlet to re-enable data collection for the current user on the current machine.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -3103,7 +3287,7 @@ Environment      : AzureCloud</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
-            <maml:para>The credentials, account, tenant and subscription used for communication with azure.</maml:para>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
@@ -3140,7 +3324,7 @@ Environment      : AzureCloud</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
-          <maml:para>The credentials, account, tenant and subscription used for communication with azure.</maml:para>
+          <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
@@ -3202,9 +3386,9 @@ Environment      : AzureCloud</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-- Example 1: Disabling data collection for the current user --</maml:title>
-        <dev:code>PS C:\&gt; Disable-AzDataCollection</dev:code>
+        <dev:code>Disable-AzDataCollection</dev:code>
         <dev:remarks>
-          <maml:para>This example shows how to disable data collection for the current user.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -3946,7 +4130,7 @@ Environment      : AzureCloud</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>---------------- Logout of the current account ----------------</maml:title>
+        <maml:title>----------- Example 1: Logout of the current account -----------</maml:title>
         <dev:code>PS C:\&gt; Disconnect-AzAccount</dev:code>
         <dev:remarks>
           <maml:para>Logs out of the Azure account associated with the current context.</maml:para>
@@ -3955,7 +4139,7 @@ Environment      : AzureCloud</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>-- Logout of the account associated with a particular context --</maml:title>
+        <maml:title>Example 2: Logout of the account associated with a particular context</maml:title>
         <dev:code>PS C:\&gt; Get-AzContext "Work" | Disconnect-AzAccount -Scope CurrentUser</dev:code>
         <dev:remarks>
           <maml:para>Logs out the account associated with the given context (named 'Work'). Because this uses the 'CurrentUser' scope, all credentials and contexts will be permanently deleted.</maml:para>
@@ -3964,7 +4148,7 @@ Environment      : AzureCloud</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>------------------ Log out a particular user ------------------</maml:title>
+        <maml:title>------------- Example 3: Log out a particular user -------------</maml:title>
         <dev:code>PS C:\&gt; Disconnect-AzAccount -Username 'user1@contoso.org'</dev:code>
         <dev:remarks>
           <maml:para>Logs out the 'user1@contoso.org' user - all credentials and all contexts associated with this user will be removed.</maml:para>
@@ -4124,10 +4308,20 @@ Environment      : AzureCloud</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>------ Enable autosaving credentials for the current user ------</maml:title>
+        <maml:title> Example 1: Enable autosaving credentials for the current user </maml:title>
         <dev:code>PS C:\&gt; Enable-AzContextAutosave</dev:code>
         <dev:remarks>
           <maml:para>Turn on credential autosave for the current user.  Whenever a powershell window is opened, your current context will be remembered without logging in.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Enable-AzContextAutosave -Scope Process</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -4146,11 +4340,11 @@ Environment      : AzureCloud</dev:code>
       <command:verb>Enable</command:verb>
       <command:noun>AzDataCollection</command:noun>
       <maml:description>
-        <maml:para>Enables Azure PowerShell to collect data to improve the user experience with AzurePowerShell cmdlets. Executing this cmdlet opts in to data collection for the current user on the current machine. No data is collected unless you explicitly opt in.</maml:para>
+        <maml:para>Enables Azure PowerShell to collect data to improve the user experience with the Azure PowerShell cmdlets. Executing this cmdlet opts in to data collection for the current user on the current machine. Data is collected by default unless you explicitly opt out.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>You can improve the experience of using the Microsoft Cloud and Azure PowerShell by opting in to data collection. Azure PowerShell does not collect data without your consent - you must explicitly opt in by executing Enable-AzDataCollection, or by answering yes when Azure PowerShell prompts you about collecting data the first time you execute a cmdlet. Microsoft aggregates collected data to identify patterns of usage, to identify common issues and to improve the experience of using Azure PowerShell. Microsoft Azure PowerShell does not collect any private data, or any personally identifiable information. Run the Enable-AzDataCollection cmdlet to enable data collection for the current user on the current machine. This will prevent the current user from being prompted about data collection the first time cmdlets are executed. To disable data collection for the current user, run the Disable-AzDataCollection cmdlet.</maml:para>
+      <maml:para>The `Enable-AzDataCollection` cmdlet is used to opt in to data collection. Azure PowerShell automatically collects telemetry data by default. Microsoft aggregates collected data to identify patterns of usage, to identify common issues, and to improve the experience of Azure PowerShell. Microsoft Azure PowerShell doesn't collect any private or personal data. To disable data collection, you must explicitly opt out by executing `Disable-AzDataCollection`.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -4158,7 +4352,7 @@ Environment      : AzureCloud</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
-            <maml:para>The credentials, account, tenant and subscription used for communication with azure.</maml:para>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
@@ -4195,7 +4389,7 @@ Environment      : AzureCloud</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
-          <maml:para>The credentials, account, tenant and subscription used for communication with azure.</maml:para>
+          <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
@@ -4257,9 +4451,9 @@ Environment      : AzureCloud</dev:code>
     <command:examples>
       <command:example>
         <maml:title>--- Example 1: Enabling data collection for the current user ---</maml:title>
-        <dev:code>PS C:\&gt; Enable-AzDataCollection</dev:code>
+        <dev:code>Enable-AzDataCollection</dev:code>
         <dev:remarks>
-          <maml:para>This example shows how to enable data collection for the current user.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -4478,7 +4672,7 @@ Environment      : AzureCloud</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
         <dev:code>PS C:\&gt; Enable-AzureRmAlias -Module Az.Accounts -Scope CurrentUser</dev:code>
         <dev:remarks>
           <maml:para>Enables AzureRm aliases for the Az.Accounts module for both the current process and for the current user.</maml:para>
@@ -6896,7 +7090,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>----------- Rename a context using named parameters -----------</maml:title>
+        <maml:title>------ Example 1: Rename a context using named parameters ------</maml:title>
         <dev:code>PS C:\&gt; Rename-AzContext -SourceName "[user1@contoso.org; 12345-6789-2345-3567890]" -TargetName "Work"</dev:code>
         <dev:remarks>
           <maml:para>Rename the context for 'user1@contoso.org' with subscription '12345-6789-2345-3567890' to 'Work'.  After this command, you will be able to target the context using  'Select-AzContext Work'.  Note that you can tab through the values for 'SourceName' using tab completion.</maml:para>
@@ -6905,7 +7099,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- Rename a context using positional parameters ---------</maml:title>
+        <maml:title>--- Example 2: Rename a context using positional parameters ---</maml:title>
         <dev:code>PS C:\&gt; Rename-AzContext "My context" "Work"</dev:code>
         <dev:remarks>
           <maml:para>Rename the context named "My context" to "Work".  After this command, you will be able to target the context using  Select-AzContext Work</maml:para>
@@ -7676,7 +7870,7 @@ PS C:\&gt; Save-AzContext -Path C:\test.json</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------- Example 1 : Target a named context --------------</maml:title>
+        <maml:title>-------------- Example 1: Target a named context --------------</maml:title>
         <dev:code>PS C:\&gt; Select-AzContext "Work"
 
 Name    Account             SubscriptionName    Environment         TenantId
@@ -7684,6 +7878,16 @@ Name    Account             SubscriptionName    Environment         TenantId
 Work    test@outlook.com    Subscription1       AzureCloud          xxxxxxxx-x...</dev:code>
         <dev:remarks>
           <maml:para>Target future Azure PowerShell cmdlets at the account, tenant, and subscription in the 'Work' context.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Select-AzContext -Name TestEnvironment -Scope Process</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -9244,6 +9448,30 @@ Tags       :</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+          <maml:Description>
+            <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+          <maml:Description>
+            <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
@@ -9445,6 +9673,30 @@ Tags       :</dev:code>
           <maml:name>AzureAttestationServiceEndpointSuffix</maml:name>
           <maml:Description>
             <maml:para>Dns suffix of Azure Attestation service.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+          <maml:Description>
+            <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+          <maml:Description>
+            <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9666,6 +9918,30 @@ Tags       :</dev:code>
         <maml:name>AzureOperationalInsightsEndpointResourceId</maml:name>
         <maml:Description>
           <maml:para>The audience for tokens authenticating with the Azure Log Analytics API.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AzureSynapseAnalyticsEndpointResourceId</maml:name>
+        <maml:Description>
+          <maml:para>The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AzureSynapseAnalyticsEndpointSuffix</maml:name>
+        <maml:Description>
+          <maml:para>Dns suffix of Azure Synapse Analytics.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -9965,7 +10241,9 @@ BatchEndpointResourceId                           :
 AzureOperationalInsightsEndpoint                  :
 AzureOperationalInsightsEndpointResourceId        :
 AzureAttestationServiceEndpointSuffix             :
-AzureAttestationServiceEndpointResourceId         :</dev:code>
+AzureAttestationServiceEndpointResourceId         :
+AzureSynapseAnalyticsEndpointSuffix               :
+AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
         <dev:remarks>
           <maml:para>In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</maml:para>
 <maml:para></maml:para>

@@ -3040,6 +3040,16 @@ Status            : PendingExecution
 <maml:para></maml:para>
         </dev:remarks>
       </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Get-AzDataFactorySlice -DataFactoryName 'WikiADF' -DatasetName 'DAWikiAggregatedData' -EndDateTime 2014-05-22T16:00:00Z -ResourceGroupName 'ADF' -StartDateTime 2014-05-20T10:00:00Z</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
@@ -8306,6 +8316,16 @@ Are you sure you want to resume pipeline 'DPWikisample' in data factory 'WikiADF
 True</dev:code>
         <dev:remarks>
           <maml:para>This command resumes the pipeline named DPWikisample in the data factory named WikiADF. Use the Suspend-AzDataFactoryPipeline cmdlet to suspend a pipeline. The command returns a value of $True.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Resume-AzDataFactoryPipeline -DataFactory $DataFactory -Name 'DPWikisample'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>

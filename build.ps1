@@ -6,7 +6,7 @@ param
 )
 # $isProd = $false
 
-$now = Get-Date
+$now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
 

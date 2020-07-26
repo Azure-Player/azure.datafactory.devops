@@ -3,7 +3,7 @@
 This extension to Azure DevOps has only one task and only one goal: deploy Azure Data Factory (v2) seamlessly at minimum efforts.
 As opposed to ARM template publishing from 'adf_publish' branch, this task publishes ADF directly from JSON files, who represent all ADF artefacts.  
 The task based on the PowerShell module [azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools) available through [PSGallery](https://www.powershellgallery.com/packages/azure.datafactory.tools/).  
-Fully written in PowerShell, compatible with 5.1
+Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell Core 6.0 and above.
 
 
 # Azure DevOps Task
@@ -119,11 +119,12 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.10.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.10.0)
-- [Az.DataFactory - ver.1.7.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.7.0)
-- [Az.Accounts - ver.1.7.5](https://www.powershellgallery.com/packages/Az.Accounts/1.7.5)
+- [azure.datafactory.tools - ver.0.14.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.14.0)
+- [Az.DataFactory - ver.1.8.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.8.2)
+- [Az.Accounts - ver.1.9.0](https://www.powershellgallery.com/packages/Az.Accounts/1.9.0)
 
 # History
+- 26 Jul 2020 - v.0.4   Upgrade all related modules (new features)
 - 06 Jun 2020 - v.0.3   Upgrade module azure.datafactory.tools to ver.0.10 (a few bug fixes)
 - 27 May 2020 - v.0.2   Enhanced few things. First Public Preview release.
 - 15 May 2020 - v.0.1   The first Private Preview release. 

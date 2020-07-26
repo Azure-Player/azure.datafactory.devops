@@ -21,8 +21,9 @@ try {
 
     # import required modules
 	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    $config = Import-PowerShellDataFile $ModulePathADFT
-    Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    #$config = Import-PowerShellDataFile $ModulePathADFT
+    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
 
     #Get-Module -ListAvailable
 
@@ -59,6 +60,7 @@ try {
     [string]$FilteringType = Get-VstsInput -Name FilteringType -Require
     [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile
     [string]$FilterText = Get-VstsInput -Name FilterText
+    $input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
@@ -97,7 +99,7 @@ try {
             $opt.Includes.Add($i, "");
         }
         Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
-        
+
         $FilterArray | Where-Object { $_.Trim().StartsWith('-') } | ForEach-Object {
             $e = $_.Trim().Substring(1)
             Write-Verbose "- Exclude: $e"

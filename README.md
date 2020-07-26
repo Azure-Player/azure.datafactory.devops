@@ -22,6 +22,8 @@ Use this to deploy a folder of ADF objects from your repo to target Azure Data F
 * Deployment of all type of objects: pipelines, datasets, linked services, data flows, triggers, integration runtimes
 * Copes with dependencies (multiple levels) between objects when deploying (no more worrying about object names)
 * Build-in mechanism to replace the properties with the indicated values (CSV file)
+* Update, add or remove any property of ADF artefact
+* Selective deployment declared in-line or by pointed file
 * Stop/start triggers (option)
 * Dropping objects when not exist in the source (code) (option)
 * Filtering (include or exclude) objects to be deployed by name and/or type
@@ -75,18 +77,69 @@ linkedService,LS_AzureKeyVault,typeProperties.baseUrl,"https://kv-blog-uat.vault
 linkedService,LS_BlobSqlPlayer,typeProperties.connectionString,"DefaultEndpointsProtocol=https;AccountName=blobstorageuat;EndpointSuffix=core.windows.net;"
 pipeline,PL_CopyMovies,activities[0].outputs[0].parameters.BlobContainer,UAT
 pipeline,PL_CopyMovies_with_param,parameters.DstBlobContainer.defaultValue,UAT
+pipeline,PL_Wait_Dynamic,parameters.WaitInSec,"{'type': 'int32','defaultValue': 22}"
+# This is comment - the line will be omitted
 ```
 > You can replace any property with that method.
 
 There are 4 columns in CSV file:
-- type - Type of object. It's the same as folder where the object's file located
-- name - Name of objects. It's the same as json file in the folder
-- path - Path of the property's value to be replaced within specific json file
-- value - Value to be set
+- `type` - Type of object. It's the same as folder where the object's file located
+- `name` - Name of objects. It's the same as json file in the folder
+- `path` - Path of the property's value to be replaced within specific json file
+- `value` - Value to be set
 
-> Note:  
-> Currently the task *does not support* replacement of parameter with values come from Azure DevOps Variable or Secrets.  
-> This feature will come soon.
+### Column TYPE
+
+Column `type` accepts one of the following values only:
+- integrationRuntime
+- pipeline
+- dataset
+- dataflow
+- linkedService
+- trigger
+
+### Column PATH
+
+Unless otherwise stated, mechanism always **replace (update)** the value for property. Location for those Properties are specified by `Path` column in Config file.  
+Additionally, you can **remove** selected property altogether or **create (add)** new one. To define desire action, put character `+` (plus) or `-` (minus) just before Property path:
+
+* `+` (plus) - Add new property with defined value
+* `-` (minus) - Remove existing property  
+
+See example below:
+```
+type,name,path,value
+# As usual - this line only update value for connectionString:
+linkedService,BlobSampleData,typeProperties.connectionString,"DefaultEndpointsProtocol=https;AccountName=sqlplayer2019;EndpointSuffix=core.windows.net;"
+# MINUS means the desired action is to REMOVE encryptedCredential:
+linkedService,BlobSampleData,-typeProperties.encryptedCredential,
+# PLUS means the desired action is to ADD new property with associated value:
+linkedService,BlobSampleData,+typeProperties.accountKey,"$($Env:VARIABLE)"
+```
+
+
+### Column VALUE
+
+You can define 3 types of values in column `Value`: number, string, (nested) JSON object.  
+If you need to use comma (,) in `Value` column - remember to enclose entire value within double-quotes ("), like in this example below:
+```
+pipeline,PL_Wait_Dynamic,parameters.WaitInSec,"{'type': 'int32','defaultValue': 22}"
+```
+
+#### Using Tokens as dynamic values
+You can use token syntax to define expression which should be replaced by value after reading CSV config file process. Currently PowerShell expression for environment is supported, which is: `$Env:VARIABLE` or `$($Env:VARIABLE)`.  
+Assuming you have *Environment Variable* name `USERDOMAIN` with value `CONTOSO`, this line from config file:
+```
+linkedService,AKV,typeProperties.baseUrl,"https://$Env:USERDOMAIN.vault.azure.net/"
+```
+will become that one after reading from disk:
+```
+linkedService,AKV,typeProperties.baseUrl,"https://CONTOSO.vault.azure.net/"
+```
+
+Having that in mind, you can leverage variables defined in Azure DevOps pipeline to replace tokens without extra task. This is possible because all pipeline's variables are available as environment variables within the agent.
+
+
 
 ## Selective deployment
 The task allows you to deploy subset of ADF's objects.   

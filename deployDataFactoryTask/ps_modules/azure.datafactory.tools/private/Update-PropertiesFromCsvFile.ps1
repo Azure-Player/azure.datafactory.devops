@@ -20,40 +20,81 @@ function Update-PropertiesFromCsvFile {
 
     Write-Verbose "Replacing values for ADF properties from CSV config file"
     Write-Host "Config file:   $configFileName"
-    Write-Debug "Testing config file..."
-    Test-Path -Path $configFileName -PathType Leaf | Out-Null 
 
-    $configtxt = Get-Content $configFileName | Out-String
-    $configcsv = ConvertFrom-Csv $configtxt 
-    $cnt = 0
+    $configcsv = Read-CsvConfigFile -Path $configFileName
 
+    $report = @{ Updated = 0; Added = 0; Removed = 0}
     $configcsv | ForEach-Object {
         Write-Debug "Item: $_"
         $path = $_.path
         $value = $_.value
         $name = $_.name
         $type = $_.type
+
+        # Omit commented lines
+        if ($type.StartsWith('#')) { 
+            Write-Debug "Skipping this line..."
+            return      # return is like continue for foreach and go to next item in collection
+        }
+
+        $action = "update"
+        if ($path.StartsWith('+')) { 
+            $action = 'add';
+            $path = $path.Substring(1)
+        }
+        if ($path.StartsWith('-')) { 
+            $action = 'remove';
+            $path = $path.Substring(1)
+        }
+        if ($path.StartsWith("`$.properties.")) { 
+            $path = $path.Substring(13) 
+        }
+
         $o = Get-AdfObjectByName -adf $adf -name $name -type $type
-        if ($null -eq $o) {
+        if ($null -eq $o -and $action -ne "add") {
             Write-Error "Could not find object: $type.$name"
         }
         $json = $o.Body
         
-        Invoke-Expression "`$fieldType = `$json.properties.$path.GetType()"
-        Write-Debug "Type of field [$path] = $fieldType"
-        if ($fieldType -eq [String]) {
-            $exp = "`$json.properties.$path = `"$value`""
-        } else {
-            $exp = "`$json.properties.$path = $value"
+        Write-Verbose "- Performing: $action for path: properties.$path"
+        try {
+            if ($action -ne "add") {
+                Invoke-Expression "`$isExist = (`$null -ne `$json.properties.$path)"
+            }
         }
-        Invoke-Expression "$exp"
+        catch {
+            $exc = ([System.Data.DataException]::new())
+            Write-Error -Message "Wrong path defined in config for object(path): $type.$name(properties.$path)" -Exception $exc
+        }
+
+        switch -Exact ($action)
+        {
+            'update'
+            {
+                Update-ObjectProperty -obj $json -path "properties.$path" -value "$value"
+                $report['Updated'] += 1
+            }
+            'add'
+            {
+                Add-ObjectProperty -obj $json -path "properties.$path" -value "$value"
+                $report['Added'] += 1
+            }
+            'remove'
+            {
+                Remove-ObjectProperty -obj $json -path "properties.$path"
+                $report['Removed'] += 1
+            }
+        }
 
         # Save new file for deployment purposes and change pointer in object instance
         $f = (Save-AdfObjectAsFile -obj $o)
         $o.FileName = $f
 
-        $cnt++
     }
-    Write-Host "*** Replaced $cnt properties. ***`n"
+    Write-Host "*** Properties modification report ***"
+    $report | Out-Host 
+
+    Write-Debug "END: Update-PropertiesFromCsvFile"
 
 }
+

@@ -4095,7 +4095,7 @@ IpAddress              : 167.220.1.167</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>Example 6: Get information about inputs for the first activity</maml:title>
+        <maml:title>Example 4: Get information about inputs for the first activity</maml:title>
         <dev:code>PS C:\&gt; (Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Activities[0].Inputs | Format-List
 
     ReferenceName : dsIn
@@ -6467,6 +6467,52 @@ PS C:\WINDOWS\system32&gt; $output.output
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>ReferencePipelineRunId</maml:name>
+          <maml:Description>
+            <maml:para>The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>IsRecovery</maml:name>
+          <maml:Description>
+            <maml:para>Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>StartActivityName</maml:name>
+          <maml:Description>
+            <maml:para>In recovery mode, the rerun will start from this activity. If not specified, all activities will run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>StartFromFailure</maml:name>
+          <maml:Description>
+            <maml:para>Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
@@ -6552,6 +6598,52 @@ PS C:\WINDOWS\system32&gt; $output.output
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>ReferencePipelineRunId</maml:name>
+          <maml:Description>
+            <maml:para>The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>IsRecovery</maml:name>
+          <maml:Description>
+            <maml:para>Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>StartActivityName</maml:name>
+          <maml:Description>
+            <maml:para>In recovery mode, the rerun will start from this activity. If not specified, all activities will run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>StartFromFailure</maml:name>
+          <maml:Description>
+            <maml:para>Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
@@ -6613,6 +6705,52 @@ PS C:\WINDOWS\system32&gt; $output.output
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>ReferencePipelineRunId</maml:name>
+          <maml:Description>
+            <maml:para>The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>IsRecovery</maml:name>
+          <maml:Description>
+            <maml:para>Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>StartActivityName</maml:name>
+          <maml:Description>
+            <maml:para>In recovery mode, the rerun will start from this activity. If not specified, all activities will run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>StartFromFailure</maml:name>
+          <maml:Description>
+            <maml:para>Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
@@ -6673,6 +6811,52 @@ PS C:\WINDOWS\system32&gt; $output.output
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>ReferencePipelineRunId</maml:name>
+          <maml:Description>
+            <maml:para>The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>IsRecovery</maml:name>
+          <maml:Description>
+            <maml:para>Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>StartActivityName</maml:name>
+          <maml:Description>
+            <maml:para>In recovery mode, the rerun will start from this activity. If not specified, all activities will run.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+          <maml:name>StartFromFailure</maml:name>
+          <maml:Description>
+            <maml:para>Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
@@ -6747,6 +6931,18 @@ PS C:\WINDOWS\system32&gt; $output.output
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+        <maml:name>IsRecovery</maml:name>
+        <maml:Description>
+          <maml:para>Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
         <maml:name>Parameter</maml:name>
         <maml:Description>
@@ -6783,6 +6979,18 @@ PS C:\WINDOWS\system32&gt; $output.output
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+        <maml:name>ReferencePipelineRunId</maml:name>
+        <maml:Description>
+          <maml:para>The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceGroupName</maml:name>
         <maml:Description>
@@ -6794,6 +7002,30 @@ PS C:\WINDOWS\system32&gt; $output.output
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+        <maml:name>StartActivityName</maml:name>
+        <maml:Description>
+          <maml:para>In recovery mode, the rerun will start from this activity. If not specified, all activities will run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="7" aliases="none">
+        <maml:name>StartFromFailure</maml:name>
+        <maml:Description>
+          <maml:para>Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -6868,6 +7100,16 @@ PS C:\WINDOWS\system32&gt; $output.output
 867d9d9f-1efc-4fee-974d-d8e6320bfbcb</dev:code>
         <dev:remarks>
           <maml:para>This command starts a run for "DPWikisample" pipeline in the "WikiADF" factory.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Invoke-AzDataFactoryV2Pipeline -DataFactoryName 'WikiADF' -Parameter &lt;Hashtable&gt; -PipelineName 'DPWikisample' -ResourceGroupName 'ADF'</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -7345,7 +7587,7 @@ AuthKey1 AuthKey2
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The New-AzDataFactoryV2LinkedServiceEncryptCredential cmdlet encrypt credential in linked service with specified integration runtime.</maml:para>
+      <maml:para>The New-AzDataFactoryV2LinkedServiceEncryptedCredential cmdlet encrypt credential in linked service with specified integration runtime.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -7675,9 +7917,10 @@ AuthKey1 AuthKey2
     <command:examples>
       <command:example>
         <maml:title>------ Example 1: Encrypt credentials in a linked service ------</maml:title>
-        <dev:code>PS C:\&gt; New-AzDataFactoryV2LinkedServiceEncryptCredential -ResourceGroupName resourceGroup -DataFactoryName myDataFactory -IntegrationRuntimeName myIR -File D:\sql.json</dev:code>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName WikiADF -DefinitionFile 'C:\samples\WikiSample\TaxiDemo1.json' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName MyResourceGroup</dev:code>
         <dev:remarks>
-          <maml:para>This command encrypts credential in file D:\sql.json with the integration runtime named myIR.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -9740,9 +9983,10 @@ PS C:\WINDOWS\system32&gt;</dev:code>
     <command:examples>
       <command:example>
         <maml:title>----- Example 1: Remove a node from an integration runtime -----</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' -NodeName 'Node_1'</dev:code>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Remove-AzDataFactoryV2IntegrationRuntimeNode -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -NodeName 'Node_1' -ResourceGroupName 'rg-test-dfv2'</dev:code>
         <dev:remarks>
-          <maml:para>This command removes an node named 'Node_1' in the integration runtime named 'test-selfhost-ir' in the subscription for the resource group named 'rg-test-dfv2' and data factory named 'test-df-eu2'.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -13749,6 +13993,42 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowComputeType</maml:name>
+          <maml:Description>
+            <maml:para>Compute type of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowCoreCount</maml:name>
+          <maml:Description>
+            <maml:para>Core count of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowTimeToLive</maml:name>
+          <maml:Description>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
           <maml:Description>
             <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -14049,6 +14329,42 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowComputeType</maml:name>
+          <maml:Description>
+            <maml:para>Compute type of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowCoreCount</maml:name>
+          <maml:Description>
+            <maml:para>Core count of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowTimeToLive</maml:name>
+          <maml:Description>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
           <maml:Description>
             <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -14344,6 +14660,42 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowComputeType</maml:name>
+          <maml:Description>
+            <maml:para>Compute type of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowCoreCount</maml:name>
+          <maml:Description>
+            <maml:para>Core count of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowTimeToLive</maml:name>
+          <maml:Description>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -14968,6 +15320,42 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DataFlowComputeType</maml:name>
+        <maml:Description>
+          <maml:para>Compute type of the data flow cluster which will execute data flow job.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DataFlowCoreCount</maml:name>
+        <maml:Description>
+          <maml:para>Core count of the data flow cluster which will execute data flow job.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DataFlowTimeToLive</maml:name>
+        <maml:Description>
+          <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -19663,9 +20051,10 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>------ Example 1: Sync an integration runtime credential ------</maml:title>
-        <dev:code>PS C:\&gt; Sync-AzDataFactoryV2IntegrationRuntimeCredential -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'</dev:code>
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName 'rg-test-dfv2'</dev:code>
         <dev:remarks>
-          <maml:para>The cmdlet synchronizes credentials among integration runtime nodes.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>

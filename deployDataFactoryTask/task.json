@@ -10,7 +10,7 @@
 	    "Build",
         "Release"
     ],
-    "author": "SQLPlayer",
+    "author": "Kamil Nowinski (SQLPlayer)",
     "version": {
         "Major": 0,
         "Minor": 3,

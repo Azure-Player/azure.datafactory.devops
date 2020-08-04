@@ -173,10 +173,12 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 # Related modules
 This task includes the following modules:  
 - [azure.datafactory.tools - ver.0.14.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.14.0)
-- [Az.DataFactory - ver.1.8.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.8.2)
-- [Az.Accounts - ver.1.9.0](https://www.powershellgallery.com/packages/Az.Accounts/1.9.0)
+- [Az.DataFactory - ver.1.9.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.9.0)
+- [Az.Accounts - ver.1.9.2](https://www.powershellgallery.com/packages/Az.Accounts/1.9.2)
+- [Az.Resources - ver.2.4.0](https://www.powershellgallery.com/packages/Az.Resources/2.4.0)
 
 # History
+- 04 Aug 2020 - v.0.5   Fix bug #3: Add module Az.Resources + upgrade other Az.*
 - 26 Jul 2020 - v.0.4   Upgrade all related modules (new features)
 - 06 Jun 2020 - v.0.3   Upgrade module azure.datafactory.tools to ver.0.10 (a few bug fixes)
 - 27 May 2020 - v.0.2   Enhanced few things. First Public Preview release.

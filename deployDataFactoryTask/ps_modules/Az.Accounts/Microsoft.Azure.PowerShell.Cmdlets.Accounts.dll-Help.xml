@@ -1238,11 +1238,60 @@ AzureSynapseAnalyticsEndpointSuffix               :
 AzureSynapseAnalyticsEndpointResourceId           :
 VersionProfiles                                   : {}
 ExtendedProperties                                : {}
-BatchEndpointResourceId                           :
-
-In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</dev:code>
+BatchEndpointResourceId                           :</dev:code>
         <dev:remarks>
-          <maml:para></maml:para>
+          <maml:para>In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------- Example 2: Discovering a new environment via Uri -------</maml:title>
+        <dev:code>&lt;#
+Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
+
+[
+  {
+    "portal": "https://portal.azure.com",
+    "authentication": {
+      "loginEndpoint": "https://login.microsoftonline.com/",
+      "audiences": [
+        "https://management.core.windows.net/"
+      ],
+      "tenant": "common",
+      "identityProvider": "AAD"
+    },
+    "media": "https://rest.media.azure.net",
+    "graphAudience": "https://graph.windows.net/",
+    "graph": "https://graph.windows.net/",
+    "name": "AzureCloud",
+    "suffixes": {
+      "azureDataLakeStoreFileSystem": "azuredatalakestore.net",
+      "acrLoginServer": "azurecr.io",
+      "sqlServerHostname": ".database.windows.net",
+      "azureDataLakeAnalyticsCatalogAndJob": "azuredatalakeanalytics.net",
+      "keyVaultDns": "vault.azure.net",
+      "storage": "core.windows.net",
+      "azureFrontDoorEndpointSuffix": "azurefd.net"
+    },
+    "batch": "https://batch.core.windows.net/",
+    "resourceManager": "https://management.azure.com/",
+    "vmImageAliasDoc": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json",
+    "activeDirectoryDataLake": "https://datalake.azure.net/",
+    "sqlManagement": "https://management.core.windows.net:8443/",
+    "gallery": "https://gallery.azure.com/"
+  },
+……
+]
+#&gt;
+
+PS C:\&gt; Add-AzEnvironment -AutoDiscover -Uri https://configuredmetadata.net
+
+Name            Resource Manager Url ActiveDirectory Authority
+----            -------------------- -------------------------
+TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
+        <dev:remarks>
+          <maml:para>In this example, we are discovering a new Azure environment from the https://configuredmetadata.net Uri.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -1823,6 +1872,18 @@ In this example we are creating a new Azure environment with sample endpoints us
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:Description>
             <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</maml:para>
@@ -2017,6 +2078,18 @@ In this example we are creating a new Azure environment with sample endpoints us
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:Description>
             <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</maml:para>
@@ -2165,6 +2238,18 @@ In this example we are creating a new Azure environment with sample endpoints us
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:Description>
             <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</maml:para>
@@ -2312,6 +2397,18 @@ In this example we are creating a new Azure environment with sample endpoints us
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:Description>
             <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</maml:para>
@@ -2457,6 +2554,18 @@ In this example we are creating a new Azure environment with sample endpoints us
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
@@ -2581,6 +2690,18 @@ In this example we are creating a new Azure environment with sample endpoints us
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>MaxContextPopulation</maml:name>
+          <maml:Description>
+            <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
@@ -2847,6 +2968,18 @@ In this example we are creating a new Azure environment with sample endpoints us
         <command:parameterValue required="true" variableLength="false">System.Security.SecureString</command:parameterValue>
         <dev:type>
           <maml:name>System.Security.SecureString</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>MaxContextPopulation</maml:name>
+        <maml:Description>
+          <maml:para>Max subscription number to populate contexts after login. Default is 25. To populate all subscriptions to contexts, set to -1.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -4170,11 +4303,12 @@ Disable-AzContextAutosave -Scope Process</dev:code>
       <command:verb>Enable</command:verb>
       <command:noun>AzContextAutosave</command:noun>
       <maml:description>
-        <maml:para>Allow the azure credential, account and subscription information to be saved and automatically loaded when you open a PowerShell window.</maml:para>
+        <maml:para>Azure contexts are PowerShell objects representing your active subscription to run commands against, and the authentication information needed to connect to an Azure cloud. With Azure contexts, Azure PowerShell doesn't need to reauthenticate your account each time you switch subscriptions. For more information, see Azure PowerShell context objects (https://docs.microsoft.com/powershell/azure/context-persistence).</maml:para>
+        <maml:para>This cmdlet allows the Azure context information to be saved and automatically loaded when you start a PowerShell process. For example, when opening a new window.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Allow the azure credential, account and subscription information to be saved and automatically loaded when you open a PowerShell window.</maml:para>
+      <maml:para>Allows the Azure context information to be saved and automatically loaded when a PowerShell process starts. The context is saved at the end of the execution of any cmdlet that affects the context. For example, any profile cmdlet. If you're using user authentication, then tokens can be updated during the course of running any cmdlet.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -4182,7 +4316,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
-            <maml:para>The credentials, tenant and subscription used for communication with azure</maml:para>
+            <maml:para>The credentials, tenant, and subscription used for communication with Azure</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
@@ -4194,7 +4328,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:Description>
-            <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user</maml:para>
+            <maml:para>Determines the scope of context changes. For example, whether changes apply only to the current process, or to all sessions started by this user. Changes made with the scope `CurrentUser` will affect all PowerShell sessions started by the user. If a particular session needs to have different settings, use the scope `Process`.</maml:para>
           </maml:Description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
@@ -4205,7 +4339,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
             <maml:name>Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <dev:defaultValue>CurrentUser</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -4221,7 +4355,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
           <maml:Description>
-            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet isn't run.</maml:para>
           </maml:Description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -4235,7 +4369,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
-          <maml:para>The credentials, tenant and subscription used for communication with azure</maml:para>
+          <maml:para>The credentials, tenant, and subscription used for communication with Azure</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
@@ -4247,14 +4381,14 @@ Disable-AzContextAutosave -Scope Process</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Scope</maml:name>
         <maml:Description>
-          <maml:para>Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user</maml:para>
+          <maml:para>Determines the scope of context changes. For example, whether changes apply only to the current process, or to all sessions started by this user. Changes made with the scope `CurrentUser` will affect all PowerShell sessions started by the user. If a particular session needs to have different settings, use the scope `Process`.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Profile.Common.ContextModificationScope</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <dev:defaultValue>CurrentUser</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -4271,7 +4405,7 @@ Disable-AzContextAutosave -Scope Process</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
         <maml:Description>
-          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet isn't run.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -4279,6 +4413,18 @@ Disable-AzContextAutosave -Scope Process</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named" aliases="none">
+        <maml:name>Common Parameters</maml:name>
+        <maml:Description>
+          <maml:para>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false"></command:parameterValue>
+        <dev:type>
+          <maml:name></maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
@@ -4309,16 +4455,16 @@ Disable-AzContextAutosave -Scope Process</dev:code>
     <command:examples>
       <command:example>
         <maml:title> Example 1: Enable autosaving credentials for the current user </maml:title>
-        <dev:code>PS C:\&gt; Enable-AzContextAutosave</dev:code>
+        <dev:code>Enable-AzContextAutosave</dev:code>
         <dev:remarks>
-          <maml:para>Turn on credential autosave for the current user.  Whenever a powershell window is opened, your current context will be remembered without logging in.</maml:para>
+          <maml:para></maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
+        <dev:code>&lt;!-- Aladdin Generated Example --&gt;
 Enable-AzContextAutosave -Scope Process</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
@@ -5775,10 +5921,10 @@ Subscription1 (xxxx-xxxx-xxxx-xxxx)      azureuser@micros... Subscription1      
         <dev:code>PS C:\&gt; Connect-AzAccount
 PS C:\&gt; Get-AzTenant
 
-Id                                   Directory
---                                   ---------
-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx microsoft.com
-yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy microsoft.com</dev:code>
+Id                                   Name        Category Domains
+--                                   ----------- -------- -------
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com, test2.microsoft.com, test3.microsoft.com...}
+yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy Testhost    Home     testhost.onmicrosoft.com</dev:code>
         <dev:remarks>
           <maml:para>This example shows how to get all of the authorized tenants of an Azure account.</maml:para>
 <maml:para></maml:para>
@@ -5790,9 +5936,9 @@ yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy microsoft.com</dev:code>
         <dev:code>PS C:\&gt; Connect-AzAccount
 PS C:\&gt; Get-AzTenant -TenantId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
-Id                                   Directory
---                                   ---------
-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx microsoft.com</dev:code>
+Id                                   Name        Category Domains
+--                                   ----------- -------- -------
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com, test2.microsoft.com, test3.microsoft.com...}</dev:code>
         <dev:remarks>
           <maml:para>This example shows how to get a specific authorized tenant of an Azure account.</maml:para>
 <maml:para></maml:para>
@@ -6090,6 +6236,501 @@ azureuser@contoso.com  Subscription1    xxxx-xxxx-xxxx-xxxx     AzureCloud</dev:
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
         <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.accounts/import-azcontext</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-AzRestMethod</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>AzRestMethod</command:noun>
+      <maml:description>
+        <maml:para>Construct and perform HTTP request to Azure resource management endpoint only</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Construct and perform HTTP request to Azure resource management endpoint only</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-AzRestMethod</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ApiVersion</maml:name>
+          <maml:Description>
+            <maml:para>Api Version</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:Description>
+            <maml:para>Run cmdlet in the background</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Method</maml:name>
+          <maml:Description>
+            <maml:para>Http Method</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">GET</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">POST</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PUT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PATCH</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DELETE</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>list of Target Resource Name</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Payload</maml:name>
+          <maml:Description>
+            <maml:para>JSON format payload</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ResourceGroupName</maml:name>
+          <maml:Description>
+            <maml:para>Target Resource Group Name</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ResourceProviderName</maml:name>
+          <maml:Description>
+            <maml:para>Target Resource Provider Name</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ResourceType</maml:name>
+          <maml:Description>
+            <maml:para>List of Target Resource Type</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SubscriptionId</maml:name>
+          <maml:Description>
+            <maml:para>Target Subscription Id</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Invoke-AzRestMethod</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:Description>
+            <maml:para>Run cmdlet in the background</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Method</maml:name>
+          <maml:Description>
+            <maml:para>Http Method</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">GET</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">POST</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PUT</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PATCH</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">DELETE</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:Description>
+            <maml:para>Target Path</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Payload</maml:name>
+          <maml:Description>
+            <maml:para>JSON format payload</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ApiVersion</maml:name>
+        <maml:Description>
+          <maml:para>Api Version</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>AsJob</maml:name>
+        <maml:Description>
+          <maml:para>Run cmdlet in the background</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+        <maml:name>DefaultProfile</maml:name>
+        <maml:Description>
+          <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+        <dev:type>
+          <maml:name>IAzureContextContainer</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Method</maml:name>
+        <maml:Description>
+          <maml:para>Http Method</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>list of Target Resource Name</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:Description>
+          <maml:para>Target Path</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Payload</maml:name>
+        <maml:Description>
+          <maml:para>JSON format payload</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ResourceGroupName</maml:name>
+        <maml:Description>
+          <maml:para>Target Resource Group Name</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ResourceProviderName</maml:name>
+        <maml:Description>
+          <maml:para>Target Resource Provider Name</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ResourceType</maml:name>
+        <maml:Description>
+          <maml:para>List of Target Resource Type</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SubscriptionId</maml:name>
+        <maml:Description>
+          <maml:para>Target Subscription Id</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.string</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Profile.Models.PSHttpResponse</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Invoke-AzRestMethod -Path "/subscriptions/{subscription}/resourcegroups/{resourcegroup}/providers/microsoft.operationalinsights/workspaces/{workspace}?api-version={API}" -Method GET
+
+Headers    : {[Cache-Control, System.String[]], [Pragma, System.String[]], [x-ms-request-id, System.String[]], [Strict-Transport-Security, System.String[]]…}
+Version    : 1.1
+StatusCode : 200
+Method     : GET
+Content    : {
+               "properties": {
+                 "source": "Azure",
+                 "customerId": "{customerId}",
+                 "provisioningState": "Succeeded",
+                 "sku": {
+                   "name": "pergb2018",
+                   "maxCapacityReservationLevel": 3000,
+                   "lastSkuUpdate": "Mon, 25 May 2020 11:10:01 GMT"
+                 },
+                 "retentionInDays": 30,
+                 "features": {
+                   "legacy": 0,
+                   "searchVersion": 1,
+                   "enableLogAccessUsingOnlyResourcePermissions": true
+                 },
+                 "workspaceCapping": {
+                   "dailyQuotaGb": -1.0,
+                   "quotaNextResetTime": "Thu, 18 Jun 2020 05:00:00 GMT",
+                   "dataIngestionStatus": "RespectQuota"
+                 },
+                 "enableFailover": false,
+                 "publicNetworkAccessForIngestion": "Enabled",
+                 "publicNetworkAccessForQuery": "Enabled",
+                 "createdDate": "Mon, 25 May 2020 11:10:01 GMT",
+                 "modifiedDate": "Mon, 25 May 2020 11:10:02 GMT"
+               },
+               "id": "/subscriptions/{subscription}/resourcegroups/{resourcegroup}/providers/microsoft.operationalinsights/workspaces/{workspace}",
+               "name": "{workspace}",
+               "type": "Microsoft.OperationalInsights/workspaces",
+               "location": "eastasia",
+               "tags": {}
+             }</dev:code>
+        <dev:remarks>
+          <maml:para>Get log analytics workspace by path</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.accounts/invoke-azrestmethod</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

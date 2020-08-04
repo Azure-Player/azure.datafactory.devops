@@ -26,9 +26,11 @@ try {
 
     #Get-Module -ListAvailable
 
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\az.accounts.psd1"
+    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
     Import-Module -Name $ModulePathAcc
-	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\az.datafactory.psd1"
+    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
+    Import-Module -Name $ModulePathRes
+	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
     Import-Module -Name $ModulePathADF
     Import-Module -Name $ModulePathADFT
 

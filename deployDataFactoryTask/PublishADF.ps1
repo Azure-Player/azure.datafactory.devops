@@ -62,7 +62,7 @@ try {
     [string]$FilteringType = Get-VstsInput -Name FilteringType -Require
     [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile
     [string]$FilterText = Get-VstsInput -Name FilterText
-    $input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
+    #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
@@ -80,9 +80,6 @@ try {
     $opt.DeleteNotInSource = $DeleteNotInSource
     $opt.StopStartTriggers = $StopStartTriggers
     $opt.CreateNewInstance = $CreateNewInstance
-
-    #$Include="pipeline.*, *.Copy*"
-    #$Exclude = ''
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {

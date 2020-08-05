@@ -16,7 +16,7 @@
         "Minor": 3,
         "Patch": 0
      },
-     "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
+     "releaseNotes": "Added Environment Variables mapping (Advanced).",
      "showEnvironmentVariables": true,
      "groups": [
         {
@@ -167,17 +167,7 @@
             "groupname": "options",
             "required": false,
             "visibleRule": "FilteringType = FilePath"
-        },
-        {
-            "name": "pwsh",
-            "type": "boolean",
-            "label": "Use PowerShell Core",
-            "required": false,
-            "defaultValue": "false",
-            "helpMarkDown": "If this is true, then on Windows the task will use pwsh.exe from your PATH instead of powershell.exe.",
-            "groupName": "advanced"
         }
-        
     ],
     "dataSourceBindings": [
         {

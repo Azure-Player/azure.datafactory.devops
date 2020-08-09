@@ -16,7 +16,7 @@
         "Minor": 3,
         "Patch": 0
      },
-     "releaseNotes": "Added Environment Variables mapping (Advanced).",
+     "releaseNotes": "Added Environment Variables mapping (Advanced).\nAdded Publish Method to be chosen.",
      "showEnvironmentVariables": true,
      "groups": [
         {
@@ -167,6 +167,19 @@
             "groupname": "options",
             "required": false,
             "visibleRule": "FilteringType = FilePath"
+        },
+        {
+            "name": "PublishMethod",
+            "type": "pickList",
+            "label": "Publish Method",
+            "required": true,
+            "defaultValue": "AzResource",
+            "options": {
+                "AzResource": "Az.Resource (recommended)",
+                "AzDataFactory": "Az.DataFactory"
+            },
+            "helpMarkDown": "Indicates the method which will be used for ADF objects deployment",
+            "groupName": "advanced"
         }
     ],
     "dataSourceBindings": [

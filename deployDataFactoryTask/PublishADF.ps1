@@ -59,13 +59,15 @@ try {
     [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
     [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
     [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
-    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require
-    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile
-    [string]$FilterText = Get-VstsInput -Name FilterText
+    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
+    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
+    [string]$FilterText = Get-VstsInput -Name FilterText;
+    [string]$PublishMethod = Get-VstsInput -Name FilterText PublishMethod;
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
+    if ([string]::IsNullOrWhitespace($PublishMethod)) { $PublishMethod = "AzResource" }
 
     Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Debug "DataFactoryName:    $DataFactoryName";
@@ -74,6 +76,7 @@ try {
     Write-Debug "Location:           $Location";
     Write-Debug "Stage:              $StageCode";
     Write-Debug "Filtering:          $FilteringYesNo";
+    Write-Debug "PublishMethod:      $PublishMethod";
 
     # Options
     $opt = New-AdfPublishOption 
@@ -120,7 +123,8 @@ try {
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
-        -Option $opt -Stage "$Stage"
+        -Option $opt -Stage "$Stage" `
+        -Method $PublishMethod
 
 
 } finally {

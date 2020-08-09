@@ -21,8 +21,9 @@ try {
 
     # import required modules
 	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    $config = Import-PowerShellDataFile $ModulePathADFT
-    Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    #$config = Import-PowerShellDataFile $ModulePathADFT
+    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
 
     #Get-Module -ListAvailable
 
@@ -58,12 +59,15 @@ try {
     [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
     [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
     [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
-    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require
-    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile
-    [string]$FilterText = Get-VstsInput -Name FilterText
+    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
+    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
+    [string]$FilterText = Get-VstsInput -Name FilterText;
+    [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
+    #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
+    if ([string]::IsNullOrWhitespace($PublishMethod)) { $PublishMethod = "AzResource" }
 
     Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Debug "DataFactoryName:    $DataFactoryName";
@@ -72,15 +76,13 @@ try {
     Write-Debug "Location:           $Location";
     Write-Debug "Stage:              $StageCode";
     Write-Debug "Filtering:          $FilteringYesNo";
+    Write-Debug "PublishMethod:      $PublishMethod";
 
     # Options
     $opt = New-AdfPublishOption 
     $opt.DeleteNotInSource = $DeleteNotInSource
     $opt.StopStartTriggers = $StopStartTriggers
     $opt.CreateNewInstance = $CreateNewInstance
-
-    #$Include="pipeline.*, *.Copy*"
-    #$Exclude = ''
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {
@@ -99,7 +101,7 @@ try {
             $opt.Includes.Add($i, "");
         }
         Write-Host "$($opt.Includes.Count) rule(s)/object(s) added to be included in deployment."
-        
+
         $FilterArray | Where-Object { $_.Trim().StartsWith('-') } | ForEach-Object {
             $e = $_.Trim().Substring(1)
             Write-Verbose "- Exclude: $e"
@@ -121,7 +123,8 @@ try {
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
-        -Option $opt -Stage "$Stage"
+        -Option $opt -Stage "$Stage" `
+        -Method $PublishMethod
 
 
 } finally {

@@ -62,7 +62,7 @@ try {
     [string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
     [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
     [string]$FilterText = Get-VstsInput -Name FilterText;
-    [string]$PublishMethod = Get-VstsInput -Name FilterText PublishMethod;
+    [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';

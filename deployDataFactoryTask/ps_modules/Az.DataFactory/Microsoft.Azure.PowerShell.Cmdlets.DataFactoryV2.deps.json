@@ -13,21 +13,21 @@
           "Microsoft.ApplicationInsights": "2.4.0",
           "Microsoft.Azure.Common": "2.2.1",
           "Microsoft.Azure.Management.DataFactory": "4.9.0",
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Aks": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Authorization": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Compute": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Graph.Rbac": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.KeyVault": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Monitor": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Network": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.PolicyInsights": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.ResourceManager": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Storage.Management": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.Websites": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Common": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Storage": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Strategies": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Aks": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Authorization": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Compute": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Graph.Rbac": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.KeyVault": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Monitor": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Network": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.PolicyInsights": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.ResourceManager": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Storage.Management": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.Websites": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Common": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Storage": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Strategies": "1.3.22-preview",
           "Microsoft.DataTransfer.Gateway.Encryption": "3.11.6898.1",
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -92,7 +92,7 @@
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Authentication.Abstractions/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Authentication.Abstractions/1.3.22-preview": {
         "dependencies": {
           "Hyak.Common": "1.2.2",
           "Microsoft.Azure.Common": "2.2.1",
@@ -102,11 +102,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Authentication.Abstractions.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Aks/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Aks/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -115,11 +115,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Aks.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Authorization/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Authorization/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -128,11 +128,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Authorization.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Compute/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Compute/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -141,15 +141,15 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Compute.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Graph.Rbac/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Graph.Rbac/1.3.22-preview": {
         "dependencies": {
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Clients.ResourceManager": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Common": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Clients.ResourceManager": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Common": "1.3.22-preview",
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "10.0.3"
@@ -157,11 +157,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Graph.Rbac.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.KeyVault/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.KeyVault/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -176,11 +176,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.KeyVault.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Monitor/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Monitor/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -194,14 +194,14 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Monitor.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Network/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Network/1.3.22-preview": {
         "dependencies": {
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Common": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Common": "1.3.22-preview",
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "10.0.3"
@@ -209,11 +209,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Network.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.PolicyInsights/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.PolicyInsights/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -222,14 +222,14 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.PolicyInsights.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.ResourceManager/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.ResourceManager/1.3.22-preview": {
         "dependencies": {
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
-          "Microsoft.Azure.PowerShell.Common": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
+          "Microsoft.Azure.PowerShell.Common": "1.3.22-preview",
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "10.0.3"
@@ -237,11 +237,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.ResourceManager.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Storage.Management/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Storage.Management/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -250,11 +250,11 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Storage.Management.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Clients.Websites/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Clients.Websites/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -268,16 +268,16 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Clients.Websites.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Common/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Common/1.3.22-preview": {
         "dependencies": {
           "Hyak.Common": "1.2.2",
           "Microsoft.ApplicationInsights": "2.4.0",
           "Microsoft.Azure.Common": "2.2.1",
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
           "Newtonsoft.Json": "10.0.3"
@@ -285,23 +285,23 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Common.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Storage/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Storage/1.3.22-preview": {
         "dependencies": {
-          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.17-preview",
+          "Microsoft.Azure.PowerShell.Authentication.Abstractions": "1.3.22-preview",
           "Microsoft.Rest.ClientRuntime": "2.3.20"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Storage.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
-      "Microsoft.Azure.PowerShell.Strategies/1.3.17-preview": {
+      "Microsoft.Azure.PowerShell.Strategies/1.3.22-preview": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.19",
@@ -310,7 +310,7 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Azure.PowerShell.Strategies.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.3.17.0"
+            "fileVersion": "1.3.22.0"
           }
         }
       },
@@ -1330,110 +1330,110 @@
       "path": "microsoft.azure.management.datafactory/4.9.0",
       "hashPath": "microsoft.azure.management.datafactory.4.9.0.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Authentication.Abstractions/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Authentication.Abstractions/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4B7mmR/k0G5GgJakoucmvX7txCUNeQ93zNlfOreuLnBlRf/YZ2f6nDD73/LcnH1inT+vHsMp0G0VqRoOKKLosw==",
-      "path": "microsoft.azure.powershell.authentication.abstractions/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.authentication.abstractions.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-fitFng2oQ+tfw0KdNV2hFby0Ym0XkxMIdHfFxVqxdprzxhOSH4VhGg3IFidKJph+6O/DiWPmHhq2sUwuiqy0+g==",
+      "path": "microsoft.azure.powershell.authentication.abstractions/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.authentication.abstractions.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Aks/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Aks/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9VN0q4G+6eim9AyuilAMgJsdfcGGLzlrNy5ag5MSg9UOcewz5Ye/Sf/VzC+Z+U7N2jq/K9+RtRIow1UeMbSiVw==",
-      "path": "microsoft.azure.powershell.clients.aks/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.aks.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-c8BE9ePzECHJWAWtl4rp+Cmx7TKk37vEotrDFlQdU9Cv9l8j6tmATZ6N/HP3mppT/of6IsSZCYYMObon7K8KUA==",
+      "path": "microsoft.azure.powershell.clients.aks/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.aks.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Authorization/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Authorization/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-X9LcOhooE0Zxtb+5FV1ftXEkZ1O9PQFRHbOGyrYNacvpxgcYAElLYB22J4x3Pti/7MsExae+r1cgSFi0cQJCzA==",
-      "path": "microsoft.azure.powershell.clients.authorization/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.authorization.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-97tj0TVkxP5d09KkkSeOANhBZBWHSUi0YAbe49bZ2J7lSLjktWicTVtxGWZ6zB8nYLmIbDY9ErRYdq8EZiDWVw==",
+      "path": "microsoft.azure.powershell.clients.authorization/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.authorization.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Compute/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Compute/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/vtcspn5EoGcHhLmm1+3xhBuo/1UuBXTTVAXqTijfKjGxE2klw695EixNR1yIoS5j0dDWwXYDT5dLAQ/JZzX/A==",
-      "path": "microsoft.azure.powershell.clients.compute/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.compute.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-eKsleESCm4iFw0pXCxa7T2KW3LFxqeEryqlc2+f+a0E2J0tudxxuABxcdcgYFvR6ljmqVWjir+wc0mJ4xcrylA==",
+      "path": "microsoft.azure.powershell.clients.compute/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.compute.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Graph.Rbac/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Graph.Rbac/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q/pnojNAJWcHMlmq9uL00ZrygRrTmxfA7yBwrAAqGCHTp8rd69+dYkNzw8WuHgj2lyzJlXDysN3vA+2QTgItpg==",
-      "path": "microsoft.azure.powershell.clients.graph.rbac/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.graph.rbac.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-dSJVjs8OM6j4WId6fg4YPLiM5sicNcR1phGJk0uu5Gmlpt8kT6VawwV1b0OqVPwr8bjPXyrLwTsnu1kKqQJSBg==",
+      "path": "microsoft.azure.powershell.clients.graph.rbac/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.graph.rbac.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.KeyVault/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.KeyVault/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wzOx08VgIlAEF4q3GuDE3eFpEIX9c+Y/2IwLnRt74FkVb4X3lRAoIFzJu4eHsoFSK94/aFJZHim7yOlhyoEHeA==",
-      "path": "microsoft.azure.powershell.clients.keyvault/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.keyvault.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-iB3C1aHXQSHGW0acdeLCOwVE00/w83QsviXtZJb6xSLCk7SnJRVuE8+lMuVM1WF3Xkp9gJSdT6hH60o0L0wIZQ==",
+      "path": "microsoft.azure.powershell.clients.keyvault/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.keyvault.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Monitor/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Monitor/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7aQ4z7qs4w0JGkK3qB+fCpVq/ghSA+LwWl/TjLdGi+nU2hvitWBqfzHfom9e73H7ZmJokXxwl1sMmRaLv2VYbA==",
-      "path": "microsoft.azure.powershell.clients.monitor/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.monitor.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-oXE6kbW+/CFt/DFv4hyMxH6PqV48pnD2C7O8/MQv2Ky4quepV96pibA0TmdWJcRd3VkEA+W4GXcUqeSniY5iYA==",
+      "path": "microsoft.azure.powershell.clients.monitor/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.monitor.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Network/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Network/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VM3qXLEskxtx7lndIadeLnSS5xBZJeytBu0hBSOLF9UNWIR5cKeVBIxNqnbSCz608TL+hTApj3/f1UwTLzmYcA==",
-      "path": "microsoft.azure.powershell.clients.network/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.network.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-1ZFUrilR2HaXuUCx+4M8jaTEBbD9TJxQTJHWTcNsGypZPmG8xFRsjvJQjx//tgBJHDh04AFFc5AtUxCz1Dr6UQ==",
+      "path": "microsoft.azure.powershell.clients.network/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.network.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.PolicyInsights/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.PolicyInsights/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ixQjYaiN1eXYykJ9jTak1qdj14JbLVfk+6L+Ts3qJZS4MYVn/d7j4RSyEBo0H2ZjklhWT3lEov1Y0zzGhyQmiQ==",
-      "path": "microsoft.azure.powershell.clients.policyinsights/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.policyinsights.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-u7oJ3QQee6eAvxWLxV5T8EEN/uu/ClbekFPHWcC81HIsr1GdRpN0h6baaquNwj5LrqyvgQFh1gPYO7CyW7FIDQ==",
+      "path": "microsoft.azure.powershell.clients.policyinsights/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.policyinsights.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.ResourceManager/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.ResourceManager/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tZyfsB6v8yzsvCp4heAlAWK0KQqufnAUcdNP5zf2o+1slLaXpNVGCRyv+LShfBDVb0fX19Lu56wOYpJo20ZDQw==",
-      "path": "microsoft.azure.powershell.clients.resourcemanager/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.resourcemanager.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-FuPp2f2cP8AvuC1SufXL2NgUWSZACuDNgPKqKAH9H5iVB6ijkUmX2VKtEkrpYQnpf2zHSZparRcSfXwmepfVIw==",
+      "path": "microsoft.azure.powershell.clients.resourcemanager/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.resourcemanager.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Storage.Management/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Storage.Management/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eHN4VPXo98MQfdARH1dsET+P/Y6tB/bBu5rC1RNQnDOlhug+IJR+jMjFXqmD4Q0O9/ofH3HoUyxVszA34/gqpA==",
-      "path": "microsoft.azure.powershell.clients.storage.management/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.storage.management.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-Ib/CxAHc8cbiTvKZH+WxqX67D6fnS16sz/fGxHVzoyYwGt0oKfAxQw6EUr4Essg7O6t/bbCD0jQSlxptGdvIfw==",
+      "path": "microsoft.azure.powershell.clients.storage.management/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.storage.management.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Clients.Websites/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Clients.Websites/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XB1Xv8okfpvpXkwY3DtoclCb6sG4cxCC53riBDqOAW4dAkaZWgPaGVhs9uBkZwux1pZI9acvkXYNbZUEOg8kkw==",
-      "path": "microsoft.azure.powershell.clients.websites/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.clients.websites.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-OUfpoRG0AG8mIgop/36fLp1qrSbM3dyrqO1pzx99sLwDabFKufWMBnWsEX64OFDBH/1L6V/fp9+Lnm2rb0QoOw==",
+      "path": "microsoft.azure.powershell.clients.websites/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.clients.websites.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Common/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Common/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FPCJV1VdT1XtZEuna2wzzV83/Xi+5BZ73V4HcRwP52kaqncehQ+UoRFT/f5a0nYDzDCY1IteqelkgkKfmRJCHw==",
-      "path": "microsoft.azure.powershell.common/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.common.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-3eNNmJbdfKCQWNkFciOjPPBOZNVFSTPrep9iRHCpD3mald7VFw1HAxZOJWw8BGKVwnwXU4fcxRh5S4aBCqmuOA==",
+      "path": "microsoft.azure.powershell.common/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.common.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Storage/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Storage/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Tch9xrXQGKpp50TgNCdpMgaJir1RLSs3wXhurA7Zl3TNxwZiSZ8R7zv9wqgpyPlRTiBe34+Z8xJv/7O4QFDykA==",
-      "path": "microsoft.azure.powershell.storage/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.storage.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-HTzruMat8TaSk9n95pkCcxgCTBKK4M7Ow6DuRP0oey/aaFa9FbJkiFRcGupJVtFVFZ2OhIB/5V4OzSH0WjuweA==",
+      "path": "microsoft.azure.powershell.storage/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.storage.1.3.22-preview.nupkg.sha512"
     },
-    "Microsoft.Azure.PowerShell.Strategies/1.3.17-preview": {
+    "Microsoft.Azure.PowerShell.Strategies/1.3.22-preview": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zem3lQNZN8YqHKDXqwBqrYpdxtoOSkDwoBPTB9cL+WazYfFe0amHzcCYZWb0JUqmC3ekyuUVA2S5xRWwjGTbfw==",
-      "path": "microsoft.azure.powershell.strategies/1.3.17-preview",
-      "hashPath": "microsoft.azure.powershell.strategies.1.3.17-preview.nupkg.sha512"
+      "sha512": "sha512-apDI/TOZNGC5NLw7GXGvC3l5byHKOx/2truNc9dOQH7ofH5y/wUTzBjGP62DkrHOY6bNvtpg+bkVeOfbPa/0lg==",
+      "path": "microsoft.azure.powershell.strategies/1.3.22-preview",
+      "hashPath": "microsoft.azure.powershell.strategies.1.3.22-preview.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",

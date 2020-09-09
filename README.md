@@ -31,6 +31,8 @@ Use this to deploy a folder of ADF objects from your repo to target Azure Data F
   * Whether stop and restarting triggers
   * Whether delete or not objects not in the source
   * Whether create or not a new instance of ADF if it not exist
+* Tokenisation in config file allows replace any value by Environment Variable or Variable from DevOps Pipeline
+* Global Parameters (new!)
 
 For more details, please go to [documentation of azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/README.md).
 
@@ -97,6 +99,7 @@ Column `type` accepts one of the following values only:
 - dataflow
 - linkedService
 - trigger
+- factory *(for Global Parameters)*
 
 ### Column PATH
 
@@ -115,6 +118,7 @@ linkedService,BlobSampleData,typeProperties.connectionString,"DefaultEndpointsPr
 linkedService,BlobSampleData,-typeProperties.encryptedCredential,
 # PLUS means the desired action is to ADD new property with associated value:
 linkedService,BlobSampleData,+typeProperties.accountKey,"$($Env:VARIABLE)"
+factory,BigFactorySample2,"$.properties.globalParameters.'Env-Code'.value","PROD"
 ```
 
 
@@ -172,12 +176,13 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.14.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.14.0)
-- [Az.DataFactory - ver.1.9.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.9.0)
-- [Az.Accounts - ver.1.9.2](https://www.powershellgallery.com/packages/Az.Accounts/1.9.2)
+- [azure.datafactory.tools - ver.0.16.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.14.0)
+- [Az.DataFactory - ver.1.10.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.9.0)
+- [Az.Accounts - ver.1.9.3](https://www.powershellgallery.com/packages/Az.Accounts/1.9.2)
 - [Az.Resources - ver.2.4.0](https://www.powershellgallery.com/packages/Az.Resources/2.4.0)
 
 # History
+- 09 Sep 2020 - v.0.7   Support of Global Parameters
 - 09 Aug 2020 - v.0.6   Added Environment Variables mapping (Advanced) & Publish Method to be chosen
 - 04 Aug 2020 - v.0.5   Fix bug #3: Add module Az.Resources + upgrade other Az.*
 - 26 Jul 2020 - v.0.4   Upgrade all related modules (new features)

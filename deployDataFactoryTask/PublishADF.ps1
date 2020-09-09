@@ -78,17 +78,6 @@ try {
     Write-Debug "Filtering:          $FilteringYesNo";
     Write-Debug "PublishMethod:      $PublishMethod";
 
-    Write-Host ""
-    Write-Host "========================================================================================================="
-    Write-Host "    - How much helpful this extension Task for Azure Data Factory is?                                    "
-    Write-Host "    - If you like it, if it saves your time or maybe something could be done better?                     "
-    Write-Host "    - I would be really appreciate if you rate this tool and leave your honest comment.                  "
-    Write-Host " https://marketplace.visualstudio.com/items?itemName=SQLPlayer.DataFactoryTools&ssr=false#review-details "
-    Write-Host "                         THE COMMUNITY WOULD LOVE TO HEAR YOUR FEEDBACK !                                "
-    Write-Host "                                            Me either :)                                        Thanks!  "
-    Write-Host "=========================================================================================================";
-    Write-Host ""
-
     # Options
     $opt = New-AdfPublishOption 
     $opt.DeleteNotInSource = $DeleteNotInSource
@@ -130,13 +119,24 @@ try {
         $Stage = $StageConfigFile
     }
 
-    Publish-AdfV2FromJson -RootFolder "$RootFolder" `
+    $null = Publish-AdfV2FromJson -RootFolder "$RootFolder" `
         -ResourceGroupName "$ResourceGroupName" `
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
         -Option $opt -Stage "$Stage" `
         -Method $PublishMethod
 
+    Write-Host ""
+    Write-Host "========================================================================================================="
+    Write-Host "    - How much helpful this extension Task for Azure Data Factory is?                                    "
+    Write-Host "    - If you like it, if it saves your time or maybe something could be done better?                     "
+    Write-Host "    - I would be really appreciate if you rate this tool and leave your honest comment.                  "
+    Write-Host "(https://marketplace.visualstudio.com/items?itemName=SQLPlayer.DataFactoryTools&ssr=false#review-details)"
+    Write-Host "                         THE COMMUNITY WOULD LOVE TO HEAR YOUR FEEDBACK !                                "
+    Write-Host "                                            Me either :)                                        Thanks!  "
+    Write-Host "=========================================================================================================";
+    Write-Host ""
+    
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation

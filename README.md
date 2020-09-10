@@ -176,12 +176,13 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.16.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.14.0)
-- [Az.DataFactory - ver.1.10.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.9.0)
-- [Az.Accounts - ver.1.9.3](https://www.powershellgallery.com/packages/Az.Accounts/1.9.2)
+- [azure.datafactory.tools - ver.0.16.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.16.1)
+- [Az.DataFactory - ver.1.10.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.10.0)
+- [Az.Accounts - ver.1.9.3](https://www.powershellgallery.com/packages/Az.Accounts/1.9.3)
 - [Az.Resources - ver.2.4.0](https://www.powershellgallery.com/packages/Az.Resources/2.4.0)
 
 # History
+- 10 Sep 2020 - v.0.8   Fixed issue with deployment when no global parameters
 - 09 Sep 2020 - v.0.7   Support of Global Parameters
 - 09 Aug 2020 - v.0.6   Added Environment Variables mapping (Advanced) & Publish Method to be chosen
 - 04 Aug 2020 - v.0.5   Fix bug #3: Add module Az.Resources + upgrade other Az.*

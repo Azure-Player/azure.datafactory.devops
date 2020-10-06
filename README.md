@@ -9,8 +9,10 @@ Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell 
 # Azure DevOps Task
 
 ## How to add task
-You will find the Task available under the Deploy tab, or search for **publish data factory**:
+For classic pipelines, you will find the Task available under the Deploy tab, or search for **publish data factory**:
 ![Adding Task](images/add-task.png)
+
+For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@0`.
 
 # Publish Azure Data Factory
 Use this to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
@@ -38,22 +40,22 @@ For more details, please go to [documentation of azure.datafactory.tools](https:
 
 
 ## Parameters
-|Parameter label|Description|
-|--|--|
-| Azure Subscription | Azure subscription to target for deployment |
-| Resource Group Name | Provide the name of the Resource Group |
-| Target Azure Data Factory Name | Provide the name of the target Azure Data Factory|
-| Azure Data Factory Path | Path from the repo root to the ADF folder which should contains sub-folders like 'pipeline', 'dataset', etc.|
-| Target Region | Azure Region of target Data Factory. It is used only in order to create new instance of ADF|
-| Environment Config Type | Specifies how you would provide set of parameters for Stage.  |
-| Environment (stage) | Allows pointing configuration with values for all properties who need to be replaced. <br/> If parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.|
-| Environment (stage) Config File Path | Allows pointing configuration with values for all properties who need to be replaced. <br/>If specified, CSV config file name must ends with '.csv'|
-| Delete objects not in source | Indicates whether the deployment process should removing objects not existing in the source (code)|
-| Stop/Start triggers | Indicates whether or not to stop the triggers before beginning deployment and start them afterwards|
-| Create new ADF instance | Indicates whether or not to create a new ADF if target instance doesn't exist yet.|
-| Filtering Type | Type of filtering ADF objects: File Path or Inline Text Field |
-| Include/Exclude Filtering Text | Multi-line or comma-separated list of objects to be included or excluded in the deployment. <br/>For example, see below. |
-| Include/Exclude Filtering File Path | Multi-line or comma-separated list of objects to be included/excluded in/from the deployment. <br/>For example, see below. | 
+|Parameter label|Parameter name (for YAML task)|Description|
+|--|--|--|
+| Azure Subscription | `azureSubscription` | Azure subscription to target for deployment |
+| Resource Group Name | `ResourceGroupName` | Provide the name of the Resource Group |
+| Target Azure Data Factory Name | `DataFactoryName` | Provide the name of the target Azure Data Factory|
+| Azure Data Factory Path | `DataFactoryCodePath` | Path from the repo root to the ADF folder which should contains sub-folders like 'pipeline', 'dataset', etc.|
+| Target Region | `Location` | Azure Region of target Data Factory. Required, but used only when creating a new instance of ADF|
+| Environment Config Type | `StageType` | Specifies how you would provide set of parameters for Stage.  |
+| Environment (stage) | `StageCode` | Allows pointing configuration with values for all properties who need to be replaced. <br/> If parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.|
+| Environment (stage) Config File Path | `StageConfigFile` | Allows pointing configuration with values for all properties who need to be replaced. <br/>If specified, CSV config file name must ends with '.csv'|
+| Delete objects not in source | `DeleteNotInSource` | Indicates whether the deployment process should removing objects not existing in the source (code)|
+| Stop/Start triggers | `StopStartTriggers` | Indicates whether or not to stop the triggers before beginning deployment and start them afterwards|
+| Create new ADF instance | `CreateNewInstance` | Indicates whether or not to create a new ADF if target instance doesn't exist yet.|
+| Filtering Type | `FilteringType` | Type of filtering ADF objects: File Path or Inline Text Field |
+| Include/Exclude Filtering Text | `FilterText` | Multi-line or comma-separated list of objects to be included or excluded in the deployment. <br/>For example, see below. |
+| Include/Exclude Filtering File Path | `FilterTextFile` | Multi-line or comma-separated list of objects to be included/excluded in/from the deployment. <br/>For example, see below. | 
 
 
 ## Environment (stage) 

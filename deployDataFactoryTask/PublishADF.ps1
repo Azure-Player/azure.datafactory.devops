@@ -113,8 +113,10 @@ try {
     if ($StageType -eq "Stage") {
         $Stage = $StageCode
     } else {
-        if (!$StageConfigFile.EndsWith('.csv')) {
-            throw ("Invalid config file name '{0}'. File must ends with '.csv'." -f $StageConfigFile)
+        $ext = [System.IO.Path]::GetExtension($StageConfigFile.ToLower())
+        $allowedExt = '.csv', '.json'
+        if (!$allowedExt.Contains($ext)) {
+            throw ("Invalid config file name '{0}'. File must ends either with '.csv' or '.json'." -f $StageConfigFile)
         }
         $Stage = $StageConfigFile
     }

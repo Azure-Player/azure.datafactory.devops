@@ -1409,11 +1409,11 @@ PS C:\&gt; Get-AzADGroupMember -GroupDisplayName "MyGroupDisplayName"</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADApplication</maml:linkText>
+        <maml:linkText>New-AzADApplication</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>New-AzADApplication</maml:linkText>
+        <maml:linkText>Update-AzADApplication</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
@@ -2825,7 +2825,7 @@ PS C:\&gt; Get-AzADGroupMember -GroupDisplayName "MyGroupDisplayName"</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADServicePrincipal</maml:linkText>
+        <maml:linkText>Update-AzADServicePrincipal</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
@@ -3676,7 +3676,7 @@ PS C:\&gt; Get-AzADGroupMember -GroupDisplayName "MyGroupDisplayName"</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADUser</maml:linkText>
+        <maml:linkText>Update-AzADUser</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
@@ -4877,7 +4877,7 @@ IsSystemProtected       : True</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Get-AzManagementGroup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -4972,7 +4972,7 @@ IsSystemProtected       : True</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>
@@ -8901,6 +8901,7 @@ PS C:\&gt; New-AzADApplication -DisplayName "NewApplication" -HomePage "http://w
     </command:details>
     <maml:description>
       <maml:para>Creates a new Azure active directory service principal. The default parameter set uses default values for parameters if they are not provided. For more information on default values, see the description for each parameter. This cmdlet has the ability to assign a role to the service principal with the Role and Scope parameters. If both are omitted, the contributor role is assigned to the service principal. The default values for the Role and Scope parameters are Contributor for the current subscription. The cmdlet creates an application and sets its properties if an ApplicationId is not provided. To update the application-specific parameters, use the Update-AzADApplication (./update-azadapplication.md)cmdlet.</maml:para>
+      <maml:para>&gt; [!WARNING] &gt; When you create a service principal using the New-AzADServicePrincipal command, the output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. As an alternative, consider using managed identities (/azure/active-directory/managed-identities-azure-resources/overview)to avoid the need to use credentials. &gt; &gt; By default, New-AzADServicePrincipal assigns the Contributor (/azure/role-based-access-control/built-in-roles#contributor) role to the service principal at the subscription scope. To reduce your risk of a compromised service principal, assign a more specific role and narrow the scope to a resource or resource group. See [Steps to add a role assignment](/azure/role-based-access-control/role-assignments-steps)for more information.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -11377,7 +11378,7 @@ PS C:\&gt; New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADUser</maml:linkText>
+        <maml:linkText>Update-AzADUser</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
@@ -11401,7 +11402,7 @@ PS C:\&gt; New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail
     <command:syntax>
       <command:syntaxItem>
         <maml:name>New-AzManagementGroup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -11474,7 +11475,7 @@ PS C:\&gt; New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzManagementGroup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -11571,7 +11572,7 @@ PS C:\&gt; New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>
@@ -11775,7 +11776,7 @@ ParentDisplayName : TestGroupParent</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>New-AzManagementGroupSubscription</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -11859,7 +11860,7 @@ ParentDisplayName : TestGroupParent</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>
@@ -12795,6 +12796,104 @@ ParentDisplayName : TestGroupParent</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ResourceGroupName</maml:name>
+          <maml:Description>
+            <maml:para>The resource group name. Creates an assignment that is effective at the specified resource group. When used in conjunction with ResourceName, ResourceType and (optionally)ParentResource parameters, the command constructs a hierarchical scope in the form of a relative URI that identifies a resource.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>RoleDefinitionName</maml:name>
+          <maml:Description>
+            <maml:para>Name of the RBAC role that needs to be assigned to the principal i.e. Reader, Contributor, Virtual Network Administrator, etc.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Email, UserPrincipalName">
+          <maml:name>SignInName</maml:name>
+          <maml:Description>
+            <maml:para>The email address or the user principal name of the user.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-AzRoleAssignment</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AllowDelegation</maml:name>
+          <maml:Description>
+            <maml:para>The delegation flag while creating a Role assignment.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Condition</maml:name>
+          <maml:Description>
+            <maml:para>Condition to be applied to the RoleAssignment.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>ConditionVersion</maml:name>
+          <maml:Description>
+            <maml:para>Version of the condition.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with azure</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Description</maml:name>
+          <maml:Description>
+            <maml:para>Brief description of the role assignment.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ParentResource</maml:name>
           <maml:Description>
@@ -12930,9 +13029,9 @@ ParentDisplayName : TestGroupParent</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>ResourceGroupName</maml:name>
+          <maml:name>RoleDefinitionName</maml:name>
           <maml:Description>
-            <maml:para>The resource group name. Creates an assignment that is effective at the specified resource group. When used in conjunction with ResourceName, ResourceType and (optionally)ParentResource parameters, the command constructs a hierarchical scope in the form of a relative URI that identifies a resource.</maml:para>
+            <maml:para>Name of the RBAC role that needs to be assigned to the principal i.e. Reader, Contributor, Virtual Network Administrator, etc.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -12941,10 +13040,10 @@ ParentDisplayName : TestGroupParent</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>RoleDefinitionName</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>Scope</maml:name>
           <maml:Description>
-            <maml:para>Name of the RBAC role that needs to be assigned to the principal i.e. Reader, Contributor, Virtual Network Administrator, etc.</maml:para>
+            <maml:para>The Scope of the role assignment. In the format of relative URI. For e.g. "/subscriptions/9004a9fd-d58e-48dc-aeb2-4a4aec58606f/resourceGroups/TestRG". If not specified, will create the role assignment at subscription level. If specified, it should start with "/subscriptions/{id}".</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -12979,30 +13078,6 @@ ParentDisplayName : TestGroupParent</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>Condition</maml:name>
-          <maml:Description>
-            <maml:para>Condition to be applied to the RoleAssignment.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>ConditionVersion</maml:name>
-          <maml:Description>
-            <maml:para>Version of the condition.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
@@ -13015,46 +13090,10 @@ ParentDisplayName : TestGroupParent</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>Description</maml:name>
-          <maml:Description>
-            <maml:para>Brief description of the role assignment.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>RoleDefinitionName</maml:name>
+          <maml:name>InputFile</maml:name>
           <maml:Description>
-            <maml:para>Name of the RBAC role that needs to be assigned to the principal i.e. Reader, Contributor, Virtual Network Administrator, etc.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>Scope</maml:name>
-          <maml:Description>
-            <maml:para>The Scope of the role assignment. In the format of relative URI. For e.g. "/subscriptions/9004a9fd-d58e-48dc-aeb2-4a4aec58606f/resourceGroups/TestRG". If not specified, will create the role assignment at subscription level. If specified, it should start with "/subscriptions/{id}".</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Email, UserPrincipalName">
-          <maml:name>SignInName</maml:name>
-          <maml:Description>
-            <maml:para>The email address or the user principal name of the user.</maml:para>
+            <maml:para>Path to role assignment json</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -13130,6 +13169,18 @@ ParentDisplayName : TestGroupParent</dev:code>
         <maml:name>Description</maml:name>
         <maml:Description>
           <maml:para>Brief description of the role assignment.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>InputFile</maml:name>
+        <maml:Description>
+          <maml:para>Path to role assignment json</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -14584,7 +14635,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADApplication</maml:linkText>
+        <maml:linkText>Update-AzADApplication</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
@@ -14948,7 +14999,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para>## RELATED LINKS</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>
@@ -16270,7 +16321,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADServicePrincipal</maml:linkText>
+        <maml:linkText>Update-AzADServicePrincipal</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
@@ -17395,7 +17446,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Set-AzADUser</maml:linkText>
+        <maml:linkText>Update-AzADUser</maml:linkText>
         <maml:uri></maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
@@ -17415,7 +17466,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Remove-AzManagementGroup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -17547,7 +17598,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>
@@ -17645,7 +17696,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
       </command:example>
       <command:example>
         <maml:title>Example 2: Remove a Management Group by piping PSManagementGroup Object</maml:title>
-        <dev:code>PS C:\&gt; Get-Remove-AzManagementGroup -GroupName "TestGroup" | Remove-AzManagementGroup</dev:code>
+        <dev:code>PS C:\&gt; Get-AzManagementGroup -GroupName "TestGroup" | Remove-AzManagementGroup</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -17675,7 +17726,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Remove-AzManagementGroupSubscription</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -17759,7 +17810,7 @@ PS C:\&gt; New-AzRoleDefinition -Role $role</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>
@@ -19684,6 +19735,307 @@ PS C:\&gt; Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
+      <command:name>Set-AzRoleAssignment</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>AzRoleAssignment</command:noun>
+      <maml:description>
+        <maml:para>Update an existing Role Assignment.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Use the New-AzRoleAssignment command to modify an existing assignment.
+Descriptions can be any valid string, use that to diferentiate from one another.
+if Condition is set Condition Version has to be set as well but if you're updating a Condition that is not necesary. Condition Version can be upgraded from 1.0 to 2.0 but it can't not be downgraded back. Be cautious as 2.0 is not retrocompatible with 1.0.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-AzRoleAssignment</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>InputFile</maml:name>
+          <maml:Description>
+            <maml:para>File name containing a single role definition.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>If specified, displays the updated role assignment</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-AzRoleAssignment</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+          <maml:name>InputObject</maml:name>
+          <maml:Description>
+            <maml:para>Role Assignment.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:Description>
+            <maml:para>If specified, displays the updated role assignment</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:Description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:Description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
+        <maml:name>DefaultProfile</maml:name>
+        <maml:Description>
+          <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>InputFile</maml:name>
+        <maml:Description>
+          <maml:para>File name containing a single role definition.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>InputObject</maml:name>
+        <maml:Description>
+          <maml:para>Role Assignment.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:Description>
+          <maml:para>If specified, displays the updated role assignment</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:Description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:Description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleAssignment</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>$ConditionVersion = "2.0"
+  $Description = "This is a new role assignment for John"
+  $Condition = "@Resource[Microsoft.Storage/storageAccounts/blobServices/containers/blobs:Path] StringEqualsIgnoreCase 'foo_storage_container'"
+
+  $roleAssignment = Get-AzRoleAssignment -Scope "/subscriptions/4e5329a6-39ce-4e13-b12e-11b30f015986/resourceGroups/contoso_rg" -PrincipalId "0c0f6cdc-90dd-4664-83c0-a0d986c4c604"
+  $roleAssignment.Description = $Description
+  $roleAssignment.Condition = $Condition
+  $roleAssignment.ConditionVersion = $ConditionVersion
+
+  Set-AzRoleAssignment -InputObject $roleAssignment -PassThru
+
+  RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-00a3
+                     -4086-a51a-dbcce1857d36/providers/Microsoft.Authorization/role
+                     Assignments/926c2a76-be19-4281-94de-38777629b9dc
+  Scope              : /subscriptions/4e5329a6-39ce-4e13-b12e-11b30f015986/resourceGroups/contoso_rg
+  DisplayName        : John Doe
+  SignInName         : John.Doe@Contoso.com
+  RoleDefinitionName : Owner
+  RoleDefinitionId   : 8e3af657-a8ff-443c-a75c-2fe8c4bcb635
+  ObjectId           : 0c0f6cdc-90dd-4664-83c0-a0d986c4c604
+  ObjectType         : User
+  CanDelegate        : False
+  Description        : This is a new role assignment for John
+  ConditionVersion   : 2.0
+  Condition          : @Resource[Microsoft.Storage/storageAccounts/blobServices/containers/blobs:Path] StringEqualsIgnoreCase 'foo_storage_container'</dev:code>
+        <dev:remarks>
+          <maml:para>Update an existing role assignment by modifying an object</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>Set-AzRoleAssignment -InputFile "C:\RoleAssignments\example.json" -PassThru
+
+  RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-00a3
+                     -4086-a51a-dbcce1857d36/providers/Microsoft.Authorization/role
+                     Assignments/926c2a76-be19-4281-94de-38777629b9dc
+  Scope              : /subscriptions/4e5329a6-39ce-4e13-b12e-11b30f015986/resourceGroups/contoso_rg
+  DisplayName        : John Doe
+  SignInName         : John.Doe@Contoso.com
+  RoleDefinitionName : Owner
+  RoleDefinitionId   : 8e3af657-a8ff-443c-a75c-2fe8c4bcb635
+  ObjectId           : 0c0f6cdc-90dd-4664-83c0-a0d986c4c604
+  ObjectType         : User
+  CanDelegate        : False
+  Description        : This is a new role assignment for John
+  ConditionVersion   : 2.0
+  Condition          : @Resource[Microsoft.Storage/storageAccounts/blobServices/containers/blobs:Path] StringEqualsIgnoreCase 'foo_storage_container'</dev:code>
+        <dev:remarks>
+          <maml:para>Update an existing role assignment by using a file</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.resources/set-azroleassignment</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
       <command:name>Set-AzRoleDefinition</command:name>
       <command:verb>Set</command:verb>
       <command:noun>AzRoleDefinition</command:noun>
@@ -21050,7 +21402,7 @@ PS C:\&gt; Set-AzRoleDefinition -Role $roleDef</dev:code>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para>## RELATED LINKS</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>
@@ -21745,7 +22097,7 @@ PS C:\&gt; Set-AzRoleDefinition -Role $roleDef</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -21818,7 +22170,7 @@ PS C:\&gt; Set-AzRoleDefinition -Role $roleDef</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="GroupId">
           <maml:name>GroupName</maml:name>
           <maml:Description>
             <maml:para>Management Group Id</maml:para>
@@ -22037,7 +22389,7 @@ PS C:\&gt; Set-AzRoleDefinition -Role $roleDef</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="GroupId">
         <maml:name>GroupName</maml:name>
         <maml:Description>
           <maml:para>Management Group Id</maml:para>

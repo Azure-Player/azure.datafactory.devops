@@ -1008,8 +1008,7 @@ Values:
       </command:example>
       <command:example>
         <maml:title>- Example 3: Deletes the entire set of tags on a subscription -</maml:title>
-        <dev:code>powershell
-PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}</dev:code>
+        <dev:code>PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}</dev:code>
         <dev:remarks>
           <maml:para>This command deletes the entire set of tags on the subscription with {subId}. It will not return the object deleted if not passing in "-PassThru".</maml:para>
 <maml:para></maml:para>
@@ -1018,8 +1017,7 @@ PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}</dev:code>
       </command:example>
       <command:example>
         <maml:title>--- Example 4: Deletes the entire set of tags on a resource ---</maml:title>
-        <dev:code>powershell
-PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -PassThru
+        <dev:code>PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -PassThru
 
 Id         : {Id}
 Name       : {Name}
@@ -1075,6 +1073,11 @@ Properties :
           <maml:Description>
             <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
           </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Merge</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Replace</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>

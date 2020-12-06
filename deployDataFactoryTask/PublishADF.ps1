@@ -90,7 +90,7 @@ try {
             if ($FilterTextFile -match '[\r\n]' -or [string]::IsNullOrWhitespace($FilterTextFile)) {
                 throw ("Invalid script path '{0}'. Invalid path characters specified." -f $FilterTextFile)
             }
-            $FilterText = Get-Content -Path $FilterTextFile
+            $FilterText = Get-Content -Path $FilterTextFile -Raw -Encoding 'UTF8'
         }
         $FilterArray = $FilterText.Replace(',', "`n").Replace("`r`n", "`n").Split("`n");
 

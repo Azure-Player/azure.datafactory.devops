@@ -184,6 +184,7 @@ This task includes the following modules:
 - [Az.Resources - ver.3.0.1](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
 
 # History
+- 06 Dec 2020 - v.0.10  Fixed: File Path Filtering Type not working
 - 19 Nov 2020 - v.0.9   Fixed check which hasn't allowed passing config file in json format
 - 10 Sep 2020 - v.0.8   Fixed issue with deployment when no global parameters
 - 09 Sep 2020 - v.0.7   Support of Global Parameters

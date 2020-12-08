@@ -2080,7 +2080,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ManagedServiceHostName</maml:name>
           <maml:Description>
-            <maml:para>Host name for the managed service.</maml:para>
+            <maml:para>Obsolete. To use customized MSI endpoint, please set environment variable MSI_ENDPOINT, e.g. "http://localhost:50342/oauth2/token". Host name for the managed service.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -2092,7 +2092,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ManagedServicePort</maml:name>
           <maml:Description>
-            <maml:para>Port number for the managed service.</maml:para>
+            <maml:para>Obsolete. To use customized MSI endpoint, please set environment variable MSI_ENDPOINT, e.g. "http://localhost:50342/oauth2/token".Port number for the managed service.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
@@ -2104,7 +2104,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ManagedServiceSecret</maml:name>
           <maml:Description>
-            <maml:para>Token for the managed service login.</maml:para>
+            <maml:para>Obsolete. To use customized MSI secret, please set environment variable MSI_SECRET. Token for the managed service login.</maml:para>
           </maml:Description>
           <command:parameterValue required="true" variableLength="false">System.Security.SecureString</command:parameterValue>
           <dev:type>
@@ -2975,7 +2975,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ManagedServiceHostName</maml:name>
         <maml:Description>
-          <maml:para>Host name for the managed service.</maml:para>
+          <maml:para>Obsolete. To use customized MSI endpoint, please set environment variable MSI_ENDPOINT, e.g. "http://localhost:50342/oauth2/token". Host name for the managed service.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -2987,7 +2987,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ManagedServicePort</maml:name>
         <maml:Description>
-          <maml:para>Port number for the managed service.</maml:para>
+          <maml:para>Obsolete. To use customized MSI endpoint, please set environment variable MSI_ENDPOINT, e.g. "http://localhost:50342/oauth2/token".Port number for the managed service.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
@@ -2999,7 +2999,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ManagedServiceSecret</maml:name>
         <maml:Description>
-          <maml:para>Token for the managed service login.</maml:para>
+          <maml:para>Obsolete. To use customized MSI secret, please set environment variable MSI_SECRET. Token for the managed service login.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">System.Security.SecureString</command:parameterValue>
         <dev:type>

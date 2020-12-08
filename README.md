@@ -178,12 +178,14 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.17.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.17.0)
-- [Az.DataFactory - ver.1.11.1](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.1)
-- [Az.Accounts - ver.2.2.1](https://www.powershellgallery.com/packages/Az.Accounts/2.2.1)
-- [Az.Resources - ver.3.0.1](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
+- [azure.datafactory.tools - ver.0.18.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.18.0)
+- [Az.DataFactory - ver.1.11.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.2)
+- [Az.Accounts - ver.2.2.2](https://www.powershellgallery.com/packages/Az.Accounts/2.2.1)
+- [Az.Resources - ver.3.1.0](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
 
 # History
+- 08 Dec 2020 - v.0.11  Fixed: JSON file could be corrupted when config update has happened on a very deep path
+                        Fixed: Special characters deployed wrong
 - 06 Dec 2020 - v.0.10  Fixed: File Path Filtering Type not working
 - 19 Nov 2020 - v.0.9   Fixed check which hasn't allowed passing config file in json format
 - 10 Sep 2020 - v.0.8   Fixed issue with deployment when no global parameters

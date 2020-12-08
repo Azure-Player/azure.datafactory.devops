@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Microsoft.Azure.PowerShell.Authentication/1.0.0": {
         "dependencies": {
+          "Azure.Core": "1.6.0",
           "Azure.Identity": "1.4.0-beta.1",
           "Hyak.Common": "1.2.2",
           "Microsoft.ApplicationInsights": "2.4.0",
@@ -38,7 +39,7 @@
           "Microsoft.Azure.PowerShell.Authentication.dll": {}
         }
       },
-      "Azure.Core/1.5.1": {
+      "Azure.Core/1.6.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.0.0",
           "System.Buffers": "4.5.0",
@@ -50,14 +51,14 @@
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Core.dll": {
-            "assemblyVersion": "1.5.1.0",
-            "fileVersion": "1.500.120.50102"
+            "assemblyVersion": "1.6.0.0",
+            "fileVersion": "1.600.20.52802"
           }
         }
       },
       "Azure.Identity/1.4.0-beta.1": {
         "dependencies": {
-          "Azure.Core": "1.5.1",
+          "Azure.Core": "1.6.0",
           "Microsoft.Identity.Client": "4.21.0",
           "Microsoft.Identity.Client.Extensions.Msal": "2.16.2",
           "System.Memory": "4.5.3",
@@ -1503,12 +1504,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Azure.Core/1.5.1": {
+    "Azure.Core/1.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b208x0N1Gk+cGSAu3suRwmC5UMIxIwGEmbkE6JsfQapOShxLXkhK2L5oVom3JU9LJtGa8TvYna5ndxTv9IG2EA==",
-      "path": "azure.core/1.5.1",
-      "hashPath": "azure.core.1.5.1.nupkg.sha512"
+      "sha512": "sha512-kI4m2NsODPOrxo0OoKjk6B3ADbdovhDQIEmI4039upjjZKRaewVLx/Uz4DfRa/NtnIRZQPUALe1yvdHWAoRt4w==",
+      "path": "azure.core/1.6.0",
+      "hashPath": "azure.core.1.6.0.nupkg.sha512"
     },
     "Azure.Identity/1.4.0-beta.1": {
       "type": "package",

@@ -16,7 +16,7 @@
         "Minor": 3,
         "Patch": 0
      },
-     "releaseNotes": "Added Environment Variables mapping (Advanced).\nAdded Publish Method to be chosen.",
+     "releaseNotes": "Fixed: JSON file could be corrupted when config update has happened on a very deep path\nFixed: Special characters deployed wrong\nFixed: File Path Filtering Type not working",
      "showEnvironmentVariables": true,
      "groups": [
         {

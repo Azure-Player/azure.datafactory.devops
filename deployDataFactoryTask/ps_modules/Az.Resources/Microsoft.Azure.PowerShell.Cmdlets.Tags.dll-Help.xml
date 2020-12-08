@@ -1107,9 +1107,9 @@ Properties :
             <command:parameterValue required="false" command:variableLength="false">Replace</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
           </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOpeation</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOpeation</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -1192,9 +1192,9 @@ Properties :
         <maml:Description>
           <maml:para>The update operation. Options are Merge, Replace and Delete.</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOpeation</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</command:parameterValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOpeation</maml:name>
+          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -1235,7 +1235,7 @@ Properties :
       </command:inputType>
       <command:inputType>
         <dev:type>
-          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOpeation</maml:name>
+          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>

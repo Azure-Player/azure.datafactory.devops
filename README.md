@@ -26,7 +26,8 @@ Use this to deploy a folder of ADF objects from your repo to target Azure Data F
 * Selective deployment declared in-line or by pointed file
 * Stop/start triggers (option)
 * Dropping objects when not exist in the source (code) (option)
-* Filtering (include or exclude) objects to be deployed by name and/or type
+* Filtering (include or exclude) objects to be deployed by name and/or type and/or type
+* Filtering supports wildcards
 * Publish options allow you to control:
   * Whether stop and restarting triggers
   * Whether delete or not objects not in the source
@@ -101,6 +102,10 @@ Column `type` accepts one of the following values only:
 - trigger
 - factory *(for Global Parameters)*
 
+### Column NAME
+
+This column defines an object. Since the latest version, you can speficy the **name** using wildcards. That means rather than duplicating lines for the same configuration (path&value) for multiple files, you can define only one line in config.
+
 ### Column PATH
 
 Unless otherwise stated, mechanism always **replace (update)** the value for property. Location for those Properties are specified by `Path` column in Config file.  
@@ -119,6 +124,8 @@ linkedService,BlobSampleData,-typeProperties.encryptedCredential,
 # PLUS means the desired action is to ADD new property with associated value:
 linkedService,BlobSampleData,+typeProperties.accountKey,"$($Env:VARIABLE)"
 factory,BigFactorySample2,"$.properties.globalParameters.'Env-Code'.value","PROD"
+# Multiple following configurations for many files:
+dataset,DS_SQL_*,properties.xyz,ABC
 ```
 
 
@@ -147,8 +154,8 @@ Having that in mind, you can leverage variables defined in Azure DevOps pipeline
 
 ## Selective deployment
 The task allows you to deploy subset of ADF's objects.   
-You can select objects by objects types & name using include or exclude option.  
-Type/Name can be wildcarded, so all such variants are possible:
+You can select objects specifying them by object's type, name or folder which belongs to, using include or exclude option.  
+All 3 parts (Type, Name, Folder) can be wildcarded, so all such variants are possible:
 
 You can specify them by exact name or wildcard. 
   Example:  
@@ -176,12 +183,19 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.18.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.18.0)
+- [azure.datafactory.tools - ver.0.19.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.19.0)
 - [Az.DataFactory - ver.1.11.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.2)
 - [Az.Accounts - ver.2.2.2](https://www.powershellgallery.com/packages/Az.Accounts/2.2.1)
 - [Az.Resources - ver.3.1.0](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
 
 # History
+- 23 Dec 2020 - v.1.00  PUBLIC Release:
+                        Support wildcard when specifying object(s) name in config file
+                        Added object name to the msg before action
+                        Exit publish cmd when ADF name is already in use
+                        Allow selecting objects in given folder (#14)
+                        Fixed: Finding dependencies miss objects when the same object names occurs
+                        Fixed: DeleteNotInSource fails when attempting to remove active trigger or found many dependant objects
 - 08 Dec 2020 - v.0.11  Fixed: JSON file could be corrupted when config update has happened on a very deep path
                         Fixed: Special characters deployed wrong
 - 06 Dec 2020 - v.0.10  Fixed: File Path Filtering Type not working

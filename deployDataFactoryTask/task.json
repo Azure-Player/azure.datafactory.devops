@@ -5,7 +5,7 @@
     "description": "Deploys entire ADF (v2) from JSON files to ADF instance",
     "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
 	"category": "deploy",
-    "preview": true,
+    "preview": false,
     "visibility": [
 	    "Build",
         "Release"
@@ -16,7 +16,7 @@
         "Minor": 3,
         "Patch": 0
      },
-     "releaseNotes": "Fixed: JSON file could be corrupted when config update has happened on a very deep path\nFixed: Special characters deployed wrong\nFixed: File Path Filtering Type not working",
+     "releaseNotes": "Support wildcard when specifying object(s) name in config file\nAllow selecting objects in given folder\nA few bug fixes",
      "showEnvironmentVariables": true,
      "groups": [
         {

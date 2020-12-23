@@ -189,7 +189,7 @@ This task includes the following modules:
 - [Az.Resources - ver.3.1.0](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
 
 # History
-- 23 Dec 2020 - v.1.00  PUBLIC Release:
+- 23 Dec 2020 - v.0.90  PUBLIC Release:
                         Support wildcard when specifying object(s) name in config file
                         Added object name to the msg before action
                         Exit publish cmd when ADF name is already in use

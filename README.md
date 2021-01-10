@@ -12,7 +12,7 @@ Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell 
 For classic pipelines, you will find the Task available under the Deploy tab, or search for **publish data factory**:
 ![Adding Task](images/add-task.png)
 
-For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@0`.
+For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@1`.
 
 # Publish Azure Data Factory
 Use this to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
@@ -169,6 +169,7 @@ You can specify them by exact name or wildcard.
   dataset.*  
   -pipeline.PL_DoNotPublish*  
   -integrationruntime.*
+  -*.*@testFolder
   ```
 To simplify user experience – only one field is exposed in order to define include/exclude rules.
 Therefore, an extra character should be provided before the name/pattern:
@@ -193,7 +194,7 @@ This task includes the following modules:
 - [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
 
 # History
-- 10 Jan 2021 - v.1.00  New publish flag: `DoNotDeleteExcludedObjects`
+- 10 Jan 2021 - v.1.00  New publish flag: `DoNotDeleteExcludedObjects`  
                         New publish flag: `DoNotStopStartExcludedTriggers`
 - 23 Dec 2020 - v.0.90  PUBLIC Release:  
                         Support wildcard when specifying object(s) name in config file  

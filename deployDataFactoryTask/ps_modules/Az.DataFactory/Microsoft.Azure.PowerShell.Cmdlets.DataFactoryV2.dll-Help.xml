@@ -4777,7 +4777,7 @@ IpAddress              : 167.220.1.167</dev:code>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>----- Example 1: Get information about a specific trigger -----</maml:title>
+        <maml:title>-------- Example 1: Get information about all triggers --------</maml:title>
         <dev:code>PS C:\&gt; Get-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
     TriggerName       : ScheduledTrigger
@@ -4798,7 +4798,7 @@ IpAddress              : 167.220.1.167</dev:code>
         </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>-------- Example 2: Get information about all triggers --------</maml:title>
+        <maml:title>----- Example 2: Get information about a specific trigger -----</maml:title>
         <dev:code>Get-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "ScheduledTrigger"
 
     TriggerName       : ScheduledTrigger

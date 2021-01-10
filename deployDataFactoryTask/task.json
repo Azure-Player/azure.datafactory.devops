@@ -12,8 +12,8 @@
     ],
     "author": "Kamil Nowinski (SQLPlayer)",
     "version": {
-        "Major": 0,
-        "Minor": 3,
+        "Major": 1,
+        "Minor": 0,
         "Patch": 0
      },
      "releaseNotes": "Support wildcard when specifying object(s) name in config file\nAllow selecting objects in given folder\nA few bug fixes",
@@ -180,6 +180,24 @@
             },
             "helpMarkDown": "Indicates the method which will be used for ADF objects deployment",
             "groupName": "advanced"
+        },
+        {
+            "name": "DoNotStopStartExcludedTriggers",
+            "type": "boolean",
+            "label": "Do not Stop/Start excluded triggers",
+            "defaultValue": "false",
+            "helpMarkDown": "Specifies whether excluded triggers will be stopped before deployment.",
+            "groupname": "advanced",
+            "required": false
+        },
+        {
+            "name": "DoNotDeleteExcludedObjects",
+            "type": "boolean",
+            "label": "Do not delete excluded objects",
+            "defaultValue": "true",
+            "helpMarkDown": "Specifies whether excluded objects can be removed. Applies when `DeleteNotInSource` is set to *True* only.",
+            "groupname": "advanced",
+            "required": false
         }
     ],
     "dataSourceBindings": [

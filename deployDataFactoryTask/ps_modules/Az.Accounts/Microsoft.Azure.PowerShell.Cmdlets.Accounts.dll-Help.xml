@@ -9484,7 +9484,7 @@ your@email.com</dev:code>
     <command:examples>
       <command:example>
         <maml:title>----------- Example 1: Set the subscription context -----------</maml:title>
-        <dev:code>PS C:\&gt;Set-AzContext -SubscriptionId "xxxx-xxxx-xxxx-xxxx"
+        <dev:code>PS C:\&gt;Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx"
 
 Name    Account             SubscriptionName    Environment         TenantId
 ----    -------             ----------------    -----------         --------

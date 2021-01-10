@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "Support wildcard when specifying object(s) name in config file\nAllow selecting objects in given folder\nA few bug fixes",
+     "releaseNotes": "Support wildcard when specifying object(s) name in config file\nAllow selecting objects in given folder\nA few bug fixes\nNew publish flag: `DoNotDeleteExcludedObjects`\nNew publish flag: `DoNotStopStartExcludedTriggers`",
      "showEnvironmentVariables": true,
      "groups": [
         {

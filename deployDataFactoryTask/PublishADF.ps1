@@ -63,6 +63,8 @@ try {
     [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
     [string]$FilterText = Get-VstsInput -Name FilterText;
     [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
+    [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
+    [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
@@ -83,6 +85,8 @@ try {
     $opt.DeleteNotInSource = $DeleteNotInSource
     $opt.StopStartTriggers = $StopStartTriggers
     $opt.CreateNewInstance = $CreateNewInstance
+    $opt.DoNotStopStartExcludedTriggers = $DoNotStopStartExcludedTriggers
+    $opt.DoNotDeleteExcludedObjects = $DoNotDeleteExcludedObjects
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {

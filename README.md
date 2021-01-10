@@ -57,6 +57,8 @@ For more details, please go to [documentation of azure.datafactory.tools](https:
 | Filtering Type | `FilteringType` | Type of filtering ADF objects: File Path or Inline Text Field |
 | Include/Exclude Filtering Text | `FilterText` | Multi-line or comma-separated list of objects to be included or excluded in the deployment. <br/>For example, see below. |
 | Include/Exclude Filtering File Path | `FilterTextFile` | Multi-line or comma-separated list of objects to be included/excluded in/from the deployment. <br/>For example, see below. | 
+| Do not Stop/Start excluded triggers | `DoNotStopStartExcludedTriggers` | Specifies whether excluded triggers will be stopped before deployment. |
+| Do not delete excluded objects | `DoNotDeleteExcludedObjects` | Specifies whether excluded objects can be removed. Applies when `DeleteNotInSource` is set to *True* only. |
 
 
 ## Environment (stage) 
@@ -185,18 +187,20 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.19.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.19.0)
-- [Az.DataFactory - ver.1.11.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.2)
-- [Az.Accounts - ver.2.2.2](https://www.powershellgallery.com/packages/Az.Accounts/2.2.1)
-- [Az.Resources - ver.3.1.0](https://www.powershellgallery.com/packages/Az.Resources/3.0.1)
+- [azure.datafactory.tools - ver.0.30.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.30.0)
+- [Az.DataFactory - ver.1.11.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.3)
+- [Az.Accounts - ver.2.2.3](https://www.powershellgallery.com/packages/Az.Accounts/2.2.3)
+- [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
 
 # History
-- 23 Dec 2020 - v.0.90  PUBLIC Release:
-                        Support wildcard when specifying object(s) name in config file
-                        Added object name to the msg before action
-                        Exit publish cmd when ADF name is already in use
-                        Allow selecting objects in given folder (#14)
-                        Fixed: Finding dependencies miss objects when the same object names occurs
+- 10 Jan 2021 - v.1.00  New publish flag: `DoNotDeleteExcludedObjects`
+                        New publish flag: `DoNotStopStartExcludedTriggers`
+- 23 Dec 2020 - v.0.90  PUBLIC Release:  
+                        Support wildcard when specifying object(s) name in config file  
+                        Added object name to the msg before action  
+                        Exit publish cmd when ADF name is already in use  
+                        Allow selecting objects in given folder (#14)  
+                        Fixed: Finding dependencies miss objects when the same object names occurs  
                         Fixed: DeleteNotInSource fails when attempting to remove active trigger or found many dependant objects
 - 08 Dec 2020 - v.0.11  Fixed: JSON file could be corrupted when config update has happened on a very deep path
                         Fixed: Special characters deployed wrong

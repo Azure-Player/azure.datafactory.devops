@@ -54,7 +54,25 @@ if (!$isProd) {
 }
 #$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 $body | Out-File "$taskFile" -Encoding utf8
-Write-Output "File task updated."
+Write-Output "File task #1 updated."
+
+
+# Update task's manifest
+$taskFile = Join-Path -Path (Get-Location) -ChildPath 'buildDataFactoryTask\task.json'
+Write-Output "Updating version for task definition in file: $taskFile"
+$body = $JsonDoc = Get-Content $taskFile -Raw
+$JsonDoc = $body | ConvertFrom-Json
+$body = $body.Replace('"Major": '+$JsonDoc.version.Major, '"Major": '+$verarr[0])
+$body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1])
+$body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
+if (!$isProd) {
+    $body = $body.Replace('"id": "8a00f62d-c46d-4019-9e11-c05d88821db8",', '"id": "0fff6fc0-4a02-46b2-9466-2ee2a9b0580f",')
+    $body = $body.Replace('"friendlyName": "Build Azure Data Factory code",', '"friendlyName": "Build ADF code (BETA)",')
+}
+$body | Out-File "$taskFile" -Encoding utf8
+Write-Output "File task #2 updated."
+
+
 
 
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin

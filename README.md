@@ -6,7 +6,7 @@ The task based on the PowerShell module [azure.datafactory.tools](https://github
 Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell Core 6.0 and above.
 
 
-# Azure DevOps Task
+# Azure DevOps Tasks (#adftools)
 
 ## How to add task
 For classic pipelines, you will find the Task available under the Deploy tab, or search for **publish data factory**:
@@ -179,21 +179,42 @@ Therefore, an extra character should be provided before the name/pattern:
 If char (+/-) is not provided – an inclusion rule would be applied.
 
 
+### Screenshot of Publish Task 
+![Task](images/AzureDevOps-publish-ADF-task-screenshot.png)
+
+
+# Build/Test Azure Data Factory code
+
+Another very helpful task is `Build Azure Data Factory`. Use it to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
+The function validates files of ADF in a given location, returning warnings or errors.  
+The following validation will be perform:
+- Reads all files and validates its json format
+- Checks whether all dependant objects exist
+- Checks whether file name equals object name
+- (more soon...)
+
+Parameters:  
+- `RootFolder` - Source folder where all ADF objects are kept. The folder should contain subfolders like pipeline, linkedservice, etc.
+
+
+
+### Screenshot of Build Task 
+![Task](images/AzureDevOps-build-ADF-task-screenshot.png)
 
 
 
 
-# Screenshot of the Task 
-![Task](images/AzureDevOps-ADF-custom-task-preview-screenshot.png)
+
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.30.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.30.0)
+- [azure.datafactory.tools - ver.0.40.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.40.0)
 - [Az.DataFactory - ver.1.11.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.3)
 - [Az.Accounts - ver.2.2.3](https://www.powershellgallery.com/packages/Az.Accounts/2.2.3)
 - [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
 
 # History
+- 14 Jan 2021 - v.1.01  New task: Build/Test Azure Data Factory Code  
 - 10 Jan 2021 - v.1.00  New publish flag: `DoNotDeleteExcludedObjects`  
                         New publish flag: `DoNotStopStartExcludedTriggers`
 - 23 Dec 2020 - v.0.90  PUBLIC Release:  

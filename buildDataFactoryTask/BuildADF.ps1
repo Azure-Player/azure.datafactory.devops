@@ -23,14 +23,6 @@ try {
 	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
     Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
 
-    #Get-Module -ListAvailable
-
-    # $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    # Import-Module -Name $ModulePathAcc
-    # $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    # Import-Module -Name $ModulePathRes
-	# $ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
-    # Import-Module -Name $ModulePathADF
     Import-Module -Name $ModulePathADFT
 
     # Get inputs params
@@ -38,11 +30,11 @@ try {
     
     $global:ErrorActionPreference = 'Continue';
 
-    Write-Debug "Invoking Build-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
+    Write-Debug "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Debug "RootFolder:         $RootFolder";
 
 
-    $null = Build-AdfCode -RootFolder "$RootFolder" 
+    $null = Test-AdfCode -RootFolder "$RootFolder" 
 
 
 

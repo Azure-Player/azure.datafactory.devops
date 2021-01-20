@@ -2,7 +2,7 @@
     "id": "1af843b5-35a0-411f-9a18-9eb7a59fb8b8",
     "name": "PublishADFTask",
     "friendlyName": "Publish Azure Data Factory",
-    "description": "Deploys entire ADF (v2) from JSON files to ADF instance",
+    "description": "Deploys entire ADF (v2) from JSON files to ADF instance (adftools)",
     "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,

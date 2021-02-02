@@ -30,16 +30,16 @@ if (Test-Path -Path "$PSScriptRoot\public" -ErrorAction Ignore)
     }
 }
 
-$moduleName = 'Az.DataFactory'
-$module = Get-Module $moduleName
-$minVer = "1.10.0"
-if ($null -ne $module -and $module.Version -lt [System.Version]$minVer) 
-{ 
-    Write-Error "This module requires $moduleName version $minVer. An earlier version of $moduleName is imported in the current PowerShell session. Please open a new session before importing this module. This error could indicate that multiple incompatible versions of the Azure PowerShell cmdlets are installed on your system. Please see https://aka.ms/azps-version-error for troubleshooting information." -ErrorAction Stop 
-} 
-elseif ($null -eq $module) 
-{
-    Write-Host "Importing module $module (> $minVer)..."
-    Import-Module -Name $moduleName -MinimumVersion "$minVer" -Scope Global
-    Write-Host "Module imported."
-}
+# $moduleName = 'Az.DataFactory'
+# $module = Get-Module $moduleName
+# $minVer = "1.10.0"
+# if ($null -ne $module -and $module.Version -lt [System.Version]$minVer) 
+# { 
+#     Write-Error "This module requires $moduleName version $minVer. An earlier version of $moduleName is imported in the current PowerShell session. Please open a new session before importing this module. This error could indicate that multiple incompatible versions of the Azure PowerShell cmdlets are installed on your system. Please see https://aka.ms/azps-version-error for troubleshooting information." -ErrorAction Stop 
+# } 
+# elseif ($null -eq $module) 
+# {
+#     Write-Host "Importing module $module (> $minVer)..."
+#     Import-Module -Name $moduleName -MinimumVersion "$minVer" -Scope Global
+#     Write-Host "Module imported."
+# }

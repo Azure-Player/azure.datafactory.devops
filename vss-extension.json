@@ -58,6 +58,9 @@
             "path": "buildDataFactoryTask"
         },
         {
+            "path": "testLinkedServiceTask"
+        },
+        {
             "path": "images",
             "addressable": true
         }
@@ -81,6 +84,16 @@
             ],
             "properties": {
                 "name": "buildDataFactoryTask"
+            }
+        }
+        ,{
+            "id": "TestADFLS",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "testLinkedServiceTask"
             }
         }
     ]

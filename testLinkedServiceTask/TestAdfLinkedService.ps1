@@ -63,8 +63,8 @@ try {
 
 
     $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
-    -DataFactoryName 'adf-blog-uat' `
-    -ResourceGroupName 'rg-blog-uat' `
+    -DataFactoryName $DataFactoryName `
+    -ResourceGroupName $ResourceGroupName `
     -SubscriptionID $SubscriptionID `
     -TenantID $TenantID -ClientID $ClientID -ClientSecret $ClientSecret
 

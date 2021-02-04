@@ -1,6 +1,6 @@
 # Azure DevOps Tasks (#adftools)
 
-![](.\images\adftools-banner.png)
+![](./images/adftools-banner.png)
 
 This extension to Azure DevOps has three tasks and only one goal: deploy Azure Data Factory (v2) seamlessly and reliable at minimum efforts.
 As opposed to ARM template publishing from 'adf_publish' branch, this task publishes ADF directly from JSON files, who represent all ADF artefacts.  

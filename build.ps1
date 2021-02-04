@@ -1,14 +1,15 @@
 [CmdletBinding()]
 param
 (
-    [boolean] [Parameter(Mandatory = $true)]
-    $isProd
+    [boolean] [Parameter(Mandatory = $true)]  $isProd,
+    [int]     [Parameter(Mandatory = $false)] $build = 0
 )
 # $isProd = $false
 
 $now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
+if ($build -gt 0) { $versionPatch = $build }
 
 # Update extension's manifest
 $vssFile = Join-Path -Path (Get-Location) -ChildPath 'vss-extension.json'
@@ -91,3 +92,6 @@ Write-Output "File task #3 updated."
 
 
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin
+
+
+

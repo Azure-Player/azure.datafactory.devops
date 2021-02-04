@@ -1,21 +1,29 @@
-# Deploying Azure Data Factory instance
+# Azure DevOps Tasks (#adftools)
 
-This extension to Azure DevOps has only one task and only one goal: deploy Azure Data Factory (v2) seamlessly at minimum efforts.
+![](.\images\adftools-banner.png)
+
+This extension to Azure DevOps has three tasks and only one goal: deploy Azure Data Factory (v2) seamlessly and reliable at minimum efforts.
 As opposed to ARM template publishing from 'adf_publish' branch, this task publishes ADF directly from JSON files, who represent all ADF artefacts.  
 The task based on the PowerShell module [azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools) available through [PSGallery](https://www.powershellgallery.com/packages/azure.datafactory.tools/).  
 Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell Core 6.0 and above.
 
+## Three tasks
+- [**Build Azure Data Factory code**](#buildtest-azure-data-factory-code) - Validates all JSON files of ADF (v2) (adftools)
+- [**Publish Azure Data Factory**](#publish-azure-data-factory) - Deploys entire ADF (v2) from JSON files to ADF instance
+- [**Test connection of ADF Linked Service** (*preview*)](#test-connection-of-adf-linked-service) - Runs test connection of Linked Service of ADF (v2)
 
-# Azure DevOps Tasks (#adftools)
+> Bear in mind that these tasks works only for Azure Data Factory **v2**.
 
 ## How to add task
-For classic pipelines, you will find the Task available under the Deploy tab, or search for **publish data factory**:
+For classic pipelines, you will find the Tasks available under the Deploy tab, or search for **adftools**:
 ![Adding Task](images/add-task.png)
 
-For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@1`.
 
 # Publish Azure Data Factory
+![](./images/task-publish.png)
+
 Use this to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
+For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@1`.
 
 
 ## Key capabilities
@@ -184,6 +192,7 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 
 
 # Build/Test Azure Data Factory code
+![](./images/task-build.png)
 
 Another very helpful task is `Build Azure Data Factory`. Use it to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
 The function validates files of ADF in a given location, returning warnings or errors.  
@@ -196,12 +205,24 @@ The following validation will be perform:
 Parameters:  
 - `RootFolder` - Source folder where all ADF objects are kept. The folder should contain subfolders like pipeline, linkedservice, etc.
 
-
-
 ### Screenshot of Build Task 
 ![Task](images/AzureDevOps-build-ADF-task-screenshot.png)
 
 
+
+# Test connection of ADF Linked Service
+![](./images/task-testLS.png)
+
+After deployment within automated CI/CD process, we would like to test foundamental Linked Services whom are used for dependant objects in ADF. In order to ensure the entire workload works, we must make sure that all Linked Services are configured correctly and have access to pointing resources.  
+The purpose of this task is to ensure such checking. It works exactly the same as hitting button `Check connection` in ADF Linked Service.
+
+> Be aware that the task uses undocumented API function.
+
+*Credits*: This task arose thanks to Simon D'Morias based on his [blog post](https://datathirst.net/blog/2018/9/23/adfv2-testing-linked-services).
+
+
+### Screenshot of Test Connection Task 
+(Coming soon)  
 
 
 

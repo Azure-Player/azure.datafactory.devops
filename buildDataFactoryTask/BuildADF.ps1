@@ -27,6 +27,7 @@ try {
 
     # Get inputs params
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
+    [string]$Action     = Get-VstsInput -Name "Action" -Require;
     
     $global:ErrorActionPreference = 'Continue';
 
@@ -37,8 +38,23 @@ try {
     $null = Test-AdfCode -RootFolder "$RootFolder" 
 
 
+    if ($Action -eq 'Export')
+    {
+        # Validate and export ARM Template using @microsoft/azure-data-factory-utilities module
+        Write-Verbose "Check NPM Version"
+        npm version
+
+        Write-Verbose "Installing NPM azure-data-factory-utilities..."
+        npm i @microsoft/azure-data-factory-utilities
+
+        $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/adf000"
+
+        Write-Verbose "Validating & exporting ARM Template..."
+        npm run build export $RootFolder $adfAzurePath "ArmTemplate"
+    }
 
 
+    
     Write-Host ""
     Write-Host "========================================================================================================="
     Write-Host "    - How much helpful this extension Task for Azure Data Factory is?                                    "

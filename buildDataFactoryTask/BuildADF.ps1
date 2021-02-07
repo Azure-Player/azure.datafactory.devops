@@ -33,6 +33,7 @@ try {
 
     Write-Debug "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Debug "RootFolder:         $RootFolder";
+    Write-Debug "Action:             $Action";
 
 
     $null = Test-AdfCode -RootFolder "$RootFolder" 
@@ -40,6 +41,10 @@ try {
 
     if ($Action -eq 'Export')
     {
+        Write-Verbose "Preparing package.json file..."
+        $packageSourceFile = "$PSScriptRoot\ext\package.json"
+        Copy-Item -Path $packageSourceFile -Destination $RootFolder
+
         # Validate and export ARM Template using @microsoft/azure-data-factory-utilities module
         Write-Verbose "Check NPM Version"
         npm version
@@ -54,7 +59,7 @@ try {
     }
 
 
-    
+
     Write-Host ""
     Write-Host "========================================================================================================="
     Write-Host "    - How much helpful this extension Task for Azure Data Factory is?                                    "

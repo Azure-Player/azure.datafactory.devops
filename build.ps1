@@ -1,14 +1,15 @@
 [CmdletBinding()]
 param
 (
-    [boolean] [Parameter(Mandatory = $true)]
-    $isProd
+    [boolean] [Parameter(Mandatory = $true)]  $isProd,
+    [int]     [Parameter(Mandatory = $false)] $build = 0
 )
 # $isProd = $false
 
 $now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
+if ($build -gt 0) { $versionPatch = $build }
 
 # Update extension's manifest
 $vssFile = Join-Path -Path (Get-Location) -ChildPath 'vss-extension.json'
@@ -73,6 +74,24 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #2 updated."
 
 
+# Update task's manifest
+$taskFile = Join-Path -Path (Get-Location) -ChildPath 'testLinkedServiceTask\task.json'
+Write-Output "Updating version for task definition in file: $taskFile"
+$body = $JsonDoc = Get-Content $taskFile -Raw
+$JsonDoc = $body | ConvertFrom-Json
+$body = $body.Replace('"Major": '+$JsonDoc.version.Major, '"Major": '+$verarr[0])
+$body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1])
+$body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
+if (!$isProd) {
+    $body = $body.Replace('"id": "5bf98930-3058-4afe-b031-48d312459df4",', '"id": "9cb687ea-a4f1-45d5-a568-98dc85fd3f1b",')
+    $body = $body.Replace('"friendlyName": "Test connection of ADF Linked Service",', '"friendlyName": "Test connection of ADF Linked Service (BETA)",')
+}
+$body | Out-File "$taskFile" -Encoding utf8
+Write-Output "File task #3 updated."
+
 
 
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin
+
+
+

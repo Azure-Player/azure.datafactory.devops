@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "DataFactoryTools",
     "name": "Deploy Azure Data Factory by SQLPlayer",
-    "version": "1.2.0",
+    "version": "1.4.0",
     "publisher": "SQLPlayer",
     "description": "Tools for deploying entire ADF code (JSON files) to ADF instance",
     "targets": [
@@ -58,6 +58,9 @@
             "path": "buildDataFactoryTask"
         },
         {
+            "path": "testLinkedServiceTask"
+        },
+        {
             "path": "images",
             "addressable": true
         }
@@ -81,6 +84,16 @@
             ],
             "properties": {
                 "name": "buildDataFactoryTask"
+            }
+        }
+        ,{
+            "id": "TestADFLS",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "testLinkedServiceTask"
             }
         }
     ]

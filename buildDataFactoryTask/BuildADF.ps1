@@ -27,15 +27,36 @@ try {
 
     # Get inputs params
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
+    [string]$Action     = Get-VstsInput -Name "Action" -Require;
     
     $global:ErrorActionPreference = 'Continue';
 
     Write-Debug "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Debug "RootFolder:         $RootFolder";
+    Write-Debug "Action:             $Action";
 
 
     $null = Test-AdfCode -RootFolder "$RootFolder" 
 
+
+    if ($Action -eq 'Export')
+    {
+        Write-Verbose "Preparing package.json file..."
+        $packageSourceFile = "$PSScriptRoot\ext\package.json"
+        Copy-Item -Path $packageSourceFile -Destination $RootFolder
+
+        # Validate and export ARM Template using @microsoft/azure-data-factory-utilities module
+        Write-Verbose "Check NPM Version"
+        npm version
+
+        Write-Verbose "Installing NPM azure-data-factory-utilities..."
+        npm i @microsoft/azure-data-factory-utilities
+
+        $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/adf000"
+
+        Write-Verbose "Validating & exporting ARM Template..."
+        npm run build export $RootFolder $adfAzurePath "ArmTemplate"
+    }
 
 
 

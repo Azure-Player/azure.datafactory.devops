@@ -25,6 +25,18 @@
             "label": "Azure Data Factory Path",
             "helpMarkDown": "Path from the repo root to the ADF folder which should contains sub-folders like 'pipeline', 'dataset', etc.",
             "required": true
+        },
+        {
+            "name": "Action",
+            "type": "pickList",
+            "label": "Action",
+            "required": true,
+            "defaultValue": "Build",
+            "options": {
+                "Build": "Build only (simple validate)",
+                "Export": "Build + Validate & Export"
+            },
+            "helpMarkDown": "soon"
         }
     ],
     "instanceNameFormat": "Validate ADF files",

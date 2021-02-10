@@ -39,5 +39,12 @@ function Test-AdfLinkedService {
     Write-Host "Failed: $($all-$ok)"
     Write-Host "Total : $all"
 
+    $failed = ($all-$ok) -gt 0
+
+    if ($failed) {
+        Write-VstsSetResult -Result 'Failed' -Message "Test failed." -DoNotThrow
+    }
+
+
 }
 

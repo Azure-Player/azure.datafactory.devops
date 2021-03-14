@@ -34,13 +34,15 @@ try {
     Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "Action:             $Action";
-
+    Write-Verbose "Verbose message."
 
     $null = Test-AdfCode -RootFolder "$RootFolder" 
 
 
     if ($Action -eq 'Export')
     {
+        Set-Location $RootFolder
+
         Write-Host "=== Preparing package.json file..."
         $packageSourceFile = "$PSScriptRoot\ext\package.json"
         Copy-Item -Path $packageSourceFile -Destination $RootFolder
@@ -58,6 +60,7 @@ try {
         $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/adf000"
 
         Write-Host "=== Validating & exporting ARM Template..."
+        Write-Host "npm run build export $RootFolder $adfAzurePath ""ArmTemplate"""
         npm run build export $RootFolder $adfAzurePath "ArmTemplate"
         Write-Host "=== Export finished."
     }

@@ -43,7 +43,8 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
   * Whether delete or not objects not in the source
   * Whether create or not a new instance of ADF if it not exist
 * Tokenisation in config file allows replace any value by Environment Variable or Variable from DevOps Pipeline
-* Global Parameters (new!)
+* Global Parameters
+* Export ARM Templates from JSON files (new!)
 
 For more details, please go to [documentation of azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/README.md).
 
@@ -194,7 +195,11 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 # Build/Test Azure Data Factory code
 ![](./images/task-build.png)
 
-Another very helpful task is `Build Azure Data Factory`. Use it to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
+Another very helpful task is `Build Azure Data Factory`. 
+The task has two actions to be choose to be done:
+
+## Build only
+Use it to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
 The function validates files of ADF in a given location, returning warnings or errors.  
 The following validation will be perform:
 - Reads all files and validates its json format
@@ -202,8 +207,16 @@ The following validation will be perform:
 - Checks whether file name equals object name
 - (more soon...)
 
-Parameters:  
-- `RootFolder` - Source folder where all ADF objects are kept. The folder should contain subfolders like pipeline, linkedservice, etc.
+## Validate & Export ARM Template
+This action uses [**ADFUtilities** NPM package](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) provided by Microsoft. 
+It does exactly the same actions as you can do with ADF UI by clicking **Validate all** and then **Export ARM Template**.
+So finally, you can automate this step and fully automate ADF deployment, even if you prefer to use [Microsoft's approach](https://docs.microsoft.com/en-us/azure/data-factory/continuous-integration-deployment-improvements) with ARM Template.
+
+### Parameters:  
+- `DataFactoryCodePath` - Source folder where all ADF objects are kept. The folder should contain subfolders like pipeline, linkedservice, etc.
+- `Action` - One of two actions to be executed:
+  - `Build only (simple validate)` - Validates files integrity. No outcome files.
+  - `Validate & Export ARM Template` - Validates files and export ARM Template files like ADF UI does. ARM Template files as the result. It uses ADFUtilities NPM package provided by Microsoft.
 
 ### Screenshot of Build Task 
 ![Task](images/AzureDevOps-build-ADF-task-screenshot.png)
@@ -222,9 +235,7 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 
 ### Screenshot of Test Connection Task 
-(Coming soon)  
-
-
+![Task](images/AzureDevOps-test-Linked-Services-task-screenshot.png)
 
 
 # Related modules
@@ -235,6 +246,7 @@ This task includes the following modules:
 - [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
 
 # History
+- 14 Mar 2021 - v.1.05  Build task can validate and export ARM Template from source code (JSON files)
 - 10 Feb 2021 - v.1.04  Added new task: TestAdfLinkedServiceTask (preview)
 - 20 Jan 2021 - v.1.02  Fixed: JSON file corrupted when contained object is located deeper than 15 nodes  
 - 14 Jan 2021 - v.1.01  New task: Build/Test Azure Data Factory Code  

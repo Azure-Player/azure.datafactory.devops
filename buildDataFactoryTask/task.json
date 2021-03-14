@@ -34,9 +34,9 @@
             "defaultValue": "Build",
             "options": {
                 "Build": "Build only (simple validate)",
-                "Export": "Build + Validate & Export"
+                "Export": "Validate & Export ARM Template"
             },
-            "helpMarkDown": "soon"
+            "helpMarkDown": "Build validates files integrity. No outcome files.\nThe second option validates files and export ARM Template files like ADF UI does (ARM Template files as the result)."
         }
     ],
     "instanceNameFormat": "Validate ADF files",

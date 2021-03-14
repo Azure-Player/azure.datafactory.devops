@@ -34,7 +34,6 @@ try {
     Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "Action:             $Action";
-    Write-Verbose "Verbose message."
 
     $null = Test-AdfCode -RootFolder "$RootFolder" 
 

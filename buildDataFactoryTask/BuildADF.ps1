@@ -31,9 +31,9 @@ try {
     
     $global:ErrorActionPreference = 'Continue';
 
-    Write-Debug "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
-    Write-Debug "RootFolder:         $RootFolder";
-    Write-Debug "Action:             $Action";
+    Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
+    Write-Host "RootFolder:         $RootFolder";
+    Write-Host "Action:             $Action";
 
 
     $null = Test-AdfCode -RootFolder "$RootFolder" 
@@ -41,21 +41,25 @@ try {
 
     if ($Action -eq 'Export')
     {
-        Write-Verbose "Preparing package.json file..."
+        Write-Host "=== Preparing package.json file..."
         $packageSourceFile = "$PSScriptRoot\ext\package.json"
         Copy-Item -Path $packageSourceFile -Destination $RootFolder
+        Write-Host "=== File copied."
 
         # Validate and export ARM Template using @microsoft/azure-data-factory-utilities module
-        Write-Verbose "Check NPM Version"
+        Write-Host "=== Check NPM Version..."
         npm version
+        Write-Host "=== Check finished."
 
-        Write-Verbose "Installing NPM azure-data-factory-utilities..."
+        Write-Host "=== Installing NPM azure-data-factory-utilities..."
         npm i @microsoft/azure-data-factory-utilities
+        Write-Host "=== Installation finished."
 
         $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/adf000"
 
-        Write-Verbose "Validating & exporting ARM Template..."
+        Write-Host "=== Validating & exporting ARM Template..."
         npm run build export $RootFolder $adfAzurePath "ArmTemplate"
+        Write-Host "=== Export finished."
     }
 
 

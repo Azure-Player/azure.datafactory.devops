@@ -57,10 +57,11 @@ try {
         npm i @microsoft/azure-data-factory-utilities
         Write-Host "=== Installation finished."
 
-        $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/adf000"
+        $adf = Split-Path -Path $RootFolder -Leaf
+        $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/$adf"
 
         Write-Host "=== Validating & exporting ARM Template..."
-        Write-Host "npm run build export $RootFolder $adfAzurePath ""ArmTemplate"""
+        Write-Verbose "npm run build export $RootFolder $adfAzurePath ""ArmTemplate"""
         npm run build export $RootFolder $adfAzurePath "ArmTemplate"
         Write-Host "=== Export finished."
     }

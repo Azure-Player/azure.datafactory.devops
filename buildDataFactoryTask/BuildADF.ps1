@@ -35,8 +35,10 @@ try {
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "Action:             $Action";
 
-    $null = Test-AdfCode -RootFolder "$RootFolder" 
-
+    if ($Action -eq 'Build')
+    {
+        $null = Test-AdfCode -RootFolder "$RootFolder" 
+    }
 
     if ($Action -eq 'Export')
     {

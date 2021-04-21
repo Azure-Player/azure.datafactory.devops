@@ -240,12 +240,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.60.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.60.0)
+- [azure.datafactory.tools - ver.0.61.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.61.0)
 - [Az.DataFactory - ver.1.11.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.3)
 - [Az.Accounts - ver.2.2.3](https://www.powershellgallery.com/packages/Az.Accounts/2.2.3)
 - [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
 
 # History
+- 21 Apr 2021 - v.1.06  Build task fails when any error is found ([#36](https://github.com/SQLPlayer/azure.datafactory.devops/issues/36))
 - 14 Mar 2021 - v.1.05  Build task can validate and export ARM Template from source code (JSON files)
 - 10 Feb 2021 - v.1.04  Added new task: TestAdfLinkedServiceTask (preview)
 - 20 Jan 2021 - v.1.02  Fixed: JSON file corrupted when contained object is located deeper than 15 nodes  

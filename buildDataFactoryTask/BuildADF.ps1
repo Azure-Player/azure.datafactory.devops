@@ -37,7 +37,11 @@ try {
 
     if ($Action -eq 'Build')
     {
-        $null = Test-AdfCode -RootFolder "$RootFolder" 
+        $noferrors = Test-AdfCode -RootFolder "$RootFolder" 
+        # Fail if any errors.
+        if ($noferrors -gt 0) {
+            Write-VstsSetResult -Result 'Failed' -Message "Build failed." -DoNotThrow
+        }
     }
 
     if ($Action -eq 'Export')

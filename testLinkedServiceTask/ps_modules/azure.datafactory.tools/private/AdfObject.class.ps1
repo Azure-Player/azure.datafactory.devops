@@ -10,7 +10,11 @@ class AdfObject {
 
     [Boolean] AddDependant ([string]$name, [string]$refType)
     {
-        $objType = $refType.Replace('Reference', '')
+        $objType = $refType
+        if ($refType.EndsWith('Reference')) {
+            $objType = $refType.Substring(0, $refType.Length-9)
+        }
+        [AdfObject]::AssertType($objType)
         $fullName = "$objType.$name"
         if (!$this.DependsOn.Contains($fullName)) {
             $this.DependsOn.Add( $fullName ) | Out-Null
@@ -25,6 +29,17 @@ class AdfObject {
             return "[$simtype].[$($this.Name)]"
         } else {
             return "$simtype.$($this.Name)"
+        }
+    }
+
+    [String] AzureResourceName ()
+    {
+        $resType = Get-AzureResourceType $this.Type
+        $DataFactoryName = $this.Adf.Name
+        if ($resType -like '*managedPrivateEndpoints') {
+            return "$DataFactoryName/default/$($this.Name)"
+        } else {
+            return "$DataFactoryName/$($this.Name)"
         }
     }
 
@@ -68,7 +83,14 @@ class AdfObject {
         return $ofn
     }
 
-    static $AllowedTypes = @('integrationRuntime', 'pipeline', 'dataset', 'dataflow', 'linkedService', 'trigger', 'factory')
+    static $AllowedTypes = @('integrationRuntime', 'pipeline', 'dataset', 'dataflow', 'linkedService', 'trigger', 'factory', 'managedVirtualNetwork', 'managedPrivateEndpoint')
+
+    static AssertType ([string] $Type)
+    {
+        if ($Type -notin [AdfObject]::allowedTypes ) { 
+            throw "ADFT0029: Unknown object type: $Type."
+        }
+    }
 
 }
 

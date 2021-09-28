@@ -240,18 +240,26 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 This task includes the following modules:  
-- [azure.datafactory.tools - ver.0.61.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.61.0)
-- [Az.DataFactory - ver.1.11.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.11.3)
-- [Az.Accounts - ver.2.2.3](https://www.powershellgallery.com/packages/Az.Accounts/2.2.3)
-- [Az.Resources - ver.3.1.1](https://www.powershellgallery.com/packages/Az.Resources/3.1.1)
+- [azure.datafactory.tools - ver.0.91.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.91.0)
+- [Az.DataFactory - ver.1.14.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.14.0)
+- [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
+- [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
 # History
-- 21 Apr 2021 - v.1.06  Build task fails when any error is found ([#36](https://github.com/SQLPlayer/azure.datafactory.devops/issues/36))
-- 14 Mar 2021 - v.1.05  Build task can validate and export ARM Template from source code (JSON files)
-- 10 Feb 2021 - v.1.04  Added new task: TestAdfLinkedServiceTask (preview)
-- 20 Jan 2021 - v.1.02  Fixed: JSON file corrupted when contained object is located deeper than 15 nodes  
-- 14 Jan 2021 - v.1.01  New task: Build/Test Azure Data Factory Code  
-- 10 Jan 2021 - v.1.00  New publish flag: `DoNotDeleteExcludedObjects`  
+- 28 Sep 2021 - v.1.7   Updated main module to ver. 0.91 with the following features:  
+                        - Added retry action on failure of starting triggers  
+                        - Build task validates config files  
+                        - Support for ADF Managed Virtual Network & Managed Private Endpoint (preview), including its configuration  
+                        - Config: Added option to index into arrays by element name  
+                        - Removing excluded ADF objects when option $DoNotDeleteExcludedObjects = $false  
+                        - Changed method of discovering referenced objects (Get-ReferencedObjects)  
+                        - Fixed minor issues ([all details](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/changelog.md))
+- 21 Apr 2021 - v.1.6   Build task fails when any error is found ([#36](https://github.com/SQLPlayer/azure.datafactory.devops/issues/36))
+- 14 Mar 2021 - v.1.5   Build task can validate and export ARM Template from source code (JSON files)
+- 10 Feb 2021 - v.1.4   Added new task: TestAdfLinkedServiceTask (preview)
+- 20 Jan 2021 - v.1.2   Fixed: JSON file corrupted when contained object is located deeper than 15 nodes  
+- 14 Jan 2021 - v.1.1   New task: Build/Test Azure Data Factory Code  
+- 10 Jan 2021 - v.1.0   New publish flag: `DoNotDeleteExcludedObjects`  
                         New publish flag: `DoNotStopStartExcludedTriggers`
 - 23 Dec 2020 - v.0.90  PUBLIC Release:  
                         Support wildcard when specifying object(s) name in config file  

@@ -17,9 +17,9 @@
         <maml:name>Get-AzTag</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>Name</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Name of the predefined tag. By default, Get-AzTag gets basic information about all predefined tags in the subscription. When you specify the Name parameter, the Detailed parameter has no effect.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -29,9 +29,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -41,9 +41,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>Detailed</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Indicates that this operation adds information about tag values to the output.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -55,9 +55,9 @@
         <maml:name>Get-AzTag</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -67,9 +67,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ResourceId</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -82,9 +82,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -94,9 +94,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>Detailed</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Indicates that this operation adds information about tag values to the output.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -106,9 +106,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>Name</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Name of the predefined tag. By default, Get-AzTag gets basic information about all predefined tags in the subscription. When you specify the Name parameter, the Detailed parameter has no effect.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -118,9 +118,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ResourceId</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -273,7 +273,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.resources/get-aztag</maml:uri>
+        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzTag</maml:linkText>
@@ -306,9 +306,9 @@ Properties :
         <maml:name>New-AzTag</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>Name</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Specifies the predefined tag name. To create a new predefined tag, enter a unique name. To add a value to an existing tag, enter the name of the existing tag. If an existing predefined tag has the specified name, New-AzTag adds the specified value, if any, to the tag with that name instead of creating a new tag.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -318,9 +318,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
           <maml:name>Value</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Specifies a predefined tag value. Predefined tags can have multiple values, but you can enter only one value in each command. This parameter is optional, because tags can have names without values.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -330,9 +330,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -342,9 +342,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -353,9 +353,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -367,9 +367,9 @@ Properties :
         <maml:name>New-AzTag</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>ResourceId</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The resource identifier for the entity being tagged. A resource, a resource group or a subscription may be tagged.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -379,9 +379,9 @@ Properties :
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
           <maml:name>Tag</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The tags to put on the resource.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
           <dev:type>
             <maml:name>System.Collections.Hashtable</maml:name>
@@ -391,9 +391,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -403,9 +403,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -414,9 +414,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -428,9 +428,9 @@ Properties :
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -440,9 +440,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>Name</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Specifies the predefined tag name. To create a new predefined tag, enter a unique name. To add a value to an existing tag, enter the name of the existing tag. If an existing predefined tag has the specified name, New-AzTag adds the specified value, if any, to the tag with that name instead of creating a new tag.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -452,9 +452,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
         <maml:name>Value</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Specifies a predefined tag value. Predefined tags can have multiple values, but you can enter only one value in each command. This parameter is optional, because tags can have names without values.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -464,9 +464,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceId</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The resource identifier for the entity being tagged. A resource, a resource group or a subscription may be tagged.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -476,9 +476,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
         <maml:name>Tag</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The tags to put on the resource.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
         <dev:type>
           <maml:name>System.Collections.Hashtable</maml:name>
@@ -488,9 +488,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -500,9 +500,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -689,7 +689,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.resources/new-aztag</maml:uri>
+        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>
@@ -722,9 +722,9 @@ Properties :
         <maml:name>Remove-AzTag</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>Name</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Specifies the Name of the predefined tag to remove. By default, Remove-AzTag removes the specified tag and all of its values. To delete selected values, but not delete the tag, use the Value parameter.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -734,9 +734,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
           <maml:name>Value</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Deletes the specified values from the predefined tag, but does not delete the tag.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
           <dev:type>
             <maml:name>System.String[]</maml:name>
@@ -746,9 +746,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -758,9 +758,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -769,9 +769,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -780,9 +780,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -794,9 +794,9 @@ Properties :
         <maml:name>Remove-AzTag</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -806,9 +806,9 @@ Properties :
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ResourceId</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -818,9 +818,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -829,9 +829,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -840,9 +840,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -854,9 +854,9 @@ Properties :
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -866,9 +866,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>Name</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Specifies the Name of the predefined tag to remove. By default, Remove-AzTag removes the specified tag and all of its values. To delete selected values, but not delete the tag, use the Value parameter.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -878,9 +878,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
         <maml:name>Value</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Deletes the specified values from the predefined tag, but does not delete the tag.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
         <dev:type>
           <maml:name>System.String[]</maml:name>
@@ -890,9 +890,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ResourceId</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -902,9 +902,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>PassThru</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -914,9 +914,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -926,9 +926,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -1037,7 +1037,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-aztag</maml:uri>
+        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>
@@ -1070,9 +1070,9 @@ Properties :
         <maml:name>Update-AzTag</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>ResourceId</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Merge</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Replace</command:parameterValue>
@@ -1087,9 +1087,9 @@ Properties :
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
           <maml:name>Tag</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The set of tags to use for update.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
           <dev:type>
             <maml:name>System.Collections.Hashtable</maml:name>
@@ -1099,9 +1099,9 @@ Properties :
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
           <maml:name>Operation</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The update operation. Options are Merge, Replace and Delete.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">Merge</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Replace</command:parameterValue>
@@ -1116,9 +1116,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -1128,9 +1128,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -1139,9 +1139,9 @@ Properties :
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -1153,9 +1153,9 @@ Properties :
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with azure.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
@@ -1165,9 +1165,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceId</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -1177,9 +1177,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
         <maml:name>Tag</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The set of tags to use for update.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
         <dev:type>
           <maml:name>System.Collections.Hashtable</maml:name>
@@ -1189,9 +1189,9 @@ Properties :
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
         <maml:name>Operation</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The update operation. Options are Merge, Replace and Delete.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
@@ -1201,9 +1201,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -1213,9 +1213,9 @@ Properties :
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -1327,7 +1327,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/en-us/powershell/module/az.resources/update-aztag</maml:uri>
+        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/update-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>

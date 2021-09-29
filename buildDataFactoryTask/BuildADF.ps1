@@ -30,8 +30,6 @@ try {
     [string]$Action     = Get-VstsInput -Name "Action" -Require;
     [string]$ConfigFolder = Get-VstsInput -Name "DataFactoryConfigPath"
 
-    DataFactoryConfigPath
-
     $global:ErrorActionPreference = 'Continue';
 
     Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";

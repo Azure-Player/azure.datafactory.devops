@@ -239,13 +239,14 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 
 # Related modules
-This task includes the following modules:  
+These tasks include the following modules:  
 - [azure.datafactory.tools - ver.0.91.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.91.0)
 - [Az.DataFactory - ver.1.14.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.14.0)
 - [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
 - [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
 # History
+- 29 Sep 2021 - v.1.8   Added ADF config path to build task  
 - 28 Sep 2021 - v.1.7   Updated main module to ver. 0.91 with the following features:  
                         - Added retry action on failure of starting triggers  
                         - Build task validates config files  

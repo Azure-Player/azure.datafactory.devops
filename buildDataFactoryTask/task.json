@@ -37,6 +37,14 @@
                 "Export": "Validate & Export ARM Template"
             },
             "helpMarkDown": "Build validates files integrity. No outcome files.\nThe second option validates files and export ARM Template files like ADF UI does (ARM Template files as the result)."
+        },
+        {
+            "name": "DataFactoryConfigPath",
+            "type": "filePath",
+            "label": "Config Path",
+            "helpMarkDown": "Provide path to folder with config files. By default it's 'deployment' subfolder of ADF path.",
+            "required": false,
+            "visibleRule": "Action = Build"
         }
     ],
     "instanceNameFormat": "Validate ADF files",

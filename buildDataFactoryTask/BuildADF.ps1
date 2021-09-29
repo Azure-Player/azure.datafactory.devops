@@ -28,16 +28,20 @@ try {
     # Get inputs params
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
     [string]$Action     = Get-VstsInput -Name "Action" -Require;
-    
+    [string]$ConfigFolder = Get-VstsInput -Name "DataFactoryConfigPath"
+
+    DataFactoryConfigPath
+
     $global:ErrorActionPreference = 'Continue';
 
     Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
     Write-Host "RootFolder:         $RootFolder";
     Write-Host "Action:             $Action";
+    Write-Host "ConfigFolder:       $ConfigFolder";
 
     if ($Action -eq 'Build')
     {
-        $noferrors = Test-AdfCode -RootFolder "$RootFolder" 
+        $noferrors = Test-AdfCode -RootFolder "$RootFolder" -ConfigPath $ConfigFolder
         # Fail if any errors.
         if ($noferrors -gt 0) {
             Write-VstsSetResult -Result 'Failed' -Message "Build failed." -DoNotThrow

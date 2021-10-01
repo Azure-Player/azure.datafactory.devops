@@ -246,6 +246,7 @@ These tasks include the following modules:
 - [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
 # History
+- 01 Oct 2021 - v.1.9   Fixed [#147](https://github.com/SQLPlayer/azure.datafactory.tools/issues/147): Pipeline could be broken when contains array with 1 item in JSON file and any property was updated  
 - 29 Sep 2021 - v.1.8   Added ADF config path to build task  
 - 28 Sep 2021 - v.1.7   Updated main module to ver. 0.91 with the following features:  
                         - Added retry action on failure of starting triggers  

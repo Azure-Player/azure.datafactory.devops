@@ -45,6 +45,9 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
 * Tokenisation in config file allows replace any value by Environment Variable or Variable from DevOps Pipeline
 * Global Parameters
 * Export ARM Templates from JSON files (new!)
+* Support for Managed VNET and Managed Private Endpoint (new!)
+* Build function to support validation of files, dependencies and config
+* Test connections (Linked Services)
 
 For more details, please go to [documentation of azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/README.md).
 
@@ -205,7 +208,13 @@ The following validation will be perform:
 - Reads all files and validates its json format
 - Checks whether all dependant objects exist
 - Checks whether file name equals object name
-- (more soon...)
+- Validate configuration file(s) and its paths
+
+The task sets these 2 pipeline output variables:
+- AdfBuildTaskErrors
+- AdfBuildTaskWarnings
+
+You can use them in any subsequent tasks as any other DevOps variables: `$(AdfBuildTaskErrors)`
 
 ## Validate & Export ARM Template
 This action uses [**ADFUtilities** NPM package](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) provided by Microsoft. 
@@ -240,12 +249,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.0.91.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.91.0)
+- [azure.datafactory.tools - ver.0.95.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.95.0)
 - [Az.DataFactory - ver.1.14.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.14.0)
 - [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
 - [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
 # History
+- 23 Oct 2021 - v.1.10  Updated to ver.0.95 in order to fix a few issues.
 - 01 Oct 2021 - v.1.9   Fixed [#147](https://github.com/SQLPlayer/azure.datafactory.tools/issues/147): Pipeline could be broken when contains array with 1 item in JSON file and any property was updated  
 - 29 Sep 2021 - v.1.8   Added ADF config path to build task  
 - 28 Sep 2021 - v.1.7   Updated main module to ver. 0.91 with the following features:  

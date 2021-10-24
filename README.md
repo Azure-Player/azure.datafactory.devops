@@ -45,6 +45,9 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
 * Tokenisation in config file allows replace any value by Environment Variable or Variable from DevOps Pipeline
 * Global Parameters
 * Export ARM Templates from JSON files (new!)
+* Support for Managed VNET and Managed Private Endpoint (new!)
+* Build function to support validation of files, dependencies and config
+* Test connections (Linked Services)
 
 For more details, please go to [documentation of azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/README.md).
 
@@ -205,7 +208,13 @@ The following validation will be perform:
 - Reads all files and validates its json format
 - Checks whether all dependant objects exist
 - Checks whether file name equals object name
-- (more soon...)
+- Validate configuration file(s) and its paths
+
+The task sets these 2 pipeline output variables:
+- AdfBuildTaskErrors
+- AdfBuildTaskWarnings
+
+You can use them in any subsequent tasks as any other DevOps variables: `$(AdfBuildTaskErrors)`
 
 ## Validate & Export ARM Template
 This action uses [**ADFUtilities** NPM package](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) provided by Microsoft. 

@@ -39,9 +39,14 @@ try {
 
     if ($Action -eq 'Build')
     {
-        $noferrors = Test-AdfCode -RootFolder "$RootFolder" -ConfigPath $ConfigFolder
+        $r = Test-AdfCode -RootFolder "$RootFolder" -ConfigPath $ConfigFolder
+
+        # Set pipeline output variable
+        Write-Host "##vso[task.setvariable variable=AdfBuildTaskErrors]$($r.ErrorCount)"
+        Write-Host "##vso[task.setvariable variable=AdfBuildTaskWarnings]$($r.WarningCount)"
+
         # Fail if any errors.
-        if ($noferrors -gt 0) {
+        if ($r.ErrorCount -gt 0) {
             Write-VstsSetResult -Result 'Failed' -Message "Build failed." -DoNotThrow
         }
     }

@@ -17,7 +17,7 @@ $body = Get-Content $vssFile -Raw
 $JsonDoc = $body | ConvertFrom-Json
 $ver = $JsonDoc.Version
 $verarr = $ver.Split('.')
-$ver = "{0}.{1}.{2}" -f $verarr[0], $verarr[1], $versionPatch
+$ver = "{0}.{1}.{2}" -f $verarr[0], $verarr[1], [int]$verarr[2] + $versionPatch
 $verarr[2] = $versionPatch
 Write-Output "Module version: $ver"
 

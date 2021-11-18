@@ -18,11 +18,27 @@ Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell 
 For classic pipelines, you will find the Tasks available under the Deploy tab, or search for **adftools**:
 ![Adding Task](images/add-task.png)
 
+You can also use the tasks in a pipeline configured with a yml file, the three tasks are called `SQLPlayer.DataFactoryTools.BuildADF.BuildADFTask`, `SQLPlayer.DataFactoryTools.PublishADF.PublishADFTask` and `SQLPlayer.DataFactoryTools.TestADFLS.TestAdfLinkedServiceTask`.
+You can also use the DevOps UI to configure these tasks and then view the generated yml, to ensure the yml is correct.
+One example, in which we use the 'Build ADF' task:
+
+```yaml
+- job: 'build_adf'
+  displayName: 'Build Azure Data Factory'
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+    - task: SQLPlayer.DataFactoryTools.BuildADF.BuildADFTask@1
+      displayName: 'Validate ADF files'
+      inputs:
+        DataFactoryCodePath: '$(System.DefaultWorkingDirectory)/data-factory'
+        Action: Build
+```
 
 # Publish Azure Data Factory
 ![](./images/task-publish.png)
 
-Use this to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
+Use this task to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
 For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@1`.
 
 
@@ -61,11 +77,11 @@ For more details, please go to [documentation of azure.datafactory.tools](https:
 | Azure Data Factory Path | `DataFactoryCodePath` | Path from the repo root to the ADF folder which should contains sub-folders like 'pipeline', 'dataset', etc.|
 | Target Region | `Location` | Azure Region of target Data Factory. Required, but used only when creating a new instance of ADF|
 | Environment Config Type | `StageType` | Specifies how you would provide set of parameters for Stage.  |
-| Environment (stage) | `StageCode` | Allows pointing configuration with values for all properties who need to be replaced. <br/> If parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exists in repo.|
+| Environment (stage) | `StageCode` | Allows pointing configuration with values for all properties who need to be replaced. <br/> If parameter is specified, a CSV file named './deployment/config-{stage}.csv' must exist in repo.|
 | Environment (stage) Config File Path | `StageConfigFile` | Allows pointing configuration with values for all properties who need to be replaced. <br/>If specified, CSV config file name must ends with '.csv'|
-| Delete objects not in source | `DeleteNotInSource` | Indicates whether the deployment process should removing objects not existing in the source (code)|
-| Stop/Start triggers | `StopStartTriggers` | Indicates whether or not to stop the triggers before beginning deployment and start them afterwards|
-| Create new ADF instance | `CreateNewInstance` | Indicates whether or not to create a new ADF if target instance doesn't exist yet.|
+| Delete objects not in source | `DeleteNotInSource` | Indicates whether the deployment process should remove objects not existing in the source (code)|
+| Stop/Start triggers | `StopStartTriggers` | Indicates whether to stop the triggers before beginning deployment and start them afterwards|
+| Create new ADF instance | `CreateNewInstance` | Indicates whether to create a new ADF if target instance doesn't exist yet.|
 | Filtering Type | `FilteringType` | Type of filtering ADF objects: File Path or Inline Text Field |
 | Include/Exclude Filtering Text | `FilterText` | Multi-line or comma-separated list of objects to be included or excluded in the deployment. <br/>For example, see below. |
 | Include/Exclude Filtering File Path | `FilterTextFile` | Multi-line or comma-separated list of objects to be included/excluded in/from the deployment. <br/>For example, see below. | 
@@ -199,12 +215,13 @@ If char (+/-) is not provided – an inclusion rule would be applied.
 ![](./images/task-build.png)
 
 Another very helpful task is `Build Azure Data Factory`. 
-The task has two actions to be choose to be done:
+The task has two actions to be chosen:
 
 ## Build only
-Use it to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
-The function validates files of ADF in a given location, returning warnings or errors.  
-The following validation will be perform:
+Use this action to validate the code of your Azure Data Factory before you publish it onto target ADF service. 
+The function validates files of ADF in a given location, returning warnings or errors. 
+This validation functionality is implemented in this task, so it is not the same implementation as behind the 'Validate all' button in the ADF UI.
+The following validation will be performed:
 - Reads all files and validates its json format
 - Checks whether all dependant objects exist
 - Checks whether file name equals object name
@@ -213,19 +230,21 @@ The following validation will be perform:
 The task sets these 2 pipeline output variables:
 - AdfBuildTaskErrors
 - AdfBuildTaskWarnings
+These variables will contain the number of errors or warnings found.
 
 You can use them in any subsequent tasks as any other DevOps variables: `$(AdfBuildTaskErrors)`
 
 ## Validate & Export ARM Template
 This action uses [**ADFUtilities** NPM package](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) provided by Microsoft. 
 It does exactly the same actions as you can do with ADF UI by clicking **Validate all** and then **Export ARM Template**.
+Therefore, this is a different implementation as the other action described above.
 So finally, you can automate this step and fully automate ADF deployment, even if you prefer to use [Microsoft's approach](https://docs.microsoft.com/en-us/azure/data-factory/continuous-integration-deployment-improvements) with ARM Template.
 
 ### Parameters:  
 - `DataFactoryCodePath` - Source folder where all ADF objects are kept. The folder should contain subfolders like pipeline, linkedservice, etc.
 - `Action` - One of two actions to be executed:
-  - `Build only (simple validate)` - Validates files integrity. No outcome files.
-  - `Validate & Export ARM Template` - Validates files and export ARM Template files like ADF UI does. ARM Template files as the result. It uses ADFUtilities NPM package provided by Microsoft.
+  - `Build only (simple validate)` (`Build` for in YAML task) - Validates files integrity. No outcome files.
+  - `Validate & Export ARM Template` (`Export` for in YAML task) - Validates files and export ARM Template files like ADF UI does. ARM Template files as the result. It uses ADFUtilities NPM package provided by Microsoft.
 
 ### Screenshot of Build Task 
 ![Task](images/AzureDevOps-build-ADF-task-screenshot.png)

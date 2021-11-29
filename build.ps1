@@ -99,7 +99,7 @@ $JsonDoc = $body | ConvertFrom-Json
 $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1])
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
-    $body = $body.Replace('"id": "ecb868a7-3c51-4925-a4b5-c63321b51700",', '"id": "9cb687ea-a4f1-45d5-a568-98dc85fd3f1b",')
+    $body = $body.Replace('"id": "ecb868a7-3c51-4925-a4b5-c63321b51700",', '"id": "f38a9662-edd3-4af5-b4c2-35f4d3e31dda",')
     $body = $body.Replace('"friendlyName": "Azure Data Factory Deployment (ARM)",', '"friendlyName": "Azure Data Factory Deployment (ARM) (BETA)",')
 }
 $body | Out-File "$taskFile" -Encoding utf8

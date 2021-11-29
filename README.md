@@ -266,6 +266,14 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 ![Task](images/AzureDevOps-test-Linked-Services-task-screenshot.png)
 
 
+
+# ADF Deployment from ARM Template files
+
+...
+
+### Screenshot of ADF Deployment Task 
+
+
 # Related modules
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.0.95.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.95.0)

@@ -61,6 +61,9 @@
             "path": "testLinkedServiceTask"
         },
         {
+            "path": "deployAdfFromArmTask"
+        },
+        {
             "path": "images",
             "addressable": true
         }
@@ -94,6 +97,16 @@
             ],
             "properties": {
                 "name": "testLinkedServiceTask"
+            }
+        }
+        ,{
+            "id": "DeployADFFromArm",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "deployAdfFromArmTask"
             }
         }
     ]

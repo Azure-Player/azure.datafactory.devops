@@ -43,7 +43,10 @@ try {
     [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
     [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
     [string]$Location = Get-VstsInput -Name "location" -Require;
-    
+    [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
+    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
+    [boolean]$DeployGlobalParams = Get-VstsInput -Name "DeployGlobalParams" -AsBool;
+
     $global:ErrorActionPreference = 'Stop';
 
     Write-Debug "Invoking Publish-AdfV2UsingArm (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
@@ -52,10 +55,15 @@ try {
     Write-Debug "Location:               $Location";
     Write-Debug "TemplateFile:           $RootFolder";
     Write-Debug "TemplateParameterFile:  $RootFolder";
+
+    # Options
+    $opt = New-AdfPublishOption 
+    $opt.StopStartTriggers = $StopStartTriggers
+    $opt.CreateNewInstance = $CreateNewInstance
+    $opt.DeployGlobalParams = $DeployGlobalParams
     Publish-AdfV2UsingArm -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile `
         -ResourceGroupName $ResourceGroupName -Location $Location `
-        -DataFactory $DataFactoryName
-
+        -DataFactory $DataFactoryName -Option $opt
 
     Write-Host ""
     Write-Host "========================================================================================================="

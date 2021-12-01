@@ -142,7 +142,7 @@ function Publish-AdfV2UsingArm {
         $o.name = $ArmName.ToString().Substring(37, $ArmName.ToString().Length - 40)
         $o.type = ConvertTo-AdfType $ArmType
         $o.adf = $adf
-        $adf.Pipelines.Add($o)
+        $adf.Pipelines.Add($o) | Out-Null
     }
     if ($armParam.parameters.factoryName.value -ne $DataFactoryName) {
         Write-Error "Given factory name does not match name in ARMTemplate parameter file. The deployment stopped."

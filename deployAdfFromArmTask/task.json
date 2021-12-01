@@ -119,8 +119,25 @@
             "helpMarkDown": "Indicates whether or not to create a new ADF if target instance doesn't exist yet.",
             "groupname": "Options",
             "required": false
+        },
+        {
+            "name": "StopStartTriggers",
+            "type": "boolean",
+            "label": "Stop/Start triggers",
+            "defaultValue": "false",
+            "helpMarkDown": "Indicates whether or not to stop the triggers before beginning deployment and start them afterwards (via provided pre & post-deployment script).",
+            "groupname": "Options",
+            "required": false
+        },
+        {
+            "name": "DeployGlobalParams",
+            "type": "boolean",
+            "label": "Deploy Global Parameters",
+            "defaultValue": "false",
+            "helpMarkDown": "Indicates whether or not to deploy Global Parameters (via provided post-deployment script).",
+            "groupname": "Options",
+            "required": false
         }
-
         
     ],
     "dataSourceBindings": [

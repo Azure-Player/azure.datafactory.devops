@@ -18,7 +18,7 @@
      },
      "releaseNotes": "",
      "showEnvironmentVariables": false,
-    "inputs": [
+     "inputs": [
         {
             "name": "DataFactoryCodePath",
             "type": "filePath",
@@ -45,6 +45,30 @@
             "helpMarkDown": "Provide path to folder with config files. By default it's 'deployment' subfolder of ADF path.",
             "required": false,
             "visibleRule": "Action = Build"
+        },
+        {
+            "name": "SubscriptionId",
+            "type": "string",
+            "label": "SubscriptionId",
+            "helpMarkDown": "",
+            "required": false,
+            "visibleRule": "Action = Export"
+        },
+        {
+            "name": "ResourceGroup",
+            "type": "string",
+            "label": "Resource Group Name",
+            "helpMarkDown": "Provide the name of the Resource Group.",
+            "required": false,
+            "visibleRule": "Action = Export"
+        },
+        {
+            "name": "AdfUtilitiesVersion",
+            "type": "string",
+            "label": "Adf Utilities Version",
+            "helpMarkDown": "Provide the version if you must use particular one, otherwise remain empty.\nCheck out recent version: [azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities)",
+            "required": false,
+            "visibleRule": "Action = Export"
         }
     ],
     "instanceNameFormat": "Validate ADF files",

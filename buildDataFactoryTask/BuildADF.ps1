@@ -29,6 +29,9 @@ try {
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
     [string]$Action     = Get-VstsInput -Name "Action" -Require;
     [string]$ConfigFolder = Get-VstsInput -Name "DataFactoryConfigPath"
+    [string]$SubscriptionId = Get-VstsInput -Name "SubscriptionId"
+    [string]$ResourceGroup = Get-VstsInput -Name "ResourceGroup"
+    [string]$AdfUtilitiesVersion = Get-VstsInput -Name "AdfUtilitiesVersion"
 
     $global:ErrorActionPreference = 'Continue';
 
@@ -53,29 +56,12 @@ try {
 
     if ($Action -eq 'Export')
     {
-        Set-Location $RootFolder
 
-        Write-Host "=== Preparing package.json file..."
-        $packageSourceFile = "$PSScriptRoot\ext\package.json"
-        Copy-Item -Path $packageSourceFile -Destination $RootFolder
-        Write-Host "=== File copied."
+        Export-AdfToArmTemplate -RootFolder $RootFolder `
+            -SubscriptionId $SubscriptionId `
+            -ResourceGroup $ResourceGroup `
+            -AdfUtilitiesVersion $AdfUtilitiesVersion
 
-        # Validate and export ARM Template using @microsoft/azure-data-factory-utilities module
-        Write-Host "=== Check NPM Version..."
-        npm version
-        Write-Host "=== Check finished."
-
-        Write-Host "=== Installing NPM azure-data-factory-utilities..."
-        npm i @microsoft/azure-data-factory-utilities
-        Write-Host "=== Installation finished."
-
-        $adf = Split-Path -Path $RootFolder -Leaf
-        $adfAzurePath = "/subscriptions/ffff-ffff/resourceGroups/abcxyz/providers/Microsoft.DataFactory/factories/$adf"
-
-        Write-Host "=== Validating & exporting ARM Template..."
-        Write-Verbose "npm run build export $RootFolder $adfAzurePath ""ArmTemplate"""
-        npm run build export $RootFolder $adfAzurePath "ArmTemplate"
-        Write-Host "=== Export finished."
     }
 
 

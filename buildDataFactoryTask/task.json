@@ -68,6 +68,16 @@
             "label": "Adf Utilities Version",
             "helpMarkDown": "Provide the version if you must use particular one, otherwise remain empty.\nCheck out recent version: [azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities)",
             "required": false,
+            "defaultValue": "0.1.6",
+            "visibleRule": "Action = Export"
+        },
+        {
+            "name": "OutputFolder",
+            "type": "string",
+            "label": "Output Folder",
+            "helpMarkDown": "Target location where ARM Template files will be generated to",
+            "required": false,
+            "defaultValue": "ArmTemplate",
             "visibleRule": "Action = Export"
         }
     ],

@@ -32,7 +32,8 @@ try {
     [string]$SubscriptionId = Get-VstsInput -Name "SubscriptionId"
     [string]$ResourceGroup = Get-VstsInput -Name "ResourceGroup"
     [string]$AdfUtilitiesVersion = Get-VstsInput -Name "AdfUtilitiesVersion"
-
+    [string]$OutputFolder = Get-VstsInput -Name "OutputFolder"
+    
     $global:ErrorActionPreference = 'Continue';
 
     Write-Host "Invoking Test-AdfCode (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
@@ -60,7 +61,8 @@ try {
         Export-AdfToArmTemplate -RootFolder $RootFolder `
             -SubscriptionId $SubscriptionId `
             -ResourceGroup $ResourceGroup `
-            -AdfUtilitiesVersion $AdfUtilitiesVersion
+            -AdfUtilitiesVersion $AdfUtilitiesVersion `
+            -OutputFolder $OutputFolder
 
     }
 

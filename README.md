@@ -268,13 +268,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.0.95.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.95.0)
+- [azure.datafactory.tools - ver.0.95.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.95.1)
 - [Az.DataFactory - ver.1.14.0](https://www.powershellgallery.com/packages/Az.DataFactory/1.14.0)
 - [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
 - [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
 # History
-- 07 Dec 2021 - v.1.11  Updated to ver.0.95 in order to fix a few issues.
+- 07 Dec 2021 - v.1.11  Updated to ver.0.95.1 in order to fix a few issues, including: [#171](https://github.com/SQLPlayer/azure.datafactory.tools/issues/171).
 - 24 Oct 2021 - v.1.10  Added: Build task sets 2 pipeline output variables: AdfBuildTaskErrors & AdfBuildTaskWarnings
 - 01 Oct 2021 - v.1.9   Fixed [#147](https://github.com/SQLPlayer/azure.datafactory.tools/issues/147): Pipeline could be broken when contains array with 1 item in JSON file and any property was updated  
 - 29 Sep 2021 - v.1.8   Added ADF config path to build task  

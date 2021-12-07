@@ -25,7 +25,6 @@ param
                 $globalParameterValue = $gp.Value.ToObject([Microsoft.Azure.Management.DataFactory.Models.GlobalParameterSpecification])
                 $newGlobalParameters.Add($gp.Key, $globalParameterValue)
             }
-            $targetAdf = Get-AzDataFactoryV2 -ResourceGroupName $adf.ResourceGroupName -Name $adf.Name
             $targetAdf.GlobalParameters = $newGlobalParameters
 
             # Write-Host "--- newGlobalParameters ---"

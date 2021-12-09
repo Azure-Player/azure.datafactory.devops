@@ -5,7 +5,9 @@ param
     [int]     [Parameter(Mandatory = $false)] $build = 0
 )
 # $isProd = $false
-
+#Install node-modules and bundle OpenSSL
+cd $PSScriptRoot
+npm run build
 $now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
@@ -92,6 +94,3 @@ Write-Output "File task #3 updated."
 
 
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin
-
-
-

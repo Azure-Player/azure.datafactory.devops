@@ -87,6 +87,7 @@ For more details, please go to [documentation of azure.datafactory.tools](https:
 | Include/Exclude Filtering File Path | `FilterTextFile` | Multi-line or comma-separated list of objects to be included/excluded in/from the deployment. <br/>For example, see below. | 
 | Do not Stop/Start excluded triggers | `DoNotStopStartExcludedTriggers` | Specifies whether excluded triggers will be stopped before deployment. |
 | Do not delete excluded objects | `DoNotDeleteExcludedObjects` | Specifies whether excluded objects can be removed. Applies when `DeleteNotInSource` is set to *True* only. |
+| Ignore lack of referenced object | `IgnoreLackOfReferencedObject` | Usually, the deployment will fail if a resource is referenced that's not present in a JSON file. Set to *True* to warn instead of failing. |
 
 
 ## Environment (stage) 

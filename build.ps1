@@ -21,7 +21,7 @@ $ver = "{0}.{1}.{2}" -f $verarr[0], $verarr[1], $versionPatch
 $verarr[2] = $versionPatch
 Write-Output "Module version: $ver"
 
-#replace with regex
+# Replace with regex
 $v = '"version": "'+$JsonDoc.Version+'",'
 $nv = '"version": "'+$ver+'",'
 if (!$isProd) {
@@ -35,7 +35,7 @@ $body = $body.Replace($v, $nv)
 $body  | Out-File "$vssFile" -Encoding utf8
 Write-Output "File vss updated."
 
-# Update task's manifest
+# deployDataFactoryTask: Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployDataFactoryTask\task.json'
 #Copy-Item -Path $taskFile -Destination "$taskFile - copy"
 Write-Output "Updating version for task definition in file: $taskFile"
@@ -58,7 +58,7 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #1 updated."
 
 
-# Update task's manifest
+# buildDataFactoryTask: Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'buildDataFactoryTask\task.json'
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
@@ -74,7 +74,7 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #2 updated."
 
 
-# Update task's manifest
+# testLinkedServiceTask: Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'testLinkedServiceTask\task.json'
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
@@ -88,6 +88,22 @@ if (!$isProd) {
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #3 updated."
+
+
+# deployAdfFromArmTask: Update task's manifest
+$taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployAdfFromArmTask\task.json'
+Write-Output "Updating version for task definition in file: $taskFile"
+$body = $JsonDoc = Get-Content $taskFile -Raw
+$JsonDoc = $body | ConvertFrom-Json
+#$body = $body.Replace('"Major": '+$JsonDoc.version.Major, '"Major": '+$verarr[0])
+$body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1])
+$body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
+if (!$isProd) {
+    $body = $body.Replace('"id": "ecb868a7-3c51-4925-a4b5-c63321b51700",', '"id": "f38a9662-edd3-4af5-b4c2-35f4d3e31dda",')
+    $body = $body.Replace('"friendlyName": "Azure Data Factory Deployment (ARM)",', '"friendlyName": "Azure Data Factory Deployment (ARM) (BETA)",')
+}
+$body | Out-File "$taskFile" -Encoding utf8
+Write-Output "File task #4 updated."
 
 
 

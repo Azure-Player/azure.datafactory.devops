@@ -3,10 +3,10 @@ param()
 
 <#
 	.SYNOPSIS
-    Publishes Azure Data Factory using code from JSON files specified DAC publish profile from your solution.
+    Publishes Azure Data Factory using code from JSON files.
 
 	.DESCRIPTION
-    Publishes Azure Data Factory using code from JSON files specified DAC publish profile from your solution.
+    Publishes Azure Data Factory using code from JSON files.
 
     Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2020 for Azure DevOps extension
     Source code and documentation: https://github.com/SQLPlayer/azure.datafactory.devops

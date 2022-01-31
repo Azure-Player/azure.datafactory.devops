@@ -198,6 +198,15 @@
             "helpMarkDown": "Specifies whether excluded objects can be removed. Applies when `DeleteNotInSource` is set to *True* only.",
             "groupname": "advanced",
             "required": false
+        },
+        {
+            "name": "IgnoreLackOfReferencedObject",
+            "type": "boolean",
+            "label": "Ignore missing referenced objects",
+            "defaultValue": "false",
+            "helpMarkDown": "Usually, the deployment will fail if a resource is referenced that's not present in a JSON file. Set to *True* to warn instead of failing.",
+            "groupname": "advanced",
+            "required": false
         }
     ],
     "dataSourceBindings": [

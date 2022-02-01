@@ -5,13 +5,29 @@ param
     [int]     [Parameter(Mandatory = $false)] $build = 0
 )
 # $isProd = $false
-#Install node-modules and bundle OpenSSL
-cd $PSScriptRoot
-npm run build
+
 $now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
 if ($build -gt 0) { $versionPatch = $build }
+
+# OpenSSL - download zip file
+$openSslUrl = 'https://vstsagenttools.blob.core.windows.net/tools/openssl/1.0.2/M138/openssl.zip'
+mkdir 'bin' -ErrorAction 'Continue'
+Invoke-WebRequest -uri $openSslUrl -Method "GET" -Outfile "bin\openssl.zip"
+$openSslZip = Resolve-Path "bin\openssl.zip"
+
+function Expand-Zip {
+    [CmdletBinding()]
+    param (
+        [String] $ZipFile,
+        [String] $TaskFolder
+    )
+    Expand-Archive -Path $ZipFile -DestinationPath ".\$TaskFolder\ps_modules\VstsAzureHelpers_\openssl"
+    Remove-Item -Path ".\$TaskFolder\ps_modules\VstsAzureHelpers_\openssl\OpenSSL License.txt" -Force
+    Write-Output "OpenSSL extracted."
+}
+
 
 # Update extension's manifest
 $vssFile = Join-Path -Path (Get-Location) -ChildPath 'vss-extension.json'
@@ -37,6 +53,7 @@ $body = $body.Replace($v, $nv)
 $body  | Out-File "$vssFile" -Encoding utf8
 Write-Output "File vss updated."
 
+# TASK: deployDataFactoryTask
 # Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployDataFactoryTask\task.json'
 #Copy-Item -Path $taskFile -Destination "$taskFile - copy"
@@ -58,8 +75,9 @@ if (!$isProd) {
 #$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #1 updated."
+Expand-Zip -ZipFile $openSslZip -TaskFolder 'deployDataFactoryTask'
 
-
+# TASK: buildDataFactoryTask
 # Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'buildDataFactoryTask\task.json'
 Write-Output "Updating version for task definition in file: $taskFile"
@@ -76,6 +94,7 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #2 updated."
 
 
+# TASK: testLinkedServiceTask
 # Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'testLinkedServiceTask\task.json'
 Write-Output "Updating version for task definition in file: $taskFile"
@@ -90,6 +109,7 @@ if (!$isProd) {
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #3 updated."
+Expand-Zip -ZipFile $openSslZip -TaskFolder 'testLinkedServiceTask'
 
 
 

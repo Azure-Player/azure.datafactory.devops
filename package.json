@@ -1,0 +1,6 @@
+{
+
+ "scripts": {
+    "build": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./BundleOpenSSL.ps1"
+}
+}

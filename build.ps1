@@ -11,6 +11,24 @@ $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
 if ($build -gt 0) { $versionPatch = $build }
 
+# OpenSSL - download zip file
+$openSslUrl = 'https://vstsagenttools.blob.core.windows.net/tools/openssl/1.0.2/M138/openssl.zip'
+mkdir 'bin' -ErrorAction 'Continue'
+Invoke-WebRequest -uri $openSslUrl -Method "GET" -Outfile "bin\openssl.zip"
+$openSslZip = Resolve-Path "bin\openssl.zip"
+
+function Expand-Zip {
+    [CmdletBinding()]
+    param (
+        [String] $ZipFile,
+        [String] $TaskFolder
+    )
+    Expand-Archive -Path $ZipFile -DestinationPath ".\$TaskFolder\ps_modules\VstsAzureHelpers_\openssl"
+    Remove-Item -Path ".\$TaskFolder\ps_modules\VstsAzureHelpers_\openssl\OpenSSL License.txt" -Force
+    Write-Output "OpenSSL extracted."
+}
+
+
 # Update extension's manifest
 $vssFile = Join-Path -Path (Get-Location) -ChildPath 'vss-extension.json'
 $body = Get-Content $vssFile -Raw
@@ -56,7 +74,7 @@ if (!$isProd) {
 #$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #1 updated."
-
+Expand-Zip -ZipFile $openSslZip -TaskFolder 'deployDataFactoryTask'
 
 # buildDataFactoryTask: Update task's manifest
 $taskFile = Join-Path -Path (Get-Location) -ChildPath 'buildDataFactoryTask\task.json'
@@ -88,6 +106,7 @@ if (!$isProd) {
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #3 updated."
+Expand-Zip -ZipFile $openSslZip -TaskFolder 'testLinkedServiceTask'
 
 
 # deployAdfFromArmTask: Update task's manifest
@@ -108,6 +127,3 @@ Write-Output "File task #4 updated."
 
 
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin
-
-
-

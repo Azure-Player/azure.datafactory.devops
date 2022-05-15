@@ -165,7 +165,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Get all predefined tags --------------</maml:title>
-        <dev:code>PS C:\&gt;Get-AzTag
+        <dev:code>Get-AzTag
 
 Name      Count
 ========  =====
@@ -181,7 +181,7 @@ CostCenter   20</dev:code>
       </command:example>
       <command:example>
         <maml:title>----------------- Example 2: Get a tag by name -----------------</maml:title>
-        <dev:code>PS C:\&gt;Get-AzTag -Name "Department"
+        <dev:code>Get-AzTag -Name "Department"
 
 Name:   Department
 Count:  5
@@ -200,7 +200,7 @@ Values:
       </command:example>
       <command:example>
         <maml:title>-------------- Example 3: Get values of all tags --------------</maml:title>
-        <dev:code>PS C:\&gt;Get-AzTag -Detailed
+        <dev:code>Get-AzTag -Detailed
 
 Name:   Department
 Count:  5
@@ -235,7 +235,7 @@ Values:
       </command:example>
       <command:example>
         <maml:title>--- Example 4: Get the entire set of tags on a subscription ---</maml:title>
-        <dev:code>PS C:\&gt;Get-AzTag -ResourceId /subscriptions/{subId}
+        <dev:code>Get-AzTag -ResourceId /subscriptions/{subId}
 
 Id         : {Id}
 Name       : {Name}
@@ -253,7 +253,7 @@ Properties :
       </command:example>
       <command:example>
         <maml:title>----- Example 5: Get the entire set of tags on a resource -----</maml:title>
-        <dev:code>PS C:\&gt;Get-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1
+        <dev:code>Get-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1
 
 Id         : {Id}
 Name       : {Name}
@@ -450,18 +450,6 @@ Properties :
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
-        <maml:name>Value</maml:name>
-        <maml:description>
-          <maml:para>Specifies a predefined tag value. Predefined tags can have multiple values, but you can enter only one value in each command. This parameter is optional, because tags can have names without values.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-        <dev:type>
-          <maml:name>System.String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceId</maml:name>
         <maml:description>
@@ -482,6 +470,18 @@ Properties :
         <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
         <dev:type>
           <maml:name>System.Collections.Hashtable</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:description>
+          <maml:para>Specifies a predefined tag value. Predefined tags can have multiple values, but you can enter only one value in each command. This parameter is optional, because tags can have names without values.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -547,8 +547,8 @@ Properties :
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Create a predefined tag --------------</maml:title>
-        <dev:code>PS C:\&gt;New-AzTag -Name "FY2015"
-                                
+        <dev:code>New-AzTag -Name "FY2015"
+
 Name   ValuesTable Count Values 
 ----   ----------- ----- ------
 FY2015             0     {}</dev:code>
@@ -560,7 +560,8 @@ FY2015             0     {}</dev:code>
       </command:example>
       <command:example>
         <maml:title>------- Example 2: Create a predefined tag with a value -------</maml:title>
-        <dev:code>PS C:\&gt;New-AzTag -Name "Department" -Value "Finance"
+        <dev:code>New-AzTag -Name "Department" -Value "Finance"
+
 Name:   Department
 Count:  0
 Values: 
@@ -576,14 +577,15 @@ Values:
       </command:example>
       <command:example>
         <maml:title>---------- Example 3: Add a value to a predefined tag ----------</maml:title>
-        <dev:code>PS C:\&gt;New-AzTag -Name "Department" -Value "Finance"
+        <dev:code>New-AzTag -Name "Department" -Value "Finance"
+
 Name:   Department
 Count:  0
 Values: 
         Name        Count
         =========   =====
         Finance     0 
-PS C:\&gt;New-AzTag -Name "Department" -Value "IT"
+New-AzTag -Name "Department" -Value "IT"
 Name:   Department
 Count:  0
 Values: 
@@ -599,14 +601,14 @@ Values:
       </command:example>
       <command:example>
         <maml:title>--------------- Example 4: Use a predefined tag ---------------</maml:title>
-        <dev:code>PS C:\&gt;New-AzTag -Name "CostCenter" -Value "0001"
+        <dev:code>New-AzTag -Name "CostCenter" -Value "0001"
 Name:   CostCenter
 Count:  0
 Values: 
         Name        Count
         =========   =====
         0001        0 
-PS C:\&gt;Set-AzResourceGroup -Name "EngineerBlog" -Tag @{Name="CostCenter";Value="0001"}
+Set-AzResourceGroup -Name "EngineerBlog" -Tag @{Name="CostCenter";Value="0001"}
 Name:      EngineerBlog
 Location:  East US
 Resources: 
@@ -620,14 +622,14 @@ Tags:
     Name         Value
     ==========   =====
     CostCenter   0001 
-PS C:\&gt;Get-AzTag -Name "CostCenter"
+Get-AzTag -Name "CostCenter"
 Name:   CostCenter
 Count:  1
 Values: 
         Name        Count
         =========   =====
         0001        1 
-PS C:\&gt;Get-AzResourceGroup -Tag @{Name="CostCenter"}
+Get-AzResourceGroup -Tag @{Name="CostCenter"}
 Name:      EngineerBlog
 Location:  East US
 Resources: 
@@ -649,8 +651,8 @@ Tags:
       </command:example>
       <command:example>
         <maml:title>Example 5: Creates or updates the entire set of tags on a subscription</maml:title>
-        <dev:code>PS C:\&gt;$Tags = @{"tagKey1"="tagValue1"; "tagKey2"="tagValue2"}
-PS C:\&gt;New-AzTag -ResourceId /subscriptions/{subId} -Tag $Tags
+        <dev:code>$Tags = @{"tagKey1"="tagValue1"; "tagKey2"="tagValue2"}
+New-AzTag -ResourceId /subscriptions/{subId} -Tag $Tags
 
 Id         : {Id}
 Name       : {Name}
@@ -668,8 +670,8 @@ Properties :
       </command:example>
       <command:example>
         <maml:title>Example 6: Creates or updates the entire set of tags on a resource</maml:title>
-        <dev:code>PS C:\&gt;$Tags = @{"Dept"="Finance"; "Status"="Normal"}
-PS C:\&gt;New-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -Tag $Tags
+        <dev:code>$Tags = @{"Dept"="Finance"; "Status"="Normal"}
+New-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -Tag $Tags
 
 Id         : {Id}
 Name       : {Name}
@@ -804,6 +806,17 @@ Properties :
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+            <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>ResourceId</maml:name>
           <maml:description>
@@ -815,17 +828,6 @@ Properties :
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>PassThru</maml:name>
-          <maml:description>
-            <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -876,17 +878,17 @@ Properties :
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
-        <maml:name>Value</maml:name>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
         <maml:description>
-          <maml:para>Deletes the specified values from the predefined tag, but does not delete the tag.</maml:para>
+          <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>System.String[]</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
         <maml:name>ResourceId</maml:name>
@@ -900,17 +902,17 @@ Properties :
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-        <maml:name>PassThru</maml:name>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+        <maml:name>Value</maml:name>
         <maml:description>
-          <maml:para>Returns an object that represents the deleted tag or the resulting tag with deleted valued.</maml:para>
+          <maml:para>Deletes the specified values from the predefined tag, but does not delete the tag.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
         <dev:type>
-          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:name>System.String[]</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
+        <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -981,7 +983,7 @@ Properties :
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Delete a predefined tag --------------</maml:title>
-        <dev:code>PS C:\&gt;Remove-AzTag -Name "Department"</dev:code>
+        <dev:code>Remove-AzTag -Name "Department"</dev:code>
         <dev:remarks>
           <maml:para>This command deletes the predefined tag named Department and all of its values. If the tag has been applied to any resources or resource groups, the command fails.</maml:para>
 <maml:para></maml:para>
@@ -990,7 +992,8 @@ Properties :
       </command:example>
       <command:example>
         <maml:title>------- Example 2: Delete a value from a predefined tag -------</maml:title>
-        <dev:code>PS C:\&gt;Remove-AzTag -Name "Department" -Value "HumanResources" -PassThru
+        <dev:code>Remove-AzTag -Name "Department" -Value "HumanResources" -PassThru
+
 Name:   Department
 Count:  14
 Values: 
@@ -1008,7 +1011,7 @@ Values:
       </command:example>
       <command:example>
         <maml:title>- Example 3: Deletes the entire set of tags on a subscription -</maml:title>
-        <dev:code>PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}</dev:code>
+        <dev:code>Remove-AzTag -ResourceId /subscriptions/{subId}</dev:code>
         <dev:remarks>
           <maml:para>This command deletes the entire set of tags on the subscription with {subId}. It will not return the object deleted if not passing in "-PassThru".</maml:para>
 <maml:para></maml:para>
@@ -1017,7 +1020,7 @@ Values:
       </command:example>
       <command:example>
         <maml:title>--- Example 4: Deletes the entire set of tags on a resource ---</maml:title>
-        <dev:code>PS C:\&gt;Remove-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -PassThru
+        <dev:code>Remove-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -PassThru
 
 Id         : {Id}
 Name       : {Name}
@@ -1073,11 +1076,6 @@ Properties :
           <maml:description>
             <maml:para>The resource identifier for the tagged entity. A resource, a resource group or a subscription may be tagged.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Merge</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Replace</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Delete</command:parameterValue>
-          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -1163,6 +1161,18 @@ Properties :
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
+        <maml:name>Operation</maml:name>
+        <maml:description>
+          <maml:para>The update operation. Options are Merge, Replace and Delete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</command:parameterValue>
+        <dev:type>
+          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceId</maml:name>
         <maml:description>
@@ -1183,18 +1193,6 @@ Properties :
         <command:parameterValue required="true" variableLength="false">System.Collections.Hashtable</command:parameterValue>
         <dev:type>
           <maml:name>System.Collections.Hashtable</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
-        <maml:name>Operation</maml:name>
-        <maml:description>
-          <maml:para>The update operation. Options are Merge, Replace and Delete.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</command:parameterValue>
-        <dev:type>
-          <maml:name>Microsoft.Azure.Commands.Tags.Model.TagPatchOperation</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -1268,8 +1266,8 @@ Properties :
     <command:examples>
       <command:example>
         <maml:title>Example 1: Selectively updates the set of tags on a subscription with "Merge" Operation</maml:title>
-        <dev:code>PS C:\&gt;$mergedTags = @{"key1"="value1"; "key3"="value3";}
-PS C:\&gt;Update-AzTag -ResourceId /subscriptions/{subId} -Tag $mergedTags -Operation Merge
+        <dev:code>$mergedTags = @{"key1"="value1"; "key3"="value3";}
+Update-AzTag -ResourceId /subscriptions/{subId} -Tag $mergedTags -Operation Merge
 
 Id         : {Id}
 Name       : {Name}
@@ -1288,8 +1286,8 @@ Properties :
       </command:example>
       <command:example>
         <maml:title>Example 2: Selectively updates the set of tags on a subscription with "Replace" Operation</maml:title>
-        <dev:code>PS C:\&gt;$replacedTags = @{"key1"="value1"; "key3"="value3";}
-PS C:\&gt;Update-AzTag -ResourceId /subscriptions/{subId} -Tag $replacedTags -Operation Replace
+        <dev:code>$replacedTags = @{"key1"="value1"; "key3"="value3";}
+Update-AzTag -ResourceId /subscriptions/{subId} -Tag $replacedTags -Operation Replace
 
 Id         : {Id}
 Name       : {Name}
@@ -1300,15 +1298,15 @@ Properties :
              key1     value1
              key3     value3</dev:code>
         <dev:remarks>
-          <maml:para>This command Repalces the set of tags on the subscription with {subId}.</maml:para>
+          <maml:para>This command Replaces the set of tags on the subscription with {subId}.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>Example 3: Selectively updates the set of tags on a subscription with "Delete" Operation</maml:title>
-        <dev:code>PS C:\&gt;$deletedTags = @{"key1"="value1"}
-PS C:\&gt;Update-AzTag -ResourceId /subscriptions/{subId} -Tag $deletedTags -Operation Delete
+        <dev:code>$deletedTags = @{"key1"="value1"}
+Update-AzTag -ResourceId /subscriptions/{subId} -Tag $deletedTags -Operation Delete
 
 Id         : {Id}
 Name       : {Name}

@@ -396,7 +396,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; Add-AzDataFactoryV2DataFlowDebugSessionPackage -ResourceGroupName adf -DataFactoryName WikiADF -PackageFile "D:\dataflowps\addpackage.json" -SessionId 550effe4-93a3-485c-8525-eaf25259efbd</dev:code>
+        <dev:code>Add-AzDataFactoryV2DataFlowDebugSessionPackage -ResourceGroupName adf -DataFactoryName WikiADF -PackageFile "D:\dataflowps\addpackage.json" -SessionId 550effe4-93a3-485c-8525-eaf25259efbd</dev:code>
         <dev:remarks>
           <maml:para>Add data flow package into debug session "550effe4-93a3-485c-8525-eaf25259efbd" of "WikiADF" data factory. Pakcage file contains data flow debug resource, list of dataset debug resouce, list of linked service debug resource, debug setting and session ID. For instance:</maml:para>
           <maml:para>{   "dataFlow": {     "name": "dataflow5",     "properties": {       "type": "MappingDataFlow",       "typeProperties": {         "sources": [           {             "dataset": {               "referenceName": "DelimitedTextInput",               "type": "DatasetReference"             },             "name": "source1",             "typeProperties": {}           }         ],         "sinks": [],         "transformations": [],         "script": "\n\nsource(output(\n\t\tResourceAgencyNum as string,\n\t\tPublicName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~&gt; source1"       }     }   },   "datasets": [     {       "name": "DelimitedTextInput",       "properties": {         "linkedServiceName": {           "referenceName": "AzureBlobStorage1",           "type": "LinkedServiceReference"         },         "annotations": [],         "type": "DelimitedText",         "typeProperties": {           "location": {             "type": "AzureBlobStorageLocation",             "container": "20192019"           },           "columnDelimiter": ",",           "escapeChar": "\",           "firstRowAsHeader": true,           "quoteChar": "\""         },         "schema": [           {             "name": "ResourceAgencyNum",             "type": "String"           },           {             "name": "PublicName",             "type": "String"           }         ]       },       "type": "Microsoft.DataFactory/factories/datasets"     }   ],   "linkedServices": [     {       "name": "AzureBlobStorage1",       "type": "Microsoft.DataFactory/factories/linkedservices",       "properties": {         "annotations": [],         "type": "AzureBlobStorage",         "typeProperties": {           "connectionString": "DefaultEndpointsProtocol=https;AccountName=name;AccountKey=key;EndpointSuffix=core.windows.net"         }       }     }   ],   "debugSettings": {     "sourceSettings": [       {         "sourceName": "source1",         "rowLimit": 1000       }     ]   },   "sessionId": "4f988caf-e765-47d2-82cd-430334a6b135" }</maml:para>
@@ -740,7 +740,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Add-AzDataFactoryV2TriggerSubscription -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1
+        <dev:code>Add-AzDataFactoryV2TriggerSubscription -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1
 
 TriggerName Status
 ----------- ------
@@ -878,9 +878,9 @@ Trigger1    Provisioning</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Get all data factories --------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2 -ResourceGroupName "ADF"
+        <dev:code>Get-AzDataFactoryV2 -ResourceGroupName "ADF"
 
-    DataFactoryName   : WikiADF
+DataFactoryName   : WikiADF
     DataFactoryId     : /subscriptions/3e8e61b5-9a7d-4952-bfae-545ab997b9ea/resourceGroups/adf/providers/Microsoft.DataFactory/factories/wikiadf
     ResourceGroupName : ADF
     Location          : EastUS
@@ -903,9 +903,9 @@ Trigger1    Provisioning</dev:code>
       </command:example>
       <command:example>
         <maml:title>------------ Example 2: Get a specific data factory ------------</maml:title>
-        <dev:code>PS C:\&gt; $DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF"
+        <dev:code>$DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF"
 
-    DataFactoryName   : WikiADF
+DataFactoryName   : WikiADF
     DataFactoryId     : /subscriptions/3e8e61b5-9a7d-4952-bfae-545ab997b9ea/resourceGroups/adf/providers/Microsoft.DataF
                         actory/factories/wikiadf
     ResourceGroupName : ADF
@@ -1281,9 +1281,9 @@ Trigger1    Provisioning</dev:code>
     <command:examples>
       <command:example>
         <maml:title>----- Example 1: Get all activity runs for a pipeline run -----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2ActivityRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "f288712d-fb08-4cb8-96ef-82d3b9b30621" -RunStartedAfter "2017-09-01" -RunStartedBefore "2017-09-30"
+        <dev:code>Get-AzDataFactoryV2ActivityRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "f288712d-fb08-4cb8-96ef-82d3b9b30621" -RunStartedAfter "2017-09-01" -RunStartedBefore "2017-09-30"
 
-    ResourceGroupName : ADF
+ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     ActivityName      : MyWebActivity
     PipelineRunId     : f288712d-fb08-4cb8-96ef-82d3b9b30621
@@ -1558,7 +1558,7 @@ Trigger1    Provisioning</dev:code>
     <command:examples>
       <command:example>
         <maml:title>------- Example 1: Get information about all data flows -------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
+        <dev:code>Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
 DataFlowName           DataFactoryName ResourceGroupName                                                    Properties
 ------------           --------------- -----------------                                                    ----------
@@ -1573,7 +1573,7 @@ dataflow3                      WikiADF               adf Microsoft.Azure.Managem
       </command:example>
       <command:example>
         <maml:title>---- Example 2: Get information about a specific data flow ----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
+        <dev:code>Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
 
 DataFlowName           DataFactoryName ResourceGroupName                                                    Properties
 ------------           --------------- -----------------                                                    ----------
@@ -1805,7 +1805,7 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; Get-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName WikiADF
+        <dev:code>Get-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName WikiADF
 
 SessionId                            ComputeType CoreCount                         StartTime                  LastActivityTime TimeToLiveInMinutes IntegrationRuntimeName                                      DataFlowName
 ---------                            ----------- ---------                         ---------                  ---------------- ------------------- ----------------------                                      ------------
@@ -2081,9 +2081,9 @@ SessionId                            ComputeType CoreCount                      
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Get information about all datasets --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
+        <dev:code>Get-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
-    DatasetName       : DACuratedWikiData
+DatasetName       : DACuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Structure         :
@@ -2108,9 +2108,9 @@ SessionId                            ComputeType CoreCount                      
       </command:example>
       <command:example>
         <maml:title>----- Example 2: Get information about a specific dataset -----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents"
+        <dev:code>Get-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents"
 
-    DatasetName       : DAWikipediaClickEvents
+DatasetName       : DAWikipediaClickEvents
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Structure         :
@@ -2435,9 +2435,9 @@ SessionId                            ComputeType CoreCount                      
     <command:examples>
       <command:example>
         <maml:title>-- Example 1: List all integration runtimes in a data factory --</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2
 
-	ResourceGroupName DataFactoryName Name                   Description
+ResourceGroupName DataFactoryName Name                   Description
 	----------------- --------------- ----                   -----------
 	rg-test-dfv2      test-df-eu2     test-reserved-ir       Reserved IR
 	rg-test-dfv2      test-df-eu2     test-dedicated-ir      Reserved IR
@@ -2450,9 +2450,9 @@ SessionId                            ComputeType CoreCount                      
       </command:example>
       <command:example>
         <maml:title>----- Example 2: Get managed dedicated integration runtime -----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir
 
-	Location                     : West US
+Location                     : West US
 	NodeSize                     : Standard_D1_v2
 	NodeCount                    : 1
 	MaxParallelExecutionsPerNode : 1
@@ -2463,6 +2463,7 @@ SessionId                            ComputeType CoreCount                      
 	VNetId                       : 
 	Subnet                       : 
 	SubnetId                     : 
+	VNetInjectionMethod          : Express
 	PublicIPs                    : 
 	State                        : Starting
 	ResourceGroupName            : rg-test-dfv2
@@ -2477,9 +2478,9 @@ SessionId                            ComputeType CoreCount                      
       </command:example>
       <command:example>
         <maml:title>Example 3: Get managed dedicated integration runtime with detail status</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir -Status
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir -Status
 
-	CreateTime                   : 
+CreateTime                   : 
 	Nodes                        : 
 	OtherErrors                  : 
 	LastOperation                : 
@@ -2495,6 +2496,7 @@ SessionId                            ComputeType CoreCount                      
 	VNetId                       : 
 	Subnet                       : 
 	SubnetId                     : 
+	VNetInjectionMethod          : Standard
 	PublicIPs                    : 
 	ResourceGroupName            : rg-test-dfv2
 	DataFactoryName              : test-df-eu2
@@ -2508,9 +2510,9 @@ SessionId                            ComputeType CoreCount                      
       </command:example>
       <command:example>
         <maml:title>-------- Example 4: Get self-hosted integration runtime --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-selfhost-ir
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-selfhost-ir
 
-	ResourceGroupName DataFactoryName Name                 Description
+ResourceGroupName DataFactoryName Name                 Description
 	----------------- --------------- ----                 -----------
 	rg-test-dfv2      test-df-eu2     test-selfhost-ir     selfhost IR</dev:code>
         <dev:remarks>
@@ -2521,9 +2523,9 @@ SessionId                            ComputeType CoreCount                      
       </command:example>
       <command:example>
         <maml:title>Example 5: Get self-hosted integration runtime with detail status</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-selfhost-ir -Status
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-selfhost-ir -Status
 
-	State                     : Online
+State                     : Online
 	Version                   : 4.2.7233.1
 	CreateTime                : 9/26/2019 6:00:08 AM
 	AutoUpdate                : Off
@@ -2797,7 +2799,7 @@ SessionId                            ComputeType CoreCount                      
     <command:examples>
       <command:example>
         <maml:title>----------- Example 1: Get integration runtime keys -----------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntimeKey -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntimeKey -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
 
 AuthKey1                                                 AuthKey2
 --------                                                 --------
@@ -3049,7 +3051,7 @@ IR@89895504-f647-48fd-8dd3-42fa556d67e3******            IR@89895504-f647-48fd-8
     <command:examples>
       <command:example>
         <maml:title>---------- Example 1: Get integration runtime metric ----------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntimeMetric -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntimeMetric -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
 
 IntegrationRuntimeName ResourceGroupName DataFactoryName   Nodes   
 ---------------------- ----------------- ---------------   -----   
@@ -3402,7 +3404,7 @@ test-selfhost-ir       rg-test-dfv2      test-df-eu2       {Node_1}</dev:code>
     <command:examples>
       <command:example>
         <maml:title>Example 1: Gets the detail information of an integration runtime node.</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1'
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1'
 
 ResourceGroupName      : rg-test-dfv2
 DataFactoryName        : test-df-eu2
@@ -3434,7 +3436,7 @@ IpAddress              :</dev:code>
       </command:example>
       <command:example>
         <maml:title>Example 2: Gets the detail information of an integration runtime node together with IP address.</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1' -IpAddress
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1' -IpAddress
 
 ResourceGroupName      : rg-test-dfv2
 DataFactoryName        : test-df-eu2
@@ -3705,7 +3707,9 @@ IpAddress              : 167.220.1.167</dev:code>
     <command:examples>
       <command:example>
         <maml:title>--------- Example 1: List outbound network dependency ---------</maml:title>
-        <dev:code>Category                                 EndPoint
+        <dev:code>Get-AzDataFactoryV2IntegrationRuntimeOutboundNetworkDependenciesEndpoint -Name 'integrationRuntime1' -ResourceGroupName 'testrg' -DataFactoryName 'newtestDataFactory1'
+
+Category                                 EndPoint
 --------                                 --------
 Azure Data Factory (Management)          [{"DomainName":"wu.frontend.clouddatahub.net","EndpointDetails":[{"Port":443}]}]
 Azure Storage (Management)               [{"DomainName":"*.blob.core.windows.net","EndpointDetails":[{"Port":443}]},{"DomainName":"*.table.core.windows.net","EndpointDetails":[{"Port":443}]}]
@@ -3969,9 +3973,9 @@ Event Hub (Logging)                      [{"DomainName":"*.servicebus.windows.ne
     <command:examples>
       <command:example>
         <maml:title>----- Example 1: Get information about all linked services -----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
+        <dev:code>Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
 
-    LinkedServiceName : LinkedServiceCuratedWikiData
+LinkedServiceName : LinkedServiceCuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureStorageLinkedService
@@ -3993,9 +3997,9 @@ Event Hub (Logging)                      [{"DomainName":"*.servicebus.windows.ne
       </command:example>
       <command:example>
         <maml:title>-- Example 2: Get information about a specific linked service --</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData"
+        <dev:code>Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData"
 
-    LinkedServiceName : LinkedServiceCuratedWikiData
+LinkedServiceName : LinkedServiceCuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureStorageLinkedService</dev:code>
@@ -4007,10 +4011,10 @@ Event Hub (Logging)                      [{"DomainName":"*.servicebus.windows.ne
       </command:example>
       <command:example>
         <maml:title>Example 3: Get information about a specific linked service by specifying the DataFactory parameter</maml:title>
-        <dev:code>PS C:\&gt; $DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "ContosoFactory"
-PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-Table -Property Name, DataFactoryName, ResourceGroupName
+        <dev:code>$DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "ContosoFactory"
+Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-Table -Property Name, DataFactoryName, ResourceGroupName
 
-     Name                          DataFactoryName ResourceGroupName
+Name                          DataFactoryName ResourceGroupName
      ----                          --------------- -----------------
      LinkedServiceCuratedWikiData  ContosoFactory  ADF</dev:code>
         <dev:remarks>
@@ -4276,9 +4280,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Get information about all pipelines --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF" 
+        <dev:code>Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
-    PipelineName      : DPWikisample
+PipelineName      : DPWikisample
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Activities        : {MyWebActivity}
@@ -4297,9 +4301,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
       </command:example>
       <command:example>
         <maml:title>----- Example 2: Get information about a specific pipeline -----</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
+        <dev:code>Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
 
-    PipelineName      : DPWikisample
+PipelineName      : DPWikisample
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Activities        : {MyCopyActivity_0_0, MyCopyActivity_1_0}
@@ -4312,9 +4316,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
       </command:example>
       <command:example>
         <maml:title>---- Example 3: Get the properties for a specific pipeline ----</maml:title>
-        <dev:code>PS C:\&gt; (Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Activities
+        <dev:code>(Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Activities
 
-    Source                          : Microsoft.Azure.Management.DataFactory.Models.BlobSource
+Source                          : Microsoft.Azure.Management.DataFactory.Models.BlobSource
     Sink                            : Microsoft.Azure.Management.DataFactory.Models.BlobSink
     Translator                      :
     EnableStaging                   :
@@ -4355,9 +4359,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
       </command:example>
       <command:example>
         <maml:title>Example 4: Get information about inputs for the first activity</maml:title>
-        <dev:code>PS C:\&gt; (Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Activities[0].Inputs | Format-List
+        <dev:code>(Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Activities[0].Inputs | Format-List
 
-    ReferenceName : dsIn
+ReferenceName : dsIn
     Parameters    :</dev:code>
         <dev:remarks>
           <maml:para>This command gets information for the pipeline named DPWikisample in the data factory named WikiADF, and then uses standard dot notation to view the Activities property associated with that pipeline. The command displays the Inputs property of the first element of the Activities array by using the Format-List cmdlet.</maml:para>
@@ -4761,9 +4765,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Get information for a pipeline run --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
+        <dev:code>Get-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
 
-    ResourceGroupName : ADF
+ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     RunId             : 61eb095a-fe23-4591-8a97-fade6c65ca72
     PipelineName      : DPWikisample
@@ -5037,9 +5041,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Get information about all triggers --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
+        <dev:code>Get-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
-    TriggerName       : ScheduledTrigger
+TriggerName       : ScheduledTrigger
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.ScheduleTrigger
@@ -5060,7 +5064,7 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
         <maml:title>----- Example 2: Get information about a specific trigger -----</maml:title>
         <dev:code>Get-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "ScheduledTrigger"
 
-    TriggerName       : ScheduledTrigger
+TriggerName       : ScheduledTrigger
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.ScheduleTrigger
@@ -5369,9 +5373,9 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
     <command:examples>
       <command:example>
         <maml:title>--------- Example 1: Get information about trigger run ---------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "WikiTrigger" -TriggerRunStartedAfter "2017-09-01" -TriggerRunStartedBefore "2019-09-30"
+        <dev:code>Get-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "WikiTrigger" -TriggerRunStartedAfter "2017-09-01" -TriggerRunStartedBefore "2019-09-30"
 
-    ResourceGroupName   : ADF
+ResourceGroupName   : ADF
     DataFactoryName     : WikiADF
     TriggerName         : WikiTrigger
     TriggerRunId        : 08586958400454144995526033731
@@ -5621,7 +5625,7 @@ PS C:\&gt; Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-T
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1
+        <dev:code>Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1
 
 TriggerName Status
 ----------- ------
@@ -6268,8 +6272,8 @@ Trigger1    Enabled</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; $result = Invoke-AzDataFactoryV2DataFlowDebugSessionCommand -ResourceGroupName adf -DataFactoryName WiKiADF -Command executePreviewQuery -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d -StreamName source1 -RowLimit 100 -AsJob
-PS C:\WINDOWS\system32&gt; $result
+        <dev:code>$result = Invoke-AzDataFactoryV2DataFlowDebugSessionCommand -ResourceGroupName adf -DataFactoryName WiKiADF -Command executePreviewQuery -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d -StreamName source1 -RowLimit 100 -AsJob
+$result
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -6278,14 +6282,14 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 (After 2 minutes)
 
-PS C:\WINDOWS\system32&gt; $result
+$result
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 3      Long Running... AzureLongRun... Completed     True            localhost            Invoke-AzDataFactoryV2...
 
-PS C:\WINDOWS\system32&gt; $output = ConvertFrom-Json($result.Output.Data)
-PS C:\WINDOWS\system32&gt; $output.output
+$output = ConvertFrom-Json($result.Output.Data)
+$output.output
 
     {
       "schema": "output(ResourceAgencyNum as string, PublicName as string)" ,
@@ -6640,7 +6644,7 @@ PS C:\WINDOWS\system32&gt; $output.output
     <command:examples>
       <command:example>
         <maml:title>---- Example 1: Upgrades a self-hosted integration runtime ----</maml:title>
-        <dev:code>PS C:\&gt; Invoke-AzDataFactoryV2IntegrationRuntimeUpgrade -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'</dev:code>
+        <dev:code>Invoke-AzDataFactoryV2IntegrationRuntimeUpgrade -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'</dev:code>
         <dev:remarks>
           <maml:para>The cmdlet upgrades self-hosted integration runtime named 'test-selfhost-ir' in data factory 'test-df-eu2'.</maml:para>
 <maml:para></maml:para>
@@ -7340,7 +7344,7 @@ PS C:\WINDOWS\system32&gt; $output.output
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline</maml:name>
+          <maml:name>System.String</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -7355,7 +7359,8 @@ PS C:\WINDOWS\system32&gt; $output.output
     <command:examples>
       <command:example>
         <maml:title>--------- Example 1: Invoke a pipeline to start a run ---------</maml:title>
-        <dev:code>PS C:\&gt; Invoke-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineName "DPWikisample"
+        <dev:code>Invoke-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineName "DPWikisample"
+
 867d9d9f-1efc-4fee-974d-d8e6320bfbcb</dev:code>
         <dev:remarks>
           <maml:para>This command starts a run for "DPWikisample" pipeline in the "WikiADF" factory.</maml:para>
@@ -7809,7 +7814,7 @@ Invoke-AzDataFactoryV2Pipeline -DataFactoryName 'WikiADF' -Parameter &lt;Hashtab
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Invoke-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "testTumblingWindowTrigger" -TriggerRunId 08586002468005888497807248799CU16</dev:code>
+        <dev:code>Invoke-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "testTumblingWindowTrigger" -TriggerRunId 08586002468005888497807248799CU16</dev:code>
         <dev:remarks>
           <maml:para>Starts another instance of a trigger run with a new trigger run id, keeping the same windowStartTime and windowEndTime as the original trigger run.</maml:para>
 <maml:para></maml:para>
@@ -8248,7 +8253,7 @@ Invoke-AzDataFactoryV2Pipeline -DataFactoryName 'WikiADF' -Parameter &lt;Hashtab
     <command:examples>
       <command:example>
         <maml:title>--- Example 1: Generate a new key for an integration runtime ---</maml:title>
-        <dev:code>PS C:\&gt; New-AzDataFactoryV2IntegrationRuntimeKey -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' -KeyName authKey2
+        <dev:code>New-AzDataFactoryV2IntegrationRuntimeKey -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' -KeyName authKey2
 
 AuthKey1 AuthKey2
 -------- --------
@@ -8969,8 +8974,9 @@ New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName WikiADF -De
     <command:examples>
       <command:example>
         <maml:title>--------------- Example 1: Remove a data factory ---------------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2 -Name "WikiADF" -ResourceGroupName "ADF"
-          Confirm
+        <dev:code>Remove-AzDataFactoryV2 -Name "WikiADF" -ResourceGroupName "ADF"
+
+Confirm
           Are you sure you want to remove data factory 'WikiADF' in resource group 'ADF'?
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
           True</dev:code>
@@ -9413,12 +9419,11 @@ New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName WikiADF -De
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
+        <dev:code>Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
 
 Confirm
 Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
-[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
-PS C:\WINDOWS\system32&gt;</dev:code>
+[Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y</dev:code>
         <dev:remarks>
           <maml:para>This command removes the data flow named dataflow5 from the data factory named WikiADF.</maml:para>
 <maml:para></maml:para>
@@ -9805,8 +9810,9 @@ PS C:\WINDOWS\system32&gt;</dev:code>
     <command:examples>
       <command:example>
         <maml:title>----------------- Example 1: Remove a dataset -----------------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikiAggregatedData"
-          Confirm
+        <dev:code>Remove-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikiAggregatedData"
+
+Confirm
           Are you sure you want to remove dataset 'DAWikiAggregatedData' in data factory 'WikiADF'?
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
           True</dev:code>
@@ -10244,7 +10250,7 @@ PS C:\WINDOWS\system32&gt;</dev:code>
     <command:examples>
       <command:example>
         <maml:title>----------- Example 1: Remove a integration runtime -----------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2IntegrationRuntime  -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserved-ir' -Confirm</dev:code>
+        <dev:code>Remove-AzDataFactoryV2IntegrationRuntime  -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserved-ir' -Confirm</dev:code>
         <dev:remarks>
           <maml:para>This command removes the integration runtime named 'test-reserved-ir' from the data factory named 'test-df'. This command returns a value of $True.</maml:para>
 <maml:para></maml:para>
@@ -11059,8 +11065,9 @@ Remove-AzDataFactoryV2IntegrationRuntimeNode -DataFactoryName 'test-df-eu2' -Int
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Remove a linked service --------------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceTest"
-          Confirm
+        <dev:code>Remove-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceTest"
+
+Confirm
           Are you sure you want to remove linked service 'LinkedServiceTest' in data factory 'WikiADF'?
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
           True</dev:code>
@@ -11450,8 +11457,9 @@ Remove-AzDataFactoryV2IntegrationRuntimeNode -DataFactoryName 'test-df-eu2' -Int
     <command:examples>
       <command:example>
         <maml:title>----------------- Example 1: Remove a pipeline -----------------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF"
-          Confirm
+        <dev:code>Remove-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF"
+
+Confirm
           Are you sure you want to remove pipeline 'DPWikisample' in data factory 'WikiADF'?
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
           True</dev:code>
@@ -12282,7 +12290,7 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Remove-AzDataFactoryV2TriggerSubscription -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1</dev:code>
+        <dev:code>Remove-AzDataFactoryV2TriggerSubscription -ResourceGroupName ADF -DataFactoryName WikiADF -Name Trigger1</dev:code>
         <dev:remarks>
           <maml:para>This command will unsubscribe BlobEnetTrigger1 trigger to the specified events from the trigger defintion.</maml:para>
 <maml:para></maml:para>
@@ -14793,9 +14801,9 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>--------------- Example 1: Create a data factory ---------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Location "WestUS"
+        <dev:code>Set-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Location "WestUS"
 
-    DataFactoryName   : WikiADF
+DataFactoryName   : WikiADF
     DataFactoryId     : /subscriptions/3e8e61b5-9a7d-4952-bfae-545ab997b9ea/resourceGroups/adf/providers/Microsoft.DataFactory/factories/wikiadf
     ResourceGroupName : ADF
     Location          : EastUS
@@ -14811,9 +14819,9 @@ True</dev:code>
       </command:example>
       <command:example>
         <maml:title>Example 2: Create a data factory with repo configuration details using an existing factory object.</maml:title>
-        <dev:code>PS C:\&gt; Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" | Set-AzDataFactoryV2 -AccountName msdata -RepositoryName ADFRepo -CollaborationBranch master -RootFolder / -ProjectName "Azure Data Factory"
+        <dev:code>Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" | Set-AzDataFactoryV2 -AccountName msdata -RepositoryName ADFRepo -CollaborationBranch master -RootFolder / -ProjectName "Azure Data Factory"
 
-    DataFactoryName   : WikiADF
+DataFactoryName   : WikiADF
     DataFactoryId     : /subscriptions/3e8e61b5-9a7d-4952-bfae-545ab997b9ea/resourceGroups/adf/providers/Microsoft.DataFactory/factories/wikiadf
     ResourceGroupName : ADF
     Location          : EastUS
@@ -14829,9 +14837,9 @@ True</dev:code>
       </command:example>
       <command:example>
         <maml:title>Example 3: Create a data factory with GitHub repo configuration details using a new factory object.</maml:title>
-        <dev:code>PS C:\&gt; New-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Location 'EastUS' -HostName 'https://github.com' -AccountName msdata -RepositoryName ADFRepo -CollaborationBranch master -RootFolder /
+        <dev:code>Set-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Location 'EastUS' -HostName 'https://github.com' -AccountName msdata -RepositoryName ADFRepo -CollaborationBranch master -RootFolder /
 
-    DataFactoryName   : WikiADF
+DataFactoryName   : WikiADF
     DataFactoryId     : /subscriptions/3e8e61b5-9a7d-4952-bfae-545ab997b9ea/resourceGroups/adf/providers/Microsoft.DataFactory/factories/wikiadf
     ResourceGroupName : ADF
     Location          : EastUS
@@ -15181,7 +15189,7 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>---------------- Example 1: Create a data flow ----------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
+        <dev:code>Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
 
 DataFlowName           DataFactoryName ResourceGroupName                                                    Properties
 ------------           --------------- -----------------                                                    ----------
@@ -15528,9 +15536,9 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>----------------- Example 1: Create a dataset -----------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -DefinitionFile "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
+        <dev:code>Set-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -DefinitionFile "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
 
-    DatasetName       : DAWikipediaClickEvents
+DatasetName       : DAWikipediaClickEvents
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Structure         :
@@ -15693,6 +15701,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
           <maml:description>
             <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -15764,6 +15783,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ExpressCustomSetup</maml:name>
+          <maml:description>
+            <maml:para>The express custom setup for SSIS integration runtime which could be used to setup configurations and 3rd party components without custom setup script.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Collections.ArrayList</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.ArrayList</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -15892,6 +15923,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>VNetId</maml:name>
           <maml:description>
             <maml:para>The ID of the VNet that the integration runtime joins.</maml:para>
@@ -15904,10 +15951,14 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SubnetId</maml:name>
+          <maml:name>VNetInjectionMethod</maml:name>
           <maml:description>
-            <maml:para>The ID of subnet, to which this Azure-SSIS integration runtime will be joined.</maml:para>
+            <maml:para>The edition for SSIS integration runtime which could be Standard or Enterprise, default is Standard if it is not specified.</maml:para>
           </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Standard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Express</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -16037,6 +16088,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
           <maml:description>
             <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -16108,6 +16170,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ExpressCustomSetup</maml:name>
+          <maml:description>
+            <maml:para>The express custom setup for SSIS integration runtime which could be used to setup configurations and 3rd party components without custom setup script.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Collections.ArrayList</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.ArrayList</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -16236,6 +16310,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>VNetId</maml:name>
           <maml:description>
             <maml:para>The ID of the VNet that the integration runtime joins.</maml:para>
@@ -16248,10 +16338,14 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SubnetId</maml:name>
+          <maml:name>VNetInjectionMethod</maml:name>
           <maml:description>
-            <maml:para>The ID of subnet, to which this Azure-SSIS integration runtime will be joined.</maml:para>
+            <maml:para>The edition for SSIS integration runtime which could be Standard or Enterprise, default is Standard if it is not specified.</maml:para>
           </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Standard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Express</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -16381,6 +16475,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
           <maml:description>
             <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -16452,6 +16557,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ExpressCustomSetup</maml:name>
+          <maml:description>
+            <maml:para>The express custom setup for SSIS integration runtime which could be used to setup configurations and 3rd party components without custom setup script.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Collections.ArrayList</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Collections.ArrayList</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -16580,6 +16697,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>VNetId</maml:name>
           <maml:description>
             <maml:para>The ID of the VNet that the integration runtime joins.</maml:para>
@@ -16592,10 +16725,14 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SubnetId</maml:name>
+          <maml:name>VNetInjectionMethod</maml:name>
           <maml:description>
-            <maml:para>The ID of subnet, to which this Azure-SSIS integration runtime will be joined.</maml:para>
+            <maml:para>The edition for SSIS integration runtime which could be Standard or Enterprise, default is Standard if it is not specified.</maml:para>
           </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Standard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Express</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -16664,6 +16801,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -16704,6 +16852,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <maml:description>
             <maml:para>The resource id of the shared self-hosted integration runtime.</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -16748,6 +16912,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -16788,6 +16963,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <maml:description>
             <maml:para>The resource id of the shared self-hosted integration runtime.</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -16832,6 +17023,17 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DataFlowEnableQuickReuse</maml:name>
+          <maml:description>
+            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -16872,6 +17074,22 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
           <maml:description>
             <maml:para>The resource id of the shared self-hosted integration runtime.</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Type</maml:name>
+          <maml:description>
+            <maml:para>The integration runtime type.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">Managed</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">SelfHosted</command:parameterValue>
+          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -17001,6 +17219,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DataFlowEnableQuickReuse</maml:name>
+        <maml:description>
+          <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>DataProxyIntegrationRuntimeName</maml:name>
         <maml:description>
           <maml:para>The Self-Hosted Integration Runtime name which is used as a proxy</maml:para>
@@ -17068,6 +17298,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ExpressCustomSetup</maml:name>
+        <maml:description>
+          <maml:para>The express custom setup for SSIS integration runtime which could be used to setup configurations and 3rd party components without custom setup script.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Collections.ArrayList</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Collections.ArrayList</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -17253,6 +17495,18 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Type</maml:name>
+        <maml:description>
+          <maml:para>The integration runtime type.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>VNetId</maml:name>
         <maml:description>
           <maml:para>The ID of the VNet that the integration runtime joins.</maml:para>
@@ -17265,9 +17519,9 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>SubnetId</maml:name>
+        <maml:name>VNetInjectionMethod</maml:name>
         <maml:description>
-          <maml:para>The ID of subnet, to which this Azure-SSIS integration runtime will be joined.</maml:para>
+          <maml:para>The edition for SSIS integration runtime which could be Standard or Enterprise, default is Standard if it is not specified.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -17337,10 +17591,10 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>------ Example 1: Update integration runtime description. ------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' `
+        <dev:code>Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' `
                                             -Description 'New description'
 
-    Id                : /subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/rg-test-dfv2/providers/Microsoft.DataFactory/factories/test-df-eu2/integrationruntimes/test-selfhost-ir
+Id                : /subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/rg-test-dfv2/providers/Microsoft.DataFactory/factories/test-df-eu2/integrationruntimes/test-selfhost-ir
     ResourceGroupName : rg-test-dfv2
     DataFactoryName   : test-df-eu2
     Name              : test-selfhost-ir
@@ -17353,10 +17607,10 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
       </command:example>
       <command:example>
         <maml:title>------ Example 2: Share Self-hosted integration runtime. ------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' `
+        <dev:code>Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir' `
                                             -SharedIntegrationRuntimeResourceId '/subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/rg-test-dfv2/providers/Microsoft.DataFactory/factories/test-df-eu2/integrationruntimes/test-selfhost-ir' -Type "SelfHosted"
 
-    Id                : /subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/rg-test-dfv2/providers/Microsoft.DataFactory/factories/test-df-eu2/integrationruntimes/test-selfhost-ir
+Id                : /subscriptions/b3ee3a7f-7614-4644-ad07-afa832620b4b/resourceGroups/rg-test-dfv2/providers/Microsoft.DataFactory/factories/test-df-eu2/integrationruntimes/test-selfhost-ir
     ResourceGroupName : rg-test-dfv2
     DataFactoryName   : test-df-eu2
     Name              : test-selfhost-ir
@@ -17369,14 +17623,14 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
       </command:example>
       <command:example>
         <maml:title>Example 3: Configure Self-Hosted IR as a proxy for Azure-SSIS IR in ADF.</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName testgroup `
+        <dev:code>Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName testgroup `
                                            -DataFactoryName testdf `
                                            -Name SSISIRWithDataProxy `
                                            -DataProxyIntegrationRuntimeName proxySelfhostedIR `
                                            -DataProxyStagingLinkedServiceName AzureBlobStorage `
                                            -DataProxyStagingPath teststaging
 
-    Location                          : EastUS
+Location                          : EastUS
     NodeSize                          : Standard_D8_v3
     NodeCount                         : 1
     MaxParallelExecutionsPerNode      : 8
@@ -17387,6 +17641,7 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     VNetId                            : 
     Subnet                            : 
     SubnetId                          : 
+    VNetInjectionMethod               : Express
     PublicIPs                         : 
     State                             : Initial
     LicenseType                       : LicenseIncluded
@@ -17739,9 +17994,9 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>-------------- Example 1: Create a linked service --------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData" -File "C:\\samples\\WikiSample\\LinkedServiceCuratedWikiData.json" | Format-List
+        <dev:code>Set-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData" -File "C:\\samples\\WikiSample\\LinkedServiceCuratedWikiData.json" | Format-List
 
-    LinkedServiceName : LinkedServiceCuratedWikiData
+LinkedServiceName : LinkedServiceCuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.AzureStorageLinkedService</dev:code>
@@ -18087,9 +18342,9 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>----------------- Example 1: Create a pipeline -----------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" -File "C:\DPWikisample.json"
+        <dev:code>Set-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" -File "C:\DPWikisample.json"
 
-    PipelineName      : DPWikisample
+PipelineName      : DPWikisample
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF11
     Activities        : {MyCopyActivity_0_0, MyCopyActivity_1_0}
@@ -18440,9 +18695,9 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>----------------- Example 1: Create a trigger -----------------</maml:title>
-        <dev:code>PS C:\&gt; Set-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "ScheduledTrigger" -DefinitionFile ".\scheduledTrigger.json"
+        <dev:code>Set-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "ScheduledTrigger" -DefinitionFile ".\scheduledTrigger.json"
 
-    TriggerName       : ScheduledTrigger
+TriggerName       : ScheduledTrigger
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     Properties        : Microsoft.Azure.Management.DataFactory.Models.ScheduleTrigger
@@ -18865,8 +19120,8 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; $job = Start-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName jikma0601sea -AsJob
-PS C:\WINDOWS\system32&gt; $job 
+        <dev:code>$job = Start-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName jikma0601sea -AsJob
+$job 
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -18874,14 +19129,14 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 (After 5 minutes)
 
-PS C:\WINDOWS\system32&gt; $job
+$job
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 1      Long Running... AzureLongRun... Completed     True            localhost            Start-AzDataFactoryV2D...
 
 
-PS C:\WINDOWS\system32&gt; $job.Output
+$job.Output
 
 SessionId                            Status
 ---------                            ------
@@ -19280,9 +19535,9 @@ SessionId                            Status
     <command:examples>
       <command:example>
         <maml:title>----------- Example 1: Start an integration runtime -----------</maml:title>
-        <dev:code>PS C:\&gt; Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name test-dedicated-ir' -Force
+        <dev:code>Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-dedicated-ir' -Force
 
-    CreateTime                   : 9/11/2017 2:16:12 PM
+CreateTime                   : 9/11/2017 2:16:12 PM
     Nodes                        : {tvm-1650185656_1-20170911t141751z}
     OtherErrors                  : {}
     LastOperation                : 
@@ -20118,7 +20373,7 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\WINDOWS\system32&gt; Stop-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName WikiADF -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d
+        <dev:code>Stop-AzDataFactoryV2DataFlowDebugSession -ResourceGroupName adf -DataFactoryName WikiADF -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d
 
 Confirm
 Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3f9d43ac686d' in data factory 'WikiADF'?
@@ -20517,7 +20772,7 @@ Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3
     <command:examples>
       <command:example>
         <maml:title>Example 1: Stop a managed integration runtime that is in 'Started' state.</maml:title>
-        <dev:code>PS C:\&gt; Stop-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserlved-ir'</dev:code>
+        <dev:code>Stop-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserlved-ir'</dev:code>
         <dev:remarks>
           <maml:para>The managed integration runtime 'test-reserlved-ir' is in 'Started' state. After running Stop-AzDataFactoryV2IntegrationRuntime cmdlet, the resources are released and the state transfers to 'Stopped'.</maml:para>
 <maml:para></maml:para>
@@ -20920,7 +21175,7 @@ Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Stop-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId b9730a13-aa12-4926-a8b3-8e3a974ab0bd
+        <dev:code>Stop-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId b9730a13-aa12-4926-a8b3-8e3a974ab0bd
 
 Confirm
 Are you sure you want to stop pipeline run 'b9730a13-aa12-4926-a8b3-8e3a974ab0bd' in data factory 'WikiADF'?
@@ -21761,7 +22016,7 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Stop-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "testTumblingWindowTrigger" -TriggerRunId 08586002468005888497807248799CU16</dev:code>
+        <dev:code>Stop-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "testTumblingWindowTrigger" -TriggerRunId 08586002468005888497807248799CU16</dev:code>
         <dev:remarks>
           <maml:para>This command stops the trigger run with id '08586002468005888497807248799CU16' in the factory WikiADF.</maml:para>
 <maml:para></maml:para>
@@ -22256,6 +22511,18 @@ Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' 
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Tag</maml:name>
           <maml:description>
             <maml:para>The tags of the data factory.</maml:para>
@@ -22401,6 +22668,18 @@ Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' 
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Tag</maml:name>
           <maml:description>
             <maml:para>The tags of the data factory.</maml:para>
@@ -22534,6 +22813,18 @@ Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' 
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Tag</maml:name>
           <maml:description>
             <maml:para>The tags of the data factory.</maml:para>
@@ -22653,6 +22944,18 @@ Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' 
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PublicNetworkAccess</maml:name>
+        <maml:description>
+          <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Enabled</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>InputObject</maml:name>
@@ -22787,7 +23090,7 @@ Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' 
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Update-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Tag @{myNewTagName = "myTagValue"}
+        <dev:code>Update-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "WikiADF" -Tag @{myNewTagName = "myTagValue"}
 
 Confirm
 Are you sure you want to update properties of the data factory 'WikiADF' in resource group 'ADF'?
@@ -23243,8 +23546,8 @@ ProvisioningState : Succeeded</dev:code>
     <command:examples>
       <command:example>
         <maml:title>---------- Example 1: Updates an integration runtime ----------</maml:title>
-        <dev:code>PS C:\&gt; $ts = New-TimeSpan -Hours 3
-PS C:\&gt; Update-AzDataFactoryV2IntegrationRuntime `
+        <dev:code>$ts = New-TimeSpan -Hours 3
+Update-AzDataFactoryV2IntegrationRuntime `
     -ResourceGroupName 'rg-test-dfv2' `
     -DataFactoryName 'test-df-eu2' `
     -Name 'test-selfhost-ir' `
@@ -23705,7 +24008,7 @@ Description               : New 2 description</dev:code>
     <command:examples>
       <command:example>
         <maml:title>--- Example 1: Updates self-hosted integration runtime node ---</maml:title>
-        <dev:code>PS C:\&gt; Update-AzDataFactoryV2IntegrationRuntimeNode `
+        <dev:code>Update-AzDataFactoryV2IntegrationRuntimeNode `
     -ResourceGroupName 'rg-test-dfv2' `
     -DataFactoryName 'test-df-eu2' `
     -IntegrationRuntimeName 'test-selfhost-ir' `

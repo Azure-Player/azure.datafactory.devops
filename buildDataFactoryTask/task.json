@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "",
+     "releaseNotes": "Added a few fields to 'Export' mode",
      "showEnvironmentVariables": false,
      "inputs": [
         {

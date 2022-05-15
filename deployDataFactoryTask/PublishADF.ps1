@@ -3,10 +3,10 @@ param()
 
 <#
 	.SYNOPSIS
-    Publishes Azure Data Factory using code from JSON files specified DAC publish profile from your solution.
+    Publishes Azure Data Factory using code from JSON files.
 
 	.DESCRIPTION
-    Publishes Azure Data Factory using code from JSON files specified DAC publish profile from your solution.
+    Publishes Azure Data Factory using code from JSON files.
 
     Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2020 for Azure DevOps extension
     Source code and documentation: https://github.com/SQLPlayer/azure.datafactory.devops
@@ -65,6 +65,7 @@ try {
     [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
     [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
     [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
+    [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
@@ -87,6 +88,7 @@ try {
     $opt.CreateNewInstance = $CreateNewInstance
     $opt.DoNotStopStartExcludedTriggers = $DoNotStopStartExcludedTriggers
     $opt.DoNotDeleteExcludedObjects = $DoNotDeleteExcludedObjects
+    $opt.IgnoreLackOfReferencedObject = $IgnoreLackOfReferencedObject
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {

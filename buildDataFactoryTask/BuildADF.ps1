@@ -57,12 +57,18 @@ try {
 
     if ($Action -eq 'Export')
     {
+        if ($null -eq $OutputFolder -or $OutputFolder -eq '') { $OutputFolder = 'ArmTemplate' }
 
         Export-AdfToArmTemplate -RootFolder $RootFolder `
             -SubscriptionId $SubscriptionId `
             -ResourceGroup $ResourceGroup `
             -AdfUtilitiesVersion $AdfUtilitiesVersion `
             -OutputFolder $OutputFolder
+
+        $expectedFile = Join-Path (Join-Path $RootFolder $OutputFolder) 'ARMTemplateForFactory.json'
+        if (!(Test-Path -Path $expectedFile)) {
+            Write-VstsSetResult -Result 'Failed' -Message "Export failed. ARMTemplateForFactory.json file couldn't be found." -DoNotThrow
+        }
 
     }
 

@@ -283,6 +283,7 @@ These tasks include the following modules:
 - [Az.Resources - ver.5.6.0](https://www.powershellgallery.com/packages/Az.Resources/5.6.0)
 
 # History
+- 08 Aug 2022 - v.1.13  Fixed bug [#95](https://github.com/SQLPlayer/azure.datafactory.devops/issues/95): BuildADFTask action Export encounters errors, but still succeeds
 - 15 May 2022 - v.1.12  - Added a few fields to 'Export Arm Template' task
                         - New task: ADF Deployment from ARM Template files
                         - Tools updated to ver.0.97 ([changeslog](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/changelog.md))

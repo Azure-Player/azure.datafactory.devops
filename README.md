@@ -278,11 +278,12 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 # Related modules
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.0.97.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.97.0)
-- [Az.DataFactory - ver.1.16.6](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.6)
-- [Az.Accounts - ver.2.7.6](https://www.powershellgallery.com/packages/Az.Accounts/2.7.6)
-- [Az.Resources - ver.5.6.0](https://www.powershellgallery.com/packages/Az.Resources/5.6.0)
+- [Az.DataFactory - ver.1.16.8](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.8)
+- [Az.Accounts - ver.2.9.1](https://www.powershellgallery.com/packages/Az.Accounts/2.9.1)
+- [Az.Resources - ver.6.1.0](https://www.powershellgallery.com/packages/Az.Resources/6.1.0)
 
 # History
+- 11 Aug 2022 - v.1.14  Bug [#100]: Updated Az modules to the latest
 - 08 Aug 2022 - v.1.13  Fixed bug [#95](https://github.com/SQLPlayer/azure.datafactory.devops/issues/95): BuildADFTask action Export encounters errors, but still succeeds
 - 15 May 2022 - v.1.12  - Added a few fields to 'Export Arm Template' task
                         - New task: ADF Deployment from ARM Template files

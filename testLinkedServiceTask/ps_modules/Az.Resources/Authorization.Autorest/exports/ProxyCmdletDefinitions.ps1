@@ -20,43 +20,18 @@ Gets the specified role assignment schedule instance.
 .Description
 Gets the specified role assignment schedule instance.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleInstance -Scope $scope 
-
-Name                                 Type                                            Scope
-----                                 ----                                            -----
-986d4ad8-f513-4a21-92e5-7163486e9e7c Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-2066f412-e9bf-406a-962c-df8c16c9f9a0 Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/UTSept3/providers/Microsoft.Compute/virtualMachines/vmtest123
-f402cab4-83ab-4361-8725-2190bbe1ea6b Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/sbo-test/providers/Microsoft.Web/connections/office365-1
-5a12ea85-419e-426b-81f8-20e53808a14c Microsoft.Authorization/roleAssignmentScheduleInstances /providers/Microsoft.Management/managementGroups/PrimaryMG1
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleInstance -Scope $scope 
 .Example
-PS C:\> $scope = "/" # "/" stands for tenant level resource
-PS C:\> Get-AzRoleAssignmentScheduleInstance -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                            Scope                                                 RoleDefinitionId
-----                                 ----                                            -----                                                 ----------------                                                                      
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorizatio… 
-a1f32976-b8f4-4606-a91d-af097a2473a2 Microsoft.Authorization/roleAssignmentScheduleInstances /providers/Microsoft.Management/managementGroups/MG-3 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-4f9bdc29-3bb9-4ad7-9c1d-3f3f5ba3e1d9 Microsoft.Authorization/roleAssignmentScheduleInstances /providers/Microsoft.Management/managementGroups/MG-2 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-529e4bba-621c-4309-a4b2-73e3364d4dd3 Microsoft.Authorization/roleAssignmentScheduleInstances /providers/Microsoft.Management/managementGroups/MG-1 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
+$scope = "/" # "/" stands for tenant level resource
+Get-AzRoleAssignmentScheduleInstance -Scope $scope -Filter "asTarget()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> $filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
-PS C:\> Get-AzRoleAssignmentScheduleInstance -Scope $scope -Filter $filter
-
-Name                                 Type                                            Scope                                                                                 RoleDefinitionId
-----                                 ----                                            -----                                                                                 ----------------                                      
-314aa57e-064d-46c3-964e-a0d20989c1a2 Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-496794ce-4465-4621-83aa-0b73b3c6fe17 Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-6461530a-4d10-400e-9eb0-ff7cb73c4ffd Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-d8daef6c-75da-42eb-9291-7cbc466d5b4b Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
+Get-AzRoleAssignmentScheduleInstance -Scope $scope -Filter $filter
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleInstance -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
-
-Name                                 Type                                            Scope                                               RoleDefinitionId
-----                                 ----                                            -----                                               ----------------                                                                        
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleInstance -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -173,7 +148,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -246,42 +221,17 @@ Get the specified role assignment schedule request.
 .Description
 Get the specified role assignment schedule request.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleRequest -Scope $scope 
-
-Name                                 Type                                                   Scope
-----                                 ----                                                   -----
-01b86d0b-2d7d-4ee2-bedb-68417ca9cc6a Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-06425dd7-102c-42c2-90c4-b5c630447356 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-0988b71a-f813-467b-abc0-cef007eddbb5 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-0cbb19d3-3804-404a-b74a-2f577f8aecbc Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleRequest -Scope $scope 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleRequest -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                                   Scope                                                                       RoleDefinitionId
-----                                 ----                                                   -----                                                                       ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-31910719-4f82-443c-9e7a-6bfe4b918e0c Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleRequest -Scope $scope -Filter "asTarget()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleRequest -Scope $scope -Filter "asApprover()"
-
-Name                                 Type                                                   Scope                                                                       RoleDefinitionId
-----                                 ----                                                   -----                                                                       ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-31910719-4f82-443c-9e7a-6bfe4b918e0c Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleRequest -Scope $scope -Filter "asApprover()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentScheduleRequest -Scope $scope -Name "2cc018c2-27f8-4730-a0bc-b6a8fcee3e70"
-
-Name                                 Type                                                   Scope                                               RoleDefinitionId
-----                                 ----                                                   -----                                               ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authoriz… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentScheduleRequest -Scope $scope -Name "2cc018c2-27f8-4730-a0bc-b6a8fcee3e70"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -399,7 +349,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -472,43 +422,18 @@ Get the specified role assignment schedule for a resource scope
 .Description
 Get the specified role assignment schedule for a resource scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentSchedule -Scope $scope 
-
-Name                                 Type                                            Scope
-----                                 ----                                            -----
-986d4ad8-f513-4a21-92e5-7163486e9e7c Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-2066f412-e9bf-406a-962c-df8c16c9f9a0 Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/UTSept3/providers/Microsoft.Compute/virtualMachines/vmtest123
-f402cab4-83ab-4361-8725-2190bbe1ea6b Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/sbo-test/providers/Microsoft.Web/connections/office365-1
-5a12ea85-419e-426b-81f8-20e53808a14c Microsoft.Authorization/roleAssignmentSchedules /providers/Microsoft.Management/managementGroups/PrimaryMG1
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentSchedule -Scope $scope 
 .Example
-PS C:\> $scope = "/" # "/" stands for tenant level resource
-PS C:\> Get-AzRoleAssignmentSchedule -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                            Scope                                                 RoleDefinitionId
-----                                 ----                                            -----                                                 ----------------                                                                      
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorizatio… 
-a1f32976-b8f4-4606-a91d-af097a2473a2 Microsoft.Authorization/roleAssignmentSchedules /providers/Microsoft.Management/managementGroups/MG-3 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-4f9bdc29-3bb9-4ad7-9c1d-3f3f5ba3e1d9 Microsoft.Authorization/roleAssignmentSchedules /providers/Microsoft.Management/managementGroups/MG-2 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-529e4bba-621c-4309-a4b2-73e3364d4dd3 Microsoft.Authorization/roleAssignmentSchedules /providers/Microsoft.Management/managementGroups/MG-1 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
+$scope = "/" # "/" stands for tenant level resource
+Get-AzRoleAssignmentSchedule -Scope $scope -Filter "asTarget()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> $filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
-PS C:\> Get-AzRoleAssignmentSchedule -Scope $scope -Filter $filter
-
-Name                                 Type                                            Scope                                                                                 RoleDefinitionId
-----                                 ----                                            -----                                                                                 ----------------                                      
-314aa57e-064d-46c3-964e-a0d20989c1a2 Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-496794ce-4465-4621-83aa-0b73b3c6fe17 Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-6461530a-4d10-400e-9eb0-ff7cb73c4ffd Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-d8daef6c-75da-42eb-9291-7cbc466d5b4b Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
+Get-AzRoleAssignmentSchedule -Scope $scope -Filter $filter
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleAssignmentSchedule -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
-
-Name                                 Type                                            Scope                                               RoleDefinitionId
-----                                 ----                                            -----                                               ----------------                                                                        
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleAssignmentSchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleAssignmentSchedule -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -625,7 +550,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -698,43 +623,18 @@ Gets the specified role eligibility schedule instance.
 .Description
 Gets the specified role eligibility schedule instance.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 Get-AzRoleEligibilityScheduleInstance -Scope $scope 
-
-Name                                 Type                                            Scope
-----                                 ----                                            -----
-986d4ad8-f513-4a21-92e5-7163486e9e7c Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-2066f412-e9bf-406a-962c-df8c16c9f9a0 Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/UTSept3/providers/Microsoft.Compute/virtualMachines/vmtest123
-f402cab4-83ab-4361-8725-2190bbe1ea6b Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/sbo-test/providers/Microsoft.Web/connections/office365-1
-5a12ea85-419e-426b-81f8-20e53808a14c Microsoft.Authorization/roleEligibilityScheduleInstances /providers/Microsoft.Management/managementGroups/PrimaryMG1
 .Example
-PS C:\> $scope = "/" # "/" stands for tenant level resource
+$scope = "/" # "/" stands for tenant level resource
 Get-AzRoleEligibilityScheduleInstance -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                            Scope                                                 RoleDefinitionId
-----                                 ----                                            -----                                                 ----------------                                                                      
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorizatio… 
-a1f32976-b8f4-4606-a91d-af097a2473a2 Microsoft.Authorization/roleEligibilityScheduleInstances /providers/Microsoft.Management/managementGroups/MG-3 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-4f9bdc29-3bb9-4ad7-9c1d-3f3f5ba3e1d9 Microsoft.Authorization/roleEligibilityScheduleInstances /providers/Microsoft.Management/managementGroups/MG-2 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-529e4bba-621c-4309-a4b2-73e3364d4dd3 Microsoft.Authorization/roleEligibilityScheduleInstances /providers/Microsoft.Management/managementGroups/MG-1 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 $filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
 Get-AzRoleEligibilityScheduleInstance -Scope $scope -Filter $filter
-
-Name                                 Type                                            Scope                                                                                 RoleDefinitionId
-----                                 ----                                            -----                                                                                 ----------------                                      
-314aa57e-064d-46c3-964e-a0d20989c1a2 Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-496794ce-4465-4621-83aa-0b73b3c6fe17 Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-6461530a-4d10-400e-9eb0-ff7cb73c4ffd Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-d8daef6c-75da-42eb-9291-7cbc466d5b4b Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 Get-AzRoleEligibilityScheduleInstance -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
-
-Name                                 Type                                            Scope                                               RoleDefinitionId
-----                                 ----                                            -----                                               ----------------                                                                        
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilityScheduleInstances /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/… 
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -851,7 +751,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -924,42 +824,17 @@ Get the specified role eligibility schedule request.
 .Description
 Get the specified role eligibility schedule request.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleEligibilityScheduleRequest -Scope $scope 
-
-Name                                 Type                                                   Scope
-----                                 ----                                                   -----
-01b86d0b-2d7d-4ee2-bedb-68417ca9cc6a Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-06425dd7-102c-42c2-90c4-b5c630447356 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-0988b71a-f813-467b-abc0-cef007eddbb5 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-0cbb19d3-3804-404a-b74a-2f577f8aecbc Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleEligibilityScheduleRequest -Scope $scope 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleEligibilityScheduleRequest -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                                   Scope                                                                       RoleDefinitionId
-----                                 ----                                                   -----                                                                       ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-31910719-4f82-443c-9e7a-6bfe4b918e0c Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleEligibilityScheduleRequest -Scope $scope -Filter "asTarget()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleEligibilityScheduleRequest -Scope $scope -Filter "asApprover()"
-
-Name                                 Type                                                   Scope                                                                       RoleDefinitionId
-----                                 ----                                                   -----                                                                       ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-31910719-4f82-443c-9e7a-6bfe4b918e0c Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                         /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/prov…
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleEligibilityScheduleRequest -Scope $scope -Filter "asApprover()"
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
-PS C:\> Get-AzRoleEligibilityScheduleRequest -Scope $scope -Name "2cc018c2-27f8-4730-a0bc-b6a8fcee3e70"
-
-Name                                 Type                                                   Scope                                               RoleDefinitionId
-----                                 ----                                                   -----                                               ----------------
-2cc018c2-27f8-4730-a0bc-b6a8fcee3e70 Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authoriz… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+Get-AzRoleEligibilityScheduleRequest -Scope $scope -Name "2cc018c2-27f8-4730-a0bc-b6a8fcee3e70"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -1077,7 +952,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -1150,43 +1025,18 @@ Get the specified role eligibility schedule for a resource scope
 .Description
 Get the specified role eligibility schedule for a resource scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 Get-AzRoleEligibilitySchedule -Scope $scope 
-
-Name                                 Type                                            Scope
-----                                 ----                                            -----
-986d4ad8-f513-4a21-92e5-7163486e9e7c Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-2066f412-e9bf-406a-962c-df8c16c9f9a0 Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/UTSept3/providers/Microsoft.Compute/virtualMachines/vmtest123
-f402cab4-83ab-4361-8725-2190bbe1ea6b Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/resourceGroups/sbo-test/providers/Microsoft.Web/connections/office365-1
-5a12ea85-419e-426b-81f8-20e53808a14c Microsoft.Authorization/roleEligibilitySchedules /providers/Microsoft.Management/managementGroups/PrimaryMG1
 .Example
-PS C:\> $scope = "/" # "/" stands for tenant level resource
+$scope = "/" # "/" stands for tenant level resource
 Get-AzRoleEligibilitySchedule -Scope $scope -Filter "asTarget()"
-
-Name                                 Type                                            Scope                                                 RoleDefinitionId
-----                                 ----                                            -----                                                 ----------------                                                                      
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorizatio… 
-a1f32976-b8f4-4606-a91d-af097a2473a2 Microsoft.Authorization/roleEligibilitySchedules /providers/Microsoft.Management/managementGroups/MG-3 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-4f9bdc29-3bb9-4ad7-9c1d-3f3f5ba3e1d9 Microsoft.Authorization/roleEligibilitySchedules /providers/Microsoft.Management/managementGroups/MG-2 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
-529e4bba-621c-4309-a4b2-73e3364d4dd3 Microsoft.Authorization/roleEligibilitySchedules /providers/Microsoft.Management/managementGroups/MG-1 /providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb… 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 $filter = "roleDefinitionId eq '/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635'"
 Get-AzRoleEligibilitySchedule -Scope $scope -Filter $filter
-
-Name                                 Type                                            Scope                                                                                 RoleDefinitionId
-----                                 ----                                            -----                                                                                 ----------------                                      
-314aa57e-064d-46c3-964e-a0d20989c1a2 Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-496794ce-4465-4621-83aa-0b73b3c6fe17 Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-6461530a-4d10-400e-9eb0-ff7cb73c4ffd Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
-d8daef6c-75da-42eb-9291-7cbc466d5b4b Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d                                   /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/… 
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d"
 Get-AzRoleEligibilitySchedule -Scope $scope -Name "4cd7e26b-8eca-425c-969d-ec708c88bf18"
-
-Name                                 Type                                            Scope                                               RoleDefinitionId
-----                                 ----                                            -----                                               ----------------                                                                        
-4cd7e26b-8eca-425c-969d-ec708c88bf18 Microsoft.Authorization/roleEligibilitySchedules /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/… 
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -1303,7 +1153,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -1376,26 +1226,12 @@ Get the child resources of a resource on which user has eligible access
 .Description
 Get the child resources of a resource on which user has eligible access
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> Get-AzRoleEligibleChildResource -Scope $scope                              
-
-Name                                               Type
-----                                               ----
-AnujRG                                             resourcegroup
-ARPJ-TESTRG-01                                     resourcegroup
-AnujRG2                                            resourcegroup
-asghodke-rg                                        resourcegroup
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+Get-AzRoleEligibleChildResource -Scope $scope                              
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $filter = "resoureType eq 'resourcegroup'"
-PS C:\> Get-AzRoleEligibleChildResource -Scope $scope -Filter $filter
-
-Name                                               Type
-----                                               ----
-AnujRG                                             resourcegroup
-ARPJ-TESTRG-01                                     resourcegroup
-AnujRG2                                            resourcegroup
-asghodke-rg                                        resourcegroup
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$filter = "resoureType eq 'resourcegroup'"
+Get-AzRoleEligibleChildResource -Scope $scope -Filter $filter
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -1502,7 +1338,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -1574,23 +1410,12 @@ Get the specified role management policy assignment for a resource scope
 .Description
 Get the specified role management policy assignment for a resource scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> Get-AzRoleManagementPolicyAssignment -Scope $scope
-
-Name                                                                      Type                                                   Scope                                               RoleDefinitionId
-----                                                                      ----                                                   -----                                               ----------------
-588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd Microsoft.Authorization/roleManagementPolicyAssignment /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f… 
-8dbbf139-4d46-4ad4-a56b-004156c117d2_056cd41c-7e88-42e1-933e-88ba6a50c9c3 Microsoft.Authorization/roleManagementPolicyAssignment /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f… 
-1c8bc687-402c-4e62-b38b-009d6fc244d3_b97fb8bc-a8b2-4522-a38b-dd33c7e65ead Microsoft.Authorization/roleManagementPolicyAssignment /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f… 
-5d582357-e60a-4322-a299-00ab23713a07_70bbe301-9835-447d-afdd-19eb3167307c Microsoft.Authorization/roleManagementPolicyAssignment /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f… 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+Get-AzRoleManagementPolicyAssignment -Scope $scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $name = "588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd"
-PS C:\> Get-AzRoleManagementPolicyAssignment -Scope $scope -Name $name
-
-Name                                                                      Type                                                   Scope                                               RoleDefinitionId
-----                                                                      ----                                                   -----                                               ----------------
-588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd Microsoft.Authorization/roleManagementPolicyAssignment /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f…
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$name = "588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd"
+Get-AzRoleManagementPolicyAssignment -Scope $scope -Name $name
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -1697,7 +1522,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -1770,22 +1595,12 @@ Get the specified role management policy for a resource scope
 .Description
 Get the specified role management policy for a resource scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> Get-AzRoleManagementPolicy -Scope $scope
-
-Name                                 Type                                           Scope
-----                                 ----                                           -----
-588b80cc-f50c-4616-acc9-0003872624db Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-8dbbf139-4d46-4ad4-a56b-004156c117d2 Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-1c8bc687-402c-4e62-b38b-009d6fc244d3 Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+Get-AzRoleManagementPolicy -Scope $scope
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $name = "33b520ea-3544-4abc-8565-3588deb8e68e"
-PS C:\> Get-AzRoleManagementPolicy -Scope $scope -Name $name
-
-Name                                 Type                                           Scope
-----                                 ----                                           -----
-33b520ea-3544-4abc-8565-3588deb8e68e Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$name = "33b520ea-3544-4abc-8565-3588deb8e68e"
+Get-AzRoleManagementPolicy -Scope $scope -Name $name
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -1892,7 +1707,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -1965,41 +1780,25 @@ Creates a role assignment schedule request.
 .Description
 Creates a role assignment schedule request.
 .Example
-PS C:\> $guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminAssign -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminAssign -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 .Example
-PS C:\> $guid = "13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminRemove -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminRemove -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 .Example
-PS C:\> $guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType SelfActivate -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType SelfActivate -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 .Example
-PS C:\> $guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType SelfDeactivate -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleAssignmentScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleAssignmentScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType SelfDeactivate -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 
 .Outputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.Api20201001Preview.IRoleAssignmentScheduleRequest
@@ -2179,7 +1978,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -2250,23 +2049,15 @@ Creates a role eligibility schedule request.
 .Description
 Creates a role eligibility schedule request.
 .Example
-PS C:\> $guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleEligibilityScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminAssign -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "12f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleEligibilityScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminAssign -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 .Example
-PS C:\> $guid = "13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
-PS C:\> $startTime = Get-Date -Format o 
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleEligibilityScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminRemove -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
-
-Name                                 Type                                                    Scope                                               RoleDefinitionId
-----                                 ----                                                    -----                                               ----------------                                                                 
-13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca Microsoft.Authorization/roleEligibilityScheduleRequests /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authori… 
+$guid = "13f8978c-5d8d-4fbf-b4b6-2f43eeb43eca"
+$startTime = Get-Date -Format o 
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleEligibilityScheduleRequest -Name $guid -Scope $scope -ExpirationDuration PT1H -ExpirationType AfterDuration -PrincipalId 5a4bdd72-ab3e-4d8e-ab0f-8dd8917481a2 -RequestType AdminRemove -RoleDefinitionId subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7 -ScheduleInfoStartDateTime $startTime
 
 .Outputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.Api20201001Preview.IRoleEligibilityScheduleRequest
@@ -2440,7 +2231,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -2511,10 +2302,8 @@ Create a role management policy assignment
 .Description
 Create a role management policy assignment
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> New-AzRoleManagementPolicyAssignment -Scope $scope -Name "0a4d3ef7-147b-4777-a958-ae9dfab3c331"
-
-The requested resource does not support http method 'PUT'.
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+New-AzRoleManagementPolicyAssignment -Scope $scope -Name "0a4d3ef7-147b-4777-a958-ae9dfab3c331"
 
 .Outputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.Api20201001Preview.IRoleManagementPolicyAssignment
@@ -2607,7 +2396,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -2678,10 +2467,8 @@ Delete a role management policy assignment
 .Description
 Delete a role management policy assignment
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> Remove-AzRoleManagementPolicyAssignment -Scope $scope -Name "588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd"
-
-Remove-AzRoleManagementPolicyAssignment_Delete: The requested resource does not support http method 'DELETE'.
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+Remove-AzRoleManagementPolicyAssignment -Scope $scope -Name "588b80cc-f50c-4616-acc9-0003872624db_00493d72-78f6-4148-b6c5-d3ce8e4799dd"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -2793,7 +2580,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -2865,10 +2652,8 @@ Delete a role management policy
 .Description
 Delete a role management policy
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> Remove-AzRoleManagementPolicy -Scope $scope -Name "0a4d3ef7-147b-4777-a958-ae9dfab3c331"
-
-The requested resource does not support http method 'DELETE'.
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+Remove-AzRoleManagementPolicy -Scope $scope -Name "0a4d3ef7-147b-4777-a958-ae9dfab3c331"
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -2980,7 +2765,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -3052,10 +2837,9 @@ Cancels a pending role assignment schedule request.
 .Description
 Cancels a pending role assignment schedule request.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $name = "47f8978c-5d8d-4fbf-b4b6-2f43eeb43ec6"
-PS C:\> Stop-AzRoleAssignmentScheduleRequest -Scope $scope -Name $name
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$name = "47f8978c-5d8d-4fbf-b4b6-2f43eeb43ec6"
+Stop-AzRoleAssignmentScheduleRequest -Scope $scope -Name $name
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -3167,7 +2951,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -3239,10 +3023,9 @@ Cancels a pending role eligibility schedule request.
 .Description
 Cancels a pending role eligibility schedule request.
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $name = "47f8978c-5d8d-4fbf-b4b6-2f43eeb43ec6"
-PS C:\> Stop-AzRoleEligibilitytScheduleRequest -Scope $scope -Name $name
-
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$name = "47f8978c-5d8d-4fbf-b4b6-2f43eeb43ec6"
+Stop-AzRoleEligibilityScheduleRequest -Scope $scope -Name $name
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -3354,7 +3137,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -3426,8 +3209,8 @@ Update a role management policy
 .Description
 Update a role management policy
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $expirationRule = [RoleManagementPolicyExpirationRule]@{
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$expirationRule = [RoleManagementPolicyExpirationRule]@{
             isExpirationRequired = "false";
             maximumDuration = "P180D";
             id = "Expiration_Admin_Eligibility";
@@ -3439,16 +3222,11 @@ PS C:\> $expirationRule = [RoleManagementPolicyExpirationRule]@{
             targetInheritableSetting = $null;
             targetEnforcedSetting = $null;
         }
-PS C:\> $rules = [IRoleManagementPolicyRule[]]@($expirationRule)
-PS C:\> Update-AzRoleManagementPolicy -Scope $scope -Name "33b520ea-3544-4abc-8565-3588deb8e68e" -Rule $rules
-
-Name                                 Type                                           Scope
-----                                 ----                                           -----
-33b520ea-3544-4abc-8565-3588deb8e68e Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-
+$rules = [IRoleManagementPolicyRule[]]@($expirationRule)
+Update-AzRoleManagementPolicy -Scope $scope -Name "33b520ea-3544-4abc-8565-3588deb8e68e" -Rule $rules
 .Example
-PS C:\> $scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
-PS C:\> $expirationRule = [RoleManagementPolicyExpirationRule]@{
+$scope = "/subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d/"
+$expirationRule = [RoleManagementPolicyExpirationRule]@{
             isExpirationRequired = "false";
             maximumDuration = "P180D";
             id = "Expiration_Admin_Eligibility";
@@ -3460,7 +3238,7 @@ PS C:\> $expirationRule = [RoleManagementPolicyExpirationRule]@{
             targetInheritableSetting = $null;
             targetEnforcedSetting = $null;
         }
-PS C:\> $notificationRule = [RoleManagementPolicyNotificationRule]@{
+$notificationRule = [RoleManagementPolicyNotificationRule]@{
             notificationType = "Email";
             recipientType = "Approver";
             isDefaultRecipientsEnabled = "false";
@@ -3475,13 +3253,8 @@ PS C:\> $notificationRule = [RoleManagementPolicyNotificationRule]@{
             targetInheritableSetting = $null;
             targetEnforcedSetting = $null;
         }
-PS C:\> $rules = [IRoleManagementPolicyRule[]]@($expirationRule, $notificationRule)
-PS C:\> Update-AzRoleManagementPolicy -Scope $scope -Name "33b520ea-3544-4abc-8565-3588deb8e68e" -Rule $rules
-
-Name                                 Type                                           Scope
-----                                 ----                                           -----
-33b520ea-3544-4abc-8565-3588deb8e68e Microsoft.Authorization/roleManagementPolicies /subscriptions/38ab2ccc-3747-4567-b36b-9478f5602f0d
-
+$rules = [IRoleManagementPolicyRule[]]@($expirationRule, $notificationRule)
+Update-AzRoleManagementPolicy -Scope $scope -Name "33b520ea-3544-4abc-8565-3588deb8e68e" -Rule $rules
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Resources.Authorization.Models.IAuthorizationIdentity
@@ -3623,7 +3396,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
-            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Runspace.Version.ToString()
+            [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $Host.Version.ToString()
         }         
         $preTelemetryId = [Microsoft.WindowsAzure.Commands.Common.MetricHelper]::TelemetryId
         if ($preTelemetryId -eq '') {
@@ -3690,42 +3463,42 @@ end {
 }
 
 # SIG # Begin signature block
-# MIInsQYJKoZIhvcNAQcCoIInojCCJ54CAQExDzANBglghkgBZQMEAgEFADB5Bgor
+# MIInpQYJKoZIhvcNAQcCoIInljCCJ5ICAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCCgV6QS+wOla5cA
-# 8gs9TNg1wux9gruQYThkC9BmlfDYOKCCDYUwggYDMIID66ADAgECAhMzAAACU+OD
-# 3pbexW7MAAAAAAJTMA0GCSqGSIb3DQEBCwUAMH4xCzAJBgNVBAYTAlVTMRMwEQYD
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBB/0Qoa8AXjJ5q
+# K1biewvCDVINiJuh6P0Aa/IQO6nDsqCCDYUwggYDMIID66ADAgECAhMzAAACzfNk
+# v/jUTF1RAAAAAALNMA0GCSqGSIb3DQEBCwUAMH4xCzAJBgNVBAYTAlVTMRMwEQYD
 # VQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25kMR4wHAYDVQQKExVNaWNy
 # b3NvZnQgQ29ycG9yYXRpb24xKDAmBgNVBAMTH01pY3Jvc29mdCBDb2RlIFNpZ25p
-# bmcgUENBIDIwMTEwHhcNMjEwOTAyMTgzMzAwWhcNMjIwOTAxMTgzMzAwWjB0MQsw
+# bmcgUENBIDIwMTEwHhcNMjIwNTEyMjA0NjAyWhcNMjMwNTExMjA0NjAyWjB0MQsw
 # CQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9u
 # ZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMR4wHAYDVQQDExVNaWNy
 # b3NvZnQgQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
-# AQDLhxHwq3OhH+4J+SX4qS/VQG8HybccH7tnG+BUqrXubfGuDFYPZ29uCuHfQlO1
-# lygLgMpJ4Geh6/6poQ5VkDKfVssn6aA1PCzIh8iOPMQ9Mju3sLF9Sn+Pzuaie4BN
-# rp0MuZLDEXgVYx2WNjmzqcxC7dY9SC3znOh5qUy2vnmWygC7b9kj0d3JrGtjc5q5
-# 0WfV3WLXAQHkeRROsJFBZfXFGoSvRljFFUAjU/zdhP92P+1JiRRRikVy/sqIhMDY
-# +7tVdzlE2fwnKOv9LShgKeyEevgMl0B1Fq7E2YeBZKF6KlhmYi9CE1350cnTUoU4
-# YpQSnZo0YAnaenREDLfFGKTdAgMBAAGjggGCMIIBfjAfBgNVHSUEGDAWBgorBgEE
-# AYI3TAgBBggrBgEFBQcDAzAdBgNVHQ4EFgQUlZpLWIccXoxessA/DRbe26glhEMw
+# AQDrIzsY62MmKrzergm7Ucnu+DuSHdgzRZVCIGi9CalFrhwtiK+3FIDzlOYbs/zz
+# HwuLC3hir55wVgHoaC4liQwQ60wVyR17EZPa4BQ28C5ARlxqftdp3H8RrXWbVyvQ
+# aUnBQVZM73XDyGV1oUPZGHGWtgdqtBUd60VjnFPICSf8pnFiit6hvSxH5IVWI0iO
+# nfqdXYoPWUtVUMmVqW1yBX0NtbQlSHIU6hlPvo9/uqKvkjFUFA2LbC9AWQbJmH+1
+# uM0l4nDSKfCqccvdI5l3zjEk9yUSUmh1IQhDFn+5SL2JmnCF0jZEZ4f5HE7ykDP+
+# oiA3Q+fhKCseg+0aEHi+DRPZAgMBAAGjggGCMIIBfjAfBgNVHSUEGDAWBgorBgEE
+# AYI3TAgBBggrBgEFBQcDAzAdBgNVHQ4EFgQU0WymH4CP7s1+yQktEwbcLQuR9Zww
 # VAYDVR0RBE0wS6RJMEcxLTArBgNVBAsTJE1pY3Jvc29mdCBJcmVsYW5kIE9wZXJh
-# dGlvbnMgTGltaXRlZDEWMBQGA1UEBRMNMjMwMDEyKzQ2NzU5ODAfBgNVHSMEGDAW
+# dGlvbnMgTGltaXRlZDEWMBQGA1UEBRMNMjMwMDEyKzQ3MDUzMDAfBgNVHSMEGDAW
 # gBRIbmTlUAXTgqoXNzcitW2oynUClTBUBgNVHR8ETTBLMEmgR6BFhkNodHRwOi8v
 # d3d3Lm1pY3Jvc29mdC5jb20vcGtpb3BzL2NybC9NaWNDb2RTaWdQQ0EyMDExXzIw
 # MTEtMDctMDguY3JsMGEGCCsGAQUFBwEBBFUwUzBRBggrBgEFBQcwAoZFaHR0cDov
 # L3d3dy5taWNyb3NvZnQuY29tL3BraW9wcy9jZXJ0cy9NaWNDb2RTaWdQQ0EyMDEx
 # XzIwMTEtMDctMDguY3J0MAwGA1UdEwEB/wQCMAAwDQYJKoZIhvcNAQELBQADggIB
-# AKVY+yKcJVVxf9W2vNkL5ufjOpqcvVOOOdVyjy1dmsO4O8khWhqrecdVZp09adOZ
-# 8kcMtQ0U+oKx484Jg11cc4Ck0FyOBnp+YIFbOxYCqzaqMcaRAgy48n1tbz/EFYiF
-# zJmMiGnlgWFCStONPvQOBD2y/Ej3qBRnGy9EZS1EDlRN/8l5Rs3HX2lZhd9WuukR
-# bUk83U99TPJyo12cU0Mb3n1HJv/JZpwSyqb3O0o4HExVJSkwN1m42fSVIVtXVVSa
-# YZiVpv32GoD/dyAS/gyplfR6FI3RnCOomzlycSqoz0zBCPFiCMhVhQ6qn+J0GhgR
-# BJvGKizw+5lTfnBFoqKZJDROz+uGDl9tw6JvnVqAZKGrWv/CsYaegaPePFrAVSxA
-# yUwOFTkAqtNC8uAee+rv2V5xLw8FfpKJ5yKiMKnCKrIaFQDr5AZ7f2ejGGDf+8Tz
-# OiK1AgBvOW3iTEEa/at8Z4+s1CmnEAkAi0cLjB72CJedU1LAswdOCWM2MDIZVo9j
-# 0T74OkJLTjPd3WNEyw0rBXTyhlbYQsYt7ElT2l2TTlF5EmpVixGtj4ChNjWoKr9y
-# TAqtadd2Ym5FNB792GzwNwa631BPCgBJmcRpFKXt0VEQq7UXVNYBiBRd+x4yvjqq
-# 5aF7XC5nXCgjbCk7IXwmOphNuNDNiRq83Ejjnc7mxrJGMIIHejCCBWKgAwIBAgIK
+# AE7LSuuNObCBWYuttxJAgilXJ92GpyV/fTiyXHZ/9LbzXs/MfKnPwRydlmA2ak0r
+# GWLDFh89zAWHFI8t9JLwpd/VRoVE3+WyzTIskdbBnHbf1yjo/+0tpHlnroFJdcDS
+# MIsH+T7z3ClY+6WnjSTetpg1Y/pLOLXZpZjYeXQiFwo9G5lzUcSd8YVQNPQAGICl
+# 2JRSaCNlzAdIFCF5PNKoXbJtEqDcPZ8oDrM9KdO7TqUE5VqeBe6DggY1sZYnQD+/
+# LWlz5D0wCriNgGQ/TWWexMwwnEqlIwfkIcNFxo0QND/6Ya9DTAUykk2SKGSPt0kL
+# tHxNEn2GJvcNtfohVY/b0tuyF05eXE3cdtYZbeGoU1xQixPZAlTdtLmeFNly82uB
+# VbybAZ4Ut18F//UrugVQ9UUdK1uYmc+2SdRQQCccKwXGOuYgZ1ULW2u5PyfWxzo4
+# BR++53OB/tZXQpz4OkgBZeqs9YaYLFfKRlQHVtmQghFHzB5v/WFonxDVlvPxy2go
+# a0u9Z+ZlIpvooZRvm6OtXxdAjMBcWBAsnBRr/Oj5s356EDdf2l/sLwLFYE61t+ME
+# iNYdy0pXL6gN3DxTVf2qjJxXFkFfjjTisndudHsguEMk8mEtnvwo9fOSKT6oRHhM
+# 9sZ4HTg/TTMjUljmN3mBYWAWI5ExdC1inuog0xrKmOWVMIIHejCCBWKgAwIBAgIK
 # YQ6Q0gAAAAAAAzANBgkqhkiG9w0BAQsFADCBiDELMAkGA1UEBhMCVVMxEzARBgNV
 # BAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jv
 # c29mdCBDb3Jwb3JhdGlvbjEyMDAGA1UEAxMpTWljcm9zb2Z0IFJvb3QgQ2VydGlm
@@ -3765,141 +3538,141 @@ end {
 # BL7fQccOKO7eZS/sl/ahXJbYANahRr1Z85elCUtIEJmAH9AAKcWxm6U/RXceNcbS
 # oqKfenoi+kiVH6v7RyOA9Z74v2u3S5fi63V4GuzqN5l5GEv/1rMjaHXmr/r8i+sL
 # gOppO6/8MO0ETI7f33VtY5E90Z1WTk+/gFcioXgRMiF670EKsT/7qMykXcGhiJtX
-# cVZOSEXAQsmbdlsKgEhr/Xmfwb1tbWrJUnMTDXpQzTGCGYIwghl+AgEBMIGVMH4x
+# cVZOSEXAQsmbdlsKgEhr/Xmfwb1tbWrJUnMTDXpQzTGCGXYwghlyAgEBMIGVMH4x
 # CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRt
 # b25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xKDAmBgNVBAMTH01p
-# Y3Jvc29mdCBDb2RlIFNpZ25pbmcgUENBIDIwMTECEzMAAAJT44Pelt7FbswAAAAA
-# AlMwDQYJYIZIAWUDBAIBBQCgga4wGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
-# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwLwYJKoZIhvcNAQkEMSIEIB9B
-# RZDPmBWpjdNJshmJVZf1phBAAaSQTFtEPOlf1+XRMEIGCisGAQQBgjcCAQwxNDAy
+# Y3Jvc29mdCBDb2RlIFNpZ25pbmcgUENBIDIwMTECEzMAAALN82S/+NRMXVEAAAAA
+# As0wDQYJYIZIAWUDBAIBBQCgga4wGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQw
+# HAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwLwYJKoZIhvcNAQkEMSIEIMLC
+# VV8Ekcmf+lHobfCaO510ffpQByCBLRJU1lzr+pkaMEIGCisGAQQBgjcCAQwxNDAy
 # oBSAEgBNAGkAYwByAG8AcwBvAGYAdKEagBhodHRwOi8vd3d3Lm1pY3Jvc29mdC5j
-# b20wDQYJKoZIhvcNAQEBBQAEggEALzJQwTMgzMvnyd2Y033CUwcIEja3J2LOKJOx
-# yLQMbgQjal5L2+4neYuecqNMXOF3GZxSM6VncCXY/9QeMRalGE4iaWwxCbplpXHb
-# dbqWVs1a02Y7RxaJIIVQyeqW/4YzwoooHihnTz3i6JO2jW/daF+it5DAqjyQMuFk
-# V76JaY1C0Nc6GgIcZwZDa+m+zlWdLO81fVbr80PD0RT5SOkByWLcrjI6mfDdFs7U
-# EzT6zpJUWpKeMKoLuUw7mA7qvJWm7x9H7KIdLA1ndAOtfUKKpLTRzR1I3D19Pyfa
-# UKoGlefqMd65tOMJIX9/ASbEcoLr491hVbE+WDcm3GOWruJyVKGCFwwwghcIBgor
-# BgEEAYI3AwMBMYIW+DCCFvQGCSqGSIb3DQEHAqCCFuUwghbhAgEDMQ8wDQYJYIZI
-# AWUDBAIBBQAwggFVBgsqhkiG9w0BCRABBKCCAUQEggFAMIIBPAIBAQYKKwYBBAGE
-# WQoDATAxMA0GCWCGSAFlAwQCAQUABCDgzlH7ZDzzxsJHLb7soP9rYjyZm785xvVH
-# 0jViLio/pAIGYi/ZU6DJGBMyMDIyMDQyMjAzNTIxNy4wNDRaMASAAgH0oIHUpIHR
-# MIHOMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMH
-# UmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSkwJwYDVQQL
-# EyBNaWNyb3NvZnQgT3BlcmF0aW9ucyBQdWVydG8gUmljbzEmMCQGA1UECxMdVGhh
-# bGVzIFRTUyBFU046RDlERS1FMzlBLTQzRkUxJTAjBgNVBAMTHE1pY3Jvc29mdCBU
-# aW1lLVN0YW1wIFNlcnZpY2WgghFfMIIHEDCCBPigAwIBAgITMwAAAaxmvIciXd49
-# ewABAAABrDANBgkqhkiG9w0BAQsFADB8MQswCQYDVQQGEwJVUzETMBEGA1UECBMK
-# V2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0
-# IENvcnBvcmF0aW9uMSYwJAYDVQQDEx1NaWNyb3NvZnQgVGltZS1TdGFtcCBQQ0Eg
-# MjAxMDAeFw0yMjAzMDIxODUxMjlaFw0yMzA1MTExODUxMjlaMIHOMQswCQYDVQQG
-# EwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
-# A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSkwJwYDVQQLEyBNaWNyb3NvZnQg
-# T3BlcmF0aW9ucyBQdWVydG8gUmljbzEmMCQGA1UECxMdVGhhbGVzIFRTUyBFU046
-# RDlERS1FMzlBLTQzRkUxJTAjBgNVBAMTHE1pY3Jvc29mdCBUaW1lLVN0YW1wIFNl
-# cnZpY2UwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDHeAtQxRdi7sdx
-# zCvABJTHUxeIhvUTsikFhXoU13vhF9UDq0wRZ4TACjRyEFqMZCtVutv6EEEJrSB6
-# PLKYTLdVqZCzbwpty2vLHVS97fwQMe1FpJn77oydyg2koLd3JXObjT1I+3t9lOJ/
-# xKfaDnPj7/xB3O1xh9Xxkby0WM8KMT9cZCpXrrGyM0/2ip+lgtgYID84x14p/ShO
-# 5K4grqgPiTYbJJHnUxyUCKLW5Ufq2XLHsU0pozvme0dJn3h4lPA57b2b2f/WnfV1
-# IQ8FCRSmfGWb8Z6p2V8BWJAyjWoGPINOgRdbw7pW5QLOgOIbj9Xu6bShaaQdVWZC
-# 1AJiFtccSRrN5HonQE1iFcdtrBlcnpmk9vTX7Q6f40bA8P2ocL9TZL+lr8pKLytJ
-# AzyGPUwlvXEW71HhJZPvglTO3CKq5fEGN5oBEPKIuOVcxAV7mNOGNSoo2xi2ERTV
-# MqVzEQwKVfpHIxvLkk9d5kgn9ojIVkUS8/f48iMHu5Zl8+M1MmHJK/tjZvBq0quX
-# 1QD7ISDvAG/2jqOv6Htxt2PnIpfIskSSyTcWzGMYkCSmb28ZQiKfqRiJ2g9d+9zO
-# yjzxf8l3k+IRtC6lyr3pZILZac3nz65lFbqY2E4Hhn7qVMBc8pkpOCUTTtbYUQdG
-# wygyMjTFahLr1dVMXXK4nFdKI4HiRwIDAQABo4IBNjCCATIwHQYDVR0OBBYEFFgR
-# n3cEyx9AZ0o8fElamFrAQI5NMB8GA1UdIwQYMBaAFJ+nFV0AXmJdg/Tl0mWnG1M1
-# GelyMF8GA1UdHwRYMFYwVKBSoFCGTmh0dHA6Ly93d3cubWljcm9zb2Z0LmNvbS9w
-# a2lvcHMvY3JsL01pY3Jvc29mdCUyMFRpbWUtU3RhbXAlMjBQQ0ElMjAyMDEwKDEp
-# LmNybDBsBggrBgEFBQcBAQRgMF4wXAYIKwYBBQUHMAKGUGh0dHA6Ly93d3cubWlj
-# cm9zb2Z0LmNvbS9wa2lvcHMvY2VydHMvTWljcm9zb2Z0JTIwVGltZS1TdGFtcCUy
-# MFBDQSUyMDIwMTAoMSkuY3J0MAwGA1UdEwEB/wQCMAAwEwYDVR0lBAwwCgYIKwYB
-# BQUHAwgwDQYJKoZIhvcNAQELBQADggIBAHnQtQJYVVxwpXZPLaCMwFvUMiE3EXso
-# VKbNbg+u8wgt9PH0c2BREv9rzF+6NDmyYMwsU9Z4tL5HLPFhtjFCLJPdUQjyHg80
-# 0CLSKY/WU8/YdLbn3Chpt2oZJ0bNYaFddo0RZHGqlyaNX7MrqCoA/hU09pTr6xLD
-# YyYecBLIvjwf5lZofyWtFbvI4VCXNYawVEOWIrEODdNLJ2cITqAnj123Q+hxrNXJ
-# rF2W65E/LzT2FfC5yOJcbif2GmEttKkK+mPQyBxQzWMWW05bEHl7Pyo54UTXRYgh
-# qAHCx1sHlnkbM4dolITH2Nf+/Xe7KJn48emciT2Tq+HxNFE9pf6wWgU66D6Qzr6W
-# jrGOhP7XiyzH8p6+lDkHhOJUYsOfbIlRsgBqqUwU23cwBSwRR+NLm6+1RJXZo4h2
-# teBJGcWL3IMysSqrm+Mqymn6P4/WlG8C6y9lTB1nKWtfCYb+syI3dNSBpFHY91Cf
-# iSkDQM+Xsj8kEmT7fcLPG8p6HRpTOZ2JBwcu6z74+Ocvmc+46y4I4L2SIsRrM8Ki
-# siieOwDx8ax/BowkLrG71vTReCwGCqGWRo+z8JkAPl5sA+bX1ENCrszERZjKTlM7
-# YkwICY0H/UzLnN6WJqRVhK/JLGHcK463VmACwlwPyEFxHQIrEMI+WM07IeEMU1Kv
-# r0UsbPd8gd5yMIIHcTCCBVmgAwIBAgITMwAAABXF52ueAptJmQAAAAAAFTANBgkq
-# hkiG9w0BAQsFADCBiDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24x
-# EDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3JhdGlv
-# bjEyMDAGA1UEAxMpTWljcm9zb2Z0IFJvb3QgQ2VydGlmaWNhdGUgQXV0aG9yaXR5
-# IDIwMTAwHhcNMjEwOTMwMTgyMjI1WhcNMzAwOTMwMTgzMjI1WjB8MQswCQYDVQQG
-# EwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
-# A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSYwJAYDVQQDEx1NaWNyb3NvZnQg
-# VGltZS1TdGFtcCBQQ0EgMjAxMDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoC
-# ggIBAOThpkzntHIhC3miy9ckeb0O1YLT/e6cBwfSqWxOdcjKNVf2AX9sSuDivbk+
-# F2Az/1xPx2b3lVNxWuJ+Slr+uDZnhUYjDLWNE893MsAQGOhgfWpSg0S3po5GawcU
-# 88V29YZQ3MFEyHFcUTE3oAo4bo3t1w/YJlN8OWECesSq/XJprx2rrPY2vjUmZNqY
-# O7oaezOtgFt+jBAcnVL+tuhiJdxqD89d9P6OU8/W7IVWTe/dvI2k45GPsjksUZzp
-# cGkNyjYtcI4xyDUoveO0hyTD4MmPfrVUj9z6BVWYbWg7mka97aSueik3rMvrg0Xn
-# Rm7KMtXAhjBcTyziYrLNueKNiOSWrAFKu75xqRdbZ2De+JKRHh09/SDPc31BmkZ1
-# zcRfNN0Sidb9pSB9fvzZnkXftnIv231fgLrbqn427DZM9ituqBJR6L8FA6PRc6ZN
-# N3SUHDSCD/AQ8rdHGO2n6Jl8P0zbr17C89XYcz1DTsEzOUyOArxCaC4Q6oRRRuLR
-# vWoYWmEBc8pnol7XKHYC4jMYctenIPDC+hIK12NvDMk2ZItboKaDIV1fMHSRlJTY
-# uVD5C4lh8zYGNRiER9vcG9H9stQcxWv2XFJRXRLbJbqvUAV6bMURHXLvjflSxIUX
-# k8A8FdsaN8cIFRg/eKtFtvUeh17aj54WcmnGrnu3tz5q4i6tAgMBAAGjggHdMIIB
-# 2TASBgkrBgEEAYI3FQEEBQIDAQABMCMGCSsGAQQBgjcVAgQWBBQqp1L+ZMSavoKR
-# PEY1Kc8Q/y8E7jAdBgNVHQ4EFgQUn6cVXQBeYl2D9OXSZacbUzUZ6XIwXAYDVR0g
-# BFUwUzBRBgwrBgEEAYI3TIN9AQEwQTA/BggrBgEFBQcCARYzaHR0cDovL3d3dy5t
-# aWNyb3NvZnQuY29tL3BraW9wcy9Eb2NzL1JlcG9zaXRvcnkuaHRtMBMGA1UdJQQM
-# MAoGCCsGAQUFBwMIMBkGCSsGAQQBgjcUAgQMHgoAUwB1AGIAQwBBMAsGA1UdDwQE
-# AwIBhjAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQYMBaAFNX2VsuP6KJcYmjRPZSQ
-# W9fOmhjEMFYGA1UdHwRPME0wS6BJoEeGRWh0dHA6Ly9jcmwubWljcm9zb2Z0LmNv
-# bS9wa2kvY3JsL3Byb2R1Y3RzL01pY1Jvb0NlckF1dF8yMDEwLTA2LTIzLmNybDBa
-# BggrBgEFBQcBAQROMEwwSgYIKwYBBQUHMAKGPmh0dHA6Ly93d3cubWljcm9zb2Z0
-# LmNvbS9wa2kvY2VydHMvTWljUm9vQ2VyQXV0XzIwMTAtMDYtMjMuY3J0MA0GCSqG
-# SIb3DQEBCwUAA4ICAQCdVX38Kq3hLB9nATEkW+Geckv8qW/qXBS2Pk5HZHixBpOX
-# PTEztTnXwnE2P9pkbHzQdTltuw8x5MKP+2zRoZQYIu7pZmc6U03dmLq2HnjYNi6c
-# qYJWAAOwBb6J6Gngugnue99qb74py27YP0h1AdkY3m2CDPVtI1TkeFN1JFe53Z/z
-# jj3G82jfZfakVqr3lbYoVSfQJL1AoL8ZthISEV09J+BAljis9/kpicO8F7BUhUKz
-# /AyeixmJ5/ALaoHCgRlCGVJ1ijbCHcNhcy4sa3tuPywJeBTpkbKpW99Jo3QMvOyR
-# gNI95ko+ZjtPu4b6MhrZlvSP9pEB9s7GdP32THJvEKt1MMU0sHrYUP4KWN1APMdU
-# bZ1jdEgssU5HLcEUBHG/ZPkkvnNtyo4JvbMBV0lUZNlz138eW0QBjloZkWsNn6Qo
-# 3GcZKCS6OEuabvshVGtqRRFHqfG3rsjoiV5PndLQTHa1V1QJsWkBRH58oWFsc/4K
-# u+xBZj1p/cvBQUl+fpO+y/g75LcVv7TOPqUxUYS8vwLBgqJ7Fx0ViY1w/ue10Cga
-# iQuPNtq6TPmb/wrpNPgkNWcr4A245oyZ1uEi6vAnQj0llOZ0dFtq0Z4+7X6gMTN9
-# vMvpe784cETRkPHIqzqKOghif9lwY1NNje6CbaUFEMFxBmoQtB1VM1izoXBm8qGC
-# AtIwggI7AgEBMIH8oYHUpIHRMIHOMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2Fz
-# aGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENv
-# cnBvcmF0aW9uMSkwJwYDVQQLEyBNaWNyb3NvZnQgT3BlcmF0aW9ucyBQdWVydG8g
-# UmljbzEmMCQGA1UECxMdVGhhbGVzIFRTUyBFU046RDlERS1FMzlBLTQzRkUxJTAj
-# BgNVBAMTHE1pY3Jvc29mdCBUaW1lLVN0YW1wIFNlcnZpY2WiIwoBATAHBgUrDgMC
-# GgMVALEa0hOwuLBJ/egDIYzZF2dGNYqgoIGDMIGApH4wfDELMAkGA1UEBhMCVVMx
-# EzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoT
-# FU1pY3Jvc29mdCBDb3Jwb3JhdGlvbjEmMCQGA1UEAxMdTWljcm9zb2Z0IFRpbWUt
-# U3RhbXAgUENBIDIwMTAwDQYJKoZIhvcNAQEFBQACBQDmDHA1MCIYDzIwMjIwNDIy
-# MDQwNzE3WhgPMjAyMjA0MjMwNDA3MTdaMHcwPQYKKwYBBAGEWQoEATEvMC0wCgIF
-# AOYMcDUCAQAwCgIBAAICFWICAf8wBwIBAAICEUYwCgIFAOYNwbUCAQAwNgYKKwYB
-# BAGEWQoEAjEoMCYwDAYKKwYBBAGEWQoDAqAKMAgCAQACAwehIKEKMAgCAQACAwGG
-# oDANBgkqhkiG9w0BAQUFAAOBgQChZICFP+G614+V8cJiQZA4eweBDPTP0w/PPE26
-# XYgZNCbPlTap68ffZp2w3lW6jpJ/chMtnKJMOgOIw1Cj8BE80ldm8oy4vtXrtSKT
-# TO03DwvmNS7PByNELlIJB7S6XfPIKEZT7YAmoA3299mQMrckqh/9t/L4YkuyTHTf
-# TJhSpDGCBA0wggQJAgEBMIGTMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNo
+# b20wDQYJKoZIhvcNAQEBBQAEggEA55nvGi6Pcc0sb7TiROiUaKOr8K1G6rwvA8ud
+# lTfa0zh0qMuE/40WPknc66AaJ1I0WxIGGfsgyorKOWj4NxLXQ0KfWfptqQqFjHyP
+# /gZa+aOYf6Ao1H0GBYnjbOsEFHqNgWeQvCszJi7EQ1whdDrHgR/VcLLQ1NoRsPXV
+# BGlEhpXCrQdY++enS794Q7dAKxm8a13Y6ev+pIyyEEvhf2FbDV16o63PPMw8I+Im
+# WXUKoVbA1wFJIbCIUmVTzwaGwuLs5iCkiec2QPlTL5jXuELyr7plB3hrxY9FhHQN
+# dD/YWEhl4AZDBcGRRhnYahlTxBCUp3DNtJ+ZceIB9Ufd/cY/a6GCFwAwghb8Bgor
+# BgEEAYI3AwMBMYIW7DCCFugGCSqGSIb3DQEHAqCCFtkwghbVAgEDMQ8wDQYJYIZI
+# AWUDBAIBBQAwggFRBgsqhkiG9w0BCRABBKCCAUAEggE8MIIBOAIBAQYKKwYBBAGE
+# WQoDATAxMA0GCWCGSAFlAwQCAQUABCC1whrI16c7/aOaysJQWJHL2KFWwZLEB49l
+# DkDLPMlSGwIGYtbQrarTGBMyMDIyMDcyNzEwMTcyMC45ODhaMASAAgH0oIHQpIHN
+# MIHKMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMH
+# UmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSUwIwYDVQQL
+# ExxNaWNyb3NvZnQgQW1lcmljYSBPcGVyYXRpb25zMSYwJAYDVQQLEx1UaGFsZXMg
+# VFNTIEVTTjpFNUE2LUUyN0MtNTkyRTElMCMGA1UEAxMcTWljcm9zb2Z0IFRpbWUt
+# U3RhbXAgU2VydmljZaCCEVcwggcMMIIE9KADAgECAhMzAAABlbf8DdbjNzElAAEA
+# AAGVMA0GCSqGSIb3DQEBCwUAMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNo
 # aW5ndG9uMRAwDgYDVQQHEwdSZWRtb25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29y
 # cG9yYXRpb24xJjAkBgNVBAMTHU1pY3Jvc29mdCBUaW1lLVN0YW1wIFBDQSAyMDEw
-# AhMzAAABrGa8hyJd3j17AAEAAAGsMA0GCWCGSAFlAwQCAQUAoIIBSjAaBgkqhkiG
-# 9w0BCQMxDQYLKoZIhvcNAQkQAQQwLwYJKoZIhvcNAQkEMSIEIHRN7zN3mhQYNQtN
-# EA1uRXU6qdmnjJWsbnvccOwrF2iPMIH6BgsqhkiG9w0BCRACLzGB6jCB5zCB5DCB
-# vQQg+bcBkoM4LwlxAHK1c+epu/T6fm0CX/tPi4Nn2gQswvUwgZgwgYCkfjB8MQsw
-# CQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9u
-# ZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSYwJAYDVQQDEx1NaWNy
-# b3NvZnQgVGltZS1TdGFtcCBQQ0EgMjAxMAITMwAAAaxmvIciXd49ewABAAABrDAi
-# BCDu6k9GB2Hx/LyP44tcGcfuw+yqVA+Oqar0Wyu4cZfDqDANBgkqhkiG9w0BAQsF
-# AASCAgDCF8KFowQSvth1XErbUDybe94R9qdqR6DIVWV8nFEg5yiwv2YSzuZvE3vP
-# TP7+t3gUcyWOu5Ck7nAu+nNRIYlnwgqLhRLcydpN9VNLW39Pgq/VFjIph6SvclsC
-# KbByNXpfvx7SaWKwVHnWTCWBsv+/H5WEAuAfz416ZOE1ilXCwM8t85Xpt5Ciqyox
-# I/KBma5yCyx19vCwrsVnnWWyxdKKPFaAfdGlnwVZJ7A03T6pw8XqNBUIpTzNkVdT
-# JDoYszWddJDNh/YC4N7cBFSvaksgRw4l5G5eoAUwAGPZp9s8MYJ2PaqZhqLCyyOD
-# hQjBFtbncrFcITHMyz7rjyA+yhOKUZh01GM+s8bYVRYSd3bbePunqvRjzAVtF2Qf
-# ru189ENNATAS6SVzlPkh7KCRa9ftQBaypDf0WrV/geHfVnh9T58gDro8yP5hoMBB
-# obXH7hmwP20X1UcQrqZ5KRkIWM6kkIaKmuM1FuvIxNrEXx6t1d5sOaBnQgvFv+JQ
-# cnCjnJPUKfdzpm1xZwfrxr1glZWXHJSC/keyKdaVXPtHA6HG/7r7M0JkKDBtBzh8
-# E3Rv2l+xnKRwQ7JkhlgHXdi7O+hjU92mv2uacQ/36EhNSyU9n6oZkTq51kFR6MO6
-# /GVONBJR0Nm2m9Z/a+rcKkYK3cHXWoLIHKi105P50sDz1CHFFw==
+# MB4XDTIxMTIwMjE5MDUxMloXDTIzMDIyODE5MDUxMlowgcoxCzAJBgNVBAYTAlVT
+# MRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25kMR4wHAYDVQQK
+# ExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xJTAjBgNVBAsTHE1pY3Jvc29mdCBBbWVy
+# aWNhIE9wZXJhdGlvbnMxJjAkBgNVBAsTHVRoYWxlcyBUU1MgRVNOOkU1QTYtRTI3
+# Qy01OTJFMSUwIwYDVQQDExxNaWNyb3NvZnQgVGltZS1TdGFtcCBTZXJ2aWNlMIIC
+# IjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAn21BDGe2Szs/WqEQniS+IYU/
+# UPCWQdsWlZTDQrd28IXEyORiz67dnvdwwLJpajs8NXBYjz4OkubCwl8+y221EKS4
+# WvEuL9qnHDLU6JBGg0EvkCRK5wLJelUpkbwMtJ5Y/gvz2mbi29zs2NAEcO1HgmS6
+# cljzx/pOTHWI+jVA0zaF6m80Bwrj7Pn4CKK6Octwx6DtO+4OiK9kxyMdcn1RRLec
+# w3BTzmDIOMgYuAOl3N4ZvbWesPOPZwb1SsJuWAC3x98v395+C5zetW9cMwMd2QmY
+# 39d1Cm6RO6eg2Cax0Qf/qcBYxvfU8Bx+rl8w3mU+v6+qh+wAAcJ/H6WHNU5pXhWP
+# GEblc846fVZDx1fFc78yy+0CtpLXnlyy/2OJb4y+oc8jphPtS1Q95RG2IaNcwrfh
+# e21PhaY8gX0wuIv8B7KbW9tfGJW5ELdYtQepZZicFRcAi1+4MUOPECBlGnDMvJKd
+# fs3M2PksZaWhIDZkJH3Na2j4fcubDGul+PPsdCuwfDqg6F3E4hAiIyXrccLbgZUL
+# HidOR0X4rH4BZtPZBu73RxKNzW1LjDARYpHOG6DfVH5tIlIavybaldCsK7/Qr92s
+# g4HTcBFoi9muuSJxFkqUU2H7AkNN3qhIeQN68Ffyn1BXIrfg6z/vVXA6Y1kbAqJG
+# b+LYJ+agFzTLR2vDYqkCAwEAAaOCATYwggEyMB0GA1UdDgQWBBSrl9NiAhRXV4K3
+# AgZgyXx+b/ypFzAfBgNVHSMEGDAWgBSfpxVdAF5iXYP05dJlpxtTNRnpcjBfBgNV
+# HR8EWDBWMFSgUqBQhk5odHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpb3BzL2Ny
+# bC9NaWNyb3NvZnQlMjBUaW1lLVN0YW1wJTIwUENBJTIwMjAxMCgxKS5jcmwwbAYI
+# KwYBBQUHAQEEYDBeMFwGCCsGAQUFBzAChlBodHRwOi8vd3d3Lm1pY3Jvc29mdC5j
+# b20vcGtpb3BzL2NlcnRzL01pY3Jvc29mdCUyMFRpbWUtU3RhbXAlMjBQQ0ElMjAy
+# MDEwKDEpLmNydDAMBgNVHRMBAf8EAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMIMA0G
+# CSqGSIb3DQEBCwUAA4ICAQDgszbeHyfozr0LqtCLZ9+yGa2DQRrMAIviABTN2Biv
+# 8BkJRJ3II5jQbmnPeVtnwC+sbRVXzH5HqkizC6qInVbFPQZuAxAY2ljTk/bl/7XG
+# IiUnxUDNKw265fFeJzPPEWReehv6iVvYOXSKjkqIpsylLf0O1h+lQcltLGq+cBr4
+# KLyt6hWncCkoc0WHBKk5Bx9s4qeXu943szx8dvrWmKiRucSc3QxK2dZzIsUY2h7N
+# yqXLJmWLsbCEXwWDibwBRspkxkb+T7sLDabPRHIdQGrKvOB/2P/MTdxkI+D9zIg5
+# /Is1AQwrlyHx2JN/W6p2gJhW1Igm8vllqbs3ZOKAys/7FsK57KEO9rhBlRDe/pMs
+# Pfh0qOYvJfGYNWJo/bVIA6VVBowHbqC8h0O16pJypkvZCUgSpOKJBA4NCHei3ii0
+# MB9XuGlXk8lGMHAV98IO6SyUFr0e52tkhq7Zf9t2BkE7nZljq8ocfZZ1OygRlf2j
+# b89LU6XLLnLCvnGRSgxJFgf6FBVa7crp+jQ+aWGTY9AoEbqeYK1QAqvwIG/hDhiw
+# g/sxLRjaKeLXyr7GG+uNuezSfV6zB4KQom++lk9+ET5ggQcsS1JB8R6ucwsmDbtC
+# BVwLdQFYnMNeDPnMy2CFTOzTslaRXXAdQfTIiYpO6XkootF00XZef1fyrHE2ggRc
+# 9zCCB3EwggVZoAMCAQICEzMAAAAVxedrngKbSZkAAAAAABUwDQYJKoZIhvcNAQEL
+# BQAwgYgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQH
+# EwdSZWRtb25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xMjAwBgNV
+# BAMTKU1pY3Jvc29mdCBSb290IENlcnRpZmljYXRlIEF1dGhvcml0eSAyMDEwMB4X
+# DTIxMDkzMDE4MjIyNVoXDTMwMDkzMDE4MzIyNVowfDELMAkGA1UEBhMCVVMxEzAR
+# BgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1p
+# Y3Jvc29mdCBDb3Jwb3JhdGlvbjEmMCQGA1UEAxMdTWljcm9zb2Z0IFRpbWUtU3Rh
+# bXAgUENBIDIwMTAwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDk4aZM
+# 57RyIQt5osvXJHm9DtWC0/3unAcH0qlsTnXIyjVX9gF/bErg4r25PhdgM/9cT8dm
+# 95VTcVrifkpa/rg2Z4VGIwy1jRPPdzLAEBjoYH1qUoNEt6aORmsHFPPFdvWGUNzB
+# RMhxXFExN6AKOG6N7dcP2CZTfDlhAnrEqv1yaa8dq6z2Nr41JmTamDu6GnszrYBb
+# fowQHJ1S/rboYiXcag/PXfT+jlPP1uyFVk3v3byNpOORj7I5LFGc6XBpDco2LXCO
+# Mcg1KL3jtIckw+DJj361VI/c+gVVmG1oO5pGve2krnopN6zL64NF50ZuyjLVwIYw
+# XE8s4mKyzbnijYjklqwBSru+cakXW2dg3viSkR4dPf0gz3N9QZpGdc3EXzTdEonW
+# /aUgfX782Z5F37ZyL9t9X4C626p+Nuw2TPYrbqgSUei/BQOj0XOmTTd0lBw0gg/w
+# EPK3Rxjtp+iZfD9M269ewvPV2HM9Q07BMzlMjgK8QmguEOqEUUbi0b1qGFphAXPK
+# Z6Je1yh2AuIzGHLXpyDwwvoSCtdjbwzJNmSLW6CmgyFdXzB0kZSU2LlQ+QuJYfM2
+# BjUYhEfb3BvR/bLUHMVr9lxSUV0S2yW6r1AFemzFER1y7435UsSFF5PAPBXbGjfH
+# CBUYP3irRbb1Hode2o+eFnJpxq57t7c+auIurQIDAQABo4IB3TCCAdkwEgYJKwYB
+# BAGCNxUBBAUCAwEAATAjBgkrBgEEAYI3FQIEFgQUKqdS/mTEmr6CkTxGNSnPEP8v
+# BO4wHQYDVR0OBBYEFJ+nFV0AXmJdg/Tl0mWnG1M1GelyMFwGA1UdIARVMFMwUQYM
+# KwYBBAGCN0yDfQEBMEEwPwYIKwYBBQUHAgEWM2h0dHA6Ly93d3cubWljcm9zb2Z0
+# LmNvbS9wa2lvcHMvRG9jcy9SZXBvc2l0b3J5Lmh0bTATBgNVHSUEDDAKBggrBgEF
+# BQcDCDAZBgkrBgEEAYI3FAIEDB4KAFMAdQBiAEMAQTALBgNVHQ8EBAMCAYYwDwYD
+# VR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBTV9lbLj+iiXGJo0T2UkFvXzpoYxDBW
+# BgNVHR8ETzBNMEugSaBHhkVodHRwOi8vY3JsLm1pY3Jvc29mdC5jb20vcGtpL2Ny
+# bC9wcm9kdWN0cy9NaWNSb29DZXJBdXRfMjAxMC0wNi0yMy5jcmwwWgYIKwYBBQUH
+# AQEETjBMMEoGCCsGAQUFBzAChj5odHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtp
+# L2NlcnRzL01pY1Jvb0NlckF1dF8yMDEwLTA2LTIzLmNydDANBgkqhkiG9w0BAQsF
+# AAOCAgEAnVV9/Cqt4SwfZwExJFvhnnJL/Klv6lwUtj5OR2R4sQaTlz0xM7U518Jx
+# Nj/aZGx80HU5bbsPMeTCj/ts0aGUGCLu6WZnOlNN3Zi6th542DYunKmCVgADsAW+
+# iehp4LoJ7nvfam++Kctu2D9IdQHZGN5tggz1bSNU5HhTdSRXud2f8449xvNo32X2
+# pFaq95W2KFUn0CS9QKC/GbYSEhFdPSfgQJY4rPf5KYnDvBewVIVCs/wMnosZiefw
+# C2qBwoEZQhlSdYo2wh3DYXMuLGt7bj8sCXgU6ZGyqVvfSaN0DLzskYDSPeZKPmY7
+# T7uG+jIa2Zb0j/aRAfbOxnT99kxybxCrdTDFNLB62FD+CljdQDzHVG2dY3RILLFO
+# Ry3BFARxv2T5JL5zbcqOCb2zAVdJVGTZc9d/HltEAY5aGZFrDZ+kKNxnGSgkujhL
+# mm77IVRrakURR6nxt67I6IleT53S0Ex2tVdUCbFpAUR+fKFhbHP+CrvsQWY9af3L
+# wUFJfn6Tvsv4O+S3Fb+0zj6lMVGEvL8CwYKiexcdFYmNcP7ntdAoGokLjzbaukz5
+# m/8K6TT4JDVnK+ANuOaMmdbhIurwJ0I9JZTmdHRbatGePu1+oDEzfbzL6Xu/OHBE
+# 0ZDxyKs6ijoIYn/ZcGNTTY3ugm2lBRDBcQZqELQdVTNYs6FwZvKhggLOMIICNwIB
+# ATCB+KGB0KSBzTCByjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24x
+# EDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3JhdGlv
+# bjElMCMGA1UECxMcTWljcm9zb2Z0IEFtZXJpY2EgT3BlcmF0aW9uczEmMCQGA1UE
+# CxMdVGhhbGVzIFRTUyBFU046RTVBNi1FMjdDLTU5MkUxJTAjBgNVBAMTHE1pY3Jv
+# c29mdCBUaW1lLVN0YW1wIFNlcnZpY2WiIwoBATAHBgUrDgMCGgMVANGPgsi3sxoF
+# R1hTZiiNS7hP4WOroIGDMIGApH4wfDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldh
+# c2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBD
+# b3Jwb3JhdGlvbjEmMCQGA1UEAxMdTWljcm9zb2Z0IFRpbWUtU3RhbXAgUENBIDIw
+# MTAwDQYJKoZIhvcNAQEFBQACBQDmizI9MCIYDzIwMjIwNzI3MTE0MDQ1WhgPMjAy
+# MjA3MjgxMTQwNDVaMHcwPQYKKwYBBAGEWQoEATEvMC0wCgIFAOaLMj0CAQAwCgIB
+# AAICKQQCAf8wBwIBAAICEacwCgIFAOaMg70CAQAwNgYKKwYBBAGEWQoEAjEoMCYw
+# DAYKKwYBBAGEWQoDAqAKMAgCAQACAwehIKEKMAgCAQACAwGGoDANBgkqhkiG9w0B
+# AQUFAAOBgQAg2e4MjnpGi/BxP73mAPiypPz1hIG9/AtryPQ43crG+qyDH8XJCMbd
+# YCvZfqRKEFELioLpLsMIM9xyli/ClM00YXfGpviRBf3B0ZGmJkAA9R8Ail7g6DQ1
+# GtgNHoiDds/1TEFB7/yiMy5AEE6CppLQGEFju94cjPe+9lDpDLTCLTGCBA0wggQJ
+# AgEBMIGTMHwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYD
+# VQQHEwdSZWRtb25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xJjAk
+# BgNVBAMTHU1pY3Jvc29mdCBUaW1lLVN0YW1wIFBDQSAyMDEwAhMzAAABlbf8Ddbj
+# NzElAAEAAAGVMA0GCWCGSAFlAwQCAQUAoIIBSjAaBgkqhkiG9w0BCQMxDQYLKoZI
+# hvcNAQkQAQQwLwYJKoZIhvcNAQkEMSIEIC8pcp3rNJ0E3OThsyLm2VkCGMH9WNMS
+# aS3cpULP2iUFMIH6BgsqhkiG9w0BCRACLzGB6jCB5zCB5DCBvQQgXOZL4Y2QC3tp
+# oSM/0He5HlTpgP3AtXcymU+MmyxJAscwgZgwgYCkfjB8MQswCQYDVQQGEwJVUzET
+# MBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+# TWljcm9zb2Z0IENvcnBvcmF0aW9uMSYwJAYDVQQDEx1NaWNyb3NvZnQgVGltZS1T
+# dGFtcCBQQ0EgMjAxMAITMwAAAZW3/A3W4zcxJQABAAABlTAiBCCP7vbk7c+B9gM4
+# o4mr14kLmDVeZsnKv6vglEZ5Fs3Y7DANBgkqhkiG9w0BAQsFAASCAgArczOGfX12
+# h24izjGJMSFiMzdI+X27dRaAg15VbD/rAfJNBn37Pr29RABVfoiLZYC8ihJ3SqQ7
+# DWcPsyBmgOBAZrZx1441RBjiFe/3uKdfb8OPsMw0/9gTH3iG0YmpSBbkrp7JZNM1
+# qVied1tw+QJ6NP2UCW2JSCtxzBcaOlLxNleXcputH6rZ2jw99tHr3/rU3b4bu6OT
+# Xj4GuZKEmWpB6M2oq+nKw4SINwAJtIrLYqbgToja0TQJZ6KDUdXmF+iKcFwbfp37
+# 6kim3wtVRojMsphHMUAM6GNWbPAOYY7NZBd+umQcMPigjBIFSGf6depcEu5+Sqp6
+# FClqLDIgFSzyn/VUFWSTUokGxpZccJM1H3ibYSvnRKaequqA6S2Vf0sos/pi0cZ7
+# j6bj3vdxl3RpMiS213U3iMhfprUswl6SR7yOPAzx1UfHIa+OjjRJ4lPvPxgrtwy6
+# oUu1/7dqVbd7bHKA9nHbFHa9v9XUIN2mZBQw5G4+n21Srpowb5SX8THxJzQJKsoN
+# MK/Jx4bbag7JZ/g/PxR2PHEfqE7MN01bAQIydmpJSMZ24JotRUf7Dw7LJ7ziRHfW
+# +arawzEh9puCgZN6J0l4J6NyehA0XQQ1pEt2shM00yHtuoL8ueU4jcswFhD0dR3U
+# UAj0CQ4xl4t16DTHUqzsVsr2mGwNC+b8Sw==
 # SIG # End signature block

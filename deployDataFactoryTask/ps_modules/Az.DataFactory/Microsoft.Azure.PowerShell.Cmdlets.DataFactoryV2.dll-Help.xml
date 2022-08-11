@@ -7370,8 +7370,7 @@ $output.output
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
-Invoke-AzDataFactoryV2Pipeline -DataFactoryName 'WikiADF' -Parameter &lt;Hashtable&gt; -PipelineName 'DPWikisample' -ResourceGroupName 'ADF'</dev:code>
+        <dev:code>Invoke-AzDataFactoryV2Pipeline -DataFactoryName 'WikiADF' -Parameter &lt;Hashtable&gt; -PipelineName 'DPWikisample' -ResourceGroupName 'ADF'</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -8618,8 +8617,7 @@ AuthKey1 AuthKey2
     <command:examples>
       <command:example>
         <maml:title>------ Example 1: Encrypt credentials in a linked service ------</maml:title>
-        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
-New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName WikiADF -DefinitionFile 'C:\samples\WikiSample\TaxiDemo1.json' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName MyResourceGroup</dev:code>
+        <dev:code>New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName WikiADF -DefinitionFile 'C:\samples\WikiSample\TaxiDemo1.json' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName MyResourceGroup</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -10685,8 +10683,7 @@ Confirm
     <command:examples>
       <command:example>
         <maml:title>----- Example 1: Remove a node from an integration runtime -----</maml:title>
-        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
-Remove-AzDataFactoryV2IntegrationRuntimeNode -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -NodeName 'Node_1' -ResourceGroupName 'rg-test-dfv2'</dev:code>
+        <dev:code>Remove-AzDataFactoryV2IntegrationRuntimeNode -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -NodeName 'Node_1' -ResourceGroupName 'rg-test-dfv2'</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -22395,8 +22392,7 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>------ Example 1: Sync an integration runtime credential ------</maml:title>
-        <dev:code>&lt;!-- Aladdin Generated Example --&gt; 
-Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName 'rg-test-dfv2'</dev:code>
+        <dev:code>Sync-AzDataFactoryV2IntegrationRuntimeCredential -DataFactoryName 'test-df-eu2' -IntegrationRuntimeName 'test-selfhost-ir' -ResourceGroupName 'rg-test-dfv2'</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>

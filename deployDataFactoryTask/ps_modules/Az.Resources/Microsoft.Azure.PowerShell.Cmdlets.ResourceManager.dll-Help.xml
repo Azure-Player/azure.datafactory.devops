@@ -3690,6 +3690,18 @@ Get-AzDeploymentScriptLog -DeploymentScriptInputObject $ds</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ExtendedLocation</maml:name>
+          <maml:description>
+            <maml:para>Whether to include extended locations.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Boolean]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Boolean]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Pre</maml:name>
           <maml:description>
             <maml:para>Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</maml:para>
@@ -3723,6 +3735,18 @@ Get-AzDeploymentScriptLog -DeploymentScriptInputObject $ds</dev:code>
         <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
           <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ExtendedLocation</maml:name>
+        <maml:description>
+          <maml:para>Whether to include extended locations.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Boolean]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Boolean]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -4510,7 +4534,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
       </command:example>
       <command:example>
         <maml:title>------------- Example 2: Get a deployment by name -------------</maml:title>
-        <dev:code>Get-AzDeployment -ManagementGroupId "myMG" -Name "Deploy01"</dev:code>
+        <dev:code>Get-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "Deploy01"</dev:code>
         <dev:remarks>
           <maml:para>This command gets the "Deploy01" deployment at the management group "myMG". You can assign a name to a deployment when you create it by using the New-AzManagementGroupDeployment cmdlets. If you do not assign a name, the cmdlets provide a default name based on the template that is used to create the deployment.</maml:para>
 <maml:para></maml:para>
@@ -8429,7 +8453,7 @@ Get-AzPolicyAssignment -Scope '/providers/Microsoft.Management/managementgroups/
       </command:example>
       <command:example>
         <maml:title>--- Example 5: Get policy definitions from a given category ---</maml:title>
-        <dev:code>Get-AzPolicyDefinition | where-object {$_.Properties.metadata.category -eq "Virtual Machine"}</dev:code>
+        <dev:code>Get-AzPolicyDefinition | Where-Object {$_.Properties.metadata.category -eq "Virtual Machine"}</dev:code>
         <dev:remarks>
           <maml:para>This command gets all policy definitions in category "Virtual Machine".</maml:para>
 <maml:para></maml:para>
@@ -9402,7 +9426,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
       </command:example>
       <command:example>
         <maml:title>- Example 5: Get policy set definitions from a given category -</maml:title>
-        <dev:code>Get-AzPolicySetDefinition | where-object {$_.Properties.metadata.category -eq "Virtual Machine"}</dev:code>
+        <dev:code>Get-AzPolicySetDefinition | Where-Object {$_.Properties.metadata.category -eq "Virtual Machine"}</dev:code>
         <dev:remarks>
           <maml:para>This command gets all policy set definitions in category "Virtual Machine".</maml:para>
 <maml:para></maml:para>
@@ -10247,7 +10271,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
     <command:examples>
       <command:example>
         <maml:title>--- Example 1: Get all resources in the current subscription ---</maml:title>
-        <dev:code>Get-AzResource | ft
+        <dev:code>Get-AzResource | Format-Table
 
 Name    ResourceGroupName  ResourceType                            Location
 ----    -----------------  ------------                            --------
@@ -10268,7 +10292,7 @@ testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus</dev:c
       </command:example>
       <command:example>
         <maml:title>------- Example 2: Get all resources in a resource group -------</maml:title>
-        <dev:code>Get-AzResource -ResourceGroupName testRG | ft
+        <dev:code>Get-AzResource -ResourceGroupName testRG | Format-Table
 
 Name   ResourceGroupName ResourceType                            Location
 ----   ----------------- ------------                            --------
@@ -10286,7 +10310,7 @@ vnet   testRG            Microsoft.Network/virtualNetworks       westus</dev:cod
       </command:example>
       <command:example>
         <maml:title>Example 3: Get all resources whose resource group matches the provided wildcard</maml:title>
-        <dev:code>Get-AzResource -ResourceGroupName other* | ft
+        <dev:code>Get-AzResource -ResourceGroupName other* | Format-Table
 
 Name    ResourceGroupName  ResourceType                      Location
 ----    -----------------  ------------                      --------
@@ -10301,7 +10325,7 @@ testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus</dev:code>
       </command:example>
       <command:example>
         <maml:title>-------- Example 4: Get all resources with a given name --------</maml:title>
-        <dev:code>Get-AzResource -Name testVM | fl
+        <dev:code>Get-AzResource -Name testVM | Format-List
 
 Name              : testVM
 ResourceGroupName : testRG
@@ -10322,7 +10346,7 @@ Tags              :
       </command:example>
       <command:example>
         <maml:title>Example 5: Get all resources whose name matches the provided wildcard</maml:title>
-        <dev:code>Get-AzResource -Name test* | ft
+        <dev:code>Get-AzResource -Name test* | Format-Table
 
 Name    ResourceGroupName  ResourceType                      Location
 ----    -----------------  ------------                      --------
@@ -10337,7 +10361,7 @@ testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus</dev:code>
       </command:example>
       <command:example>
         <maml:title>---- Example 6: Get all resources of a given resource type ----</maml:title>
-        <dev:code>Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
+        <dev:code>Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | Format-Table
 
 Name    ResourceGroupName  ResourceType                      Location
 ----    -----------------  ------------                      --------
@@ -10694,8 +10718,8 @@ Tags              :
       <command:example>
         <maml:title>------- Example 4: Show the Resource groups by location -------</maml:title>
         <dev:code>Get-AzResourceGroup |
-  Sort Location,ResourceGroupName |
-  Format-Table -GroupBy Location ResourceGroupName,ProvisioningState,Tags</dev:code>
+  Sort-Object Location,ResourceGroupName |
+    Format-Table -GroupBy Location ResourceGroupName,ProvisioningState,Tags</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -10705,8 +10729,8 @@ Tags              :
       <command:example>
         <maml:title>Example 5: Show the names of all the Resource groups in a particular location</maml:title>
         <dev:code>Get-AzResourceGroup -Location westus2 |
-   Sort ResourceGroupName | 
-   Format-Wide ResourceGroupName -Column 4</dev:code>
+  Sort-Object ResourceGroupName |
+    Format-Wide ResourceGroupName -Column 4</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -17930,10 +17954,10 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:examples>
       <command:example>
         <maml:title>------- Example 1: Invoke starting a VM with ResourceId -------</maml:title>
-        <dev:code>Invoke-AzResourceAction -ResourceId /subscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.Compute/virtualMachines/testVM -Action start
+        <dev:code>Invoke-AzResourceAction -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachines/testVM -Action start
 
 Confirm
-Are you sure you want to invoke the 'start' action on the following resource: /subscriptions/{subId}/resourceGroups/testGroup/providers/Microsoft.Compute/virtualMachines/testVM
+Are you sure you want to invoke the 'start' action on the following resource: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Compute/virtualMachines/testVM
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y</dev:code>
         <dev:remarks>
           <maml:para>This command starts the Virtual Machine with {ResourceId}.</maml:para>
@@ -17952,9 +17976,9 @@ Are you sure you want to invoke the 'start' action on the following resource: /s
       </command:example>
       <command:example>
         <maml:title>Example 3: Invoke registering a resource provider with ResourceId</maml:title>
-        <dev:code>Invoke-AzResourceAction -ResourceId /subscriptions/{subId}/providers/Microsoft.Network -action register -Force
+        <dev:code>Invoke-AzResourceAction -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Network -action register -Force
 
-id                : /subscriptions/{subId}/providers/Microsoft.Network
+id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Network
 namespace         : Microsoft.Network
 authorizations    : {…}
 resourceTypes     : {@{resourceType=virtualNetworks; locations=System.Object[]; apiVersions=System.Object[]},
@@ -21623,9 +21647,9 @@ Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "
     <command:examples>
       <command:example>
         <maml:title>Example 1: Use a custom template and parameter file to create a deployment</maml:title>
-        <dev:code>New-AzDeployment -Location "West US" -TemplateFile "D:\Azure\Templates\EngineeringSite.json" -TemplateParameterFile "D:\Azure\Templates\EngSiteParms.json" -TemplateVersion "2.1" -Tag @{"key1"="value1"; "key2"="value2";}</dev:code>
+        <dev:code>New-AzDeployment -Location "West US" -TemplateFile "D:\Azure\Templates\EngineeringSite.json" -TemplateParameterFile "D:\Azure\Templates\EngSiteParms.json" -Tag @{"key1"="value1"; "key2"="value2";}</dev:code>
         <dev:remarks>
-          <maml:para>This command creates a new deployment at the current subscription scope by using a custom template and a template file on disk, with defined tags parameter. The command uses the TemplateFile parameter to specify the template and the TemplateParameterFile parameter to specify a file that contains parameters and parameter values. It uses the TemplateVersion parameter to specify the version of the template.</maml:para>
+          <maml:para>This command creates a new deployment at the current subscription scope by using a custom template and a template file on disk, with defined tags parameter. The command uses the TemplateFile parameter to specify the template and the TemplateParameterFile parameter to specify a file that contains parameters and parameter values.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -21643,9 +21667,9 @@ Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "
         <maml:title>Example 3: Use a custom template object and parameter file to create a deployment</maml:title>
         <dev:code>$TemplateFileText = [System.IO.File]::ReadAllText("D:\Azure\Templates\EngineeringSite.json")
 $TemplateObject = ConvertFrom-Json $TemplateFileText -AsHashtable
-New-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplateParameterFile "D:\Azure\Templates\EngSiteParams.json" -TemplateVersion "2.1"</dev:code>
+New-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplateParameterFile "D:\Azure\Templates\EngSiteParams.json"</dev:code>
         <dev:remarks>
-          <maml:para>This command creates a new deployment at the current subscription scope by using a custom template and a template file on disk that has been converted to an in-memory hashtable. The first two commands read the text for the template file on disk and convert it to an in-memory hashtable. The last command uses the TemplateObject parameter to specify this hashtable and the TemplateParameterFile parameter to specify a file that contains parameters and parameter values. It uses the TemplateVersion parameter to specify the version of the template.</maml:para>
+          <maml:para>This command creates a new deployment at the current subscription scope by using a custom template and a template file on disk that has been converted to an in-memory hashtable. The first two commands read the text for the template file on disk and convert it to an in-memory hashtable. The last command uses the TemplateObject parameter to specify this hashtable and the TemplateParameterFile parameter to specify a file that contains parameters and parameter values.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -27577,7 +27601,7 @@ New-AzPolicyAssignment -Name 'VirtualMachinePolicyAssignment' -PolicyDefinition 
         <maml:title>Example 3: Policy assignment at resource group level with policy parameter object</maml:title>
         <dev:code>$ResourceGroup = Get-AzResourceGroup -Name 'ResourceGroup11'
 $Policy = Get-AzPolicyDefinition -BuiltIn | Where-Object {$_.Properties.DisplayName -eq 'Allowed locations'}
-$Locations = Get-AzLocation | where displayname -like '*east*'
+$Locations = Get-AzLocation | Where-Object displayname -like '*east*'
 $AllowedLocations = @{'listOfAllowedLocations'=($Locations.location)}
 New-AzPolicyAssignment -Name 'RestrictLocationPolicyAssignment' -PolicyDefinition $Policy -Scope $ResourceGroup.ResourceId -PolicyParameterObject $AllowedLocations</dev:code>
         <dev:remarks>
@@ -40243,7 +40267,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>Publish-AzBicepModule -FilePath main.bicep -Target br:{registry}/{moduleName}:{tag}</dev:code>
+        <dev:code>Publish-AzBicepModule -FilePath 'main.bicep' -Target 'br:{registry}/{moduleName}:{tag}'</dev:code>
         <dev:remarks>
           <maml:para>Publishes `main.bicep` to `br:{registry}/{moduleName}:{tag}`.</maml:para>
 <maml:para></maml:para>
@@ -40264,11 +40288,11 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
       <command:verb>Register</command:verb>
       <command:noun>AzProviderFeature</command:noun>
       <maml:description>
-        <maml:para>Registers an Azure provider feature in your account.</maml:para>
+        <maml:para>Registers an Azure provider feature in your current subscription context.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Register-AzProviderFeature cmdlet registers an Azure provider feature in your account.</maml:para>
+      <maml:para>The Register-AzProviderFeature cmdlet registers an Azure provider feature in your current subscription context.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -40425,7 +40449,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
         <maml:title>---------------- Example 1: Register a feature ----------------</maml:title>
         <dev:code>Register-AzProviderFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network</dev:code>
         <dev:remarks>
-          <maml:para>This adds the AllowApplicationSecurityGroups feature for Microsoft.Network to your account.</maml:para>
+          <maml:para>This adds the AllowApplicationSecurityGroups feature for Microsoft.Network to your current subscription context.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -46271,7 +46295,7 @@ Remove-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Force</dev:cod
     <command:examples>
       <command:example>
         <maml:title>Example 1: Removes a resource group deployment with ResourceId</maml:title>
-        <dev:code>Remove-AzResourceGroupDeployment -ResourceId /subscriptions/{subId}/resourceGroups/testGroup/providers/Microsoft.Resources/deployments/testDeployment1
+        <dev:code>Remove-AzResourceGroupDeployment -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testGroup/providers/Microsoft.Resources/deployments/testDeployment1
 
 True</dev:code>
         <dev:remarks>
@@ -47444,7 +47468,7 @@ True</dev:code>
       </command:example>
       <command:example>
         <maml:title>Example 4: Removing a Template Spec and all versions by resource id</maml:title>
-        <dev:code>Remove-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec' -ResourceGroupName 'myRG'</dev:code>
+        <dev:code>Remove-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec'</dev:code>
         <dev:remarks>
           <maml:para>Removes the Template Spec named 'MyTemplateSpec' and all of its versions within the resource group 'myRG' of subscription \{subId\}.</maml:para>
 <maml:para></maml:para>
@@ -49002,7 +49026,7 @@ True</dev:code>
       </command:example>
       <command:example>
         <maml:title>------ Example 2: Get a deployment and save its template ------</maml:title>
-        <dev:code>Get-AzManagementGroupDeploymentTemplate -ManagementGroupId "myMG" -Name "RolesDeployment" | Save-AzManagementGroupDeploymentTemplate</dev:code>
+        <dev:code>Get-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "RolesDeployment" | Save-AzManagementGroupDeploymentTemplate</dev:code>
         <dev:remarks>
           <maml:para>This command gets the deployment "RolesDeployment" at the management group "myMG" and saves its template.</maml:para>
 <maml:para></maml:para>
@@ -49591,7 +49615,7 @@ True</dev:code>
       </command:example>
       <command:example>
         <maml:title>------ Example 2: Get a deployment and save its template ------</maml:title>
-        <dev:code>Get-AzTenantDeploymentTemplate -Name "RolesDeployment" | Save-AzTenantDeploymentTemplate</dev:code>
+        <dev:code>Get-AzTenantDeployment -Name "RolesDeployment" | Save-AzTenantDeploymentTemplate</dev:code>
         <dev:remarks>
           <maml:para>This command gets the deployment "RolesDeployment" at the current tenant scope and saves its template.</maml:para>
 <maml:para></maml:para>
@@ -50126,9 +50150,9 @@ True</dev:code>
     <command:examples>
       <command:example>
         <maml:title>- Example 1: Update managed application definition description -</maml:title>
-        <dev:code>Set-AzManagedApplication -ResourceId "/subscriptions/mySubId/resourcegroups/myRG/Microsoft.Solutions/applications/myApp" -Description "Updated description here"</dev:code>
+        <dev:code>Set-AzManagedApplication -ResourceId "/subscriptions/mySubId/resourcegroups/myRG/Microsoft.Solutions/applications/myApp" -Tag @{"key" = "value"}</dev:code>
         <dev:remarks>
-          <maml:para>This command updates the managed application description</maml:para>
+          <maml:para>This command updates the managed application tag</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -52323,7 +52347,7 @@ $UserAssignedIdentity = Get-AzUserAssignedIdentity -ResourceGroupName 'ResourceG
       </command:example>
       <command:example>
         <maml:title>Example 4: Update policy assignment parameters with new policy parameter object</maml:title>
-        <dev:code>$Locations = Get-AzLocation | where {($_.displayname -like 'france*') -or ($_.displayname -like 'uk*')}
+        <dev:code>$Locations = Get-AzLocation | Where-Object {($_.displayname -like 'france*') -or ($_.displayname -like 'uk*')}
 $AllowedLocations = @{'listOfAllowedLocations'=($Locations.location)}
 $PolicyAssignment = Get-AzPolicyAssignment -Name 'PolicyAssignment'
 Set-AzPolicyAssignment -Id $PolicyAssignment.ResourceId -PolicyParameterObject $AllowedLocations</dev:code>
@@ -55096,7 +55120,7 @@ Set-AzPolicyExemption -Id $PolicyExemption.ResourceId -ExemptionCategory Mitigat
       <command:example>
         <maml:title>- Example 1: Update the description of a policy set definition -</maml:title>
         <dev:code>$PolicySetDefinition = Get-AzPolicySetDefinition -ResourceId '/subscriptions/mySub/Microsoft.Authorization/policySetDefinitions/myPSSetDefinition'
- Set-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Description 'Updated policy to not allow virtual machine creation'</dev:code>
+Set-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Description 'Updated policy to not allow virtual machine creation'</dev:code>
         <dev:remarks>
           <maml:para>The first command gets a policy set definition by using the Get-AzPolicySetDefinition cmdlet. The command stores that object in the $PolicySetDefinition variable. The second command updates the description of the policy set definition identified by the ResourceId property of $PolicySetDefinition.</maml:para>
 <maml:para></maml:para>
@@ -55131,7 +55155,7 @@ PolicySetDefinitionId : /subscriptions/11111111-1111-1111-1111-111111111111/prov
       </command:example>
       <command:example>
         <maml:title>Example 4: Update the groups of a policy set definition using a hash table</maml:title>
-        <dev:code>$groupsJson = ConvertTo-Json @{ name = "group1", displayName = "Virtual Machine Security" }, @{ name = "group2" }
+        <dev:code>$groupsJson = ConvertTo-Json @{ name = "group1"; displayName = "Virtual Machine Security" }, @{ name = "group2" }
 Set-AzPolicySetDefinition -Name 'VMPolicySetDefinition' -GroupDefinition $groupsJson</dev:code>
         <dev:remarks>
           <maml:para>This command updates the groups of a policy set definition named VMPolicySetDefinition using a hash table to construct the groups.</maml:para>
@@ -59879,7 +59903,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 --     ----            -------------   -----         -----------     --------             -------
 1      Long Running... AzureLongRun... Running       True            localhost            New-AzResourceGro...
 
- Stop-AzResourceGroupDeployment -Name mynewstorageaccount -ResourceGroupName myrg
+Stop-AzResourceGroupDeployment -Name mynewstorageaccount -ResourceGroupName myrg
+
 True
 
 Get-Job 1

@@ -1,7 +1,7 @@
-- [azure.datafactory.tools - ver.0.97.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.97.0)
-- [Az.DataFactory - ver.1.16.6](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.6)
-- [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
-- [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
+- [azure.datafactory.tools - ver.0.99.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.99.0)
+- [Az.DataFactory - ver.1.16.9](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.9)
+- [Az.Accounts - ver.2.10.2](https://www.powershellgallery.com/packages/Az.Accounts/2.10.2)
+- [Az.Resources - ver.6.3.1](https://www.powershellgallery.com/packages/Az.Resources/6.3.1)
 
 $target = 'd:\modules'
 Remove-Item -Path "$target\*" -Force

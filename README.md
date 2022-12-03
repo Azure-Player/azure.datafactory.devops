@@ -277,7 +277,7 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.110.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.110.0)
+- [azure.datafactory.tools - ver.1.110.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.110.1)
 - [Az.DataFactory - ver.1.16.10](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.10)
 - [Az.Accounts - ver.2.10.3](https://www.powershellgallery.com/packages/Az.Accounts/2.10.3)
 - [Az.Resources - ver.6.4.1](https://www.powershellgallery.com/packages/Az.Resources/6.4.1)

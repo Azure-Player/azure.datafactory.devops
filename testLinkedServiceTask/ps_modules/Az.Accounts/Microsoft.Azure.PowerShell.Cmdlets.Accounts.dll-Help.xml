@@ -1464,6 +1464,17 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisplaySurveyMessage</maml:name>
+          <maml:description>
+            <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EnableDataCollection</maml:name>
           <maml:description>
             <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
@@ -1657,6 +1668,18 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         <maml:name>DisplayBreakingChangeWarning</maml:name>
         <maml:description>
           <maml:para>Controls if warning messages for breaking changes are displayed or suppressed. When enabled, a breaking change warning is displayed when executing cmdlets with breaking changes in a future release.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DisplaySurveyMessage</maml:name>
+        <maml:description>
+          <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -6012,9 +6035,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:name>IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6022,11 +6045,11 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ResourceTypeName</maml:name>
           <maml:description>
-            <maml:para>Optional resource type name, supported values: AadGraph, AnalysisServices, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse. Default value is Arm if not specified.</maml:para>
+            <maml:para>Optional resource type name, supported values: AadGraph, AnalysisServices, AppConfiguration, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse. Default value is Arm if not specified.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>System.String</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6036,9 +6059,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <maml:description>
             <maml:para>Optional Tenant Id. Use tenant id of default context if not specified.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>System.String</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6051,9 +6074,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+            <maml:name>IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6063,9 +6086,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <maml:description>
             <maml:para>Resource url for that you're requesting token, e.g. 'https://graph.microsoft.com/'.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>System.String</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6075,9 +6098,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <maml:description>
             <maml:para>Optional Tenant Id. Use tenant id of default context if not specified.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
           <dev:type>
-            <maml:name>System.String</maml:name>
+            <maml:name>String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -6090,9 +6113,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
+          <maml:name>IAzureContextContainer</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -6100,11 +6123,11 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>ResourceTypeName</maml:name>
         <maml:description>
-          <maml:para>Optional resource type name, supported values: AadGraph, AnalysisServices, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse. Default value is Arm if not specified.</maml:para>
+          <maml:para>Optional resource type name, supported values: AadGraph, AnalysisServices, AppConfiguration, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse. Default value is Arm if not specified.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
-          <maml:name>System.String</maml:name>
+          <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -6114,9 +6137,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <maml:description>
           <maml:para>Resource url for that you're requesting token, e.g. 'https://graph.microsoft.com/'.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
-          <maml:name>System.String</maml:name>
+          <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -6126,9 +6149,9 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <maml:description>
           <maml:para>Optional Tenant Id. Use tenant id of default context if not specified.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
-          <maml:name>System.String</maml:name>
+          <maml:name>String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -6260,6 +6283,17 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisplaySurveyMessage</maml:name>
+          <maml:description>
+            <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EnableDataCollection</maml:name>
           <maml:description>
             <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
@@ -6333,6 +6367,18 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <maml:name>DisplayBreakingChangeWarning</maml:name>
         <maml:description>
           <maml:para>Controls if warning messages for breaking changes are displayed or suppressed. When enabled, a breaking change warning is displayed when executing cmdlets with breaking changes in a future release.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DisplaySurveyMessage</maml:name>
+        <maml:description>
+          <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -6996,7 +7042,6 @@ Tags       :</dev:code>
 Name              Resource Manager Url                  ActiveDirectory Authority          Type
 ----              --------------------                  -------------------------          ----
 AzureUSGovernment https://management.usgovcloudapi.net/ https://login.microsoftonline.us/  Built-in
-AzureGermanCloud  https://management.microsoftazure.de/ https://login.microsoftonline.de/  Built-in
 AzureCloud        https://management.azure.com/         https://login.microsoftonline.com/ Built-in
 AzureChinaCloud   https://management.chinacloudapi.cn/  https://login.chinacloudapi.cn/    Built-in</dev:code>
         <dev:remarks>
@@ -7325,7 +7370,7 @@ Subscription2                      xxxx-xxxx-xxxx-xxxx     aaaa-aaaa-aaaa-aaaa  
       </command:example>
       <command:example>
         <maml:title>---- Example 3: Get all subscriptions in the current tenant ----</maml:title>
-        <dev:code>Get-AzSubscription
+        <dev:code>Get-AzSubscription -TenantId (Get-AzContext).Tenant
 
 Name                               Id                      TenantId                        State
 ----                               --                      --------                        -----
@@ -13024,6 +13069,18 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DisplaySurveyMessage</maml:name>
+          <maml:description>
+            <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
           <maml:name>EnableDataCollection</maml:name>
           <maml:description>
             <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
@@ -13118,6 +13175,18 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
         <maml:name>DisplayBreakingChangeWarning</maml:name>
         <maml:description>
           <maml:para>Controls if warning messages for breaking changes are displayed or suppressed. When enabled, a breaking change warning is displayed when executing cmdlets with breaking changes in a future release.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>DisplaySurveyMessage</maml:name>
+        <maml:description>
+          <maml:para>When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
         <dev:type>

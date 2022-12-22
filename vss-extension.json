@@ -38,7 +38,16 @@
     },
     "links": {
         "support": {
-          "uri": "https://github.com/SQLPlayer/azure.datafactory.devops/issues"
+            "uri": "https://github.com/SQLPlayer/azure.datafactory.devops/issues"
+        },
+        "getstarted": {
+            "uri": "https://sqlplayer.net/adftools/"
+        },
+        "learn": {
+            "uri": "https://github.com/SQLPlayer/azure.datafactory.tools/discussions"
+        },
+        "privacypolicy": {
+            "uri": "https://sqlplayer.net/privacy/"
         }
     },
     "icons": {

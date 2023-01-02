@@ -3,14 +3,14 @@
     "name": "PublishADFTask",
     "friendlyName": "Publish Azure Data Factory",
     "description": "Deploys entire ADF (v2) from JSON files to ADF instance (adftools)",
-    "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
     "visibility": [
 	    "Build",
         "Release"
     ],
-    "author": "Kamil Nowinski (SQLPlayer)",
+    "author": "Kamil Nowinski (AzurePlayer)",
     "version": {
         "Major": 1,
         "Minor": 0,

@@ -3,7 +3,7 @@
     "name": "DeployAdfFromArmTask",
     "friendlyName": "Azure Data Factory Deployment (ARM)",
     "description": "Deploys entire ADF (v2) from ARM template file (adftools)",
-    "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
     "visibility": [

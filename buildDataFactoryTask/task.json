@@ -3,14 +3,14 @@
     "name": "BuildADFTask",
     "friendlyName": "Build Azure Data Factory code",
     "description": "Validates all JSON files of ADF (v2) (adftools)",
-    "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
     "visibility": [
 	    "Build",
         "Release"
     ],
-    "author": "Kamil Nowinski (SQLPlayer)",
+    "author": "Kamil Nowinski (AzurePlayer)",
     "version": {
         "Major": 1,
         "Minor": 0,

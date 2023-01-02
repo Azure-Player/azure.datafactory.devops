@@ -4,7 +4,7 @@
 
 This extension to Azure DevOps has three tasks and only one goal: deploy Azure Data Factory (v2) seamlessly and reliable at minimum efforts.
 As opposed to ARM template publishing from 'adf_publish' branch, this task publishes ADF directly from JSON files, who represent all ADF artefacts.  
-The task based on the PowerShell module [azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools) available through [PSGallery](https://www.powershellgallery.com/packages/azure.datafactory.tools/).  
+The task based on the PowerShell module [azure.datafactory.tools](https://github.com/Azure-Player/azure.datafactory.tools) available through [PSGallery](https://www.powershellgallery.com/packages/azure.datafactory.tools/).  
 Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell Core 6.0 and above.
 
 ## Three tasks
@@ -65,7 +65,7 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
 * Build function to support validation of files, dependencies and config
 * Test connections (Linked Services)
 
-For more details, please go to [documentation of azure.datafactory.tools](https://github.com/SQLPlayer/azure.datafactory.tools/blob/master/README.md).
+For more details, please go to [documentation of azure.datafactory.tools](https://github.com/Azure-Player/azure.datafactory.tools/blob/master/README.md).
 
 
 ## Parameters
@@ -277,12 +277,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.110.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.110.1)
-- [Az.DataFactory - ver.1.16.10](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.10)
+- [azure.datafactory.tools - ver.1.0.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.0.0)
+- [Az.DataFactory - ver.1.16.11](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.11)
 - [Az.Accounts - ver.2.10.3](https://www.powershellgallery.com/packages/Az.Accounts/2.10.3)
 - [Az.Resources - ver.6.4.1](https://www.powershellgallery.com/packages/Az.Resources/6.4.1)
 
 # History
+- 02 Jan 2023 - v.1.23  #adftools updated to ver.1.0 & renamed the brand: AzurePlayer. Please note that Publisher ID remains the same (SQLPlayer).
 - 03 Dec 2022 - v.1.15  Updated Az.* & `azure.datafactory.tools` modules to the latest versions (see above)
 - 11 Aug 2022 - v.1.14  Bug [#100]: Updated Az modules to the latest
 - 08 Aug 2022 - v.1.13  Fixed bug [#95](https://github.com/SQLPlayer/azure.datafactory.devops/issues/95): BuildADFTask action Export encounters errors, but still succeeds

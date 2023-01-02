@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "DataFactoryTools",
-    "name": "Deploy Azure Data Factory by SQLPlayer",
-    "version": "1.15.1000",
+    "name": "Deploy Azure Data Factory (#adftools)",
+    "version": "1.23.0000",
     "publisher": "SQLPlayer",
     "description": "Tools for deploying entire ADF code (JSON files) to ADF instance",
     "targets": [
@@ -34,20 +34,20 @@
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/SQLPlayer/azure.datafactory.devops"
+        "uri": "https://github.com/Azure-Player/azure.datafactory.devops"
     },
     "links": {
         "support": {
-            "uri": "https://github.com/SQLPlayer/azure.datafactory.devops/issues"
+            "uri": "https://github.com/Azure-Player/azure.datafactory.devops/issues"
         },
         "getstarted": {
-            "uri": "https://sqlplayer.net/adftools/"
+            "uri": "https://azureplayer.net/adftools/"
         },
         "learn": {
-            "uri": "https://github.com/SQLPlayer/azure.datafactory.tools/discussions"
+            "uri": "https://github.com/Azure-Player/azure.datafactory.tools/discussions"
         },
         "privacypolicy": {
-            "uri": "https://sqlplayer.net/privacy/"
+            "uri": "https://azureplayer.net/privacy/"
         }
     },
     "icons": {

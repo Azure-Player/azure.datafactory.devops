@@ -3,14 +3,14 @@
     "name": "TestAdfLinkedServiceTask",
     "friendlyName": "Test connection of ADF Linked Service",
     "description": "Runs test connection of Linked Service of ADF (v2) (adftools)",
-    "helpMarkDown": "[More Information](https://github.com/SQLPlayer/azure.datafactory.devops)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": true,
     "visibility": [
 	    "Build",
         "Release"
     ],
-    "author": "Kamil Nowinski (SQLPlayer)",
+    "author": "Kamil Nowinski (AzurePlayer)",
     "version": {
         "Major": 1,
         "Minor": 0,

@@ -279,10 +279,11 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.1.0.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.0.0)
 - [Az.DataFactory - ver.1.16.11](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.11)
-- [Az.Accounts - ver.2.10.3](https://www.powershellgallery.com/packages/Az.Accounts/2.10.3)
+- [Az.Accounts - ver.2.10.4](https://www.powershellgallery.com/packages/Az.Accounts/2.10.4)
 - [Az.Resources - ver.6.4.1](https://www.powershellgallery.com/packages/Az.Resources/6.4.1)
 
 # History
+- 03 Jan 2023 - v.1.24  Bugfix [#118](https://github.com/Azure-Player/azure.datafactory.devops/issues/118): Az.Accounts updated to ver. 2.10.4
 - 02 Jan 2023 - v.1.23  #adftools updated to ver.1.0 & renamed the brand: AzurePlayer. Please note that Publisher ID remains the same (SQLPlayer).
 - 03 Dec 2022 - v.1.15  Updated Az.* & `azure.datafactory.tools` modules to the latest versions (see above)
 - 11 Aug 2022 - v.1.14  Bug [#100]: Updated Az modules to the latest

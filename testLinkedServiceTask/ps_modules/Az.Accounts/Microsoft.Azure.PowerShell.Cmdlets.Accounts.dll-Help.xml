@@ -1384,7 +1384,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/add-azenvironment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/add-azenvironment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzEnvironment</maml:linkText>
@@ -1809,7 +1809,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/clear-azconfig</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/clear-azconfig</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2015,7 +2015,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/clear-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/clear-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2253,7 +2253,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/clear-azdefault</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/clear-azdefault</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4217,7 +4217,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/connect-azaccount</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4386,7 +4386,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/disable-azcontextautosave</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/disable-azcontextautosave</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4518,7 +4518,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/disable-azdatacollection</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/disable-azdatacollection</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Enable-AzDataCollection</maml:linkText>
@@ -4739,7 +4739,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/disable-azurermalias</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/disable-azurermalias</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5281,7 +5281,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/disconnect-azaccount</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/disconnect-azaccount</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5291,7 +5291,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
       <command:verb>Enable</command:verb>
       <command:noun>AzContextAutosave</command:noun>
       <maml:description>
-        <maml:para>Azure contexts are PowerShell objects representing your active subscription to run commands against, and the authentication information needed to connect to an Azure cloud. With Azure contexts, Azure PowerShell doesn't need to reauthenticate your account each time you switch subscriptions. For more information, see Azure PowerShell context objects (https://docs.microsoft.com/powershell/azure/context-persistence).</maml:para>
+        <maml:para>Azure contexts are PowerShell objects representing your active subscription to run commands against, and the authentication information needed to connect to an Azure cloud. With Azure contexts, Azure PowerShell doesn't need to reauthenticate your account each time you switch subscriptions. For more information, see Azure PowerShell context objects (https://learn.microsoft.com/powershell/azure/context-persistence).</maml:para>
         <maml:para>This cmdlet allows the Azure context information to be saved and automatically loaded when you start a PowerShell process. For example, when opening a new window.</maml:para>
       </maml:description>
     </command:details>
@@ -5451,7 +5451,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/enable-azcontextautosave</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/enable-azcontextautosave</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5583,7 +5583,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/enable-azdatacollection</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/enable-azdatacollection</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Disable-AzDataCollection</maml:linkText>
@@ -5805,7 +5805,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/enable-azurermalias</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/enable-azurermalias</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6007,7 +6007,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/export-azconfig</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/export-azconfig</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Import-AzConfig</maml:linkText>
@@ -6214,7 +6214,7 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azaccesstoken</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azaccesstoken</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6470,7 +6470,7 @@ EnableDataCollection          False Az         CurrentUser When enabled, Azure P
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azconfig</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azconfig</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6661,7 +6661,7 @@ Subscription3 (xxxxxxxx-xxxx-xxxx-xxx... test@outlook.com    Subscription3      
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azcontext</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzContext</maml:linkText>
@@ -6806,7 +6806,7 @@ Settings         : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azcontextautosavesetting</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azcontextautosavesetting</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6938,7 +6938,7 @@ Tags       :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azdefault</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azdefault</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7121,7 +7121,7 @@ AzureUSGovernment https://management.usgovcloudapi.net/ https://login.microsofto
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azenvironment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azenvironment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Add-AzEnvironment</maml:linkText>
@@ -7399,7 +7399,7 @@ Subscription1 (xxxx-xxxx-xxxx-xxxx)      azureuser@micros... Subscription1      
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-azsubscription</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7529,7 +7529,7 @@ xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com,
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/get-aztenant</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/get-aztenant</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7709,7 +7709,7 @@ xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com,
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/import-azconfig</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/import-azconfig</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Export-AzConfig</maml:linkText>
@@ -7999,7 +7999,7 @@ azureuser@contoso.com  Subscription1    xxxx-xxxx-xxxx-xxxx     AzureCloud</dev:
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/import-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/import-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8686,7 +8686,7 @@ Content    : {"properties":{"public":true,"url":"https://test-spring-service-dem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/invoke-azrestmethod</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/invoke-azrestmethod</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8740,7 +8740,7 @@ Opening the default browser to https://aka.ms/azpssurvey?Q_CHL=INTERCEPT</dev:co
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/open-azsurveylink</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/open-azsurveylink</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8848,7 +8848,7 @@ Opening the default browser to https://aka.ms/azpssurvey?Q_CHL=INTERCEPT</dev:co
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/register-azmodule</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/register-azmodule</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9177,7 +9177,7 @@ Opening the default browser to https://aka.ms/azpssurvey?Q_CHL=INTERCEPT</dev:co
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/remove-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/remove-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9376,7 +9376,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/remove-azenvironment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/remove-azenvironment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Add-AzEnvironment</maml:linkText>
@@ -9762,7 +9762,7 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/rename-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/rename-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -10057,7 +10057,7 @@ HistoryId      : 8</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/resolve-azerror</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/resolve-azerror</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -10270,7 +10270,7 @@ Save-AzContext -Path C:\test.json</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/save-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/save-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -10544,7 +10544,7 @@ Work    test@outlook.com    Subscription1       AzureCloud          xxxxxxxx-x..
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/select-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/select-azcontext</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -10646,7 +10646,7 @@ your@email.com</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/send-feedback</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/send-feedback</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -11381,7 +11381,7 @@ Work    test@outlook.com    Subscription1       AzureCloud          xxxxxxxx-x..
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/set-azcontext</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzContext</maml:linkText>
@@ -11599,7 +11599,7 @@ Tags       :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/set-azdefault</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/set-azdefault</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -12831,7 +12831,7 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/set-azenvironment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/set-azenvironment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Add-AzEnvironment</maml:linkText>
@@ -12998,7 +12998,7 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/uninstall-azurerm</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/uninstall-azurerm</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -13321,7 +13321,7 @@ EnableDataCollection True  Az         CurrentUser When enabled, Azure PowerShell
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.accounts/update-azconfig</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.accounts/update-azconfig</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

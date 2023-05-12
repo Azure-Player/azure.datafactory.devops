@@ -383,7 +383,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/export-azresourcegroup</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/export-azresourcegroup</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroup</maml:linkText>
@@ -709,7 +709,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/export-aztemplatespec</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/export-aztemplatespec</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -901,7 +901,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1118,7 +1118,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdeploymentoperation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdeploymentoperation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1345,7 +1345,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdeploymentscript</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdeploymentscript</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1632,7 +1632,7 @@ Get-AzDeploymentScriptLog -DeploymentScriptInputObject $ds</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdeploymentscriptlog</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdeploymentscriptlog</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3646,7 +3646,7 @@ Get-AzDeploymentScriptLog -DeploymentScriptInputObject $ds</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdeploymentwhatifresult</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdeploymentwhatifresult</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -3825,7 +3825,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azlocation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azlocation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4077,7 +4077,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagedapplication</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagedapplication</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4329,7 +4329,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagedapplicationdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagedapplicationdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4554,7 +4554,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4794,7 +4794,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeploymentoperation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeploymentoperation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7014,7 +7014,7 @@ Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, m
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeploymentwhatifresult</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupdeploymentwhatifresult</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7491,7 +7491,7 @@ Microsoft.Security complianceResults   {Microsoft.Security/complianceResults/res
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azpolicyalias</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -7867,11 +7867,20 @@ Get-AzPolicyAssignment -Scope '/providers/Microsoft.Management/managementgroups/
 <maml:para></maml:para>
         </dev:remarks>
       </command:example>
+      <command:example>
+        <maml:title>Example 4: Get the scope, policy set definition identifier, and display name of all policy assignments formatted as a list</maml:title>
+        <dev:code>Get-AzPolicyAssignment | Select-Object -ExpandProperty properties | Select-Object -Property Scope, PolicyDefinitionID, DisplayName | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>This command is useful when you need to find the reader-friendly DisplayName property of an Azure Policy assignment.</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azpolicyassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzPolicyAssignment</maml:linkText>
@@ -8453,9 +8462,18 @@ Get-AzPolicyAssignment -Scope '/providers/Microsoft.Management/managementgroups/
       </command:example>
       <command:example>
         <maml:title>--- Example 5: Get policy definitions from a given category ---</maml:title>
-        <dev:code>Get-AzPolicyDefinition | Where-Object {$_.Properties.metadata.category -eq "Virtual Machine"}</dev:code>
+        <dev:code>Get-AzPolicyDefinition | Where-Object {$_.Properties.metadata.category -eq 'Tags'}</dev:code>
         <dev:remarks>
-          <maml:para>This command gets all policy definitions in category "Virtual Machine".</maml:para>
+          <maml:para>This command gets all policy definitions in the category Tags .</maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>Example 6: Get the display name, description, policy type, and metadata of all policy definitions formatted as a list</maml:title>
+        <dev:code>Get-AzPolicyDefinition | Select-Object -ExpandProperty properties | Select-Object -Property DisplayName, Description, PolicyType, Metadata | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>This command is useful when you need to find the reader-friendly DisplayName property of an Azure Policy definition. You can parse the Metadata property to discover the policy definition's version number and category assignment.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -8464,7 +8482,7 @@ Get-AzPolicyAssignment -Scope '/providers/Microsoft.Management/managementgroups/
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azpolicydefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azpolicydefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzPolicyDefinition</maml:linkText>
@@ -8827,7 +8845,7 @@ Get-AzPolicyAssignment -Scope '/providers/Microsoft.Management/managementgroups/
         <maml:title>------------- Example 1 Get all policy exemptions -------------</maml:title>
         <dev:code>Get-AzPolicyExemption</dev:code>
         <dev:remarks>
-          <maml:para>This command gets all the policy exemptions.</maml:para>
+          <maml:para>This command gets all the policy exemptions in the current subscription. If you need to list all the exemptions related to the given scope, including those from ancestor scopes and those from descendent scopes you need to pass the `-IncludeDescendent` parameter.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -8856,7 +8874,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyexemption</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azpolicyexemption</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9437,7 +9455,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azpolicysetdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azpolicysetdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -9630,7 +9648,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azproviderfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azproviderfeature</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Register-AzProviderFeature</maml:linkText>
@@ -9768,7 +9786,7 @@ Get-AzPolicyExemption -PolicyAssignmentIdFilter $Assignment.ResourceId</dev:code
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azproviderpreviewfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azproviderpreviewfeature</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Register-AzProviderPreviewFeature</maml:linkText>
@@ -10398,7 +10416,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresource</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresource</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Move-AzResource</maml:linkText>
@@ -10750,7 +10768,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcegroup</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzResourceGroup</maml:linkText>
@@ -10987,7 +11005,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeployment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroup</maml:linkText>
@@ -11176,7 +11194,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentoperation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentoperation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -13466,7 +13484,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentwhatifresult</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeploymentwhatifresult</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -14104,7 +14122,7 @@ Tags              :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcelock</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcelock</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzResourceLock</maml:linkText>
@@ -14542,7 +14560,7 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourceprovider</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourceprovider</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Register-AzResourceProvider</maml:linkText>
@@ -14831,7 +14849,7 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztemplatespec</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztemplatespec</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -15032,7 +15050,7 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztenantdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztenantdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -15248,7 +15266,7 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztenantdeploymentoperation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztenantdeploymentoperation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -17262,7 +17280,7 @@ Locations         : {West US, East US, North Europe, West Europe…}
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztenantdeploymentwhatifresult</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztenantdeploymentwhatifresult</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -17996,7 +18014,7 @@ registrationState : Registered</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/invoke-azresourceaction</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -18279,7 +18297,7 @@ Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/move-azresource</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/move-azresource</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResource</maml:linkText>
@@ -21678,7 +21696,7 @@ New-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplatePa
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -22085,7 +22103,7 @@ New-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplatePa
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagedapplication</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagedapplication</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -22557,7 +22575,7 @@ New-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplatePa
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagedapplicationdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagedapplicationdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -26143,7 +26161,7 @@ New-AzManagementGroupDeployment -ManagementGroupId "myMG" -Location "West US" -T
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagementgroupdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -27679,7 +27697,7 @@ New-AzPolicyAssignment -Name 'VirtualMachinePolicyAssignment' -PolicySetDefiniti
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azpolicyassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azpolicyassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyDefinition</maml:linkText>
@@ -28245,7 +28263,7 @@ PolicyDefinitionId : /subscriptions/11111111-1111-1111-1111-111111111111/provide
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azpolicydefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azpolicydefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyDefinition</maml:linkText>
@@ -28693,7 +28711,7 @@ New-AzPolicyExemption -Name 'VirtualMachinePolicyAssignment' -PolicyAssignment $
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azpolicyexemption</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azpolicyexemption</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -29301,7 +29319,7 @@ New-AzPolicySetDefinition -Name 'VMPolicySetDefinition' -GroupDefinition $groups
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azpolicysetdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azpolicysetdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -30312,7 +30330,7 @@ New-AzResource @prop</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azresource</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azresource</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResource</maml:linkText>
@@ -30628,7 +30646,7 @@ New-AzResource @prop</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azresourcegroup</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceProvider</maml:linkText>
@@ -35043,7 +35061,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateO
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroupDeployment</maml:linkText>
@@ -36061,7 +36079,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateO
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azresourcelock</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azresourcelock</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceLock</maml:linkText>
@@ -36702,7 +36720,7 @@ New-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'myTemplateSpec' -Version 'v1
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-aztemplatespec</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-aztemplatespec</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -40075,7 +40093,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-aztenantdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-aztenantdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -40278,7 +40296,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/publish-azbicepmodule</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/publish-azbicepmodule</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -40458,7 +40476,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/register-azproviderfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/register-azproviderfeature</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzProviderFeature</maml:linkText>
@@ -40642,7 +40660,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/register-azproviderpreviewfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/register-azproviderpreviewfeature</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzProviderPreviewFeature</maml:linkText>
@@ -40900,7 +40918,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/register-azresourceprovider</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceProvider</maml:linkText>
@@ -41330,7 +41348,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -41685,7 +41703,7 @@ New-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Temp
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azdeploymentscript</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azdeploymentscript</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -42031,7 +42049,7 @@ Remove-AzManagedApplication -Id $Application.ResourceId -Force</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azmanagedapplication</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagedapplication</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -42377,7 +42395,7 @@ Remove-AzManagedApplicationDefinition -Id $ApplicationDefinition.ResourceId -For
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azmanagedapplicationdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagedapplicationdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -42823,7 +42841,7 @@ Remove-AzManagedApplicationDefinition -Id $ApplicationDefinition.ResourceId -For
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azmanagementgroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagementgroupdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -43208,7 +43226,7 @@ Remove-AzManagedApplicationDefinition -Id $ApplicationDefinition.ResourceId -For
       <command:example>
         <maml:title>---- Example 1: Remove policy assignment by name and scope ----</maml:title>
         <dev:code>$ResourceGroup = Get-AzResourceGroup -Name 'ResourceGroup11'
-Remove-AzPolicyAssignment -Name 'PolicyAssignment07' -Scope $ResourceGroup.ResourceId -Confirm</dev:code>
+Remove-AzPolicyAssignment -Name 'PolicyAssignment07' -Scope $ResourceGroup.ResourceId -Confirm:$false</dev:code>
         <dev:remarks>
           <maml:para>The first command gets a resource group named ResourceGroup11 by using the Get-AzResourceGroup cmdlet. The command stores that object in the $ResourceGroup variable. The second command removes the policy assignment named PolicyAssignment07 that was assigned at a resource group level. The ResourceId property of $ResourceGroup identifies the resource group.</maml:para>
 <maml:para></maml:para>
@@ -43219,7 +43237,7 @@ Remove-AzPolicyAssignment -Name 'PolicyAssignment07' -Scope $ResourceGroup.Resou
         <maml:title>---------- Example 2: Remove policy assignment by ID ----------</maml:title>
         <dev:code>$ResourceGroup = Get-AzResourceGroup -Name 'ResourceGroup11' 
 $PolicyAssignment = Get-AzPolicyAssignment -Name 'PolicyAssignment07' -Scope $ResourceGroup.ResourceId
-Remove-AzPolicyAssignment -Id $PolicyAssignment.ResourceId -Confirm</dev:code>
+Remove-AzPolicyAssignment -Id $PolicyAssignment.ResourceId -Confirm:$false</dev:code>
         <dev:remarks>
           <maml:para>The first command gets a resource group named ResourceGroup11, and then stores that object in the $ResourceGroup variable. The second command gets the policy assignment at a resource group level, and then stores it in the $PolicyAssignment variable. The ResourceId property of $ResourceGroup identifies the resource group. The final command removes the policy assignment that the ResourceId property of $PolicyAssignment identifies.</maml:para>
 <maml:para></maml:para>
@@ -43230,7 +43248,7 @@ Remove-AzPolicyAssignment -Id $PolicyAssignment.ResourceId -Confirm</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicyassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azpolicyassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyAssignment</maml:linkText>
@@ -43890,7 +43908,7 @@ Remove-AzPolicyDefinition -Id $PolicyDefinition.ResourceId -Force</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicydefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azpolicydefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyDefinition</maml:linkText>
@@ -44362,7 +44380,7 @@ Remove-AzPolicyExemption -Id $PolicyExemption.ResourceId -Confirm</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicyexemption</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azpolicyexemption</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -45001,7 +45019,7 @@ Remove-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Force</dev:cod
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicysetdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azpolicysetdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -45653,7 +45671,7 @@ Remove-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Force</dev:cod
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azresource</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azresource</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResource</maml:linkText>
@@ -46042,7 +46060,7 @@ Remove-AzPolicySetDefinition -Id $PolicySetDefinition.ResourceId -Force</dev:cod
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azresourcegroup</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroup</maml:linkText>
@@ -46342,7 +46360,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azresourcegroupdeployment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroupDeployment</maml:linkText>
@@ -47152,7 +47170,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcelock</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azresourcelock</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceLock</maml:linkText>
@@ -47502,7 +47520,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-aztemplatespec</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-aztemplatespec</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -47924,7 +47942,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-aztenantdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-aztenantdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -48376,7 +48394,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/save-azdeploymentscriptlog</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/save-azdeploymentscriptlog</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -48706,7 +48724,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/save-azdeploymenttemplate</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/save-azdeploymenttemplate</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -49060,7 +49078,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/save-azmanagementgroupdeploymenttemplate</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/save-azmanagementgroupdeploymenttemplate</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -49319,7 +49337,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/save-azresourcegroupdeploymenttemplate</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/save-azresourcegroupdeploymenttemplate</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -49649,7 +49667,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/save-aztenantdeploymenttemplate</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/save-aztenantdeploymenttemplate</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -50184,7 +50202,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azmanagedapplication</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azmanagedapplication</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -50700,7 +50718,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azmanagedapplicationdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azmanagedapplicationdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -52425,7 +52443,7 @@ Set-AzPolicyAssignment -Id $PolicyAssignment.ResourceId -NonComplianceMessage @{
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azpolicyassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azpolicyassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyAssignment</maml:linkText>
@@ -53333,7 +53351,7 @@ PolicyDefinitionId : /subscriptions/11111111-1111-1111-1111-111111111111/provide
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azpolicydefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azpolicydefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPolicyDefinition</maml:linkText>
@@ -54150,7 +54168,7 @@ Set-AzPolicyExemption -Id $PolicyExemption.ResourceId -ExemptionCategory Mitigat
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azpolicyexemption</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azpolicyexemption</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -55190,7 +55208,7 @@ Set-AzPolicySetDefinition -Name 'VMPolicySetDefinition' -GroupDefinition $groups
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azpolicysetdefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azpolicysetdefinition</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -56376,7 +56394,7 @@ Sku               : @{name=A0}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azresource</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azresource</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResource</maml:linkText>
@@ -56677,7 +56695,7 @@ Set-AzResourceGroup -Name "ContosoRG" -Tag $Tags
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azresourcegroup</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azresourcegroup</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResource</maml:linkText>
@@ -57678,7 +57696,7 @@ Set-AzResourceGroup -Name "ContosoRG" -Tag $Tags
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azresourcelock</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azresourcelock</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceLock</maml:linkText>
@@ -58875,7 +58893,7 @@ Set-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'myTemplateSpec' -Version 'v1
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-aztemplatespec</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-aztemplatespec</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -59254,7 +59272,7 @@ Set-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'myTemplateSpec' -Version 'v1
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/stop-azdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/stop-azdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -59656,7 +59674,7 @@ Set-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'myTemplateSpec' -Version 'v1
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/stop-azmanagementgroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/stop-azmanagementgroupdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -59945,7 +59963,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/stop-azresourcegroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/stop-azresourcegroupdeployment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroupDeployment</maml:linkText>
@@ -60347,7 +60365,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/stop-aztenantdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/stop-aztenantdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -62094,7 +62112,7 @@ Test-AzDeployment -Location "West US" -TemplateObject $TemplateObject -TemplateP
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/test-azdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/test-azdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -64036,7 +64054,7 @@ Test-AzManagementGroupDeployment -ManagementGroupId "myMG" -Location "West US" -
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/test-azmanagementgroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/test-azmanagementgroupdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -66255,7 +66273,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -Template
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/test-azresourcegroupdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/test-azresourcegroupdeployment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceGroupDeployment</maml:linkText>
@@ -68009,7 +68027,7 @@ Test-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Tem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/test-aztenantdeployment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/test-aztenantdeployment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -68189,7 +68207,7 @@ Test-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Tem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/unregister-azproviderfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/unregister-azproviderfeature</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -68392,7 +68410,7 @@ Test-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Tem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/unregister-azproviderpreviewfeature</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/unregister-azproviderpreviewfeature</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzProviderPreviewFeature</maml:linkText>
@@ -68603,7 +68621,7 @@ Test-AzTenantDeployment -Location "West US" -TemplateObject $TemplateObject -Tem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/unregister-azresourceprovider</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/unregister-azresourceprovider</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceProvider</maml:linkText>

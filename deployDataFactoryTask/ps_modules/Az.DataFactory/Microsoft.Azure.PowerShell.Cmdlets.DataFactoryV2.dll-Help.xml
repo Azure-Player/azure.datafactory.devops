@@ -409,7 +409,7 @@
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/add-azdatafactoryv2dataflowdebugsessionpackage</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/add-azdatafactoryv2dataflowdebugsessionpackage</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2DataFlowDebugSession</maml:linkText>
@@ -755,7 +755,7 @@ Trigger1    Provisioning</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/add-azdatafactoryv2triggersubscription</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/add-azdatafactoryv2triggersubscription</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -923,7 +923,7 @@ DataFactoryName   : WikiADF
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2</maml:linkText>
@@ -1305,7 +1305,7 @@ ResourceGroupName : ADF
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2activityrun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2activityrun</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Invoke-AzDataFactoryV2Pipeline</maml:linkText>
@@ -1588,7 +1588,7 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataflow</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataflow</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2DataFlow</maml:linkText>
@@ -1820,7 +1820,7 @@ SessionId                            ComputeType CoreCount                      
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataflowdebugsession</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataflowdebugsession</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2DataFlowDebugSession</maml:linkText>
@@ -2125,7 +2125,7 @@ DatasetName       : DAWikipediaClickEvents
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2dataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2Dataset</maml:linkText>
@@ -2558,7 +2558,7 @@ State                     : Online
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -2814,7 +2814,7 @@ IR@89895504-f647-48fd-8dd3-42fa556d67e3******            IR@89895504-f647-48fd-8
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimekey</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimekey</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryV2IntegrationRuntimeKey</maml:linkText>
@@ -3066,7 +3066,7 @@ test-selfhost-ir       rg-test-dfv2      test-df-eu2       {Node_1}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimemetric</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimemetric</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -3470,7 +3470,7 @@ IpAddress              : 167.220.1.167</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimenode</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimenode</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -3724,7 +3724,7 @@ Event Hub (Logging)                      [{"DomainName":"*.servicebus.windows.ne
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-AzDataFactoryV2IntegrationRuntimeOutboundNetworkDependenciesEndpoint</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-AzDataFactoryV2IntegrationRuntimeOutboundNetworkDependenciesEndpoint</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -4027,7 +4027,7 @@ Name                          DataFactoryName ResourceGroupName
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2linkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2linkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2LinkedService</maml:linkText>
@@ -4373,7 +4373,7 @@ ReferenceName : dsIn
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2pipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2pipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2Pipeline</maml:linkText>
@@ -4788,7 +4788,7 @@ ResourceGroupName : ADF
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2pipelinerun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2pipelinerun</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Invoke-AzDataFactoryV2Pipeline</maml:linkText>
@@ -5079,7 +5079,7 @@ TriggerName       : ScheduledTrigger
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2trigger</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2trigger</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2Trigger</maml:linkText>
@@ -5392,7 +5392,7 @@ ResourceGroupName   : ADF
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2triggerrun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2triggerrun</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2Trigger</maml:linkText>
@@ -5640,7 +5640,7 @@ Trigger1    Enabled</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2triggersubscriptionstatus</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryv2triggersubscriptionstatus</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -6305,7 +6305,7 @@ $output.output
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2dataflowdebugsessioncommand</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2dataflowdebugsessioncommand</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2DataFlowDebugSession</maml:linkText>
@@ -6655,7 +6655,7 @@ $output.output
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2integrationruntimeupgrade</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2integrationruntimeupgrade</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -7381,7 +7381,7 @@ $output.output
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2pipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2pipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2PipelineRun</maml:linkText>
@@ -7824,7 +7824,7 @@ $output.output
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2triggerrun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/invoke-azdatafactoryv2triggerrun</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8267,7 +8267,7 @@ AuthKey1 AuthKey2
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryv2integrationruntimekey</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryv2integrationruntimekey</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2IntegrationRuntimeKey</maml:linkText>
@@ -8628,7 +8628,7 @@ AuthKey1 AuthKey2
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryv2linkedserviceencryptedcredential</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryv2linkedserviceencryptedcredential</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8988,7 +8988,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2</maml:linkText>
@@ -9432,7 +9432,7 @@ Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2dataflow</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2dataflow</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2DataFlow</maml:linkText>
@@ -9824,7 +9824,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2dataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2dataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Dataset</maml:linkText>
@@ -10259,7 +10259,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -10694,7 +10694,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2integrationruntimenode</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2integrationruntimenode</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -11078,7 +11078,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2linkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2linkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2LinkedService</maml:linkText>
@@ -11470,7 +11470,7 @@ Confirm
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2pipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2pipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Pipeline</maml:linkText>
@@ -11866,7 +11866,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2trigger</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2trigger</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Trigger</maml:linkText>
@@ -12298,7 +12298,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2triggersubscription</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryv2triggersubscription</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -14854,7 +14854,7 @@ DataFactoryName   : WikiADF
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2</maml:linkText>
@@ -15201,7 +15201,7 @@ TaxiDemo1                      WikiADF               adf Microsoft.Azure.Managem
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2dataflow</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2dataflow</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2DataFlow</maml:linkText>
@@ -15550,7 +15550,7 @@ DatasetName       : DAWikipediaClickEvents
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2dataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2dataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Dataset</maml:linkText>
@@ -17663,7 +17663,7 @@ Location                          : EastUS
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -18007,7 +18007,7 @@ LinkedServiceName : LinkedServiceCuratedWikiData
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2linkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2linkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2LinkedService</maml:linkText>
@@ -18356,7 +18356,7 @@ PipelineName      : DPWikisample
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2pipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2pipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Pipeline</maml:linkText>
@@ -18709,7 +18709,7 @@ TriggerName       : ScheduledTrigger
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2trigger</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryv2trigger</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Trigger</maml:linkText>
@@ -19148,7 +19148,7 @@ SessionId                            Status
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2dataflowdebugsession</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2dataflowdebugsession</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2DataFlowDebugSession</maml:linkText>
@@ -19566,7 +19566,7 @@ CreateTime                   : 9/11/2017 2:16:12 PM
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Stop-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -19954,7 +19954,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2trigger</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/start-azdatafactoryv2trigger</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Trigger</maml:linkText>
@@ -20385,7 +20385,7 @@ Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2dataflowdebugsession</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2dataflowdebugsession</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2DataFlowDebugSession</maml:linkText>
@@ -20780,7 +20780,7 @@ Are you sure you want to stop data flow debug session 'fd76cd0d-8b37-4dc0-a370-3
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Start-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -21189,7 +21189,7 @@ true</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2pipelinerun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2pipelinerun</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -21573,7 +21573,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2trigger</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2trigger</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryV2Trigger</maml:linkText>
@@ -22024,7 +22024,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2triggerrun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2triggerrun</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -22403,7 +22403,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/sync-azdatafactoryv2integrationruntimecredential</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/sync-azdatafactoryv2integrationruntimecredential</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -23111,7 +23111,7 @@ ProvisioningState : Succeeded</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -23577,7 +23577,7 @@ Description               : New 2 description</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2integrationruntime</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2integrationruntime</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>
@@ -24020,7 +24020,7 @@ Description               : New 2 description</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2integrationruntimenode</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/update-azdatafactoryv2integrationruntimenode</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactoryV2IntegrationRuntime</maml:linkText>

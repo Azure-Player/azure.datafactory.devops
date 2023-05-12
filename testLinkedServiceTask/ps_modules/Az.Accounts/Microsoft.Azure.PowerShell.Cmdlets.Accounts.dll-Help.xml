@@ -1486,6 +1486,17 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>EnableLoginByWam</maml:name>
+          <maml:description>
+            <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para>Returns true if cmdlet executes correctly.</maml:para>
@@ -1504,6 +1515,8 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">CurrentUser</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Environment</command:parameterValue>
           </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Common.Config.ConfigScope</command:parameterValue>
           <dev:type>
@@ -1593,6 +1606,8 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">CurrentUser</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Environment</command:parameterValue>
           </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Common.Config.ConfigScope</command:parameterValue>
           <dev:type>
@@ -1692,6 +1707,18 @@ TestEnvironment TestRMEndpoint       TestADEndpoint/</dev:code>
         <maml:name>EnableDataCollection</maml:name>
         <maml:description>
           <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>EnableLoginByWam</maml:name>
+        <maml:description>
+          <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -4213,6 +4240,20 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
 <maml:para></maml:para>
         </dev:remarks>
       </command:example>
+      <command:example>
+        <maml:title>--------- Example 10: Connect interactively using WAM ---------</maml:title>
+        <dev:code>Update-AzConfig -EnableLoginByWam $true
+Connect-AzAccount
+
+Account                     SubscriptionName TenantId                        Environment
+-------                     ---------------- --------                        -----------
+xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy AzureCloud</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+<maml:para></maml:para>
+<maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
@@ -6305,6 +6346,17 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>EnableLoginByWam</maml:name>
+          <maml:description>
+            <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:description>
             <maml:para>Determines the scope of config changes, for example, whether changes apply only to the current process, or to all sessions started by this user. By default it is CurrentUser.</maml:para>
@@ -6391,6 +6443,18 @@ xxxxxxxx-xxxx-xxxx-xxxxxxxx Subscription1    yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyy Azu
         <maml:name>EnableDataCollection</maml:name>
         <maml:description>
           <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>EnableLoginByWam</maml:name>
+        <maml:description>
+          <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -13092,6 +13156,18 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>EnableLoginByWam</maml:name>
+          <maml:description>
+            <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Boolean</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Scope</maml:name>
           <maml:description>
@@ -13100,6 +13176,8 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
           <command:parameterValueGroup>
             <command:parameterValue required="false" command:variableLength="false">CurrentUser</command:parameterValue>
             <command:parameterValue required="false" command:variableLength="false">Process</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Environment</command:parameterValue>
           </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Common.Config.ConfigScope</command:parameterValue>
           <dev:type>
@@ -13199,6 +13277,18 @@ AzureSynapseAnalyticsEndpointResourceId           :</dev:code>
         <maml:name>EnableDataCollection</maml:name>
         <maml:description>
           <maml:para>When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience. For more information, see our privacy statement: https://aka.ms/privacy</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+        <maml:name>EnableLoginByWam</maml:name>
+        <maml:description>
+          <maml:para>[Preview] When enabled, Web Account Manager (WAM) will be the default interactive login experience. It will fall back to using the browser if the platform does not support WAM. Note that this feature is under preview. Microsoft Account (MSA) is currently not supported. Feel free to reach out to Azure PowerShell team if you have any feedbacks: https://aka.ms/azpsissue</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Boolean</command:parameterValue>
         <dev:type>

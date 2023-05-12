@@ -277,12 +277,16 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.3.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.3.0)
-- [Az.DataFactory - ver.1.16.11](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.11)
-- [Az.Accounts - ver.2.10.4](https://www.powershellgallery.com/packages/Az.Accounts/2.10.4)
-- [Az.Resources - ver.6.4.1](https://www.powershellgallery.com/packages/Az.Resources/6.4.1)
+- [azure.datafactory.tools - ver.1.4.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.4.0)
+- [Az.DataFactory - ver.1.16.13](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.13)
+- [Az.Accounts - ver.2.12.1](https://www.powershellgallery.com/packages/Az.Accounts/2.12.1)
+- [Az.Resources - ver.6.5.3](https://www.powershellgallery.com/packages/Az.Resources/6.5.3)
 
 # History
+- 12 May 2023 - v.1.28  Update [adftools v.1.4](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.4):
+                        - More precise error message when value in config is empty
+                        - Incremental deployment!!! 
+                        - Support for credentials deployment & delete
 - 27 Feb 2023 - v.1.27  Update [adftools v.1.3](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.3)
 - 24 Feb 2023 - v.1.26  Fixed two bugs when validate ADF code - [adftools v.1.2](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.2)
 - 23 Feb 2023 - v.1.25  Added Support for new SynapseNotebook activity [#121](https://github.com/Azure-Player/azure.datafactory.devops/issues/121)

@@ -7,9 +7,9 @@ $target = 'd:\modules'
 Remove-Item -Path "$target\*" -Force
 
 function Download-Module {
-    param ([String] $m, [String]$target)
+    param ([String] $m, [String]$target, $reqVer)
 
-    update-module $m -Force
+    update-module $m -Force -RequiredVersion $reqVer
     $list = get-module $m -ListAvailable
     $mod = $list[0]
     $folder = Split-Path $mod.Path -Parent
@@ -50,9 +50,9 @@ function Update-ModuleInPlace {
 
 # Downloading modules
 $m = 'azure.datafactory.tools'; Download-Module -m $m -target $target
-$m = 'Az.DataFactory';          Download-Module -m $m -target $target
-$m = 'Az.Accounts';             Download-Module -m $m -target $target
-$m = 'Az.Resources';            Download-Module -m $m -target $target
+$m = 'Az.DataFactory';          Download-Module -m $m -target $target -reqVer '1.16.13'
+$m = 'Az.Accounts';             Download-Module -m $m -target $target -reqVer '2.12.1'
+$m = 'Az.Resources';            Download-Module -m $m -target $target -reqVer '6.5.3'
 
 # Updating modules in 'azure.datafactory.devops'
 $m = 'azure.datafactory.tools'; 

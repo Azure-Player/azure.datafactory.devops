@@ -72,6 +72,14 @@
             "required": true
         },
         {
+            "name": "IncrementalDeployment",
+            "type": "boolean",
+            "label": "Incremental Deployment (new)",
+            "defaultValue": "false",
+            "helpMarkDown": "Accelerating deployment time by keeping hash list of lastly deployed objects.\n[Learn more...](https://github.com/Azure-Player/azure.datafactory.tools#incremental-deployment) ",
+            "required": false
+        },
+        {
             "name": "StageType",
             "type": "radio",
             "label": "Environment Config Type",

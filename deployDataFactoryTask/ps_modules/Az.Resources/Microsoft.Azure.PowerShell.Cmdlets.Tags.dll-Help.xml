@@ -273,7 +273,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-aztag</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzTag</maml:linkText>
@@ -698,7 +698,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-aztag</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>
@@ -1047,7 +1047,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-aztag</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>
@@ -1332,7 +1332,7 @@ Properties :
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/update-aztag</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/update-aztag</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzTag</maml:linkText>

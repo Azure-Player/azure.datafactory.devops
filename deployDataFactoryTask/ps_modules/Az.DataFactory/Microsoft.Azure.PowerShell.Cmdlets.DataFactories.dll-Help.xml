@@ -157,7 +157,7 @@ Properties        : Microsoft.WindowsAzure.Commands.Utilities.PSDataFactoryConfi
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactory</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactory</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactory</maml:linkText>
@@ -877,7 +877,7 @@ WindowEnd         : 8/17/2016 4:00:00 AM</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryactivitywindow</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryactivitywindow</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Azure Data Factories Cmdlets</maml:linkText>
@@ -1154,7 +1154,7 @@ PartitionBy       : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorydataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactorydataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryDataset</maml:linkText>
@@ -1417,7 +1417,7 @@ ExpiryTime      :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorygateway</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactorygateway</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryGateway</maml:linkText>
@@ -1651,7 +1651,7 @@ Key2 : DMG@632e739e-1053-4070-9102-8591f067526e@41fcbc45-c594-4152-a8f1-fcbcd645
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorygatewayauthkey</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactorygatewayauthkey</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryGateway</maml:linkText>
@@ -1885,7 +1885,7 @@ Key2 : DMG@632e739e-1053-4070-9102-8591f067526e@41fcbc45-c594-4152-a8f1-fcbcd645
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryhub</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryhub</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryHub</maml:linkText>
@@ -2133,7 +2133,7 @@ Get-AzDataFactoryLinkedService -DataFactory $DataFactory | Format-Table -Propert
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorylinkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactorylinkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryLinkedService</maml:linkText>
@@ -2440,7 +2440,7 @@ StartTime :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorypipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactorypipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryPipeline</maml:linkText>
@@ -2732,7 +2732,7 @@ ErrorMessage        :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryrun</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryrun</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactorySlice</maml:linkText>
@@ -3070,7 +3070,7 @@ Status            : PendingExecution
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryslice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryslice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Set-AzDataFactorySliceStatus</maml:linkText>
@@ -3350,7 +3350,7 @@ Properties        : Microsoft.WindowsAzure.Commands.Utilities.PSDataFactoryConfi
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactory</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactory</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactory</maml:linkText>
@@ -3776,7 +3776,7 @@ MinimumSizeMB : 1</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorydataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactorydataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryDataset</maml:linkText>
@@ -4362,7 +4362,7 @@ New-AzDataFactoryEncryptValue -ResourceGroupName $RGName -DataFactoryName $DFNam
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryencryptvalue</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryencryptvalue</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryEncryptValue</maml:linkText>
@@ -4631,7 +4631,7 @@ Key               : ADF#40cbb3d9-2736-4794-a8a6-e6b839b4894f@a2d875ce-c9d7-4b8b-
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorygateway</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactorygateway</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzDataFactoryGateway</maml:linkText>
@@ -4972,7 +4972,7 @@ Key2 :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorygatewayauthkey</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactorygatewayauthkey</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryGateway</maml:linkText>
@@ -5335,7 +5335,7 @@ Key2 :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryhub</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryhub</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryHub</maml:linkText>
@@ -5706,7 +5706,7 @@ Properties        : Microsoft.DataFactories.AzureStorageLinkedService</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorylinkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactorylinkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryLinkedService</maml:linkText>
@@ -6078,7 +6078,7 @@ Properties        : Microsoft.DataFactories.PipelineProperties</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorypipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/new-azdatafactorypipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryPipeline</maml:linkText>
@@ -6386,7 +6386,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactory</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactory</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactory</maml:linkText>
@@ -6718,7 +6718,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorydataset</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorydataset</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryDataset</maml:linkText>
@@ -7050,7 +7050,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorygateway</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorygateway</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryGateway</maml:linkText>
@@ -7381,7 +7381,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryhub</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactoryhub</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryHub</maml:linkText>
@@ -7713,7 +7713,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorylinkedservice</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorylinkedservice</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryLinkedService</maml:linkText>
@@ -8045,7 +8045,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorypipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorypipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryPipeline</maml:linkText>
@@ -8364,7 +8364,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/resume-azdatafactorypipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/resume-azdatafactorypipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryPipeline</maml:linkText>
@@ -8689,7 +8689,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/save-azdatafactorylog</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/save-azdatafactorylog</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryRun</maml:linkText>
@@ -8976,7 +8976,7 @@ ExpiryTime      :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactorygateway</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactorygateway</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryGateway</maml:linkText>
@@ -9419,7 +9419,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactorypipelineactiveperiod</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactorypipelineactiveperiod</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzDataFactoryPipeline</maml:linkText>
@@ -9812,7 +9812,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactorySlice</maml:linkText>
@@ -10106,7 +10106,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.datafactory/suspend-azdatafactorypipeline</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.datafactory/suspend-azdatafactorypipeline</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzDataFactoryPipeline</maml:linkText>

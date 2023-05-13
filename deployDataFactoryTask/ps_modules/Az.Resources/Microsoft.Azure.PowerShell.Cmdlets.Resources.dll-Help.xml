@@ -1177,7 +1177,7 @@ IsSystemProtected       : True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azdenyassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azdenyassignment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1487,7 +1487,7 @@ Children    :</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1630,16 +1630,7 @@ Name        : TestGroupChild
 TenantId    : 6b2064b9-34bd-46e6-9092-52f2dd5f7fc0
 DisplayName : TestGroupChildDisplayName</dev:code>
         <dev:remarks>
-          <maml:para></maml:para>
-<maml:para></maml:para>
-<maml:para></maml:para>
-        </dev:remarks>
-      </command:example>
-      <command:example>
-        <maml:title>----------------------- CommonParameters -----------------------</maml:title>
-        <dev:code></dev:code>
-        <dev:remarks>
-          <maml:para></maml:para>
+          <maml:para>This cmdlet get all the ManagementGroupEntity under this tenant.</maml:para>
 <maml:para></maml:para>
 <maml:para></maml:para>
         </dev:remarks>
@@ -1648,7 +1639,7 @@ DisplayName : TestGroupChildDisplayName</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azentities/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupentity</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1819,7 +1810,7 @@ DefaultManagementGroup : TestGroup</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgrouphierarchysetting</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2005,7 +1996,7 @@ Reason               : Invalid</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupnameavailability</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2241,7 +2232,7 @@ State             : Active</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azmanagementgroupsubscription</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2411,7 +2402,7 @@ Properties : {"privateLink":"/subscriptions/aeb49941-36c3-4e7c-9ffd-16ba89d33ec4
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azprivatelinkassociation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azprivatelinkassociation</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzPrivateLinkAssociation</maml:linkText>
@@ -2547,7 +2538,7 @@ Properties : {"privateLink":"/subscriptions/aeb49941-36c3-4e7c-9ffd-16ba89d33ec4
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azprovideroperation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azprovideroperation</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -2734,7 +2725,7 @@ PrivateEndpointConnections : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azresourcemanagementprivatelink</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azresourcemanagementprivatelink</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzResourceManagementPrivateLink</maml:linkText>
@@ -4113,7 +4104,7 @@ PrivateEndpointConnections : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azroleassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azroleassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzRoleAssignment</maml:linkText>
@@ -4385,7 +4376,7 @@ PrivateEndpointConnections : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azroledefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-azroledefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzRoleAssignment</maml:linkText>
@@ -4536,7 +4527,7 @@ Type              : c7a87cda-9a66-4920-b0f8-869baa04efe0</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/get-aztenantbackfillstatus</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -4898,7 +4889,7 @@ ParentDisplayName : TestGroupParent</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagementgroup/</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzManagementGroup</maml:linkText>
@@ -5161,7 +5152,7 @@ DefaultManagementGroup : TestGroup</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagementgrouphierarchysetting</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5372,7 +5363,7 @@ State             : Active</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -5609,7 +5600,7 @@ Properties : {"privateLink":"/subscriptions/aeb49941-36c3-4e7c-9ffd-16ba89d33ec4
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azprivatelinkassociation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azprivatelinkassociation</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzPrivateLinkAssociation</maml:linkText>
@@ -5828,7 +5819,7 @@ PrivateEndpointConnections : {}</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azresourcemanagementprivatelink</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azresourcemanagementprivatelink</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Remove-AzResourceManagementPrivateLink</maml:linkText>
@@ -7403,7 +7394,7 @@ New-AzRoleAssignment -RoleDefinitionName "Reader" -ApplicationId $servicePrincip
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azroleassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzRoleAssignment</maml:linkText>
@@ -7593,7 +7584,7 @@ New-AzRoleDefinition -Role $role</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azroledefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/new-azroledefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzProviderOperation</maml:linkText>
@@ -7869,7 +7860,7 @@ New-AzRoleDefinition -Role $role</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagementgroup/</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8014,9 +8005,7 @@ New-AzRoleDefinition -Role $role</dev:code>
     <command:examples>
       <command:example>
         <maml:title>------------- Example 1: Remove Hierarchy Settings -------------</maml:title>
-        <dev:code>Remove-AzManagementGroupHierarchySetting -GroupName c7a87cda-9a66-4920-b0f8-869baa04efe0
-
-</dev:code>
+        <dev:code>Remove-AzManagementGroupHierarchySetting -GroupName c7a87cda-9a66-4920-b0f8-869baa04efe0</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
 <maml:para></maml:para>
@@ -8027,7 +8016,7 @@ New-AzRoleDefinition -Role $role</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagementgrouphierarchysetting</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8230,7 +8219,7 @@ New-AzRoleDefinition -Role $role</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azmanagementgroupsubscription/</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -8550,7 +8539,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azprivatelinkassociation</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azprivatelinkassociation</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzPrivateLinkAssociation</maml:linkText>
@@ -8878,7 +8867,7 @@ True</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcemanagementprivatelink</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azresourcemanagementprivatelink</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzResourceManagementPrivateLink</maml:linkText>
@@ -10260,7 +10249,7 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azroleassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azroleassignment</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzRoleAssignment</maml:linkText>
@@ -10701,7 +10690,7 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/remove-azroledefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/remove-azroledefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>New-AzRoleDefinition</maml:linkText>
@@ -10735,7 +10724,7 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Use the New-AzRoleAssignment command to modify an existing assignment.
+      <maml:para>Use the Set-AzRoleAssignment command to modify an existing assignment.
 Descriptions can be any valid string, use that to diferentiate from one another.
 if Condition is set Condition Version has to be set as well but if you're updating a Condition that is not necesary. Condition Version can be upgraded from 1.0 to 2.0 but it can't not be downgraded back. Be cautious as 2.0 is not retrocompatible with 1.0.</maml:para>
     </maml:description>
@@ -11022,7 +11011,7 @@ RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-0
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azroleassignment</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azroleassignment</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -11184,7 +11173,7 @@ Set-AzRoleDefinition -Role $roleDef</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/set-azroledefinition</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/set-azroledefinition</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Get-AzProviderOperation</maml:linkText>
@@ -11335,7 +11324,7 @@ Type              : c7a87cda-9a66-4920-b0f8-869baa04efe0</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/new-azmanagementgroupsubscription/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/start-aztenantbackfill</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -11854,7 +11843,7 @@ ParentDisplayName : TestGroupParent</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/update-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/update-azmanagementgroup/</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -12105,7 +12094,7 @@ DefaultManagementGroup : TestGroup</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://docs.microsoft.com/powershell/module/az.resources/get-azmanagementgroup/</maml:uri>
+        <maml:uri>https://learn.microsoft.com/powershell/module/az.resources/update-azmanagementgrouphierarchysetting</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

@@ -8,12 +8,12 @@ param()
 	.DESCRIPTION
     Publishes Azure Data Factory using code from JSON files.
 
-    Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2020 for Azure DevOps extension
-    Source code and documentation: https://github.com/SQLPlayer/azure.datafactory.devops
+    Script written by (c) Kamil Nowinski (AzurePlayer.net blog), 2020 for Azure DevOps extension
+    Source code and documentation: https://github.com/Azure-Player/azure.datafactory.devops
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
     Depends on PowerShell module azure.datafactory.tools 
-    written by (c) Kamil Nowinski, 2020 https://github.com/SQLPlayer/azure.datafactory.tools
+    written by (c) Kamil Nowinski, 2020 https://github.com/Azure-Player/azure.datafactory.tools
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
@@ -66,6 +66,7 @@ try {
     [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
     [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
     [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
+    [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
@@ -89,6 +90,7 @@ try {
     $opt.DoNotStopStartExcludedTriggers = $DoNotStopStartExcludedTriggers
     $opt.DoNotDeleteExcludedObjects = $DoNotDeleteExcludedObjects
     $opt.IgnoreLackOfReferencedObject = $IgnoreLackOfReferencedObject
+    $opt.IncrementalDeployment = $IncrementalDeployment
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {
@@ -138,7 +140,7 @@ try {
     Write-Host "========================================================================================================="
     Write-Host "    - How much helpful this extension Task for Azure Data Factory is?                                    "
     Write-Host "    - If you like it, if it saves your time or maybe something could be done better?                     "
-    Write-Host "    - I would be really appreciate if you rate this tool and leave your honest comment.                  "
+    Write-Host "    - I would be really appreciate when you rate this tool and leave your honest comment.                "
     Write-Host "(https://marketplace.visualstudio.com/items?itemName=SQLPlayer.DataFactoryTools&ssr=false#review-details)"
     Write-Host "                         THE COMMUNITY WOULD LOVE TO HEAR YOUR FEEDBACK !                                "
     Write-Host "                                            Me either :)                                        Thanks!  "

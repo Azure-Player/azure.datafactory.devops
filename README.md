@@ -272,17 +272,18 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 ...
 
-### Screenshot of ADF Deployment Task 
+### Screenshot of ADF Deployment Task
 
 
 # Related modules
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.1.4.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.4.0)
 - [Az.DataFactory - ver.1.16.13](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.13)
-- [Az.Accounts - ver.2.12.1](https://www.powershellgallery.com/packages/Az.Accounts/2.12.1)
-- [Az.Resources - ver.6.5.3](https://www.powershellgallery.com/packages/Az.Resources/6.5.3)
+- [Az.Accounts - ver.2.12.2](https://www.powershellgallery.com/packages/Az.Accounts/2.12.2)
+- [Az.Resources - ver.6.6.1](https://www.powershellgallery.com/packages/Az.Resources/6.6.1)
 
 # History
+- 16 May 2023 - v.1.29  Upgrade of Az modules (issue #137)
 - 12 May 2023 - v.1.28  Update [adftools v.1.4](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.4):
                         - More precise error message when value in config is empty
                         - Incremental deployment!!! 

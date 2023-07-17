@@ -67,6 +67,8 @@ try {
     [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
     [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
     [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
+    [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
+    [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
     
     $global:ErrorActionPreference = 'Stop';
@@ -91,6 +93,8 @@ try {
     $opt.DoNotDeleteExcludedObjects = $DoNotDeleteExcludedObjects
     $opt.IgnoreLackOfReferencedObject = $IgnoreLackOfReferencedObject
     $opt.IncrementalDeployment = $IncrementalDeployment
+    $opt.TriggerStopMethod = $TriggerStopMethod
+    $opt.TriggerStartMethod = $TriggerStartMethod
 
     # Validate the Filtering Type
     if ($FilteringType -ne "None") {

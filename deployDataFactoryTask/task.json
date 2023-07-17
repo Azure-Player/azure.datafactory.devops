@@ -216,6 +216,32 @@
             "helpMarkDown": "Usually, the deployment will fail if a resource is referenced that's not present in a JSON file. Set to *True* to warn instead of failing.",
             "groupname": "advanced",
             "required": false
+        },
+        {
+            "name": "TriggerStopMethod",
+            "type": "pickList",
+            "label": "Triggers: Stop Method",
+            "required": false,
+            "defaultValue": "AllEnabled",
+            "options": {
+                "AllEnabled": "All Enabled (default)",
+                "DeployableOnly": "Deployable Only"
+            },
+            "helpMarkDown": "Indicates how many triggers should be stopped before the deployment. \n[Read more...](https://github.com/Azure-Player/azure.datafactory.tools#step-stoping-triggers)",
+            "groupName": "advanced"
+        },
+        {
+            "name": "TriggerStartMethod",
+            "type": "pickList",
+            "label": "Triggers: Start Method",
+            "required": false,
+            "defaultValue": "BasedOnSourceCode",
+            "options": {
+                "BasedOnSourceCode": "Based On Source Code (default)",
+                "KeepPreviousState": "Keep Previous State"
+            },
+            "helpMarkDown": "Indicates which triggers should be started after the deployment. \n[Read more...](https://github.com/Azure-Player/azure.datafactory.tools#step-restarting-triggers)",
+            "groupName": "advanced"
         }
     ],
     "dataSourceBindings": [

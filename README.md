@@ -45,9 +45,9 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
 ## Key capabilities
 
 * Creation of Azure Data Factory, if not exist (option)
-* Deployment of all type of objects: pipelines, datasets, linked services, data flows, triggers, integration runtimes
+* Deployment of all type of objects: pipelines, datasets, linked services, data flows, triggers, integration runtimes, credentials
 * Copes with dependencies (multiple levels) between objects when deploying (no more worrying about object names)
-* Build-in mechanism to replace the properties with the indicated values (CSV file)
+* Build-in mechanism to replace the properties with the indicated values (CSV or JSON file)
 * Update, add or remove any property of ADF artefact
 * Selective deployment declared in-line or by pointed file
 * Stop/start triggers (option)
@@ -62,6 +62,7 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
 * Global Parameters
 * Export ARM Templates from JSON files (new!)
 * Support for Managed VNET and Managed Private Endpoint (new!)
+* ⭐️ Incremental deployment (**NEW!**)
 * Build function to support validation of files, dependencies and config
 * Test connections (Linked Services)
 
@@ -96,110 +97,26 @@ Optional parameter. When defined, process will replace all properties defined in
 The parameter can be either full path to csv file (must ends with .csv) or just stage name.
 When you provide parameter value 'UAT' the process will try open config file located in `.\deployment\config-UAT.csv`
 
-The whole concept of CI & CD (Continuous Integration and Continuous Delivery) process is to deploy automatically and riskless onto target infrastructure, supporting multi-environments. Each environment (or stage) to be exact the same code except selected properties. Very often these properties are:  
-- Data Factory name
-- Azure Key Vault URL (endpoint)
-- Selected properties of Linked Services 
-- Some variables
-- etc.
+More details: [Step: Replacing all properties environment-related](https://github.com/Azure-Player/azure.datafactory.tools#step-replacing-all-properties-environment-related)
 
-All these values are hold among JSON files in code repository and due to their specifics - they are not parametrised as it happens in ARM template.
-That is the reason of the need of replacing selected object's parameters into one specified for particular environment. The changes must be done just before deployment.
-
-In order to address that needs, the process are able to read flat **configuration file** with all required values **per environment**. Below is the example of such config file:
-```
-type,name,path,value
-linkedService,LS_AzureKeyVault,typeProperties.baseUrl,"https://kv-blog-uat.vault.azure.net/"
-linkedService,LS_BlobSqlPlayer,typeProperties.connectionString,"DefaultEndpointsProtocol=https;AccountName=blobstorageuat;EndpointSuffix=core.windows.net;"
-pipeline,PL_CopyMovies,activities[0].outputs[0].parameters.BlobContainer,UAT
-pipeline,PL_CopyMovies_with_param,parameters.DstBlobContainer.defaultValue,UAT
-pipeline,PL_Wait_Dynamic,parameters.WaitInSec,"{'type': 'int32','defaultValue': 22}"
-# This is comment - the line will be omitted
-```
-> You can replace any property with that method.
-
-There are 4 columns in CSV file:
-- `type` - Type of object. It's the same as folder where the object's file located
-- `name` - Name of objects. It's the same as json file in the folder
-- `path` - Path of the property's value to be replaced within specific json file
-- `value` - Value to be set
-
-### Column TYPE
-
-Column `type` accepts one of the following values only:
-- integrationRuntime
-- pipeline
-- dataset
-- dataflow
-- linkedService
-- trigger
-- factory *(for Global Parameters)*
-
-### Column NAME
-
-This column defines an object. Since the latest version, you can speficy the **name** using wildcards. That means rather than duplicating lines for the same configuration (path&value) for multiple files, you can define only one line in config.
-
-### Column PATH
-
-Unless otherwise stated, mechanism always **replace (update)** the value for property. Location for those Properties are specified by `Path` column in Config file.  
-Additionally, you can **remove** selected property altogether or **create (add)** new one. To define desire action, put character `+` (plus) or `-` (minus) just before Property path:
-
-* `+` (plus) - Add new property with defined value
-* `-` (minus) - Remove existing property  
-
-See example below:
-```
-type,name,path,value
-# As usual - this line only update value for connectionString:
-linkedService,BlobSampleData,typeProperties.connectionString,"DefaultEndpointsProtocol=https;AccountName=sqlplayer2019;EndpointSuffix=core.windows.net;"
-# MINUS means the desired action is to REMOVE encryptedCredential:
-linkedService,BlobSampleData,-typeProperties.encryptedCredential,
-# PLUS means the desired action is to ADD new property with associated value:
-linkedService,BlobSampleData,+typeProperties.accountKey,"$($Env:VARIABLE)"
-factory,BigFactorySample2,"$.properties.globalParameters.'Env-Code'.value","PROD"
-# Multiple following configurations for many files:
-dataset,DS_SQL_*,properties.xyz,ABC
-```
-
-
-### Column VALUE
-
-You can define 3 types of values in column `Value`: number, string, (nested) JSON object.  
-If you need to use comma (,) in `Value` column - remember to enclose entire value within double-quotes ("), like in this example below:
-```
-pipeline,PL_Wait_Dynamic,parameters.WaitInSec,"{'type': 'int32','defaultValue': 22}"
-```
-
-#### Using Tokens as dynamic values
-You can use token syntax to define expression which should be replaced by value after reading CSV config file process. Currently PowerShell expression for environment is supported, which is: `$Env:VARIABLE` or `$($Env:VARIABLE)`.  
-Assuming you have *Environment Variable* name `USERDOMAIN` with value `CONTOSO`, this line from config file:
-```
-linkedService,AKV,typeProperties.baseUrl,"https://$Env:USERDOMAIN.vault.azure.net/"
-```
-will become that one after reading from disk:
-```
-linkedService,AKV,typeProperties.baseUrl,"https://CONTOSO.vault.azure.net/"
-```
-
-Having that in mind, you can leverage variables defined in Azure DevOps pipeline to replace tokens without extra task. This is possible because all pipeline's variables are available as environment variables within the agent.
 
 
 
 ## Selective deployment
 The task allows you to deploy subset of ADF's objects.   
 You can select objects specifying them by object's type, name or folder which belongs to, using include or exclude option.  
-All 3 parts (Type, Name, Folder) can be wildcarded, so all such variants are possible:
+All 3 parts (`Type`, `Name`, `Folder`) can be wildcarded, so all such variants are possible:
 
-You can specify them by exact name or wildcard. 
-  Example:  
-  ```
-  +pipeline.PL_Copy*  
-  +dataset.ds_srcCopy  
-  dataset.*  
-  -pipeline.PL_DoNotPublish*  
-  -integrationruntime.*
-  -*.*@testFolder
-  ```
+You can specify them by exact name or wildcard.  
+Example:  
+```
++pipeline.PL_Copy*  
++dataset.ds_srcCopy  
+dataset.*  
+-pipeline.PL_DoNotPublish*  
+-integrationruntime.*
+-*.*@testFolder
+```
 To simplify user experience – only one field is exposed in order to define include/exclude rules.
 Therefore, an extra character should be provided before the name/pattern:
 * `+` (plus) - for objects you want to include to a deployment
@@ -207,6 +124,7 @@ Therefore, an extra character should be provided before the name/pattern:
 
 If char (+/-) is not provided – an inclusion rule would be applied.
 
+Read more: [Selective deployment, triggers and logic](https://github.com/Azure-Player/azure.datafactory.tools#selective-deployment-triggers-and-logic)
 
 ### Screenshot of Publish Task 
 ![Task](images/AzureDevOps-publish-ADF-task-screenshot.png)
@@ -268,26 +186,33 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 
 
-# ADF Deployment from ARM Template files
-
-...
-
-### Screenshot of ADF Deployment Task
 
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.4.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.4.0)
+- [azure.datafactory.tools - ver.1.6.3](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.6.3)
 - [Az.DataFactory - ver.1.16.13](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.13)
 - [Az.Accounts - ver.2.12.2](https://www.powershellgallery.com/packages/Az.Accounts/2.12.2)
 - [Az.Resources - ver.6.6.1](https://www.powershellgallery.com/packages/Az.Resources/6.6.1)
 
 # History
+- 17 Jul 2023 - v.1.30  Update [adftools v.1.6.3](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.6.3):  
+                        - Stop and restart only changed triggers  
+                        - New option to Stop/Start only the triggers that are already Started  
+                        - Remove pipeline's from check (`Test-AdfCode`) for dashes in name  
+                        - Test-AdfLinkedService - minor enhancements  
+                        - Fixed: `RootFolder` must be absolute otherwise temp files cannot be written  
+                        - Fixed: Catch InvalidOperation exception when reading empty FilterFilePath in New-AdfPublishOption.ps1  
+                        - Fixed: Purview configuration gets overwritten when deploy Global Parameters using ADF deployment task  
+                        - Fixed: Incremental Deployment seems to not work when factory folder does not exist  
+                        - Fixed: The publish cmdlet tries to delete enabled (active) trigger (not in source) when TriggerStartMethod = KeepPreviousState  
+                        - Fixed: deletion of credential type of objects  
+                        - Fixed: `Test-AdfCode` for [credential] objects  
 - 16 May 2023 - v.1.29  Upgrade of Az modules (issue #137)
-- 12 May 2023 - v.1.28  Update [adftools v.1.4](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.4):
-                        - More precise error message when value in config is empty
-                        - Incremental deployment!!! 
-                        - Support for credentials deployment & delete
+- 12 May 2023 - v.1.28  Update [adftools v.1.4](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.4):  
+                        - Major improvement: Incremental deployment  
+                        - More precise error message when value in config is empty  
+                        - Support for credentials deployment & delete  
 - 27 Feb 2023 - v.1.27  Update [adftools v.1.3](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.3)
 - 24 Feb 2023 - v.1.26  Fixed two bugs when validate ADF code - [adftools v.1.2](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.2)
 - 23 Feb 2023 - v.1.25  Added Support for new SynapseNotebook activity [#121](https://github.com/Azure-Player/azure.datafactory.devops/issues/121)

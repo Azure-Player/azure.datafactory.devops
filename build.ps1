@@ -43,6 +43,7 @@ $taskName = 'deployDataFactoryTask'
 $commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources', 'Az.DataFactory')
 $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
 $taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+New-Item -Path "$taskFolder/ps_modules" -ItemType Directory -Force | Out-Null
 $commonModules | ForEach-Object {
     Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
 }
@@ -67,6 +68,7 @@ $taskName = 'buildDataFactoryTask'
 $commonModules = @('azure.datafactory.tools', 'VstsTaskSdk')
 $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
 $taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+New-Item -Path "$taskFolder/ps_modules" -ItemType Directory -Force | Out-Null
 $commonModules | ForEach-Object {
     Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
 }
@@ -91,6 +93,7 @@ $taskName = 'testLinkedServiceTask'
 $commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources')
 $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
 $taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+New-Item -Path "$taskFolder/ps_modules" -ItemType Directory -Force | Out-Null
 $commonModules | ForEach-Object {
     Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
 }
@@ -115,6 +118,7 @@ $taskName = 'deployAdfFromArmTask'
 $commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk')
 $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
 $taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+New-Item -Path "$taskFolder/ps_modules" -ItemType Directory -Force | Out-Null
 $commonModules | ForEach-Object {
     Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
 }

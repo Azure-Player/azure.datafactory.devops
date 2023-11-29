@@ -10,6 +10,7 @@ $now = (Get-Date).ToUniversalTime()
 $ts = New-TimeSpan -Hours $now.Hour -Minutes $now.Minute
 $versionPatch = $ts.TotalMinutes
 if ($build -gt 0) { $versionPatch = $build }
+$CommonFolder = Join-Path -Path (Get-Location) -ChildPath 'Common'
 
 # Update extension's manifest
 $vssFile = Join-Path -Path (Get-Location) -ChildPath 'vss-extension.json'
@@ -35,31 +36,40 @@ $body = $body.Replace($v, $nv)
 $body  | Out-File "$vssFile" -Encoding utf8
 Write-Output "File vss updated."
 
+#
 # deployDataFactoryTask: Update task's manifest
-$taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployDataFactoryTask\task.json'
-#Copy-Item -Path $taskFile -Destination "$taskFile - copy"
+#
+$taskName = 'deployDataFactoryTask'
+$commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources', 'Az.DataFactory')
+$taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
+$taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+$commonModules | ForEach-Object {
+    Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
+}
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
 $JsonDoc = $body | ConvertFrom-Json
-#$JsonDoc.version.Major = $verarr[0]
-#$JsonDoc.version.Minor = $verarr[1]
-#$JsonDoc.version.Patch = $versionPatch  #$verarr[2]
 $body = $body.Replace('"Major": '+$JsonDoc.version.Major, '"Major": '+$verarr[0])
 $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1])
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
-    #$JsonDoc.id = "b2032481-f9a9-476d-af8f-9156ee066e1b"
-    #$JsonDoc.friendlyName = "Publish ADF (BETA)"
     $body = $body.Replace('"id": "1af843b5-35a0-411f-9a18-9eb7a59fb8b8",', '"id": "b2032481-f9a9-476d-af8f-9156ee066e1b",')
     $body = $body.Replace('"friendlyName": "Publish Azure Data Factory",', '"friendlyName": "Publish ADF (BETA)",')
 }
-#$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #1 updated."
 
 
+#
 # buildDataFactoryTask: Update task's manifest
-$taskFile = Join-Path -Path (Get-Location) -ChildPath 'buildDataFactoryTask\task.json'
+#
+$taskName = 'buildDataFactoryTask'
+$commonModules = @('azure.datafactory.tools', 'VstsTaskSdk')
+$taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
+$taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+$commonModules | ForEach-Object {
+    Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
+}
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
 $JsonDoc = $body | ConvertFrom-Json
@@ -74,8 +84,16 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #2 updated."
 
 
+#
 # testLinkedServiceTask: Update task's manifest
-$taskFile = Join-Path -Path (Get-Location) -ChildPath 'testLinkedServiceTask\task.json'
+#
+$taskName = 'testLinkedServiceTask'
+$commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources')
+$taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
+$taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+$commonModules | ForEach-Object {
+    Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
+}
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
 $JsonDoc = $body | ConvertFrom-Json
@@ -90,8 +108,16 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #3 updated."
 
 
+#
 # deployAdfFromArmTask: Update task's manifest
-$taskFile = Join-Path -Path (Get-Location) -ChildPath 'deployAdfFromArmTask\task.json'
+#
+$taskName = 'deployAdfFromArmTask'
+$commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk')
+$taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
+$taskFile = Join-Path -Path $taskFolder -ChildPath "task.json"
+$commonModules | ForEach-Object {
+    Copy-Item -Path ("$commonFolder\$_") -Destination "$taskFolder/ps_modules" -Recurse -Force
+}
 Write-Output "Updating version for task definition in file: $taskFile"
 $body = $JsonDoc = Get-Content $taskFile -Raw
 $JsonDoc = $body | ConvertFrom-Json
@@ -106,8 +132,8 @@ $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #4 updated."
 
 
-
+#
+# BUILD! Yeah!!!
+#
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin
-
-
 

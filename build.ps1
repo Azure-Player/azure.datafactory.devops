@@ -4,12 +4,12 @@ param
     [boolean] [Parameter(Mandatory = $true)]  $isProd,
     [int]     [Parameter(Mandatory = $false)] $build = 0
 )
-# $isProd = $false
+#$isProd = $true
 
 function Copy-CommonModule {
     param ([String[]] $commonModules, [String] $taskName)
 
-    Write-Output "*** $taskName ***"
+    Write-Output "`n*** $taskName ***"
     $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"
     New-Item -Path "$taskFolder/ps_modules" -ItemType Directory -Force | Out-Null
     $commonModules | ForEach-Object {

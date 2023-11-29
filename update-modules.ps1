@@ -19,32 +19,15 @@ function Download-Module {
 }
 
 function Update-ModuleInPlace {
-    param ([String] $m, [String[]]$tasks)
+    param ([String] $m)
 
     $targetPath = (.\Get-RootPath.ps1)
     $src = Join-Path $target $m
-
-    foreach ($t in $tasks) {
-        $short = $t.EndsWith('*')
-        $t = $t.Replace('*', '')
-        $dst = "$targetPath\$t\ps_modules"
-        Write-Host "Module: $src"
-        Write-Host "- copy to: $dst ..."
-        Copy-Item -Path $src -Destination $dst -Recurse -Force
-        if ($short) {
-            $file = "$dst\$m\$m.psm1"
-            Write-Host "- modifying file: $file ..."
-            $lines = Get-Content -Path $file -Encoding utf8
-            $sb = [System.Text.StringBuilder]::new()
-            $commentActive = $false
-            foreach ($line in $lines) {
-                if ($line.StartsWith('$moduleName = ')) { $commentActive = $true }
-                if ($commentActive) { $line = "# $line" }
-                $sb.AppendLine($line) | Out-Null
-            }
-            $sb.ToString() | Set-Content -Path $file
-        }
-    }
+    $dst = "$targetPath\Common2"
+    Write-Host "Module: $src"
+    Write-Host "- copy to: $dst ..."
+    New-Item -Path $dst -Force -ItemType Directory | Out-Null
+    Copy-Item -Path $src -Destination $dst -Recurse -Force
 }
 
 
@@ -56,17 +39,17 @@ $m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '
 
 # Updating modules in 'azure.datafactory.devops'
 $m = 'azure.datafactory.tools'; 
-$tasks = @('buildDataFactoryTask*', 'deployAdfFromArmTask*', 'deployDataFactoryTask', 'testLinkedServiceTask*')
-Update-ModuleInPlace $m $tasks
+#$tasks = @('buildDataFactoryTask*', 'deployAdfFromArmTask*', 'deployDataFactoryTask', 'testLinkedServiceTask*')
+Update-ModuleInPlace $m
 
 $m = 'Az.DataFactory';
-$tasks = @('deployDataFactoryTask')
-Update-ModuleInPlace $m $tasks
+#$tasks = @('deployDataFactoryTask')
+Update-ModuleInPlace $m
 
 $m = 'Az.Accounts';
-$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
-Update-ModuleInPlace $m $tasks
+#$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
+Update-ModuleInPlace $m
 
 $m = 'Az.Resources';
-$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
-Update-ModuleInPlace $m $tasks
+#$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
+Update-ModuleInPlace $m

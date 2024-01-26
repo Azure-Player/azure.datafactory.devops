@@ -242,6 +242,15 @@
             },
             "helpMarkDown": "Indicates which triggers should be started after the deployment. \n[Read more...](https://github.com/Azure-Player/azure.datafactory.tools#step-restarting-triggers)",
             "groupName": "advanced"
+        },
+        {
+            "name": "IsDryRun",
+            "type": "boolean",
+            "label": "Dry Run Deployment",
+            "defaultValue": "false",
+            "helpMarkDown": "Process will not make any changes to target data factory but instead return the ADF object.",
+            "groupname": "advanced",
+            "required": false
         }
     ],
     "dataSourceBindings": [

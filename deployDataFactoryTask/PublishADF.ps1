@@ -66,6 +66,7 @@ try {
     [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
     [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
     [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
+    [boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
     [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
     [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
     [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
@@ -138,7 +139,8 @@ try {
         -DataFactoryName "$DataFactoryName" `
         -Location "$Location" `
         -Option $opt -Stage "$Stage" `
-        -Method $PublishMethod
+        -Method $PublishMethod `
+        -DryRun:$IsDryRun
 
     Write-Host ""
     Write-Host "========================================================================================================="

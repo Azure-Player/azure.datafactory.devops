@@ -75,7 +75,7 @@ Write-Output "File vss updated."
 # deployDataFactoryTask: Update task's manifest
 #
 $taskName = 'deployDataFactoryTask'
-$commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources', 'Az.DataFactory')
+$commonModules = @('azure.datafactory.tools', 'TlsHelper_', 'VstsAzureHelpers_', 'VstsAzureRestHelpers_', 'VstsTaskSdk', 'Az.Accounts', 'Az.Resources', 'Az.DataFactory')
 Copy-CommonModule -commonModules $commonModules -taskName $taskName
 Write-Output "Updating version for task definition in file: $taskFile"
 $taskFolder = Join-Path -Path (Get-Location) -ChildPath "$taskName"

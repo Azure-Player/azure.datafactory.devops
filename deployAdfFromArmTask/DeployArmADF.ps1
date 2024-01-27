@@ -17,6 +17,18 @@ param()
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
+
+# Get inputs params
+[string]$TemplateFile = Get-VstsInput -Name "csmFile" -Require;
+[string]$TemplateParameterFile = Get-VstsInput -Name "csmParametersFile" -Require;
+[string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
+[string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
+[string]$Location = Get-VstsInput -Name "location" -Require;
+[boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
+[boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
+[boolean]$DeployGlobalParams = Get-VstsInput -Name "DeployGlobalParams" -AsBool;
+
+
 try {
 
     # import required modules
@@ -27,25 +39,70 @@ try {
 
     Import-Module -Name $ModulePathADFT
 
+    Write-Host "## Initializing Azure"
     . "$PSScriptRoot\Utility.ps1"
-
+    $targetAzurePs = Get-RollForwardVersion -azurePowerShellVersion $targetAzurePs
+    
+    $authScheme = ''
+    try
+    {
+        $serviceNameInput = Get-VstsInput -Name ConnectedServiceNameSelector -Default 'ConnectedServiceName'
+        $serviceName = Get-VstsInput -Name $serviceNameInput -Default (Get-VstsInput -Name DeploymentEnvironmentName)
+    
+        if (!$serviceName)
+        {
+                Get-VstsInput -Name $serviceNameInput -Require
+        }
+    
+        $endpoint = Get-VstsEndpoint -Name $serviceName -Require
+    
+        if($endpoint)
+        {
+            $authScheme = $endpoint.Auth.Scheme 
+        }
+    
+         Write-Verbose "AuthScheme $authScheme"
+    }
+    catch
+    {
+       $error = $_.Exception.Message
+       Write-Verbose "Unable to get the authScheme $error" 
+    }
+    
+    . $PSScriptRoot\TryMakingModuleAvailable.ps1 -targetVersion $targetAzurePs
+    
+    Update-PSModulePathForHostedAgent -targetAzurePs $targetAzurePs -authScheme $authScheme
+    
+    # troubleshoot link
+    $troubleshoot = "https://aka.ms/azurepowershelltroubleshooting"
+    try {
+        # Initialize Azure.
+        Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
+        if (($authScheme -eq 'WorkloadIdentityFederation') -and (Get-Module Az.Accounts -ListAvailable)) {
+            $vstsEndpoint = Get-VstsEndpoint -Name SystemVssConnection -Require
+            $vstsAccessToken = $vstsEndpoint.auth.parameters.AccessToken
+            $encryptedToken = ConvertTo-SecureString $vstsAccessToken -AsPlainText -Force
+            Initialize-AzModule -Endpoint $endpoint -connectedServiceNameARM $serviceName -encryptedToken $encryptedToken
+        }
+        else {
+            Initialize-Azure -azurePsVersion $targetAzurePs -strict
+        }
+        Write-Host "## Initializing Azure Complete"
+        $success = $true
+    }
+    finally {
+        if (!$success) {
+            Write-VstsTaskError "Initialize Azure failed: For troubleshooting, refer: $troubleshoot"
+            Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
+            Remove-EndpointSecrets
+        }
+    }
+    
     $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
     $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
     $endpoint = ConvertTo-Json $endpointObject
     . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
 
-
-    #Get-Module -ListAvailable
-
-    # Get inputs params
-    [string]$TemplateFile = Get-VstsInput -Name "csmFile" -Require;
-    [string]$TemplateParameterFile = Get-VstsInput -Name "csmParametersFile" -Require;
-    [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
-    [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
-    [string]$Location = Get-VstsInput -Name "location" -Require;
-    [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
-    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
-    [boolean]$DeployGlobalParams = Get-VstsInput -Name "DeployGlobalParams" -AsBool;
 
     $global:ErrorActionPreference = 'Stop';
 

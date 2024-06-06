@@ -17,13 +17,21 @@ param()
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
+
+# Get inputs for the task
+[string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
+[string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
+[string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
+[string]$TenantID = $c.Subscription.TenantId                   #Get-VstsInput -Name "TenantID" -Require;
+[string]$ClientID = Get-VstsInput -Name "ClientID" -Require;
+[string]$ClientSecret = Get-VstsInput -Name "ClientSecret" -Require;
+[string]$SubscriptionID = $c.Subscription.Id
+
 try {
 
     # import required modules
 	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
     Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
-
-    #Get-Module -ListAvailable
 
     $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
     Import-Module -Name $ModulePathAcc
@@ -31,25 +39,36 @@ try {
     Import-Module -Name $ModulePathRes
     Import-Module -Name $ModulePathADFT
 
+    # Initialize Azure.
+    Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
+
+    $endpoint = Get-VstsEndpoint -Name $connectedServiceName -Require
+
+    # Update PSModulePath for hosted agent
     . "$PSScriptRoot\Utility.ps1"
-    $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
-    $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
-    $endpoint = ConvertTo-Json $endpointObject
-    #$CoreAzArgument = "-endpoint '$endpoint'"
-    . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
+
+    CleanUp-PSModulePathForHostedAgent
+
+    $vstsEndpoint = Get-VstsEndpoint -Name SystemVssConnection -Require
+    $vstsAccessToken = $vstsEndpoint.auth.parameters.AccessToken
+
+    if (Get-Module Az.Accounts -ListAvailable) {
+        $encryptedToken = ConvertTo-SecureString $vstsAccessToken -AsPlainText -Force
+        Initialize-AzModule -Endpoint $endpoint -connectedServiceNameARM $connectedServiceName -encryptedToken $encryptedToken
+    }
+    else {
+        Write-Verbose "No module found with name: Az.Accounts"
+        throw ("Could not find the module Az.Accounts with given version. If the module was recently installed, retry after restarting the Azure Pipelines task agent.")
+    }
+    $azureUtility = Get-AzureUtility
+    Write-Verbose -Verbose "Loading $azureUtility"
+    . "$PSScriptRoot/$azureUtility"
 
     $c = Get-AzContext
     # $c.Subscription.Id
     # $c.Subscription.TenantId
 
-    # Get inputs params
-    [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
-    [string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
-    [string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
-    [string]$TenantID = $c.Subscription.TenantId                   #Get-VstsInput -Name "TenantID" -Require;
-    [string]$ClientID = Get-VstsInput -Name "ClientID" -Require;
-    [string]$ClientSecret = Get-VstsInput -Name "ClientSecret" -Require;
-    [string]$SubscriptionID = $c.Subscription.Id
+    #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
 
     $global:ErrorActionPreference = 'Continue';
 
@@ -83,5 +102,6 @@ try {
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
+    Disconnect-AzureAndClearContext -authScheme $endpoint.Auth.Scheme -ErrorAction SilentlyContinue
 }
 

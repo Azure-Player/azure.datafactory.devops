@@ -16,39 +16,10 @@ param()
     written by (c) Kamil Nowinski, 2020 https://github.com/Azure-Player/azure.datafactory.tools
 #>
 
-Trace-VstsEnteringInvocation $MyInvocation
-try {
+    Trace-VstsEnteringInvocation $MyInvocation
 
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    #$config = Import-PowerShellDataFile $ModulePathADFT
-    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
-
-    #Get-Module -ListAvailable
-
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
-	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
-    Import-Module -Name $ModulePathADF
-    Import-Module -Name $ModulePathADFT
-
-
-    . "$PSScriptRoot\Utility.ps1"
-
-    #$serviceName = Get-VstsInput -Name ConnectedServiceNameARM -Require
-    $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
-    $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
-    $endpoint = ConvertTo-Json $endpointObject
-    #$CoreAzArgument = "-endpoint '$endpoint'"
-    . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
-
-
-    #Get-Module -ListAvailable
-
-    # Get inputs params
+    # Get inputs for the task
+    $connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
     [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
     [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
     [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
@@ -71,12 +42,55 @@ try {
     [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
     [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
     #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
+
+try {
+
+    # import required modules
+	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    #$config = Import-PowerShellDataFile $ModulePathADFT
+    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+
+    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
+    Import-Module -Name $ModulePathAcc
+    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
+    Import-Module -Name $ModulePathRes
+	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
+    Import-Module -Name $ModulePathADF
+    Import-Module -Name $ModulePathADFT
+
+    # Initialize Azure.
+    Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
+
+    $endpoint = Get-VstsEndpoint -Name $connectedServiceName -Require
+
+    # Update PSModulePath for hosted agent
+    . "$PSScriptRoot\Utility.ps1"
+
+    CleanUp-PSModulePathForHostedAgent
+
+    $vstsEndpoint = Get-VstsEndpoint -Name SystemVssConnection -Require
+    $vstsAccessToken = $vstsEndpoint.auth.parameters.AccessToken
+
+    if (Get-Module Az.Accounts -ListAvailable) {
+        $encryptedToken = ConvertTo-SecureString $vstsAccessToken -AsPlainText -Force
+        Initialize-AzModule -Endpoint $endpoint -connectedServiceNameARM $connectedServiceName -encryptedToken $encryptedToken
+    }
+    else {
+        Write-Verbose "No module found with name: Az.Accounts"
+        throw ("Could not find the module Az.Accounts with given version. If the module was recently installed, retry after restarting the Azure Pipelines task agent.")
+    }
+    $azureUtility = Get-AzureUtility
+    Write-Verbose -Verbose "Loading $azureUtility"
+    . "$PSScriptRoot/$azureUtility"
+
+    #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
     
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
     if ([string]::IsNullOrWhitespace($PublishMethod)) { $PublishMethod = "AzResource" }
 
-    Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
+    Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/Azure-Player/azure.datafactory.tools) with the following parameters:";
     Write-Debug "DataFactoryName:    $DataFactoryName";
     Write-Debug "RootFolder:         $RootFolder";
     Write-Debug "ResourceGroupName:  $ResourceGroupName";
@@ -156,5 +170,5 @@ try {
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
+    Disconnect-AzureAndClearContext -authScheme $endpoint.Auth.Scheme -ErrorAction SilentlyContinue
 }
-

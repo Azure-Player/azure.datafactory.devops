@@ -1,0 +1,20 @@
+{
+  "loc.friendlyName": "Build Azure Data Factory code",
+  "loc.helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
+  "loc.description": "Validates all JSON files of ADF (v2) (adftools)",
+  "loc.instanceNameFormat": "Validate ADF files",
+  "loc.releaseNotes": "Added a few fields to 'Export' mode",
+  "loc.input.label.DataFactoryCodePath": "Azure Data Factory Path",
+  "loc.input.help.DataFactoryCodePath": "Path from the repo root to the ADF folder which should contains sub-folders like 'pipeline', 'dataset', etc.",
+  "loc.input.label.Action": "Action",
+  "loc.input.help.Action": "Build validates files integrity. No outcome files.\nThe second option validates files and export ARM Template files like ADF UI does (ARM Template files as the result).",
+  "loc.input.label.DataFactoryConfigPath": "Config Path",
+  "loc.input.help.DataFactoryConfigPath": "Provide path to folder with config files. By default it's 'deployment' subfolder of ADF path.",
+  "loc.input.label.SubscriptionId": "SubscriptionId",
+  "loc.input.label.ResourceGroup": "Resource Group Name",
+  "loc.input.help.ResourceGroup": "Provide the name of the Resource Group.",
+  "loc.input.label.AdfUtilitiesVersion": "Adf Utilities Version",
+  "loc.input.help.AdfUtilitiesVersion": "Provide the version if you must use particular one, otherwise remain empty.\nCheck out recent version: [azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities)",
+  "loc.input.label.OutputFolder": "Output Folder",
+  "loc.input.help.OutputFolder": "Target location where ARM Template files will be generated to"
+}

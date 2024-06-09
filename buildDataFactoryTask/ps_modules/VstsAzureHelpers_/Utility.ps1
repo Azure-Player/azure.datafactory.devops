@@ -200,6 +200,7 @@ function Get-VstsFederatedToken {
     } catch {
         # The requested type may successfully load now even though the assembly itself is not fully loaded.
         Write-Verbose "Services.WebApi load errors: $($_.Exception.GetType().FullName): $($_.Exception.Message)"
+        $error[0].Exception.GetBaseException().LoaderExceptions
     }
 
     $onAssemblyResolve = [System.ResolveEventHandler] {

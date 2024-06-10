@@ -82,6 +82,12 @@ try {
     }
     $azureUtility = Get-AzureUtility
     Write-Verbose -Verbose "Loading $azureUtility"
+    dir "./ps_modules/VstsAzureRestHelpers_"
+    Write-Verbose -Verbose "DIR2"
+    $p = "$PSScriptRoot/ps_modules/VstsAzureRestHelpers_"
+    dir $p
+    Write-Verbose "Resolving path: $p"
+    Write-Verbose (Resolve-Path $p)
     . "$PSScriptRoot/$azureUtility"
 
     #### MAIN EXECUTION OF THE TASK BEGINS HERE ####

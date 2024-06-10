@@ -45,20 +45,6 @@ param()
 
 try {
 
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    #$config = Import-PowerShellDataFile $ModulePathADFT
-    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
-
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
-	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
-    Import-Module -Name $ModulePathADF
-    Import-Module -Name $ModulePathADFT
-
     # Initialize Azure.
     Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
 
@@ -91,7 +77,21 @@ try {
     . "$PSScriptRoot/$azureUtility"
 
     #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
-    
+
+    # import required modules
+	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    #$config = Import-PowerShellDataFile $ModulePathADFT
+    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+
+    # $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
+    # Import-Module -Name $ModulePathAcc
+    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
+    Import-Module -Name $ModulePathRes
+	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
+    Import-Module -Name $ModulePathADF
+    Import-Module -Name $ModulePathADFT
+
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
     if ([string]::IsNullOrWhitespace($PublishMethod)) { $PublishMethod = "AzResource" }

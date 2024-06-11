@@ -84,10 +84,12 @@ try {
     #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
     Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
 
+    Write-Host "Listing all imported modules..."
+    Get-Module
     # $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
     # Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
+    #$ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
+    #Import-Module -Name $ModulePathRes
 	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
     Import-Module -Name $ModulePathADF
     Import-Module -Name $ModulePathADFT

@@ -191,12 +191,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 # Related modules
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.1.9.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.9.0)
-- [Az.DataFactory - ver.1.16.13](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.13)
-- [Az.Accounts - ver.2.12.2](https://www.powershellgallery.com/packages/Az.Accounts/2.12.2)
-- [Az.Resources - ver.6.6.1](https://www.powershellgallery.com/packages/Az.Resources/6.6.1)
+- [Az.DataFactory - ver.1.18.4](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.4)
+- [Az.Accounts - ver.3.0.0](https://www.powershellgallery.com/packages/Az.Accounts/3.0.0)
+- [Az.Resources - ver.7.1.0](https://www.powershellgallery.com/packages/Az.Resources/7.1.0)
 
 # History
-- 07 Jun 2023 - v.1.34
+- xx Jun 2023 - v.1.34  - Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps (#154)
+                        - Updated all related modules (Az.* & adftools)
 - 06 Jun 2023 - v.1.33  Update [adftools v.1.9.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.9.0)  
 - 27 Jan 2024 - v.1.32  - Added dry run option (advanced). Thanks [@LiquoriChris](https://github.com/LiquoriChris)!
 - 12 Sep 2023 - v.1.31  Update [adftools v.1.8.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.8.0):  

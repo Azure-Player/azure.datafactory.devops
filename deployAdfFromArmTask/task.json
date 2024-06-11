@@ -2,7 +2,7 @@
     "id": "ecb868a7-3c51-4925-a4b5-c63321b51700",
     "name": "DeployAdfFromArmTask",
     "friendlyName": "Azure Data Factory Deployment (ARM)",
-    "description": "Deploys entire ADF (v2) from ARM template file (adftools)",
+    "description": "Deploys entire ADF (v2) from ARM template file (#adftools)",
     "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "The first (beta) release.\n\n#adftools version behind this task: 1.9.0",
+     "releaseNotes": "The first (beta) release.\n\n> #adftools version behind this task: 1.9.0",
      "showEnvironmentVariables": true,
      "groups": [
         {

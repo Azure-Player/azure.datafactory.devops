@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Stop and restart only changed triggers\n- New option to Stop/Start only the triggers that are already Started\n- Incremental deployment\n\n#adftools version behind this task: 1.9.0",
+     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Stop and restart only changed triggers\n- New option to Stop/Start only the triggers that are already Started\n- Incremental deployment\n\n> #adftools version behind this task: 1.9.0",
      "showEnvironmentVariables": true,
      "groups": [
         {

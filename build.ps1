@@ -25,7 +25,7 @@ Write-Output "Module version: $ver"
 $v = '"version": "'+$JsonDoc.Version+'",'
 $nv = '"version": "'+$ver+'",'
 if (!$isProd) {
-    $body = $body.Replace('"name": "Deploy Azure Data Factory by SQLPlayer"', '"name": "Deploy ADF (Beta)"')
+    $body = $body.Replace('"name": "Deploy Azure Data Factory by SQLPlayer"', '"name": "Deploy ADF (Preview)"')
     $body = $body.Replace('"public": true,', '"public": false,')
     $body = $body.Replace('"publisher": "SQLPlayer",', '"publisher": "Kamil-Nowinski",')
 }
@@ -49,9 +49,9 @@ $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1]
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
     #$JsonDoc.id = "b2032481-f9a9-476d-af8f-9156ee066e1b"
-    #$JsonDoc.friendlyName = "Publish ADF (BETA)"
+    #$JsonDoc.friendlyName = "Publish ADF (Preview)"
     $body = $body.Replace('"id": "1af843b5-35a0-411f-9a18-9eb7a59fb8b8",', '"id": "b2032481-f9a9-476d-af8f-9156ee066e1b",')
-    $body = $body.Replace('"friendlyName": "Publish Azure Data Factory",', '"friendlyName": "Publish ADF (BETA)",')
+    $body = $body.Replace('"friendlyName": "Publish Azure Data Factory",', '"friendlyName": "Publish ADF (Preview)",')
 }
 #$JsonDoc | ConvertTo-Json | Out-File "$taskFile" -Encoding utf8
 $body | Out-File "$taskFile" -Encoding utf8
@@ -68,7 +68,7 @@ $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1]
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
     $body = $body.Replace('"id": "8a00f62d-c46d-4019-9e11-c05d88821db8",', '"id": "0fff6fc0-4a02-46b2-9466-2ee2a9b0580f",')
-    $body = $body.Replace('"friendlyName": "Build Azure Data Factory code",', '"friendlyName": "Build ADF code (BETA)",')
+    $body = $body.Replace('"friendlyName": "Build Azure Data Factory code",', '"friendlyName": "Build ADF code (Preview)",')
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #2 updated."
@@ -84,7 +84,7 @@ $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1]
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
     $body = $body.Replace('"id": "5bf98930-3058-4afe-b031-48d312459df4",', '"id": "9cb687ea-a4f1-45d5-a568-98dc85fd3f1b",')
-    $body = $body.Replace('"friendlyName": "Test connection of ADF Linked Service",', '"friendlyName": "Test connection of ADF Linked Service (BETA)",')
+    $body = $body.Replace('"friendlyName": "Test connection of ADF Linked Service",', '"friendlyName": "Test connection of ADF Linked Service (Preview)",')
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #3 updated."
@@ -100,7 +100,7 @@ $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$verarr[1]
 $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$versionPatch)
 if (!$isProd) {
     $body = $body.Replace('"id": "ecb868a7-3c51-4925-a4b5-c63321b51700",', '"id": "f38a9662-edd3-4af5-b4c2-35f4d3e31dda",')
-    $body = $body.Replace('"friendlyName": "Azure Data Factory Deployment (ARM)",', '"friendlyName": "Azure Data Factory Deployment (ARM) (BETA)",')
+    $body = $body.Replace('"friendlyName": "Azure Data Factory Deployment (ARM)",', '"friendlyName": "Azure Data Factory Deployment (ARM) (Preview)",')
 }
 $body | Out-File "$taskFile" -Encoding utf8
 Write-Output "File task #4 updated."

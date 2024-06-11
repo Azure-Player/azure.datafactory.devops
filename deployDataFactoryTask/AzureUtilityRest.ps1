@@ -1,4 +1,4 @@
-Import-Module "$PSScriptRoot/ps_modules/VstsAzureRestHelpers_"
+Import-Module (Join-Path $PSScriptRoot ".\ps_modules\VstsAzureRestHelpers_")
 
 function Get-AzureStorageKeyFromARM
 {

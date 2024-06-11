@@ -13,7 +13,7 @@ param()
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
     Depends on PowerShell module azure.datafactory.tools 
-    written by (c) Kamil Nowinski, 2020 https://github.com/Azure-Player/azure.datafactory.tools
+    Written by (c) Kamil Nowinski, 2020-2024 https://github.com/Azure-Player/azure.datafactory.tools
 #>
 
     Trace-VstsEnteringInvocation $MyInvocation
@@ -68,31 +68,19 @@ try {
     }
     $azureUtility = Get-AzureUtility
     Write-Verbose -Verbose "Loading $azureUtility"
-    dir "./ps_modules/VstsAzureRestHelpers_"
-    Write-Verbose -Verbose "DIR2"
-    $p = "$PSScriptRoot/ps_modules/VstsAzureRestHelpers_"
-    dir $p
-    Write-Verbose "Resolving path: $p"
-    Write-Verbose (Resolve-Path $p)
-    . "$PSScriptRoot/$azureUtility"
+    . "$PSScriptRoot\$azureUtility"
 
     #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
 
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    #$config = Import-PowerShellDataFile $ModulePathADFT
-    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+    # Import required modules
+    Write-Output "PowerShell version: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
 
     Write-Host "Listing all imported modules..."
-    Get-Module
-    # $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    # Import-Module -Name $ModulePathAcc
-    #$ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    #Import-Module -Name $ModulePathRes
-	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
+    Get-Module | Select-Object Name, Version, PreRelease, ModuleType | Format-Table
+	$ModulePathADF = Join-Path $PSScriptRoot ".\ps_modules\Az.DataFactory\"
     Import-Module -Name $ModulePathADF
-    Import-Module -Name $ModulePathADFT
+	$ModulePathADFTools = Join-Path $PSScriptRoot ".\ps_modules\azure.datafactory.tools\"
+    Import-Module -Name $ModulePathADFTools
 
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }

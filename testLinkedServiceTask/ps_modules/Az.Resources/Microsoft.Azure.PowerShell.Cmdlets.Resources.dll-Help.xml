@@ -13,7 +13,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Use the Get-AzDenyAssignment command to list all deny assignments that are effective on a scope. Without any parameters, this command returns all the deny assignments made under the subscription. This list can  be filtered using filtering parameters for principal, deny assignment name and scope. To specify a user, use SignInName or Azure AD ObjectId parameters. To specify a security group, use Azure AD ObjectId parameter. And to specify an Azure AD application, use ServicePrincipalName or ObjectId parameters. The scope at which access is being denied may be specified. It defaults to the selected subscription. The scope of the deny assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;. This will filter deny assignments that are effective at that particular scope i.e. all deny assignments at that scope and above.         b. ResourceGroupName - Name of any resource group under the subscription. This will filter assignments effective at the specified resource group i.e. all deny assignments at that scope and above.         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - Identifies a particular resource under the subscription and will filter deny assignments effective at that resource scope. To determine what access is denied for a particular user in the subscription, use the ExpandPrincipalGroups switch. This will list all deny assignments assigned to the user, and to the groups that the user is member of.</maml:para>
+      <maml:para>Use the Get-AzDenyAssignment command to list all deny assignments that are effective on a scope. Without any parameters, this command returns all the deny assignments made under the subscription. This list can  be filtered using filtering parameters for principal, deny assignment name and scope. To specify a user, use SignInName or Microsoft Entra ObjectId parameters. To specify a security group, use Microsoft Entra ObjectId parameter. And to specify a Microsoft Entra application, use ServicePrincipalName or ObjectId parameters. The scope at which access is being denied may be specified. It defaults to the selected subscription. The scope of the deny assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;. This will filter deny assignments that are effective at that particular scope i.e. all deny assignments at that scope and above.         b. ResourceGroupName - Name of any resource group under the subscription. This will filter assignments effective at the specified resource group i.e. all deny assignments at that scope and above.         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - Identifies a particular resource under the subscription and will filter deny assignments effective at that resource scope. To determine what access is denied for a particular user in the subscription, use the ExpandPrincipalGroups switch. This will list all deny assignments assigned to the user, and to the groups that the user is member of.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -83,7 +83,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Guid]</command:parameterValue>
           <dev:type>
@@ -187,7 +187,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Guid]</command:parameterValue>
           <dev:type>
@@ -226,7 +226,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Guid]</command:parameterValue>
           <dev:type>
@@ -301,7 +301,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Guid]</command:parameterValue>
           <dev:type>
@@ -463,7 +463,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -604,7 +604,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -736,7 +736,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -790,7 +790,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -853,7 +853,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="PrincipalId">
         <maml:name>ObjectId</maml:name>
         <maml:description>
-          <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
+          <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all deny assignments that are made to the specified principal.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Guid]</command:parameterValue>
         <dev:type>
@@ -925,7 +925,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
         <maml:name>ServicePrincipalName</maml:name>
         <maml:description>
-          <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Azure AD application.</maml:para>
+          <maml:para>The ServicePrincipalName of the service principal. Filters all deny assignments that are made to the specified Microsoft Entra application.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -2755,7 +2755,7 @@ PrivateEndpointConnections : {}</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Use the Get-AzRoleAssignment command to list all role assignments that are effective on a scope. Without any parameters, this command returns all the role assignments made under the subscription. This list can  be filtered using filtering parameters for principal, role and scope. The subject of the assignment must be specified. To specify a user, use SignInName or Azure AD ObjectId parameters. To specify a security group, use Azure AD ObjectId parameter. And to specify an Azure AD application, use ServicePrincipalName or ObjectId parameters. The role that is being assigned must be specified using the RoleDefinitionName parameter. The scope at which access is being granted may be specified. It defaults to the selected subscription.  The scope of the assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;. This will filter assignments that are effective at that particular scope i.e. all assignments at that scope and above.         b. ResourceGroupName - Name of any resource group under the subscription. This will filter assignments effective at the specified resource group         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - Identifies a particular resource under the subscription and will filter assignments effective at that resource scope. To determine what access a particular user has in the subscription, use the ExpandPrincipalGroups switch. This will list all roles assigned to the user, and to the groups that the user is member of. Use the IncludeClassicAdministrators switch to also display the subscription admins and co-admins.</maml:para>
+      <maml:para>Use the Get-AzRoleAssignment command to list all role assignments that are effective on a scope. Without any parameters, this command returns all the role assignments made under the subscription. This list can  be filtered using filtering parameters for principal, role and scope. The subject of the assignment must be specified. To specify a user, use SignInName or Microsoft Entra ObjectId parameters. To specify a security group, use Microsoft Entra ObjectId parameter. And to specify a Microsoft Entra application, use ServicePrincipalName or ObjectId parameters. The role that is being assigned must be specified using the RoleDefinitionName parameter. The scope at which access is being granted may be specified. It defaults to the selected subscription.  The scope of the assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;. This will filter assignments that are effective at that particular scope i.e. all assignments at that scope and above.         b. ResourceGroupName - Name of any resource group under the subscription. This will filter assignments effective at the specified resource group         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - Identifies a particular resource under the subscription and will filter assignments effective at that resource scope. To determine what access a particular user has in the subscription, use the ExpandPrincipalGroups switch. This will list all roles assigned to the user, and to the groups that the user is member of. Use the IncludeClassicAdministrators switch to also display the subscription admins and co-admins.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -2797,7 +2797,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -2817,6 +2817,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -2879,6 +2890,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -2917,6 +2939,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -2946,7 +2979,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -2979,6 +3012,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3008,7 +3052,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3077,6 +3121,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3106,7 +3161,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3138,6 +3193,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3201,6 +3267,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3299,6 +3376,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3361,6 +3449,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3414,7 +3513,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3422,6 +3521,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3512,7 +3622,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3520,6 +3630,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3574,7 +3695,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3582,6 +3703,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3624,7 +3756,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Azure AD application.</maml:para>
+            <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Microsoft Entra application.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3632,6 +3764,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3682,6 +3825,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3769,6 +3923,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleAssignment</maml:name>
@@ -3818,6 +3983,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -3837,7 +4013,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+            <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -3869,6 +4045,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -3912,7 +4099,7 @@ PrivateEndpointConnections : {}</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
         <maml:name>ObjectId</maml:name>
         <maml:description>
-          <maml:para>The Azure AD ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
+          <maml:para>The Microsoft Entra ObjectId of the User, Group or Service Principal. Filters all assignments that are made to the specified principal.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -4008,7 +4195,7 @@ PrivateEndpointConnections : {}</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
         <maml:name>ServicePrincipalName</maml:name>
         <maml:description>
-          <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Azure AD application.</maml:para>
+          <maml:para>The ServicePrincipalName of the service principal. Filters all assignments that are made to the specified Microsoft Entra application.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -4028,6 +4215,18 @@ PrivateEndpointConnections : {}</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
@@ -4170,6 +4369,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleDefinition</maml:name>
@@ -4209,6 +4419,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-AzRoleDefinition</maml:name>
@@ -4247,6 +4468,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -4310,6 +4542,18 @@ PrivateEndpointConnections : {}</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
@@ -5848,7 +6092,7 @@ PrivateEndpointConnections : {}</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Use the New-AzRoleAssignment command to grant access. Access is granted by assigning the appropriate RBAC role to them at the right scope. To grant access to the entire subscription, assign a role at the subscription scope. To grant access to a specific resource group within a subscription, assign a role at the resource group scope. The subject of the assignment must be specified. To specify a user, use SignInName or Azure AD ObjectId parameters. To specify a security group, use Azure AD ObjectId parameter. And to specify an Azure AD application, use ApplicationId or ObjectId parameters. The role that is being assigned must be specified using the RoleDefinitionName parameter. The scope at which access is being granted may be specified. It defaults to the selected subscription.  The scope of the assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;         b. ResourceGroupName - to grant access to the specified resource group.         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - to specify a particular resource within a resource group to grant access to.</maml:para>
+      <maml:para>Use the New-AzRoleAssignment command to grant access. Access is granted by assigning the appropriate RBAC role to them at the right scope. To grant access to the entire subscription, assign a role at the subscription scope. To grant access to a specific resource group within a subscription, assign a role at the resource group scope. The subject of the assignment must be specified. To specify a user, use SignInName or Microsoft Entra ObjectId parameters. To specify a security group, use Microsoft Entra ObjectId parameter. And to specify a Microsoft Entra application, use ApplicationId or ObjectId parameters. The role that is being assigned must be specified using the RoleDefinitionName parameter. The scope at which access is being granted may be specified. It defaults to the selected subscription.  The scope of the assignment can be specified using one of the following parameter combinations         a. Scope - This is the fully qualified scope starting with /subscriptions/&lt;subscriptionId&gt;         b. ResourceGroupName - to grant access to the specified resource group.         c. ResourceName, ResourceType, ResourceGroupName and (optionally) ParentResource - to specify a particular resource within a resource group to grant access to.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -5960,6 +6204,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6106,6 +6361,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6216,6 +6482,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6281,7 +6558,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD Objectid of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra Objectid of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -6326,6 +6603,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6391,7 +6679,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD Objectid of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra Objectid of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -6436,6 +6724,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6501,7 +6800,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD Objectid of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra Objectid of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -6582,6 +6881,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6647,7 +6957,7 @@ PrivateEndpointConnections : {}</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD Objectid of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra Objectid of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -6692,6 +7002,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -6801,6 +7122,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
@@ -6948,6 +7280,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -7058,6 +7401,17 @@ PrivateEndpointConnections : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleAssignment</maml:name>
@@ -7095,6 +7449,17 @@ PrivateEndpointConnections : {}</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -7186,7 +7551,7 @@ PrivateEndpointConnections : {}</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
         <maml:name>ObjectId</maml:name>
         <maml:description>
-          <maml:para>Azure AD Objectid of the user, group or service principal.</maml:para>
+          <maml:para>Microsoft Entra Objectid of the user, group or service principal.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -7302,6 +7667,18 @@ PrivateEndpointConnections : {}</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
@@ -7449,6 +7826,17 @@ New-AzRoleAssignment -RoleDefinitionName "Reader" -ApplicationId $servicePrincip
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>New-AzRoleDefinition</maml:name>
@@ -7475,6 +7863,17 @@ New-AzRoleAssignment -RoleDefinitionName "Reader" -ApplicationId $servicePrincip
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -7515,6 +7914,18 @@ New-AzRoleAssignment -RoleDefinitionName "Reader" -ApplicationId $servicePrincip
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
@@ -7544,26 +7955,24 @@ New-AzRoleAssignment -RoleDefinitionName "Reader" -ApplicationId $servicePrincip
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Create using PSRoleDefinitionObject --------</maml:title>
-        <dev:code>$role = Get-AzRoleDefinition -Name "Virtual Machine Contributor"
-
-$role.Id = $null
-$role.Name = "Virtual Machine Operator"
-$role.Description = "Can monitor, start, and restart virtual machines."
-$role.IsCustom = $True
-$role.Actions.RemoveRange(0,$role.Actions.Count)
-$role.Actions.Add("Microsoft.Compute/*/read")
-$role.Actions.Add("Microsoft.Compute/virtualMachines/start/action")
-$role.Actions.Add("Microsoft.Compute/virtualMachines/restart/action")
-$role.Actions.Add("Microsoft.Compute/virtualMachines/downloadRemoteDesktopConnectionFile/action")
-$role.Actions.Add("Microsoft.Network/*/read")
-$role.Actions.Add("Microsoft.Storage/*/read")
-$role.Actions.Add("Microsoft.Authorization/*/read")
-$role.Actions.Add("Microsoft.Resources/subscriptions/resourceGroups/read")
-$role.Actions.Add("Microsoft.Resources/subscriptions/resourceGroups/resources/read")
-$role.Actions.Add("Microsoft.Insights/alertRules/*")
-$role.Actions.Add("Microsoft.Support/*")
-$role.AssignableScopes.Clear()
-$role.AssignableScopes.Add("/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+        <dev:code>$role = New-Object -TypeName Microsoft.Azure.Commands.Resources.Models.Authorization.PSRoleDefinition 
+$role.Name = 'Virtual Machine Operator'
+$role.Description = 'Can monitor, start, and restart virtual machines.'
+$role.IsCustom = $true
+$role.AssignableScopes = @("/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
+$role.Actions = @(
+    "Microsoft.Compute/*/read"
+    "Microsoft.Compute/virtualMachines/start/action"
+    "Microsoft.Compute/virtualMachines/restart/action"
+    "Microsoft.Compute/virtualMachines/downloadRemoteDesktopConnectionFile/action"
+    "Microsoft.Network/*/read"
+    "Microsoft.Storage/*/read"
+    "Microsoft.Authorization/*/read"
+    "Microsoft.Resources/subscriptions/resourceGroups/read"
+    "Microsoft.Resources/subscriptions/resourceGroups/resources/read"
+    "Microsoft.Insights/alertRules/*"
+    "Microsoft.Support/*"
+)
 
 New-AzRoleDefinition -Role $role</dev:code>
         <dev:remarks>
@@ -8938,6 +9347,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -8978,7 +9398,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9022,6 +9442,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9062,7 +9493,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9142,6 +9573,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9182,7 +9624,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9226,6 +9668,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9266,7 +9719,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9310,6 +9763,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9350,7 +9814,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
           <maml:name>ObjectId</maml:name>
           <maml:description>
-            <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+            <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9394,6 +9858,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9514,6 +9989,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9625,7 +10111,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the Azure AD application</maml:para>
+            <maml:para>The ServicePrincipalName of the Microsoft Entra application</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9633,6 +10119,17 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -9718,6 +10215,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9793,7 +10301,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the Azure AD application</maml:para>
+            <maml:para>The ServicePrincipalName of the Microsoft Entra application</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9801,6 +10309,17 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -9886,6 +10405,17 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -9961,7 +10491,7 @@ True</dev:code>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
           <maml:name>ServicePrincipalName</maml:name>
           <maml:description>
-            <maml:para>The ServicePrincipalName of the Azure AD application</maml:para>
+            <maml:para>The ServicePrincipalName of the Microsoft Entra application</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -9969,6 +10499,17 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -10022,7 +10563,7 @@ True</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="Id, PrincipalId">
         <maml:name>ObjectId</maml:name>
         <maml:description>
-          <maml:para>Azure AD ObjectId of the user, group or service principal.</maml:para>
+          <maml:para>Microsoft Entra ObjectId of the user, group or service principal.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -10130,7 +10671,7 @@ True</dev:code>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="SPN">
         <maml:name>ServicePrincipalName</maml:name>
         <maml:description>
-          <maml:para>The ServicePrincipalName of the Azure AD application</maml:para>
+          <maml:para>The ServicePrincipalName of the Microsoft Entra application</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -10150,6 +10691,18 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -10339,6 +10892,17 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -10403,6 +10967,17 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para></maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -10492,6 +11067,17 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
@@ -10601,6 +11187,18 @@ Remove-AzRoleAssignment -InputObject $roleassignment</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -10767,6 +11365,17 @@ if Condition is set Condition Version has to be set as well but if you're updati
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
           <maml:description>
@@ -10820,6 +11429,17 @@ if Condition is set Condition Version has to be set as well but if you're updati
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para>If specified, displays the updated role assignment</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -10892,6 +11512,18 @@ if Condition is set Condition Version has to be set as well but if you're updati
         <maml:name>PassThru</maml:name>
         <maml:description>
           <maml:para>If specified, displays the updated role assignment</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
@@ -11055,6 +11687,17 @@ RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-0
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Set-AzRoleDefinition</maml:name>
@@ -11081,6 +11724,17 @@ RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-0
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SkipClientSideScopeValidation</maml:name>
+          <maml:description>
+            <maml:para>If specified, skip client side scope validation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -11120,6 +11774,18 @@ RoleAssignmentId   : /providers/Microsoft.Management/managementGroups/1273adef-0
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SkipClientSideScopeValidation</maml:name>
+        <maml:description>
+          <maml:para>If specified, skip client side scope validation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>

@@ -19,6 +19,7 @@ param()
 Trace-VstsEnteringInvocation $MyInvocation
 
 # Get inputs for the task
+$connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
 [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
 [string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
 [string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;

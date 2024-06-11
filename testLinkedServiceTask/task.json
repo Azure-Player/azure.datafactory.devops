@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Minor enhancements and bug fixes.\n\n> #adftools version behind this task: 1.9.0",
+     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Minor enhancements and bug fixes.\n\nadftools version behind this task: 1.9.0",
     "showEnvironmentVariables": true,
     "inputs": [
         {

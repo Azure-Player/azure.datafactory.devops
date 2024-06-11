@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "The first (beta) release",
+     "releaseNotes": "The first (beta) release.\n\n#adftools version behind this task: 1.9.0",
      "showEnvironmentVariables": true,
      "groups": [
         {

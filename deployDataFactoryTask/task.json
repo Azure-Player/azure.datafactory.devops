@@ -2,7 +2,7 @@
     "id": "1af843b5-35a0-411f-9a18-9eb7a59fb8b8",
     "name": "PublishADFTask",
     "friendlyName": "Publish Azure Data Factory",
-    "description": "Deploys entire ADF (v2) from JSON files to ADF instance (adftools)",
+    "description": "Deploys entire ADF (v2) from JSON files to ADF instance (#adftools)",
     "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "Support wildcard when specifying object(s) name in config file\nAllow selecting objects in given folder\nA few bug fixes\nNew publish flag: `DoNotDeleteExcludedObjects`\nNew publish flag: `DoNotStopStartExcludedTriggers`",
+     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Stop and restart only changed triggers\n- New option to Stop/Start only the triggers that are already Started\n- Incremental deployment\n\n#adftools version behind this task: 1.9.0",
      "showEnvironmentVariables": true,
      "groups": [
         {

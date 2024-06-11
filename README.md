@@ -196,7 +196,7 @@ These tasks include the following modules:
 - [Az.Resources - ver.7.1.0](https://www.powershellgallery.com/packages/Az.Resources/7.1.0)
 
 # History
-- xx Jun 2023 - v.1.34  - Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps (#154)
+- 12 Jun 2023 - v.1.34  - Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps (#154)
                         - Updated all related modules (Az.* & adftools)
 - 06 Jun 2023 - v.1.33  Update [adftools v.1.9.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.9.0)  
 - 27 Jan 2024 - v.1.32  - Added dry run option (advanced). Thanks [@LiquoriChris](https://github.com/LiquoriChris)!

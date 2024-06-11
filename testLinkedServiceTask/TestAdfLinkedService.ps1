@@ -23,9 +23,9 @@ Trace-VstsEnteringInvocation $MyInvocation
 [string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
 [string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
 [string]$TenantID = $c.Subscription.TenantId                   #Get-VstsInput -Name "TenantID" -Require;
-[string]$ClientID = Get-VstsInput -Name "ClientID" -Require;
-[string]$ClientSecret = Get-VstsInput -Name "ClientSecret" -Require;
-[string]$SubscriptionID = $c.Subscription.Id
+[string]$ClientID = Get-VstsInput -Name "ClientID";
+[string]$ClientSecret = Get-VstsInput -Name "ClientSecret";
+[string]$SubscriptionID = $c.Subscription.Id;
 
 try {
 
@@ -74,13 +74,20 @@ try {
     Write-Debug "ClientID:                $ClientID";
     Write-Debug "SubscriptionID:          $SubscriptionID";
 
-
-    $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
-    -DataFactoryName $DataFactoryName `
-    -ResourceGroupName $ResourceGroupName `
-    -SubscriptionID $SubscriptionID `
-    -TenantID $TenantID -ClientID $ClientID -ClientSecret $ClientSecret
-
+    if ($null -eq $ClientID -or $ClientID -eq "") {
+        Write-Debug "Invoking Test-AdfLinkedService with Managed Identity..."
+        $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
+        -DataFactoryName $DataFactoryName `
+        -ResourceGroupName $ResourceGroupName `
+        -SubscriptionID $SubscriptionID
+    } else {
+        Write-Debug "Invoking Test-AdfLinkedService with Service Principal..."
+        $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
+        -DataFactoryName $DataFactoryName `
+        -ResourceGroupName $ResourceGroupName `
+        -SubscriptionID $SubscriptionID `
+        -TenantID $TenantID -ClientID $ClientID -ClientSecret $ClientSecret
+    }
 
     Write-Host ""
     Write-Host "========================================================================================================="

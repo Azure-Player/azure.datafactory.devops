@@ -56,13 +56,13 @@
             "name": "ClientID",
             "type": "string",
             "label": "Client ID",
-            "required": true
+            "required": false
         },
 		{
             "name": "ClientSecret",
             "type": "string",
             "label": "Client Secret",
-            "required": true
+            "required": false
         }
     ],
     "dataSourceBindings": [

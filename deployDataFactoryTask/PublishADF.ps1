@@ -8,7 +8,7 @@ param()
 	.DESCRIPTION
     Publishes Azure Data Factory using code from JSON files.
 
-    Script written by (c) Kamil Nowinski (AzurePlayer.net blog), 2020 for Azure DevOps extension
+    Script written by (c) Kamil Nowinski (AzurePlayer.net blog), 2020-2024 for Azure DevOps extension
     Source code and documentation: https://github.com/Azure-Player/azure.datafactory.devops
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
@@ -16,32 +16,32 @@ param()
     Written by (c) Kamil Nowinski, 2020-2024 https://github.com/Azure-Player/azure.datafactory.tools
 #>
 
-    Trace-VstsEnteringInvocation $MyInvocation
+Trace-VstsEnteringInvocation $MyInvocation
 
-    # Get inputs for the task
-    $connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
-    [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
-    [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
-    [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
-    [string]$Location = Get-VstsInput -Name "Location" -Require;
-    [string]$StageType = Get-VstsInput -Name "StageType" -Require;
-    [string]$StageCode = Get-VstsInput -Name "StageCode";
-    [string]$StageConfigFile = Get-VstsInput -Name "StageConfigFile";
-    [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
-    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
-    [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
-    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
-    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
-    [string]$FilterText = Get-VstsInput -Name FilterText;
-    [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
-    [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
-    [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
-    [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
-    [boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
-    [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
-    [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
-    [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
-    #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
+# Get inputs for the task
+$connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
+[string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
+[string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
+[string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
+[string]$Location = Get-VstsInput -Name "Location" -Require;
+[string]$StageType = Get-VstsInput -Name "StageType" -Require;
+[string]$StageCode = Get-VstsInput -Name "StageCode";
+[string]$StageConfigFile = Get-VstsInput -Name "StageConfigFile";
+[boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
+[boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
+[boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
+[string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
+[string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
+[string]$FilterText = Get-VstsInput -Name FilterText;
+[string]$PublishMethod = Get-VstsInput -Name PublishMethod;
+[boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
+[boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
+[boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
+[boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
+[boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
+[string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
+[string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
+#$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
 
 try {
 
@@ -77,9 +77,10 @@ try {
 
     Write-Host "Listing all imported modules..."
     Get-Module | Select-Object Name, Version, PreRelease, ModuleType | Format-Table
-	$ModulePathADF = Join-Path $PSScriptRoot ".\ps_modules\Az.DataFactory\"
+
+    $ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
     Import-Module -Name $ModulePathADF
-	$ModulePathADFTools = Join-Path $PSScriptRoot ".\ps_modules\azure.datafactory.tools\"
+	$ModulePathADFTools = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
     Import-Module -Name $ModulePathADFTools
 
     $global:ErrorActionPreference = 'Stop';

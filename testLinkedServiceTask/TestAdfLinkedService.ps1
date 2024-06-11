@@ -8,12 +8,12 @@ param()
 	.DESCRIPTION
     Runs test connection against Linked Service(s) of Azure Data Factory.
 
-    Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2021 for Azure DevOps extension
+    Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2021-2024 for Azure DevOps extension
     Source code and documentation: https://github.com/SQLPlayer/azure.datafactory.devops
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
     Depends on PowerShell module azure.datafactory.tools 
-    written by (c) Kamil Nowinski, 2021 https://github.com/SQLPlayer/azure.datafactory.tools
+    Written by (c) Kamil Nowinski, 2021-2024 https://github.com/SQLPlayer/azure.datafactory.tools
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
@@ -28,16 +28,6 @@ Trace-VstsEnteringInvocation $MyInvocation
 [string]$SubscriptionID = $c.Subscription.Id
 
 try {
-
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
-
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
-    Import-Module -Name $ModulePathADFT
 
     # Initialize Azure.
     Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
@@ -62,13 +52,17 @@ try {
     }
     $azureUtility = Get-AzureUtility
     Write-Verbose -Verbose "Loading $azureUtility"
-    . "$PSScriptRoot/$azureUtility"
-
-    $c = Get-AzContext
-    # $c.Subscription.Id
-    # $c.Subscription.TenantId
+    . "$PSScriptRoot\$azureUtility"
 
     #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
+
+    # Import required modules
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+    Write-Host "Listing all imported modules..."
+    Get-Module | Select-Object Name, Version, PreRelease, ModuleType | Format-Table
+
+	$ModulePathADFTools = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    Import-Module -Name $ModulePathADFTools
 
     $global:ErrorActionPreference = 'Continue';
 

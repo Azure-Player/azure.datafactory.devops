@@ -23,10 +23,8 @@ $connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
 [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
 [string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
 [string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
-[string]$TenantID = $c.Subscription.TenantId                   #Get-VstsInput -Name "TenantID" -Require;
 [string]$ClientID = Get-VstsInput -Name "ClientID";
 [string]$ClientSecret = Get-VstsInput -Name "ClientSecret";
-[string]$SubscriptionID = $c.Subscription.Id;
 
 try {
 
@@ -56,6 +54,10 @@ try {
     . "$PSScriptRoot\$azureUtility"
 
     #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
+
+    $c = Get-AzContext
+    [string]$SubscriptionID = $c.Subscription.Id;
+    [string]$TenantID = $c.Subscription.TenantId;
 
     # Import required modules
     Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"

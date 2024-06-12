@@ -10,7 +10,7 @@ Fully written in PowerShell, compatible with Windows PowerShell 5.1, PowerShell 
 ## Three tasks
 - [**Build Azure Data Factory code**](#buildtest-azure-data-factory-code) - Validates all JSON files of ADF (v2) (adftools)
 - [**Publish Azure Data Factory**](#publish-azure-data-factory) - Deploys entire ADF (v2) from JSON files to ADF instance
-- [**Test connection of ADF Linked Service** (*preview*)](#test-connection-of-adf-linked-service) - Runs test connection of Linked Service of ADF (v2)
+- [**Test connection of ADF Linked Service**](#test-connection-of-adf-linked-service) - Runs test connection of Linked Service of ADF (v2)
 
 > Bear in mind that these tasks works only for Azure Data Factory **v2**.
 
@@ -196,7 +196,8 @@ These tasks include the following modules:
 - [Az.Resources - ver.7.1.0](https://www.powershellgallery.com/packages/Az.Resources/7.1.0)
 
 # History
-- 12 Jun 2023 - v.1.34  - Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps (#154)
+- 12 Jun 2023 - v.1.34  - Support for Service Connection using **Workload Identity Federation Authentication** in Azure DevOps (#154)
+                        - Test Connection Task is no longer Preview. ClientID & Secret fields are optional for SPN auth.
                         - Updated all related modules (Az.* & adftools)
 - 06 Jun 2023 - v.1.33  Update [adftools v.1.9.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.9.0)  
 - 27 Jan 2024 - v.1.32  - Added dry run option (advanced). Thanks [@LiquoriChris](https://github.com/LiquoriChris)!

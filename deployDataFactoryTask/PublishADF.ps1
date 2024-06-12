@@ -8,75 +8,86 @@ param()
 	.DESCRIPTION
     Publishes Azure Data Factory using code from JSON files.
 
-    Script written by (c) Kamil Nowinski (AzurePlayer.net blog), 2020 for Azure DevOps extension
+    Script written by (c) Kamil Nowinski (AzurePlayer.net blog), 2020-2024 for Azure DevOps extension
     Source code and documentation: https://github.com/Azure-Player/azure.datafactory.devops
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
     Depends on PowerShell module azure.datafactory.tools 
-    written by (c) Kamil Nowinski, 2020 https://github.com/Azure-Player/azure.datafactory.tools
+    Written by (c) Kamil Nowinski, 2020-2024 https://github.com/Azure-Player/azure.datafactory.tools
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
+
+# Get inputs for the task
+$connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
+[string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
+[string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
+[string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
+[string]$Location = Get-VstsInput -Name "Location" -Require;
+[string]$StageType = Get-VstsInput -Name "StageType" -Require;
+[string]$StageCode = Get-VstsInput -Name "StageCode";
+[string]$StageConfigFile = Get-VstsInput -Name "StageConfigFile";
+[boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
+[boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
+[boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
+[string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
+[string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
+[string]$FilterText = Get-VstsInput -Name FilterText;
+[string]$PublishMethod = Get-VstsInput -Name PublishMethod;
+[boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
+[boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
+[boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
+[boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
+[boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
+[string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
+[string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
+#$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
+
 try {
 
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    #$config = Import-PowerShellDataFile $ModulePathADFT
-    #Write-Output "Azure.DataFactory.Tools version: $($config.ModuleVersion)"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+    # Initialize Azure.
+    Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
 
-    #Get-Module -ListAvailable
+    $endpoint = Get-VstsEndpoint -Name $connectedServiceName -Require
 
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
-	$ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
-    Import-Module -Name $ModulePathADF
-    Import-Module -Name $ModulePathADFT
-
-
+    # Update PSModulePath for hosted agent
     . "$PSScriptRoot\Utility.ps1"
 
-    #$serviceName = Get-VstsInput -Name ConnectedServiceNameARM -Require
-    $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
-    $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
-    $endpoint = ConvertTo-Json $endpointObject
-    #$CoreAzArgument = "-endpoint '$endpoint'"
-    . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
+    CleanUp-PSModulePathForHostedAgent
 
+    $vstsEndpoint = Get-VstsEndpoint -Name SystemVssConnection -Require
+    $vstsAccessToken = $vstsEndpoint.auth.parameters.AccessToken
 
-    #Get-Module -ListAvailable
+    if (Get-Module Az.Accounts -ListAvailable) {
+        $encryptedToken = ConvertTo-SecureString $vstsAccessToken -AsPlainText -Force
+        Initialize-AzModule -Endpoint $endpoint -connectedServiceNameARM $connectedServiceName -encryptedToken $encryptedToken
+    }
+    else {
+        Write-Verbose "No module found with name: Az.Accounts"
+        throw ("Could not find the module Az.Accounts with given version. If the module was recently installed, retry after restarting the Azure Pipelines task agent.")
+    }
+    $azureUtility = Get-AzureUtility
+    Write-Verbose -Verbose "Loading $azureUtility"
+    . "$PSScriptRoot\$azureUtility"
 
-    # Get inputs params
-    [string]$RootFolder = Get-VstsInput -Name "DataFactoryCodePath" -Require;
-    [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
-    [string]$ResourceGroupName = Get-VstsInput -Name  "ResourceGroupName" -Require;
-    [string]$Location = Get-VstsInput -Name "Location" -Require;
-    [string]$StageType = Get-VstsInput -Name "StageType" -Require;
-    [string]$StageCode = Get-VstsInput -Name "StageCode";
-    [string]$StageConfigFile = Get-VstsInput -Name "StageConfigFile";
-    [boolean]$DeleteNotInSource = Get-VstsInput -Name "DeleteNotInSource" -AsBool;
-    [boolean]$StopStartTriggers = Get-VstsInput -Name "StopStartTriggers" -AsBool;
-    [boolean]$CreateNewInstance = Get-VstsInput -Name "CreateNewInstance" -AsBool;
-    [string]$FilteringType = Get-VstsInput -Name FilteringType -Require;
-    [string]$FilterTextFile = Get-VstsInput -Name FilterTextFile;
-    [string]$FilterText = Get-VstsInput -Name FilterText;
-    [string]$PublishMethod = Get-VstsInput -Name PublishMethod;
-    [boolean]$DoNotStopStartExcludedTriggers = Get-VstsInput -Name "DoNotStopStartExcludedTriggers" -AsBool;
-    [boolean]$DoNotDeleteExcludedObjects = Get-VstsInput -Name "DoNotDeleteExcludedObjects" -AsBool;
-    [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
-    [boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
-    [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
-    [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
-    [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
-    #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
-    
+    #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
+
+    # Import required modules
+    Write-Output "PowerShell version: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+
+    Write-Host "Listing all imported modules..."
+    Get-Module | Select-Object Name, Version, PreRelease, ModuleType | Format-Table
+
+    $ModulePathADF = "$PSScriptRoot\ps_modules\Az.DataFactory\Az.DataFactory.psd1"
+    Import-Module -Name $ModulePathADF
+	$ModulePathADFTools = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    Import-Module -Name $ModulePathADFTools
+
     $global:ErrorActionPreference = 'Stop';
     if ($FilteringType -eq "None") { $FilteringYesNo = "NO" } else { $FilteringYesNo = ("YES ({0})" -f $FilteringType) }
     if ([string]::IsNullOrWhitespace($PublishMethod)) { $PublishMethod = "AzResource" }
 
-    Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/SQLPlayer/azure.datafactory.tools) with the following parameters:";
+    Write-Debug "Invoking Publish-AdfV2FromJson (https://github.com/Azure-Player/azure.datafactory.tools) with the following parameters:";
     Write-Debug "DataFactoryName:    $DataFactoryName";
     Write-Debug "RootFolder:         $RootFolder";
     Write-Debug "ResourceGroupName:  $ResourceGroupName";
@@ -156,5 +167,5 @@ try {
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
+    Disconnect-AzureAndClearContext -authScheme $endpoint.Auth.Scheme -ErrorAction SilentlyContinue
 }
-

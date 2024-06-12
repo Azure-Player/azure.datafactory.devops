@@ -8,48 +8,64 @@ param()
 	.DESCRIPTION
     Runs test connection against Linked Service(s) of Azure Data Factory.
 
-    Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2021 for Azure DevOps extension
+    Script written by (c) Kamil Nowinski (SQLPlayer.net blog), 2021-2024 for Azure DevOps extension
     Source code and documentation: https://github.com/SQLPlayer/azure.datafactory.devops
 	This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
 
     Depends on PowerShell module azure.datafactory.tools 
-    written by (c) Kamil Nowinski, 2021 https://github.com/SQLPlayer/azure.datafactory.tools
+    Written by (c) Kamil Nowinski, 2021-2024 https://github.com/SQLPlayer/azure.datafactory.tools
 #>
 
 Trace-VstsEnteringInvocation $MyInvocation
+
+# Get inputs for the task
+$connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
+[string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
+[string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
+[string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
+[string]$ClientID = Get-VstsInput -Name "ClientID";
+[string]$ClientSecret = Get-VstsInput -Name "ClientSecret";
+
 try {
 
-    # import required modules
-	$ModulePathADFT = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
-    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+    # Initialize Azure.
+    Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
 
-    #Get-Module -ListAvailable
+    $endpoint = Get-VstsEndpoint -Name $connectedServiceName -Require
 
-    $ModulePathAcc = "$PSScriptRoot\ps_modules\Az.Accounts\Az.Accounts.psd1"
-    Import-Module -Name $ModulePathAcc
-    $ModulePathRes = "$PSScriptRoot\ps_modules\Az.Resources\Az.Resources.psd1"
-    Import-Module -Name $ModulePathRes
-    Import-Module -Name $ModulePathADFT
-
+    # Update PSModulePath for hosted agent
     . "$PSScriptRoot\Utility.ps1"
-    $serviceName = Get-VstsInput -Name ConnectedServiceName -Require
-    $endpointObject = Get-VstsEndpoint -Name $serviceName -Require
-    $endpoint = ConvertTo-Json $endpointObject
-    #$CoreAzArgument = "-endpoint '$endpoint'"
-    . "$PSScriptRoot\CoreAz.ps1" -endpoint $endpoint
+
+    CleanUp-PSModulePathForHostedAgent
+
+    $vstsEndpoint = Get-VstsEndpoint -Name SystemVssConnection -Require
+    $vstsAccessToken = $vstsEndpoint.auth.parameters.AccessToken
+
+    if (Get-Module Az.Accounts -ListAvailable) {
+        $encryptedToken = ConvertTo-SecureString $vstsAccessToken -AsPlainText -Force
+        Initialize-AzModule -Endpoint $endpoint -connectedServiceNameARM $connectedServiceName -encryptedToken $encryptedToken
+    }
+    else {
+        Write-Verbose "No module found with name: Az.Accounts"
+        throw ("Could not find the module Az.Accounts with given version. If the module was recently installed, retry after restarting the Azure Pipelines task agent.")
+    }
+    $azureUtility = Get-AzureUtility
+    Write-Verbose -Verbose "Loading $azureUtility"
+    . "$PSScriptRoot\$azureUtility"
+
+    #### MAIN EXECUTION OF THE TASK BEGINS HERE ####
 
     $c = Get-AzContext
-    # $c.Subscription.Id
-    # $c.Subscription.TenantId
+    [string]$SubscriptionID = $c.Subscription.Id;
+    [string]$TenantID = $c.Subscription.TenantId;
 
-    # Get inputs params
-    [string]$DataFactoryName = Get-VstsInput -Name "DataFactoryName" -Require;
-    [string]$ResourceGroupName = Get-VstsInput -Name "ResourceGroupName" -Require;
-    [string]$LinkedServiceName = Get-VstsInput -Name "LinkedServiceName" -Require;
-    [string]$TenantID = $c.Subscription.TenantId                   #Get-VstsInput -Name "TenantID" -Require;
-    [string]$ClientID = Get-VstsInput -Name "ClientID" -Require;
-    [string]$ClientSecret = Get-VstsInput -Name "ClientSecret" -Require;
-    [string]$SubscriptionID = $c.Subscription.Id
+    # Import required modules
+    Write-Output "PowerShell: $($PSVersionTable.PSVersion) $($PSVersionTable.PSEdition)"
+    Write-Host "Listing all imported modules..."
+    Get-Module | Select-Object Name, Version, PreRelease, ModuleType | Format-Table
+
+	$ModulePathADFTools = "$PSScriptRoot\ps_modules\azure.datafactory.tools\azure.datafactory.tools.psd1"
+    Import-Module -Name $ModulePathADFTools
 
     $global:ErrorActionPreference = 'Continue';
 
@@ -61,13 +77,20 @@ try {
     Write-Debug "ClientID:                $ClientID";
     Write-Debug "SubscriptionID:          $SubscriptionID";
 
-
-    $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
-    -DataFactoryName $DataFactoryName `
-    -ResourceGroupName $ResourceGroupName `
-    -SubscriptionID $SubscriptionID `
-    -TenantID $TenantID -ClientID $ClientID -ClientSecret $ClientSecret
-
+    if ($null -eq $ClientID -or $ClientID -eq "") {
+        Write-Debug "Invoking Test-AdfLinkedService with Managed Identity..."
+        $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
+        -DataFactoryName $DataFactoryName `
+        -ResourceGroupName $ResourceGroupName `
+        -SubscriptionID $SubscriptionID
+    } else {
+        Write-Debug "Invoking Test-AdfLinkedService with Service Principal..."
+        $null = Test-AdfLinkedService -LinkedServiceName $LinkedServiceName `
+        -DataFactoryName $DataFactoryName `
+        -ResourceGroupName $ResourceGroupName `
+        -SubscriptionID $SubscriptionID `
+        -TenantID $TenantID -ClientID $ClientID -ClientSecret $ClientSecret
+    }
 
     Write-Host ""
     Write-Host "========================================================================================================="
@@ -83,5 +106,6 @@ try {
 
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
+    Disconnect-AzureAndClearContext -authScheme $endpoint.Auth.Scheme -ErrorAction SilentlyContinue
 }
 

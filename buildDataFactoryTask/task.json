@@ -2,7 +2,7 @@
     "id": "8a00f62d-c46d-4019-9e11-c05d88821db8",
     "name": "BuildADFTask",
     "friendlyName": "Build Azure Data Factory code",
-    "description": "Validates all JSON files of ADF (v2) (adftools)",
+    "description": "Validates all JSON files of ADF (v2) (#adftools)",
     "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
 	"category": "deploy",
     "preview": false,
@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "Added a few fields to 'Export' mode",
+     "releaseNotes": "Added a few fields to 'Export' mode.\n\nadftools version behind this task: 1.9.0",
      "showEnvironmentVariables": false,
      "inputs": [
         {

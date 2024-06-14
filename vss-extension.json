@@ -61,16 +61,7 @@
     "public": true,
     "files": [
         {
-            "path": "deployDataFactoryTask"
-        },
-        {
-            "path": "buildDataFactoryTask"
-        },
-        {
-            "path": "testLinkedServiceTask"
-        },
-        {
-            "path": "deployAdfFromArmTask"
+            "path": "Tasks"
         },
         {
             "path": "images",

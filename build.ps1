@@ -53,7 +53,7 @@ Write-Output "Updated version2: $version2"
 
 # Replace with regex
 $v = '"version": "'+$JsonDoc.Version+'",'
-$nv = '"version": "'+$ver+'",'
+$nv = '"version": "' + $version2.ToString() + '",'
 if (!$isProd) {
     $body = $body.Replace('"name": "Deploy Azure Data Factory by SQLPlayer"', '"name": "Deploy ADF (Preview)"')
     $body = $body.Replace('"public": true,', '"public": false,')

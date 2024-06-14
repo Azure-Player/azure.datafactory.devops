@@ -15,7 +15,8 @@ function Update-TaskManifest {
     )
 
     Write-Output "Updating version for task definition: $taskFolder"
-    $taskFile = Join-Path -Path ".\Tasks\$taskFolder" -ChildPath "task.json"
+    $taskFolderRoot = $taskFolder.Substring(0, $taskFolder.Length - 2)
+    $taskFile = Join-Path -Path ".\$taskFolderRoot\$taskFolder" -ChildPath "task.json"
     $body = $JsonDoc = Get-Content $taskFile -Raw
     $JsonDoc = $body | ConvertFrom-Json
     #$body = $body.Replace('"Major": '+$JsonDoc.version.Major, '"Major": '+$verarr[0])
@@ -69,10 +70,12 @@ Update-TaskManifest -taskFolder 'deployDataFactoryTaskV2' -version $version2 -No
 Update-TaskManifest -taskFolder 'buildDataFactoryTaskV2'  -version $version2 -NonProdTaskId '0fff6fc0-4a02-46b2-9466-2ee2a9b0580f' -isProd $isProd
 Update-TaskManifest -taskFolder 'testLinkedServiceTaskV2' -version $version2 -NonProdTaskId '9cb687ea-a4f1-45d5-a568-98dc85fd3f1b' -isProd $isProd
 Update-TaskManifest -taskFolder 'deployAdfFromArmTaskV2'  -version $version2 -NonProdTaskId 'f38a9662-edd3-4af5-b4c2-35f4d3e31dda' -isProd $isProd
+
 Update-TaskManifest -taskFolder 'deployDataFactoryTaskV1' -version $version1 -NonProdTaskId 'b2032481-f9a9-476d-af8f-9156ee066e1b' -isProd $isProd
 Update-TaskManifest -taskFolder 'buildDataFactoryTaskV1'  -version $version1 -NonProdTaskId '0fff6fc0-4a02-46b2-9466-2ee2a9b0580f' -isProd $isProd
 Update-TaskManifest -taskFolder 'testLinkedServiceTaskV1' -version $version1 -NonProdTaskId '9cb687ea-a4f1-45d5-a568-98dc85fd3f1b' -isProd $isProd
 Update-TaskManifest -taskFolder 'deployAdfFromArmTaskV1'  -version $version1 -NonProdTaskId 'f38a9662-edd3-4af5-b4c2-35f4d3e31dda' -isProd $isProd
 
 # Build extension
+Write-Output "Building extension..."
 tfx extension create --manifest-globs vss-extension.json --output-path ./bin

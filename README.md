@@ -192,12 +192,10 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.1.9.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.9.0)
 - [Az.DataFactory - ver.1.18.4](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.4)
-- [Az.Accounts - ver.3.0.0](https://www.powershellgallery.com/packages/Az.Accounts/3.0.0)
-- [Az.Resources - ver.7.1.0](https://www.powershellgallery.com/packages/Az.Resources/7.1.0)
 
 # History
 ## Version 2
-- 14 Jun 2024 - v.2.00  - Updated all related modules (Az.*)  
+- 14 Jun 2024 - v.2.00  - Related Az.* modules must be installed on DevOps Agent (no longer belongs to tasks)  
                         - Support for Service Connection using **Workload Identity Federation Authentication** in Azure DevOps (#154)  
                         - Test Connection Task is no longer Preview. ClientID & Secret fields are optional for SPN auth.
 

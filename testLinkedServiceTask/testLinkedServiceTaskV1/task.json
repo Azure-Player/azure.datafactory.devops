@@ -1,0 +1,84 @@
+{
+    "id": "5bf98930-3058-4afe-b031-48d312459df4",
+    "name": "TestAdfLinkedServiceTask",
+    "friendlyName": "Test connection of ADF Linked Service",
+    "description": "Runs test connection of Linked Service of ADF (v2) (adftools)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
+	"category": "deploy",
+    "preview": true,
+    "visibility": [
+	    "Build",
+        "Release"
+    ],
+    "author": "Kamil Nowinski (AzurePlayer)",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+     },
+    "releaseNotes": "",
+    "showEnvironmentVariables": true,
+    "inputs": [
+        {
+            "name": "ConnectedServiceName",
+            "aliases": ["azureSubscription"],
+            "type": "connectedService:AzureRM",
+            "label": "Azure Subscription",
+            "defaultValue": "",
+            "helpMarkDown": "Azure subscription to target for deployment.",
+            "required": true
+        },
+        {
+            "name": "ResourceGroupName",
+            "type": "pickList",
+            "label": "Resource Group Name",
+            "required": true,
+            "helpMarkDown": "Provide the name of the Resource Group.",
+            "properties": {
+                "EditableOptions": "True"
+            }
+        },
+		{
+            "name": "DataFactoryName",
+            "type": "string",
+            "label": "Target Azure Data Factory Name",
+            "helpMarkDown": "Provide the name of the target Azure Data Factory",
+            "required": true
+        },
+		{
+            "name": "LinkedServiceName",
+            "type": "string",
+            "label": "Linked Service Name(s)",
+            "helpMarkDown": "Comma-separated list of objects to be tested",
+            "required": true
+        },
+		{
+            "name": "ClientID",
+            "type": "string",
+            "label": "Client ID",
+            "required": true
+        },
+		{
+            "name": "ClientSecret",
+            "type": "string",
+            "label": "Client Secret",
+            "required": true
+        }
+    ],
+    "dataSourceBindings": [
+        {
+            "target": "ResourceGroupName",
+            "endpointId": "$(ConnectedServiceName)",
+            "dataSourceName": "AzureResourceGroups"
+        }
+    ],
+    "instanceNameFormat": "Run ADF Linked Service connection test",
+    "execution": {
+        "PowerShell3": {
+            "target": "TestAdfLinkedService.ps1",
+            "platforms": [
+                "windows"
+            ]
+        }
+    }
+}

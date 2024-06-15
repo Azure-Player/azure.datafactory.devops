@@ -1,0 +1,86 @@
+{
+    "id": "5bf98930-3058-4afe-b031-48d312459df4",
+    "name": "TestAdfLinkedServiceTask",
+    "friendlyName": "Test connection of ADF Linked Service",
+    "description": "Runs test connection of Linked Service of ADF (v2) (#adftools)",
+    "helpMarkDown": "[More Information](https://github.com/Azure-Player/azure.datafactory.devops)",
+	"category": "deploy",
+    "preview": false,
+    "visibility": [
+	    "Build",
+        "Release"
+    ],
+    "author": "Kamil Nowinski (AzurePlayer)",
+    "version": {
+        "Major": 2,
+        "Minor": 0,
+        "Patch": 0
+     },
+    "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- ClientID & Secret are optional, use for SPN only\n- Minor enhancements and bug fixes.\n- This task is GA now.\n\nadftools version behind this task: 1.9.0",
+    "showEnvironmentVariables": true,
+    "inputs": [
+        {
+            "name": "ConnectedServiceName",
+            "aliases": ["azureSubscription"],
+            "type": "connectedService:AzureRM",
+            "label": "Azure Subscription",
+            "defaultValue": "",
+            "helpMarkDown": "Azure subscription to target for deployment.",
+            "required": true
+        },
+        {
+            "name": "ResourceGroupName",
+            "type": "pickList",
+            "label": "Resource Group Name",
+            "required": true,
+            "helpMarkDown": "Provide the name of the Resource Group.",
+            "properties": {
+                "EditableOptions": "True"
+            }
+        },
+		{
+            "name": "DataFactoryName",
+            "type": "string",
+            "label": "Target Azure Data Factory Name",
+            "helpMarkDown": "Provide the name of the target Azure Data Factory",
+            "required": true
+        },
+		{
+            "name": "LinkedServiceName",
+            "type": "string",
+            "label": "Linked Service Name(s)",
+            "helpMarkDown": "Comma-separated list of objects to be tested",
+            "required": true
+        },
+		{
+            "name": "ClientID",
+            "type": "string",
+            "label": "Client ID",
+            "helpMarkDown": "Provide the Client ID of the Service Principal (otherwise, leave empty)",
+            "required": false
+        },
+		{
+            "name": "ClientSecret",
+            "type": "string",
+            "label": "Client Secret",
+            "helpMarkDown": "Provide the Secret of the Service Principal (otherwise, leave empty)",
+            "required": false
+        }
+    ],
+    "dataSourceBindings": [
+        {
+            "target": "ResourceGroupName",
+            "endpointId": "$(ConnectedServiceName)",
+            "dataSourceName": "AzureResourceGroups"
+        }
+    ],
+    "instanceNameFormat": "Run ADF Linked Service connection test",
+    "execution": {
+        "PowerShell3": {
+            "target": "TestAdfLinkedService.ps1",
+            "platforms": [
+                "windows"
+            ]
+        }
+    }
+}

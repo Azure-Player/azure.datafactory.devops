@@ -3,6 +3,7 @@
 # [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
 # [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
 
+$ErrorActionPreference = 'Stop'
 $target = 'd:\modules'
 Remove-Item -Path "$target\*" -Force
 
@@ -25,9 +26,11 @@ function Update-ModuleInPlace {
     $src = Join-Path $target $m
 
     foreach ($t in $tasks) {
+        if (!$t.EndsWith('V1') -and !$t.EndsWith('V2') -and !$t.EndsWith('V1*') -and !$t.EndsWith('V2*')) { Write-Error "Task must ends with V1/2[*]"}
         $short = $t.EndsWith('*')
-        $t = $t.Replace('*', '')
-        $dst = "$targetPath\$t\ps_modules"
+        $tv = $t.Replace('*', '')
+        $t = $tv.Substring(0, $tv.Length - 2)
+        $dst = "$targetPath\$t\$tv\ps_modules"
         Write-Host "Module: $src"
         Write-Host "- copy to: $dst ..."
         Copy-Item -Path $src -Destination $dst -Recurse -Force
@@ -56,17 +59,17 @@ $m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '
 
 # Updating modules in 'azure.datafactory.devops'
 $m = 'azure.datafactory.tools'; 
-$tasks = @('buildDataFactoryTask*', 'deployAdfFromArmTask*', 'deployDataFactoryTask', 'testLinkedServiceTask*')
+$tasks = @('buildDataFactoryTaskV1*', 'deployAdfFromArmTaskV1*', 'deployDataFactoryTaskV2', 'testLinkedServiceTaskV2*')
 Update-ModuleInPlace $m $tasks
 
 $m = 'Az.DataFactory';
-$tasks = @('deployDataFactoryTask')
+$tasks = @('deployDataFactoryTaskV2')
 Update-ModuleInPlace $m $tasks
 
-$m = 'Az.Accounts';
-$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
-Update-ModuleInPlace $m $tasks
+# $m = 'Az.Accounts';
+# $tasks = @('deployDataFactoryTaskV1', 'testLinkedServiceTaskV1')
+# Update-ModuleInPlace $m $tasks
 
-$m = 'Az.Resources';
-$tasks = @('deployDataFactoryTask', 'testLinkedServiceTask')
-Update-ModuleInPlace $m $tasks
+# $m = 'Az.Resources';
+# $tasks = @('deployDataFactoryTaskV1', 'testLinkedServiceTaskV1')
+# Update-ModuleInPlace $m $tasks

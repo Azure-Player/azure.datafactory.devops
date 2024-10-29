@@ -39,6 +39,7 @@ $connectedServiceName = Get-VstsInput -Name ConnectedServiceName -Require
 [boolean]$IgnoreLackOfReferencedObject = Get-VstsInput -Name "IgnoreLackOfReferencedObject" -AsBool;
 [boolean]$IsDryRun = Get-VstsInput -Name "IsDryRun" -AsBool;
 [boolean]$IncrementalDeployment = Get-VstsInput -Name "IncrementalDeployment" -AsBool;
+[string]$IncrementalDeploymentStorageUri = Get-VstsInput -Name "IncrementalDeploymentStorageUri";
 [string]$TriggerStopMethod = Get-VstsInput -Name "TriggerStopMethod";
 [string]$TriggerStartMethod = Get-VstsInput -Name "TriggerStartMethod";
 #$input_pwsh = Get-VstsInput -Name 'pwsh' -AsBool
@@ -105,6 +106,7 @@ try {
     $opt.DoNotDeleteExcludedObjects = $DoNotDeleteExcludedObjects
     $opt.IgnoreLackOfReferencedObject = $IgnoreLackOfReferencedObject
     $opt.IncrementalDeployment = $IncrementalDeployment
+    $opt.IncrementalDeploymentStorageUri = $IncrementalDeploymentStorageUri
     $opt.TriggerStopMethod = $TriggerStopMethod
     $opt.TriggerStartMethod = $TriggerStartMethod
 

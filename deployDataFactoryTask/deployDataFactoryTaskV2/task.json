@@ -16,7 +16,7 @@
         "Minor": 0,
         "Patch": 0
      },
-     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Stop and restart only changed triggers\n- New option to Stop/Start only the triggers that are already Started\n- Incremental deployment\n\nadftools version behind this task: 1.9.0",
+     "releaseNotes": "- Support for Service Connection using Workload Identity Federation Authentication in Azure DevOps.\n- Stop and restart only changed triggers\n- New option to Stop/Start only the triggers that are already Started\n- Incremental deployment with required Azure Storage for deployment state file\n\nadftools version behind this task: 1.11.0",
      "showEnvironmentVariables": true,
      "groups": [
         {
@@ -70,15 +70,6 @@
             "label": "Target Region",
             "helpMarkDown": "Azure Region of target Data Factory.\nIt is used only in order to create new instance of ADF.",
             "required": true
-        },
-        {
-            "name": "IncrementalDeployment",
-            "type": "boolean",
-            "label": "Incremental Deployment (new)",
-            "groupname": "options",
-            "defaultValue": "false",
-            "helpMarkDown": "Accelerating deployment time by keeping hash list of lastly deployed objects.\n[Learn more...](https://github.com/Azure-Player/azure.datafactory.tools#incremental-deployment) ",
-            "required": false
         },
         {
             "name": "StageType",
@@ -215,6 +206,25 @@
             "defaultValue": "false",
             "helpMarkDown": "Usually, the deployment will fail if a resource is referenced that's not present in a JSON file. Set to *True* to warn instead of failing.",
             "groupname": "advanced",
+            "required": false
+        },
+        {
+            "name": "IncrementalDeployment",
+            "type": "boolean",
+            "label": "Incremental Deployment (new)",
+            "groupname": "advanced",
+            "defaultValue": "false",
+            "helpMarkDown": "Accelerating deployment time by keeping hash list of lastly deployed objects.\n[Learn more...](https://github.com/Azure-Player/azure.datafactory.tools#incremental-deployment) ",
+            "required": false
+        },
+        {
+            "name": "IncrementalDeploymentStorageUri",
+            "type": "string",
+            "label": "Incremental Deployment Storage URI (new)",
+            "groupname": "advanced",
+            "defaultValue": "",
+            "helpMarkDown": "Indicates Azure Storage where the latest deployment state file is stored (no default).\n[Learn more...](https://github.com/Azure-Player/azure.datafactory.tools#incremental-deployment) \nExample: `https://sqlplayer2020.file.core.windows.net/adftools` ",
+            "visibleRule": "IncrementalDeployment = true",
             "required": false
         },
         {

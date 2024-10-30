@@ -190,16 +190,17 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.9.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.9.0)
-- [Az.DataFactory - ver.1.18.4](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.4)
+- [azure.datafactory.tools - ver.1.11.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.11.0)
+- [Az.DataFactory - ver.1.18.8](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.8)
 
 # History
-## Version 2
-- 14 Jun 2024 - v.2.00  - Related Az.* modules must be installed on DevOps Agent (no longer belongs to tasks)  
+## Version 2.*
+- 30 Oct 2024 - v.2.1   - Incremental state is no longer save into Global Parameter of ADF, but now it's store in provided Storage Account #374
+- 14 Jun 2024 - v.2.0   - Related Az.* modules must be installed on DevOps Agent (no longer belongs to tasks)  
                         - Support for Service Connection using **Workload Identity Federation Authentication** in Azure DevOps (#154)  
                         - Test Connection Task is no longer Preview. ClientID & Secret fields are optional for SPN auth.
 
-## Version 1
+## Version 1.*
 - 13 Jun 2024 - v.1.35    
 - 06 Jun 2024 - v.1.33  Update [adftools v.1.9.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.9.0)  
 - 27 Jan 2024 - v.1.32  - Added dry run option (advanced). Thanks [@LiquoriChris](https://github.com/LiquoriChris)!

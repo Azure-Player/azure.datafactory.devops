@@ -39,6 +39,18 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>SessionId</maml:name>
+          <maml:description>
+            <maml:para>The data flow debug session ID.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -123,6 +135,18 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>SessionId</maml:name>
+          <maml:description>
+            <maml:para>The data flow debug session ID.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -187,6 +211,18 @@
           <maml:name>PackageFile</maml:name>
           <maml:description>
             <maml:para>The JSON file path.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>SessionId</maml:name>
+          <maml:description>
+            <maml:para>The data flow debug session ID.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -327,6 +363,18 @@
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>SessionId</maml:name>
+        <maml:description>
+          <maml:para>The data flow debug session ID.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
         <maml:description>
@@ -449,9 +497,9 @@
           <maml:description>
             <maml:para>The resource group name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -461,9 +509,9 @@
           <maml:description>
             <maml:para>The data factory name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -473,9 +521,9 @@
           <maml:description>
             <maml:para>The trigger name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -485,9 +533,9 @@
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -498,7 +546,7 @@
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -509,7 +557,7 @@
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -522,9 +570,9 @@
           <maml:description>
             <maml:para>The trigger object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
           <dev:type>
-            <maml:name>PSTrigger</maml:name>
+            <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -534,9 +582,9 @@
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -547,7 +595,7 @@
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -558,7 +606,7 @@
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -571,9 +619,9 @@
           <maml:description>
             <maml:para>The Azure resource ID.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -583,9 +631,9 @@
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -596,7 +644,7 @@
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -607,7 +655,7 @@
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -620,9 +668,9 @@
         <maml:description>
           <maml:para>The data factory name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -632,9 +680,9 @@
         <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
-          <maml:name>IAzureContextContainer</maml:name>
+          <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -644,9 +692,9 @@
         <maml:description>
           <maml:para>The trigger object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
         <dev:type>
-          <maml:name>PSTrigger</maml:name>
+          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -656,9 +704,9 @@
         <maml:description>
           <maml:para>The trigger name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -668,9 +716,9 @@
         <maml:description>
           <maml:para>The resource group name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -680,9 +728,9 @@
         <maml:description>
           <maml:para>The Azure resource ID.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -692,9 +740,9 @@
         <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -704,9 +752,9 @@
         <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -5424,9 +5472,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The resource group name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5436,9 +5484,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The data factory name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5448,9 +5496,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The trigger name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5460,9 +5508,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5475,9 +5523,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The trigger object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
           <dev:type>
-            <maml:name>PSTrigger</maml:name>
+            <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5487,9 +5535,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5502,9 +5550,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The Azure resource ID.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5514,9 +5562,9 @@ ResourceGroupName   : ADF
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5529,9 +5577,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The data factory name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5541,9 +5589,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
-          <maml:name>IAzureContextContainer</maml:name>
+          <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5553,9 +5601,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The trigger object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
         <dev:type>
-          <maml:name>PSTrigger</maml:name>
+          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5565,9 +5613,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The trigger name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5577,9 +5625,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The resource group name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5589,9 +5637,9 @@ ResourceGroupName   : ADF
         <maml:description>
           <maml:para>The Azure resource ID.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5732,7 +5780,7 @@ Trigger1    Enabled</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
-          <maml:name>Columns</maml:name>
+          <maml:name>Column</maml:name>
           <maml:description>
             <maml:para>The columns list for data flow statistics preview.</maml:para>
           </maml:description>
@@ -5876,7 +5924,7 @@ Trigger1    Enabled</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
-          <maml:name>Columns</maml:name>
+          <maml:name>Column</maml:name>
           <maml:description>
             <maml:para>The columns list for data flow statistics preview.</maml:para>
           </maml:description>
@@ -6008,7 +6056,7 @@ Trigger1    Enabled</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
-          <maml:name>Columns</maml:name>
+          <maml:name>Column</maml:name>
           <maml:description>
             <maml:para>The columns list for data flow statistics preview.</maml:para>
           </maml:description>
@@ -6080,7 +6128,7 @@ Trigger1    Enabled</dev:code>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
-        <maml:name>Columns</maml:name>
+        <maml:name>Column</maml:name>
         <maml:description>
           <maml:para>The columns list for data flow statistics preview.</maml:para>
         </maml:description>
@@ -9115,9 +9163,9 @@ Confirm
           <maml:description>
             <maml:para>The data flow object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</maml:name>
+            <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -9293,9 +9341,9 @@ Confirm
         <maml:description>
           <maml:para>The data flow object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</command:parameterValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset</maml:name>
+          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -9311,6 +9359,18 @@ Confirm
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+          <maml:para>If specified will write true in case operation succeeds. This parameter is optional.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
         <maml:name>ResourceGroupName</maml:name>
@@ -9335,18 +9395,6 @@ Confirm
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>PassThru</maml:name>
-        <maml:description>
-          <maml:para>If specified will write true in case operation succeeds. This parameter is optional.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
@@ -11906,9 +11954,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The resource group name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -11918,9 +11966,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The data factory name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -11930,9 +11978,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The trigger name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -11942,9 +11990,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -11955,7 +12003,7 @@ True</dev:code>
             <maml:para>Don't ask for confirmation.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -11966,7 +12014,7 @@ True</dev:code>
             <maml:para>If specified, cmdlet will return return true on successful delete.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -11977,7 +12025,7 @@ True</dev:code>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -11988,7 +12036,7 @@ True</dev:code>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12001,9 +12049,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The trigger object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
           <dev:type>
-            <maml:name>PSTrigger</maml:name>
+            <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -12013,9 +12061,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -12026,7 +12074,7 @@ True</dev:code>
             <maml:para>Don't ask for confirmation.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12037,7 +12085,7 @@ True</dev:code>
             <maml:para>If specified, cmdlet will return return true on successful delete.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12048,7 +12096,7 @@ True</dev:code>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12059,7 +12107,7 @@ True</dev:code>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12072,9 +12120,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The Azure resource ID.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>String</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -12084,9 +12132,9 @@ True</dev:code>
           <maml:description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
           <dev:type>
-            <maml:name>IAzureContextContainer</maml:name>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -12097,7 +12145,7 @@ True</dev:code>
             <maml:para>Don't ask for confirmation.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12108,7 +12156,7 @@ True</dev:code>
             <maml:para>If specified, cmdlet will return return true on successful delete.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12119,7 +12167,7 @@ True</dev:code>
             <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12130,7 +12178,7 @@ True</dev:code>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
-            <maml:name>SwitchParameter</maml:name>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
@@ -12143,9 +12191,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The data factory name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12155,9 +12203,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">IAzureContextContainer</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</command:parameterValue>
         <dev:type>
-          <maml:name>IAzureContextContainer</maml:name>
+          <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12167,9 +12215,9 @@ True</dev:code>
         <maml:description>
           <maml:para>Don't ask for confirmation.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -12179,9 +12227,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The trigger object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">PSTrigger</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</command:parameterValue>
         <dev:type>
-          <maml:name>PSTrigger</maml:name>
+          <maml:name>Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12191,9 +12239,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The trigger name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12203,9 +12251,9 @@ True</dev:code>
         <maml:description>
           <maml:para>If specified, cmdlet will return return true on successful delete.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -12215,9 +12263,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The resource group name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12227,9 +12275,9 @@ True</dev:code>
         <maml:description>
           <maml:para>The Azure resource ID.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
-          <maml:name>String</maml:name>
+          <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -12239,9 +12287,9 @@ True</dev:code>
         <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -12251,9 +12299,9 @@ True</dev:code>
         <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
-          <maml:name>SwitchParameter</maml:name>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
@@ -12390,6 +12438,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -12473,18 +12532,6 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>LastCommitId</maml:name>
           <maml:description>
             <maml:para>The last commit id for repo configuration.</maml:para>
@@ -12495,17 +12542,6 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
-          <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ProjectName</maml:name>
@@ -12518,6 +12554,18 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -12665,6 +12713,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -12760,18 +12819,6 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>LastCommitId</maml:name>
           <maml:description>
             <maml:para>The last commit id for repo configuration.</maml:para>
@@ -12784,15 +12831,16 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
+          <maml:name>PublicNetworkAccess</maml:name>
           <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -12940,6 +12988,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -13035,18 +13094,6 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>LastCommitId</maml:name>
           <maml:description>
             <maml:para>The last commit id for repo configuration.</maml:para>
@@ -13059,15 +13106,16 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
+          <maml:name>PublicNetworkAccess</maml:name>
           <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -13215,6 +13263,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -13298,18 +13357,6 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>LastCommitId</maml:name>
           <maml:description>
             <maml:para>The last commit id for repo configuration.</maml:para>
@@ -13320,17 +13367,6 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
-          <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ProjectName</maml:name>
@@ -13343,6 +13379,18 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -13478,6 +13526,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -13560,18 +13619,6 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:description>
@@ -13596,17 +13643,6 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
-          <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>ProjectName</maml:name>
           <maml:description>
@@ -13618,6 +13654,18 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PublicNetworkAccess</maml:name>
+          <maml:description>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -13753,6 +13801,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -13847,18 +13906,6 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:description>
@@ -13884,15 +13931,16 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
+          <maml:name>PublicNetworkAccess</maml:name>
           <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>RepositoryName</maml:name>
@@ -13992,6 +14040,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -14074,18 +14133,6 @@ True</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PublicNetworkAccess</maml:name>
-          <maml:description>
-            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:description>
@@ -14099,15 +14146,16 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
+          <maml:name>PublicNetworkAccess</maml:name>
           <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+            <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
           </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <dev:defaultValue>Enabled</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>UserAssignedIdentity</maml:name>
@@ -14207,6 +14255,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -14300,17 +14359,6 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
-          <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>UserAssignedIdentity</maml:name>
@@ -14398,6 +14446,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>DisablePublish</maml:name>
+          <maml:description>
+            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>EncryptionKeyName</maml:name>
           <maml:description>
             <maml:para>The name of the key in Azure Key Vault to use as Customer Managed Key for encryption.</maml:para>
@@ -14491,17 +14550,6 @@ True</dev:code>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>Enabled</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DisablePublish</maml:name>
-          <maml:description>
-            <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>UserAssignedIdentity</maml:name>
@@ -14575,6 +14623,18 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>DisablePublish</maml:name>
+        <maml:description>
+          <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>EncryptionKeyName</maml:name>
@@ -14672,18 +14732,6 @@ True</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>PublicNetworkAccess</maml:name>
-        <maml:description>
-          <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-        <dev:type>
-          <maml:name>System.String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>Enabled</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>InputObject</maml:name>
         <maml:description>
@@ -14707,18 +14755,6 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>DisablePublish</maml:name>
-        <maml:description>
-          <maml:para>Disable manual publish operation in ADF studio to favor automated publish.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
         <maml:name>Location</maml:name>
@@ -14755,6 +14791,18 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PublicNetworkAccess</maml:name>
+        <maml:description>
+          <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Enabled</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>RepositoryName</maml:name>
@@ -15797,18 +15845,6 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataFlowEnableQuickReuse</maml:name>
           <maml:description>
             <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
@@ -15820,9 +15856,9 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:name>DataFlowTimeToLive</maml:name>
           <maml:description>
-            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
           <dev:type>
@@ -15830,65 +15866,6 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
@@ -16018,6 +15995,66 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:description>
+            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>MaxParallelExecutionsPerNode</maml:name>
           <maml:description>
             <maml:para>Maximum parallel execution count per node for a managed dedicated integration runtime.</maml:para>
@@ -16064,6 +16101,17 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
+          <maml:description>
+            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>SetupScriptContainerSasUri</maml:name>
@@ -16255,18 +16303,6 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataFlowEnableQuickReuse</maml:name>
           <maml:description>
             <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
@@ -16278,9 +16314,9 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:name>DataFlowTimeToLive</maml:name>
           <maml:description>
-            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
           <dev:type>
@@ -16288,65 +16324,6 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
@@ -16476,6 +16453,66 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:description>
+            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>MaxParallelExecutionsPerNode</maml:name>
           <maml:description>
             <maml:para>Maximum parallel execution count per node for a managed dedicated integration runtime.</maml:para>
@@ -16522,6 +16559,17 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
+          <maml:description>
+            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>SetupScriptContainerSasUri</maml:name>
@@ -16713,18 +16761,6 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataFlowEnableQuickReuse</maml:name>
           <maml:description>
             <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
@@ -16736,9 +16772,9 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:name>DataFlowTimeToLive</maml:name>
           <maml:description>
-            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+            <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
           <dev:type>
@@ -16746,65 +16782,6 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
-          <maml:description>
-            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
-          <maml:description>
-            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>DataProxyIntegrationRuntimeName</maml:name>
@@ -16934,6 +16911,66 @@ DatasetName       : DAWikipediaClickEvents
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+          <maml:description>
+            <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
+          <maml:description>
+            <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
+          <maml:description>
+            <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>MaxParallelExecutionsPerNode</maml:name>
           <maml:description>
             <maml:para>Maximum parallel execution count per node for a managed dedicated integration runtime.</maml:para>
@@ -16980,6 +17017,17 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
+          <maml:description>
+            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>SetupScriptContainerSasUri</maml:name>
@@ -17122,28 +17170,6 @@ DatasetName       : DAWikipediaClickEvents
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowEnableQuickReuse</maml:name>
-          <maml:description>
-            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -17244,28 +17270,6 @@ DatasetName       : DAWikipediaClickEvents
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowEnableQuickReuse</maml:name>
-          <maml:description>
-            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:description>
@@ -17365,28 +17369,6 @@ DatasetName       : DAWikipediaClickEvents
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>DataFlowEnableQuickReuse</maml:name>
-          <maml:description>
-            <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-          <maml:description>
-            <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureRmContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
@@ -17561,18 +17543,6 @@ DatasetName       : DAWikipediaClickEvents
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>DataFlowTimeToLive</maml:name>
-        <maml:description>
-          <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Nullable`1[System.Int32]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>DataFlowEnableQuickReuse</maml:name>
         <maml:description>
           <maml:para>To whether enable data flow cluster to be reused in the next dataflow activity.</maml:para>
@@ -17585,9 +17555,9 @@ DatasetName       : DAWikipediaClickEvents
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+        <maml:name>DataFlowTimeToLive</maml:name>
         <maml:description>
-          <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+          <maml:para>Time to live (in minutes) setting of the data flow cluster which will execute data flow job.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
         <dev:type>
@@ -17595,66 +17565,6 @@ DatasetName       : DAWikipediaClickEvents
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
-        <maml:description>
-          <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Nullable`1[System.Int32]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
-        <maml:description>
-          <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Nullable`1[System.Int32]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
-        <maml:description>
-          <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Nullable`1[System.Int32]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
-        <maml:description>
-          <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Nullable`1[System.Int32]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
-        <maml:description>
-          <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>DataProxyIntegrationRuntimeName</maml:name>
@@ -17789,6 +17699,66 @@ DatasetName       : DAWikipediaClickEvents
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ManagedVNetCopyComputeScaleDataIntegrationUnit</maml:name>
+        <maml:description>
+          <maml:para>DIU number setting reserved for copy activity execution.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ManagedVNetCopyComputeScaleTimeToLive</maml:name>
+        <maml:description>
+          <maml:para>Time to live (in minutes) setting of integration runtime which will execute copy activity.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ManagedVNetNumberOfExternalNodeCount</maml:name>
+        <maml:description>
+          <maml:para>Number of the the external nodes, which should be greater than 0 and less than 11.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ManagedVNetNumberOfPipelineNodeCount</maml:name>
+        <maml:description>
+          <maml:para>Number of the pipeline nodes, which should be greater than 0 and less than 11.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ManagedVNetPipelineExternalComputeScaleTimeToLive</maml:name>
+        <maml:description>
+          <maml:para>Time to live (in minutes) setting of integration runtime which will execute pipeline and external activity.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Nullable`1[System.Int32]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>MaxParallelExecutionsPerNode</maml:name>
         <maml:description>
           <maml:para>Maximum parallel execution count per node for a managed dedicated integration runtime.</maml:para>
@@ -17871,6 +17841,18 @@ DatasetName       : DAWikipediaClickEvents
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>SelfContainedInteractiveAuthoringEnabled</maml:name>
+        <maml:description>
+          <maml:para>An alternative option to ensure interactive authoring function when your self-hosted integration runtime is unable to establish a connection with Azure Relay.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>SetupScriptContainerSasUri</maml:name>
@@ -20455,6 +20437,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Don't ask for confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para>If specified will write true in case operation succeeds. This parameter is optional.</maml:para>
@@ -20539,6 +20532,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Don't ask for confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para>If specified will write true in case operation succeeds. This parameter is optional.</maml:para>
@@ -20611,6 +20615,17 @@ True</dev:code>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Force</maml:name>
+          <maml:description>
+            <maml:para>Don't ask for confirmation.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>PassThru</maml:name>
           <maml:description>
             <maml:para>If specified will write true in case operation succeeds. This parameter is optional.</maml:para>
@@ -20681,6 +20696,18 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Don't ask for confirmation.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>PassThru</maml:name>
@@ -23370,18 +23397,6 @@ True</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>PublicNetworkAccess</maml:name>
-        <maml:description>
-          <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
-        </maml:description>
-        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-        <dev:type>
-          <maml:name>System.String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>Enabled</dev:defaultValue>
-      </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>InputObject</maml:name>
         <maml:description>
@@ -23405,6 +23420,18 @@ True</dev:code>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>PublicNetworkAccess</maml:name>
+        <maml:description>
+          <maml:para>Whether or not public network access is allowed for the data factory. Options are 'Enabled' or 'Disabled'</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Enabled</dev:defaultValue>
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
         <maml:name>ResourceGroupName</maml:name>

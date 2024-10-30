@@ -195,7 +195,7 @@ These tasks include the following modules:
 
 # History
 ## Version 2.*
-- 29 Oct 2024 - v.2.1   - Incremental state is no longer save into Global Parameter of ADF, but now it's store in provided Storage Account #374
+- 30 Oct 2024 - v.2.1   - Incremental state is no longer save into Global Parameter of ADF, but now it's store in provided Storage Account #374
 - 14 Jun 2024 - v.2.0   - Related Az.* modules must be installed on DevOps Agent (no longer belongs to tasks)  
                         - Support for Service Connection using **Workload Identity Federation Authentication** in Azure DevOps (#154)  
                         - Test Connection Task is no longer Preview. ClientID & Secret fields are optional for SPN auth.

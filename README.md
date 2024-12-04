@@ -190,11 +190,13 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.11.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.11.1)
+- [azure.datafactory.tools - ver.1.11.2](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.11.2)
 - [Az.DataFactory - ver.1.18.8](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.8)
 
 # History
 ## Version 2.*
+- 04 Dec 2024 - v.2.2   Update [adftools v.1.11.2](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.11.2)
+                        - Fixed: Unknown object type: SparkJobDefinition by adding the type to the ignored list
 - 06 Nov 2024 - v.2.1   - Incremental state is no longer save into Global Parameter of ADF, but now it's store in provided Storage Account #374
 - 14 Jun 2024 - v.2.0   - Related Az.* modules must be installed on DevOps Agent (no longer belongs to tasks)  
                         - Support for Service Connection using **Workload Identity Federation Authentication** in Azure DevOps (#154)  

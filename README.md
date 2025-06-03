@@ -190,11 +190,17 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.11.2](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.11.2)
-- [Az.DataFactory - ver.1.18.8](https://www.powershellgallery.com/packages/Az.DataFactory/1.18.8)
+- [azure.datafactory.tools - ver.1.13.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.13.0)
+- [Az.DataFactory - ver.1.19.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.3)
 
 # History
 ## Version 2.*
+- 03 Jun 2025 - v.2.3   Update [adftools v.1.13.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.13.0)  
+                        - New: Az.DataFactory module is required to import adftools  
+                        - New: Added function `Set-AdfToolsAuthToken` to enable   changing URL to API when target environment is different the default Global Azure #356 #441  
+                        - Fixed: Error during the import when required Az.Resource module is not loaded #336  
+                        - Fixed: Error when deleting credentials #403  
+                        - Fixed: Adopted to breaking change in Az.Accounts v5.0 with Get-AzAccessToken that doesn't support String anymore #449
 - 04 Dec 2024 - v.2.2   Update [adftools v.1.11.2](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.11.2)
                         - Fixed: Unknown object type: SparkJobDefinition by adding the type to the ignored list
 - 06 Nov 2024 - v.2.1   - Incremental state is no longer save into Global Parameter of ADF, but now it's store in provided Storage Account #374

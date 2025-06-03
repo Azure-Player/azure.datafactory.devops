@@ -54,8 +54,8 @@ function Update-ModuleInPlace {
 # Downloading modules
 $m = 'azure.datafactory.tools'; Download-Module -m $m -target $target
 $m = 'Az.DataFactory';          Download-Module -m $m -target $target #-reqVer '1.16.13'
-$m = 'Az.Accounts';             Download-Module -m $m -target $target #-reqVer '2.12.1'
-$m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '6.5.3'
+# $m = 'Az.Accounts';             Download-Module -m $m -target $target #-reqVer '2.12.1'
+# $m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '6.5.3'
 
 # Updating modules in 'azure.datafactory.devops'
 $m = 'azure.datafactory.tools'; 

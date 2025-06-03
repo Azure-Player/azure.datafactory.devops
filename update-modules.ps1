@@ -50,10 +50,12 @@ function Update-ModuleInPlace {
     }
 }
 
+Uninstall-Module -Name 'Az.DataFactory'
+Uninstall-Module -Name 'azure.datafactory.tools'
 
 # Downloading modules
 $m = 'azure.datafactory.tools'; Download-Module -m $m -target $target
-$m = 'Az.DataFactory';          Download-Module -m $m -target $target #-reqVer '1.16.13'
+$m = 'Az.DataFactory';          Download-Module -m $m -target $target #-reqVer '1.19.2'
 # $m = 'Az.Accounts';             Download-Module -m $m -target $target #-reqVer '2.12.1'
 # $m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '6.5.3'
 

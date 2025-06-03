@@ -191,7 +191,7 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 # Related modules
 These tasks include the following modules:  
 - [azure.datafactory.tools - ver.1.13.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.13.0)
-- [Az.DataFactory - ver.1.19.3](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.3)
+- [Az.DataFactory - ver.1.19.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.2)
 
 # History
 ## Version 2.*

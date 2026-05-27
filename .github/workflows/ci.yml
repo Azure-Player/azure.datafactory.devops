@@ -46,3 +46,6 @@ jobs:
         with:
           name: nonprod
           path: ${{ github.workspace }}/artifacts/nonprod
+
+      - name: Print run ID for CD
+        run: echo "Use run_id=${{ github.run_id }} to trigger the CD workflow"

@@ -15,34 +15,34 @@ jobs:
 
       - name: Build PROD
         shell: pwsh
-        run: ./build.ps1 -isProd $True -build ${{ github.run_id }}
+        run: ./build.ps1 -isProd $True -build ${{ github.run_number }}
 
       - name: Copy PROD artifacts
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}\artifacts\prod"
+          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}/artifacts/prod"
           Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "SQLPlayer*.vsix" |
-            Copy-Item -Destination "${{ github.workspace }}\artifacts\prod"
+            Copy-Item -Destination "${{ github.workspace }}/artifacts/prod"
 
       - name: Publish Artifact prod
         uses: actions/upload-artifact@v4
         with:
           name: prod
-          path: ${{ github.workspace }}\artifacts\prod
+          path: ${{ github.workspace }}/artifacts/prod
 
       - name: Build non-prod
         shell: pwsh
-        run: ./build.ps1 -isProd $False -build ${{ github.run_id }}
+        run: ./build.ps1 -isProd $False -build ${{ github.run_number }}
 
       - name: Copy non-prod artifacts
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}\artifacts\nonprod"
+          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}/artifacts/nonprod"
           Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "Kamil-Nowinski*.vsix" |
-            Copy-Item -Destination "${{ github.workspace }}\artifacts\nonprod"
+            Copy-Item -Destination "${{ github.workspace }}/artifacts/nonprod"
 
       - name: Publish Artifact nonprod
         uses: actions/upload-artifact@v4
         with:
           name: nonprod
-          path: ${{ github.workspace }}\artifacts\nonprod
+          path: ${{ github.workspace }}/artifacts/nonprod

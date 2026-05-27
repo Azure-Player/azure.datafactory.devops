@@ -1,0 +1,57 @@
+name: Azure.DF.DevOps-CD
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'CI workflow run ID to download artifacts from'
+        required: true
+        type: string
+
+jobs:
+  publish-non-prod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install tfx-cli
+        run: npm install -g tfx-cli
+
+      - name: Download non-prod artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: nonprod
+          path: artifacts/nonprod
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ inputs.run_id }}
+
+      - name: Publish non-prod extension
+        run: |
+          tfx extension publish \
+            --vsix artifacts/nonprod/Kamil-Nowinski.DataFactoryTools-*.vsix \
+            --publisher Kamil-Nowinski \
+            --share-with sqlplayer \
+            --token ${{ secrets.MARKETPLACE_PAT }}
+
+  publish-prod:
+    runs-on: ubuntu-latest
+    needs: publish-non-prod
+    environment: production
+
+    steps:
+      - name: Install tfx-cli
+        run: npm install -g tfx-cli
+
+      - name: Download prod artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: prod
+          path: artifacts/prod
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ inputs.run_id }}
+
+      - name: Publish prod extension
+        run: |
+          tfx extension publish \
+            --vsix artifacts/prod/SQLPlayer.DataFactoryTools-*.vsix \
+            --publisher SQLPlayer \
+            --token ${{ secrets.MARKETPLACE_PAT }}

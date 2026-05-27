@@ -1,4 +1,4 @@
-name: Azure.DF.DevOps-CD
+name: Publish to Marketplace
 
 on:
   workflow_dispatch:

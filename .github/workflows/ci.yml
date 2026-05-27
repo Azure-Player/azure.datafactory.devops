@@ -15,7 +15,7 @@ jobs:
 
       - name: Build PROD
         shell: pwsh
-        run: ./build.ps1 -isProd $True -build ${{ github.run_number }}
+        run: ./build.ps1 -isProd $True -build ([int]$env:GITHUB_RUN_NUMBER + 5000)
 
       - name: Copy PROD artifacts
         shell: pwsh
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build non-prod
         shell: pwsh
-        run: ./build.ps1 -isProd $False -build ${{ github.run_number }}
+        run: ./build.ps1 -isProd $False -build ([int]$env:GITHUB_RUN_NUMBER + 5000)
 
       - name: Copy non-prod artifacts
         shell: pwsh

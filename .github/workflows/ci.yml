@@ -1,0 +1,48 @@
+name: CI Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tfx-cli
+        run: npm install -g tfx-cli
+
+      - name: Build PROD
+        shell: pwsh
+        run: ./build.ps1 -isProd $True -build ${{ github.run_id }}
+
+      - name: Copy PROD artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}\artifacts\prod"
+          Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "SQLPlayer*.vsix" |
+            Copy-Item -Destination "${{ github.workspace }}\artifacts\prod"
+
+      - name: Publish Artifact prod
+        uses: actions/upload-artifact@v4
+        with:
+          name: prod
+          path: ${{ github.workspace }}\artifacts\prod
+
+      - name: Build non-prod
+        shell: pwsh
+        run: ./build.ps1 -isProd $False -build ${{ github.run_id }}
+
+      - name: Copy non-prod artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "${{ github.workspace }}\artifacts\nonprod"
+          Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "Kamil-Nowinski*.vsix" |
+            Copy-Item -Destination "${{ github.workspace }}\artifacts\nonprod"
+
+      - name: Publish Artifact nonprod
+        uses: actions/upload-artifact@v4
+        with:
+          name: nonprod
+          path: ${{ github.workspace }}\artifacts\nonprod

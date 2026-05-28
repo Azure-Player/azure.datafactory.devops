@@ -48,7 +48,7 @@ jobs:
           Add-Content -Path "$env:GITHUB_STEP_SUMMARY" -Value $summaryText
 
       - name: Publish Artifact nonprod
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: nonprod
           path: ${{ github.workspace }}/artifacts/nonprod

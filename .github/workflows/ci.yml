@@ -27,6 +27,7 @@ jobs:
           Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "SQLPlayer*.vsix" |
             Copy-Item -Destination "${{ github.workspace }}/artifacts/prod"
 
+
       - name: Publish Artifact prod
         uses: actions/upload-artifact@v6
         with:
@@ -43,6 +44,8 @@ jobs:
           New-Item -ItemType Directory -Force -Path "${{ github.workspace }}/artifacts/nonprod"
           Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "Kamil-Nowinski*.vsix" |
             Copy-Item -Destination "${{ github.workspace }}/artifacts/nonprod"
+          $summaryText = "Artifacts published for prod and nonprod.`nRun ID: $env:GITHUB_RUN_ID"
+          Add-Content -Path "$env:GITHUB_STEP_SUMMARY" -Value $summaryText
 
       - name: Publish Artifact nonprod
         uses: actions/upload-artifact@v5
@@ -51,4 +54,6 @@ jobs:
           path: ${{ github.workspace }}/artifacts/nonprod
 
       - name: Print run ID for CD
-        run: echo "Use run_id=${{ github.run_id }} to trigger the CD workflow"
+        run: |
+          $summaryText = "Use run_id=${{ github.run_id }} to trigger the CD workflow"
+          Add-Content -Path "$env:GITHUB_STEP_SUMMARY" -Value $summaryText

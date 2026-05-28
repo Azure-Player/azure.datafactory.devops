@@ -28,7 +28,7 @@ jobs:
             Copy-Item -Destination "${{ github.workspace }}/artifacts/prod"
 
       - name: Publish Artifact prod
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: prod
           path: ${{ github.workspace }}/artifacts/prod

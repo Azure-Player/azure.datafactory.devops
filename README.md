@@ -197,11 +197,12 @@ These tasks include the following modules:
 
 ## Version 2.*
 
+- 29 May 2026 - v.2.5   Updated common libraries for tasks in Azure DevOps pipelines  
 - 28 May 2026 - v.2.4   Update [adftools v.1.15.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.15.0)  
-                        - New: Credential type of ADF objects is now supported for deployment via REST API
-                        - Fixed: Starting blob event trigger fails with 'Resource cannot be updated during provisioning' - now waits for provisioning to complete before retrying #484, #474, #463
-                        - Fixed: REST API calls failing with 401 Unauthorized due to Az.Accounts 5.x returning SecureString from Get-AzAccessToken
-                        - Fixed: DryRun not loading deployment state from storage for hash comparison #476
+                        - New: Credential type of ADF objects is now supported for deployment via REST API  
+                        - Fixed: Starting blob event trigger fails with 'Resource cannot be updated during provisioning' - now waits for provisioning to complete before retrying #484, #474, #463  
+                        - Fixed: REST API calls failing with 401 Unauthorized due to Az.Accounts 5.x returning SecureString from Get-AzAccessToken  
+                        - Fixed: DryRun not loading deployment state from storage for hash comparison #476  
 - 03 Jun 2025 - v.2.3   Update [adftools v.1.13.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.13.0)  
                         - New: Az.DataFactory module is required to import adftools  
                         - New: Added function `Set-AdfToolsAuthToken` to enable   changing URL to API when target environment is different the default Global Azure #356 #441  

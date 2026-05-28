@@ -17,7 +17,7 @@ jobs:
         run: npm install -g tfx-cli
 
       - name: Download non-prod artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: nonprod
           path: artifacts/nonprod
@@ -42,7 +42,7 @@ jobs:
         run: npm install -g tfx-cli
 
       - name: Download prod artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: prod
           path: artifacts/prod

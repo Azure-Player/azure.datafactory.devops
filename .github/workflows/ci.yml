@@ -54,6 +54,7 @@ jobs:
           path: ${{ github.workspace }}/artifacts/nonprod
 
       - name: Print run ID for CD
+        shell: pwsh
         run: |
           $summaryText = "Use run_id=${{ github.run_id }} to trigger the CD workflow"
           Add-Content -Path "$env:GITHUB_STEP_SUMMARY" -Value $summaryText

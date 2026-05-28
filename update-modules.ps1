@@ -10,7 +10,28 @@ Remove-Item -Path "$target\*" -Force
 function Download-Module {
     param ([String] $m, [String]$target, $reqVer)
 
-    update-module $m -Force -RequiredVersion $reqVer
+    try {
+        if ($reqVer) {
+            Update-Module -Name $m -Force -RequiredVersion $reqVer
+        }
+        else {
+            Update-Module -Name $m -Force
+        }
+    }
+    catch {
+        if ($_.Exception.Message -match 'not installed by using Install-Module') {
+            if ($reqVer) {
+                Install-Module -Name $m -Force -RequiredVersion $reqVer -AllowClobber
+            }
+            else {
+                Install-Module -Name $m -Force -AllowClobber
+            }
+        }
+        else {
+            throw
+        }
+    }
+
     $list = get-module $m -ListAvailable
     $mod = $list[0]
     $folder = Split-Path $mod.Path -Parent

@@ -190,11 +190,18 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.13.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.13.0)
-- [Az.DataFactory - ver.1.19.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.2)
+- [azure.datafactory.tools - ver.1.15.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.15.0)
+- [Az.DataFactory - ver.1.19.7](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.7)
 
 # History
+
 ## Version 2.*
+
+- 28 May 2026 - v.2.4   Update [adftools v.1.15.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.15.0)  
+                        - New: Credential type of ADF objects is now supported for deployment via REST API
+                        - Fixed: Starting blob event trigger fails with 'Resource cannot be updated during provisioning' - now waits for provisioning to complete before retrying #484, #474, #463
+                        - Fixed: REST API calls failing with 401 Unauthorized due to Az.Accounts 5.x returning SecureString from Get-AzAccessToken
+                        - Fixed: DryRun not loading deployment state from storage for hash comparison #476
 - 03 Jun 2025 - v.2.3   Update [adftools v.1.13.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.13.0)  
                         - New: Az.DataFactory module is required to import adftools  
                         - New: Added function `Set-AdfToolsAuthToken` to enable   changing URL to API when target environment is different the default Global Azure #356 #441  
@@ -209,7 +216,8 @@ These tasks include the following modules:
                         - Test Connection Task is no longer Preview. ClientID & Secret fields are optional for SPN auth.
 
 ## Version 1.*
-- 13 Jun 2024 - v.1.35    
+
+- 13 Jun 2024 - v.1.35
 - 06 Jun 2024 - v.1.33  Update [adftools v.1.9.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.9.0)  
 - 27 Jan 2024 - v.1.32  - Added dry run option (advanced). Thanks [@LiquoriChris](https://github.com/LiquoriChris)!
 - 12 Sep 2023 - v.1.31  Update [adftools v.1.8.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.8.0):  

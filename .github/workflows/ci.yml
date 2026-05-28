@@ -9,6 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          path: ''
 
       - name: Install tfx-cli
         run: npm install -g tfx-cli
@@ -20,6 +22,7 @@ jobs:
       - name: Copy PROD artifacts
         shell: pwsh
         run: |
+          Write-Host "github.workspace: ${{ github.workspace }}"
           New-Item -ItemType Directory -Force -Path "${{ github.workspace }}/artifacts/prod"
           Get-ChildItem -Path "${{ github.workspace }}" -Recurse -Filter "SQLPlayer*.vsix" |
             Copy-Item -Destination "${{ github.workspace }}/artifacts/prod"

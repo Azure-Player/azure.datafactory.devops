@@ -7,10 +7,16 @@ on:
         description: 'CI workflow run ID to download artifacts from'
         required: true
         type: string
+      skip_nonprod:
+        description: 'Skip deployment to non-prod'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   publish-non-prod:
     runs-on: ubuntu-latest
+    if: ${{ !inputs.skip_nonprod }}
 
     steps:
       - name: Install tfx-cli
@@ -36,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: publish-non-prod
     environment: production
+    if: ${{ always() && (needs.publish-non-prod.result == 'success' || needs.publish-non-prod.result == 'skipped') }}
 
     steps:
       - name: Install tfx-cli

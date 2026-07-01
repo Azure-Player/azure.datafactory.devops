@@ -39,7 +39,7 @@ One example, in which we use the 'Build ADF' task:
 ![](./images/task-publish.png)
 
 Use this task to deploy a folder of ADF objects from your repo to target Azure Data Factory instance.  
-For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@1`.
+For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started), use task `PublishADFTask@2`.
 
 
 ## Key capabilities

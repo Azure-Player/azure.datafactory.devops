@@ -60,9 +60,9 @@ For [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get
   * Whether create or not a new instance of ADF if it not exist
 * Tokenisation in config file allows replace any value by Environment Variable or Variable from DevOps Pipeline
 * Global Parameters
-* Export ARM Templates from JSON files (new!)
-* Support for Managed VNET and Managed Private Endpoint (new!)
-* ⭐️ Incremental deployment (**NEW!**)
+* Export ARM Templates from JSON files
+* Support for Managed VNET and Managed Private Endpoint
+* Incremental deployment
 * Build function to support validation of files, dependencies and config
 * Test connections (Linked Services)
 
@@ -190,14 +190,15 @@ The purpose of this task is to ensure such checking. It works exactly the same a
 
 # Related modules
 These tasks include the following modules:  
-- [azure.datafactory.tools - ver.1.15.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.15.0)
-- [Az.DataFactory - ver.1.19.7](https://www.powershellgallery.com/packages/Az.DataFactory/1.19.7)
+- [azure.datafactory.tools - ver.1.19.1](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.19.1)
+- [Az.DataFactory - ver.1.20.2](https://www.powershellgallery.com/packages/Az.DataFactory/1.20.2)
 
 # History
 
 ## Version 2.*
 
-- 29 May 2026 - v.2.5   Updated common libraries for tasks in Azure DevOps pipelines  
+- 18 Oct 2026 - v.2.5   Updated common libraries for tasks in Azure DevOps pipelines  
+                        Updated adftools (1.19.1) & Az.DataFactory (1.20.2)  
 - 28 May 2026 - v.2.4   Update [adftools v.1.15.0](https://github.com/Azure-Player/azure.datafactory.tools/releases/tag/v1.15.0)  
                         - New: Credential type of ADF objects is now supported for deployment via REST API  
                         - Fixed: Starting blob event trigger fails with 'Resource cannot be updated during provisioning' - now waits for provisioning to complete before retrying #484, #474, #463  

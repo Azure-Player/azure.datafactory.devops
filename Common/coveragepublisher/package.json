@@ -1,6 +1,6 @@
 {
   "name": "coveragepublisher",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Microsoft Corporation",
   "license": "MIT",
   "bugs": {
@@ -10,7 +10,7 @@
     "azure-pipelines-task-lib": "^5.0.1-preview.0",
     "@types/node": "^16.11.39",
     "os": "^0.1.1",
-    "uuid": "^14.0.0"
+    "uuid": "^11.1.1"
   },
   "main": "VSTS Tasks Code Coverage Tools",
   "scripts": {

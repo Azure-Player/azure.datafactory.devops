@@ -23,10 +23,10 @@ function Update-TaskManifest {
     $body = $body.Replace('"Minor": '+$JsonDoc.version.Minor, '"Minor": '+$version.Minor)
     $body = $body.Replace('"Patch": '+$JsonDoc.version.Patch, '"Patch": '+$version.Build)
     if (!$IsProd) {
-        Write-Output "- Updating task id and friendly name for private preview..."
+        Write-Output "- Updating task id and friendly name for private preview (aka beta)..."
         $TaskId = $JsonDoc.id
         $TaskFriendlyName = $JsonDoc.friendlyName
-        $NonProdTaskFriendlyName = "$TaskFriendlyName (Private Preview)"
+        $NonProdTaskFriendlyName = "$TaskFriendlyName (beta)"
         $body = $body.Replace("""id"": ""$TaskId"",", """id"": ""$NonProdTaskId"",")
         $body = $body.Replace("""friendlyName"": ""$TaskFriendlyName"",", """friendlyName"": ""$NonProdTaskFriendlyName"",")
     }

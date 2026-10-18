@@ -939,6 +939,8 @@ function Get-AzureSqlDatabaseServerResourceId {
         $ResourceDetails = Invoke-RestMethod -Uri $uri -Method $method -Headers $headers -ContentType $script:jsonContentType
         foreach ($resourceDetail in $ResourceDetails.Value) {
             if ($resourceDetail.name -eq $serverName -and $resourceDetail.type -eq $serverType) {
+                $serverNameLower = $serverName.ToLower() 
+                $resourcedetail.id = $resourcedetail.id -ireplace "$serverName", "$serverNameLower"
                 return $resourceDetail.id
             }
         }
@@ -1348,9 +1350,24 @@ function ConvertTo-Pfx {
     $pfxFilePassword = [System.Guid]::NewGuid().ToString()
     Set-Content -Path $pfxPasswordFilePath -Value $pfxFilePassword -NoNewline
 
-    $openSSLExePath = "$PSScriptRoot\openssl\openssl.exe"
-    $openSSLArgs = "pkcs12 -export -in $pemFilePath -out $pfxFilePath -password file:`"$pfxPasswordFilePath`""
+    $useOpenssLatestVersion = Get-VstsPipelineFeature -FeatureName 'UseLatestOpensslVstsAzureRestHelpers'
+    if(-not $useOpenssLatestVersion) {
+        $openSSLExePath = "$PSScriptRoot\opensslv3.4.2\openssl.exe"
+        $env:OPENSSL_CONF = "$PSScriptRoot\opensslv3.4.2\openssl.cnf"
+    }
+    else {
+        $openSSLExePath = "$PSScriptRoot\opensslv3.5.6\openssl.exe"
+        $env:OPENSSL_CONF = "$PSScriptRoot\opensslv3.5.6\openssl.cnf"
+    }
+    try {
+        $versionOutput = & $openSSLExePath version
+        Write-Verbose "OpenSSL version: $versionOutput"
+    } catch {
+        Write-Host "There was an error while getting the OpenSSL version $_"
+    }
 
+    $env:RANDFILE=".rnd"
+    $openSSLArgs = "pkcs12 -export -certpbe PBE-SHA1-3DES -keypbe PBE-SHA1-3DES -macalg sha1 -in `"$pemFilePath`" -out `"$pfxFilePath`" -password file:`"$pfxPasswordFilePath`""
     Invoke-VstsTool -FileName $openSSLExePath -Arguments $openSSLArgs -RequireExitCodeZero
 
     return $pfxFilePath, $pfxFilePassword
@@ -1437,6 +1454,39 @@ function Get-VstsFederatedToken {
     return $federatedToken
 }
 
+
+# Get the Bearer Access Token - MSAL
+function Get-AccessTokenMSALWithCustomScope {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)] $endpoint,
+        [string][Parameter(Mandatory=$false)] $connectedServiceNameARM,
+        [string][Parameter(Mandatory=$false)] $scope
+    )
+
+    Get-MSALInstance $endpoint $connectedServiceNameARM
+
+    # prepare MSAL scopes
+    [string] $resourceId = $scope + "/.default"
+    $scopes = [Collections.Generic.List[string]]@($resourceId)
+
+    try {
+        Write-Verbose "Fetching Access Token - MSAL"
+        $tokenResult = $script:msalClientInstance.AcquireTokenForClient($scopes).ExecuteAsync().GetAwaiter().GetResult()
+        return $tokenResult
+    }
+    catch {
+        $exceptionMessage = $_.Exception.Message.ToString()
+        $parsedException = Parse-Exception($_.Exception)
+        if ($parsedException) {
+            $exceptionMessage = $parsedException
+        }
+        Write-Error "ExceptionMessage: $exceptionMessage (in function: Get-AccessTokenMSAL)"
+        throw (Get-VstsLocString -Key AZ_SpnAccessTokenFetchFailure -ArgumentList $endpoint.Auth.Parameters.TenantId)
+    }
+}
+
+
 # Export only the public function.
 Export-ModuleMember -Function Add-AzureSqlDatabaseServerFirewallRule
 Export-ModuleMember -Function Remove-AzureSqlDatabaseServerFirewallRule
@@ -1454,3 +1504,4 @@ Export-ModuleMember -Function Get-AzureLoadBalancerDetails
 Export-ModuleMember -Function Get-AzureRMLoadBalancerFrontendIpConfigDetails
 Export-ModuleMember -Function Get-AzureRMLoadBalancerInboundNatRuleConfigDetails
 Export-ModuleMember -Function Get-AzureRMAccessToken
+Export-ModuleMember -Function Get-AccessTokenMSALWithCustomScope

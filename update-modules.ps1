@@ -1,10 +1,10 @@
-# [azure.datafactory.tools - ver.0.97.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/0.97.0)
+# [azure.datafactory.tools - ver.0.97.0](https://www.powershellgallery.com/packages/azure.datafactory.tools/1.19.1)
 # [Az.DataFactory - ver.1.16.6](https://www.powershellgallery.com/packages/Az.DataFactory/1.16.6)
-# [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/2.5.3)
-# [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/4.3.1)
+# [Az.Accounts - ver.2.5.3](https://www.powershellgallery.com/packages/Az.Accounts/5.5.3)
+# [Az.Resources - ver.4.3.1](https://www.powershellgallery.com/packages/Az.Resources/10.2.0)
 
 $ErrorActionPreference = 'Stop'
-$target = 'd:\modules'
+$target = 'c:\modules'
 Remove-Item -Path "$target\*" -Force
 
 function Download-Module {
@@ -71,14 +71,14 @@ function Update-ModuleInPlace {
     }
 }
 
-Uninstall-Module -Name 'Az.DataFactory'
-Uninstall-Module -Name 'azure.datafactory.tools'
+Uninstall-Module -Name 'Az.DataFactory' -ErrorAction Continue
+Uninstall-Module -Name 'azure.datafactory.tools' -ErrorAction Continue
 
 # Downloading modules
-$m = 'azure.datafactory.tools'; Download-Module -m $m -target $target
-$m = 'Az.DataFactory';          Download-Module -m $m -target $target #-reqVer '1.19.2'
-# $m = 'Az.Accounts';             Download-Module -m $m -target $target #-reqVer '2.12.1'
-# $m = 'Az.Resources';            Download-Module -m $m -target $target #-reqVer '6.5.3'
+$m = 'azure.datafactory.tools'; Download-Module -m $m -target $target -reqVer '1.19.1'
+$m = 'Az.DataFactory';          Download-Module -m $m -target $target -reqVer '1.20.2'
+#$m = 'Az.Accounts';             Download-Module -m $m -target $target -reqVer '5.5.3'
+#$m = 'Az.Resources';            Download-Module -m $m -target $target -reqVer '10.2.0'
 
 # Updating modules in 'azure.datafactory.devops'
 $m = 'azure.datafactory.tools'; 

@@ -4,11 +4,11 @@ import * as taskLib from 'azure-pipelines-task-lib/task';
 import * as os from 'os';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as UUID from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import {execSync} from 'child_process';
 
 export async function PublishCodeCoverage(inputFiles: string[], sourceDirectory?: string) {
-    var reportDirectory = path.join(getTempFolder(), UUID());
+    var reportDirectory = path.join(getTempFolder(), uuidv4());
     fs.mkdirSync(reportDirectory);
     publishCoverage(inputFiles, reportDirectory, sourceDirectory)
 }
